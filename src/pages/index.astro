@@ -290,8 +290,6 @@
       font-family: var(--font-en);
       direction: ltr;
     }
-    body.lang-en [data-ar] { display: none !important; }
-    body.lang-ar [data-en] { display: none !important; }
 
     a:focus-visible,
     button:focus-visible {
@@ -1304,38 +1302,29 @@
   <nav aria-label="التنقل الرئيسي">
     <div class="nav-brand">
       <span class="material-symbols-outlined" aria-hidden="true">terminal</span>
-      <span data-ar>النواة المعمارية</span>
-      <span data-en>Architectural Core</span>
+      <span data-i18n="index.auto_1">النواة المعمارية</span>
     </div>
 
     <div class="nav-links">
-      <a href="/projects/" data-ar>المشاريع</a>
-      <a href="/projects/" data-en>Projects</a>
-      <a href="/services/" data-ar>الخدمات</a>
-      <a href="/services/" data-en>Services</a>
-      <a href="/offers/" class="nav-flag-link" data-ar>العروض <span class="nav-flag">HOT</span></a>
-      <a href="/offers/" class="nav-flag-link" data-en>Offers <span class="nav-flag">HOT</span></a>
-      <a href="/blog/" data-ar>المقالات</a>
-      <a href="/blog/" data-en>Articles</a>
-      <a href="#gcc" class="gcc-only" data-ar>الخليج</a>
-      <a href="#gcc" class="gcc-only" data-en>GCC</a>
-      <a href="#stack" data-ar>التقنيات</a>
-      <a href="#stack" data-en>Stack</a>
-      <a href="#experience" data-ar>الخبرة</a>
-      <a href="#experience" data-en>Experience</a>
+      <a href="/projects/" data-i18n="index.auto_2">المشاريع</a>
+      <a href="/services/" data-i18n="index.auto_3">الخدمات</a>
+      <a href="/offers/" class="nav-flag-link" data-i18n="index.auto_4">العروض <span class="nav-flag">HOT</span></a>
+      <a href="/blog/" data-i18n="index.auto_5">المقالات</a>
+      <a href="#gcc" class="gcc-only" data-i18n="index.auto_6">الخليج</a>
+      <a href="#stack" data-i18n="index.auto_7">التقنيات</a>
+      <a href="#experience" data-i18n="index.auto_8">الخبرة</a>
 
       <div class="lang-toggle" role="group" aria-label="اختيار اللغة">
-        <button id="btn-ar" class="active" onclick="setLang('ar')" aria-pressed="true">عربي</button>
-        <button id="btn-en" onclick="setLang('en')" aria-pressed="false">EN</button>
+        <button id="btn-ar" class="active" onclick="setLang('ar')" aria-pressed="true" data-i18n="lang.ar_short">عربي</button>
+        <button id="btn-en" onclick="setLang('en')" aria-pressed="false" data-i18n="lang.en_short">EN</button>
       </div>
 
-      <a href="#contact" class="btn-contact" data-ar>تواصل معي</a>
-      <a href="#contact" class="btn-contact" data-en>Contact</a>
+      <a href="#contact" class="btn-contact" data-i18n="index.auto_9">تواصل معي</a>
     </div>
 
     <div class="lang-toggle md-only-lang" role="group" aria-label="اختيار اللغة" style="margin-inline-start:auto; margin-inline-end:0.5rem;" id="mobile-lang">
-      <button id="btn-ar-m" class="active" onclick="setLang('ar')">ع</button>
-      <button id="btn-en-m" onclick="setLang('en')">EN</button>
+      <button id="btn-ar-m" class="active" onclick="setLang('ar')" data-i18n="lang.ar_short">ع</button>
+      <button id="btn-en-m" onclick="setLang('en')" data-i18n="lang.en_short">EN</button>
     </div>
   </nav>
 </header>
@@ -1353,124 +1342,97 @@
 
     <div style="max-width:680px; display:flex; flex-direction:column; align-items:center; gap:1rem;">
       <h1 id="hero-heading">
-        <span data-ar class="hero-title-line">أبني أنظمة <span class="gradient-text">Laravel Backend</span> قابلة للتوسع</span>
-        <span data-en class="hero-title-line">I Build Scalable <span class="gradient-text">Laravel Backend Systems</span></span>
+        <span class="hero-title-line" data-i18n="index.auto_10">أبني أنظمة <span class="gradient-text">Laravel Backend</span> قابلة للتوسع</span>
       </h1>
 
       <p class="hero-sub">
-        <span data-ar>أساعد الشركات الناشئة والبيزنس على بناء APIs عالية الأداء، تحسين الأنظمة الحالية، وتجهيز المنتج للتوسع إلى آلاف المستخدمين بدون فوضى تقنية.</span>
-        <span data-en>Helping startups and businesses build high-performance APIs, optimize systems, and scale to thousands of users.</span>
+        <span data-i18n="index.auto_11">أساعد الشركات الناشئة والبيزنس على بناء APIs عالية الأداء، تحسين الأنظمة الحالية، وتجهيز المنتج للتوسع إلى آلاف المستخدمين بدون فوضى تقنية.</span>
       </p>
 
       <ul class="hero-checklist" aria-label="Core backend strengths">
         <li>
           <span class="check">✔</span>
-          <span data-ar>REST APIs وMicroservices</span>
-          <span data-en>REST APIs &amp; Microservices</span>
+          <span data-i18n="index.auto_12">REST APIs وMicroservices</span>
         </li>
         <li>
           <span class="check">✔</span>
-          <span data-ar>أنظمة عالية الأداء تدعم 10K+ مستخدم</span>
-          <span data-en>High-performance systems (10K+ users)</span>
+          <span data-i18n="index.auto_13">أنظمة عالية الأداء تدعم 10K+ مستخدم</span>
         </li>
         <li>
           <span class="check">✔</span>
-          <span data-ar>معمارية نظيفة وقابلة للتوسع</span>
-          <span data-en>Clean &amp; scalable architecture</span>
+          <span data-i18n="index.auto_14">معمارية نظيفة وقابلة للتوسع</span>
         </li>
       </ul>
 
       <div class="hero-cta">
-        <a href="#contact" class="btn-primary btn-with-icon" data-ar><span class="material-symbols-outlined" aria-hidden="true">rocket_launch</span>وظفني الآن</a>
-        <a href="#contact" class="btn-primary btn-with-icon" data-en><span class="material-symbols-outlined" aria-hidden="true">rocket_launch</span>Hire Me</a>
-        <a href="https://wa.me/201008275881" target="_blank" rel="noopener noreferrer" class="btn-ghost btn-with-icon" data-ar><span class="material-symbols-outlined" aria-hidden="true">chat</span>لنعمل معًا</a>
-        <a href="https://wa.me/201008275881" target="_blank" rel="noopener noreferrer" class="btn-ghost btn-with-icon" data-en><span class="material-symbols-outlined" aria-hidden="true">chat</span>Let’s Work Together</a>
-        <a href="/projects/" class="btn-ghost btn-with-icon" data-ar><span class="material-symbols-outlined" aria-hidden="true">work</span>معرض الأعمال</a>
-        <a href="/projects/" class="btn-ghost btn-with-icon" data-en><span class="material-symbols-outlined" aria-hidden="true">work</span>Portfolio</a>
-        <a href="https://www.upwork.com/freelancers/~018ae3e5cfaa1804d1?mp_source=share" target="_blank" rel="noopener noreferrer" class="btn-ghost btn-with-icon" data-ar><span class="material-symbols-outlined" aria-hidden="true">verified</span>توظيف من Upwork</a>
-        <a href="https://www.upwork.com/freelancers/~018ae3e5cfaa1804d1?mp_source=share" target="_blank" rel="noopener noreferrer" class="btn-ghost btn-with-icon" data-en><span class="material-symbols-outlined" aria-hidden="true">verified</span>Hire via Upwork</a>
+        <a href="#contact" class="btn-primary btn-with-icon" data-i18n="index.auto_15"><span class="material-symbols-outlined" aria-hidden="true">rocket_launch</span>وظفني الآن</a>
+        <a href="https://wa.me/201008275881" target="_blank" rel="noopener noreferrer" class="btn-ghost btn-with-icon" data-i18n="index.auto_16"><span class="material-symbols-outlined" aria-hidden="true">chat</span>لنعمل معًا</a>
+        <a href="/projects/" class="btn-ghost btn-with-icon" data-i18n="index.auto_17"><span class="material-symbols-outlined" aria-hidden="true">work</span>معرض الأعمال</a>
+        <a href="https://www.upwork.com/freelancers/~018ae3e5cfaa1804d1?mp_source=share" target="_blank" rel="noopener noreferrer" class="btn-ghost btn-with-icon" data-i18n="index.auto_18"><span class="material-symbols-outlined" aria-hidden="true">verified</span>توظيف من Upwork</a>
       </div>
     </div>
 
     <div class="hero-proof">
       <div class="proof-card">
         <strong>3+</strong>
-        <span data-ar>سنوات في بناء Laravel APIs ومنتجات تشغيلية قابلة للاعتماد</span>
-        <span data-en>Years building reliable Laravel APIs and production systems</span>
+        <span data-i18n="index.auto_19">سنوات في بناء Laravel APIs ومنتجات تشغيلية قابلة للاعتماد</span>
       </div>
       <div class="proof-card">
         <strong>40%</strong>
-        <span data-ar>تحسين في سرعة CI/CD بعد إعادة هيكلة المعمارية</span>
-        <span data-en>CI/CD throughput improvement after architecture redesign</span>
+        <span data-i18n="index.auto_20">تحسين في سرعة CI/CD بعد إعادة هيكلة المعمارية</span>
       </div>
       <div class="proof-card">
         <strong>EG + GCC</strong>
-        <span data-ar>جاهزية للعمل مع فرق في مصر والسعودية والإمارات وباقي الخليج</span>
-        <span data-en>Available for Egypt, Saudi, UAE, and wider GCC product teams</span>
+        <span data-i18n="index.auto_21">جاهزية للعمل مع فرق في مصر والسعودية والإمارات وباقي الخليج</span>
       </div>
     </div>
 
     <div class="hero-note">
-      <span data-ar><strong style="color:var(--c-text)">القيمة الحقيقية:</strong> لست فقط مطورًا يكتب كود. أنا أبني باك-إند يسرّع إطلاق المنتج، يرفع الاعتمادية، ويجعل التوسع أقل ألمًا لفريقك.</span>
-      <span data-en><strong style="color:var(--c-text)">Value proposition:</strong> this is not just code delivery. I build backend systems that help teams ship faster, operate more reliably, and scale with less technical drag.</span>
+      <span data-i18n="index.auto_22"><strong style="color:var(--c-text)">القيمة الحقيقية:</strong> لست فقط مطورًا يكتب كود. أنا أبني باك-إند يسرّع إطلاق المنتج، يرفع الاعتمادية، ويجعل التوسع أقل ألمًا لفريقك.</span>
     </div>
 
     <div class="hero-hook">
-      <span data-ar>إذا كان منتجك بطيئًا، الـ checkout ضعيف، أو الـ APIs لا تتحمل الضغط، فالمشكلة ليست أنك تحتاج “Developer” فقط. أنت تحتاج Back-End يحسّن الأداء، يقلل الأعطال، ويدعم نمو البيزنس.</span>
-      <span data-en>If your product is slow, checkout is weak, or APIs break under load, you do not just need a developer. You need backend systems that improve performance, reduce incidents, and support business growth.</span>
+      <span data-i18n="index.auto_23">إذا كان منتجك بطيئًا، الـ checkout ضعيف، أو الـ APIs لا تتحمل الضغط، فالمشكلة ليست أنك تحتاج “Developer” فقط. أنت تحتاج Back-End يحسّن الأداء، يقلل الأعطال، ويدعم نمو البيزنس.</span>
     </div>
   </section>
 
   <section id="about" aria-labelledby="about-heading">
     <div class="section-label">
-      <span data-ar>من أنا</span>
-      <span data-en>About Me</span>
+      <span data-i18n="index.auto_24">من أنا</span>
     </div>
     <div class="about-shell">
       <div class="panel">
         <h2 id="about-heading" class="section-title">
-          <span data-ar>لماذا يختارني أصحاب المنتجات وفرق التقنية؟</span>
-          <span data-en>Why founders and product teams hire me</span>
+          <span data-i18n="index.auto_25">لماذا يختارني أصحاب المنتجات وفرق التقنية؟</span>
         </h2>
         <p style="color:var(--c-muted);">
-          <span data-ar>أنا عبدالرحمن طاهر، مطور Laravel Backend أول أركّز على بناء الأنظمة التي تحتاجها الشركات عندما تنتقل من MVP أو نظام مرهق إلى منصة يمكن الاعتماد عليها في التشغيل اليومي.</span>
-          <span data-en>I’m Abdulrahman Taher, a senior Laravel backend developer focused on building systems that survive real operations, not just demos.</span>
+          <span data-i18n="index.auto_26">أنا عبدالرحمن طاهر، مطور Laravel Backend أول أركّز على بناء الأنظمة التي تحتاجها الشركات عندما تنتقل من MVP أو نظام مرهق إلى منصة يمكن الاعتماد عليها في التشغيل اليومي.</span>
         </p>
         <p style="color:var(--c-muted);">
-          <span data-ar>عملي يشمل تصميم REST APIs، أنظمة المصادقة والصلاحيات، التكامل مع بوابات الدفع والخدمات الخارجية، وتحسين الأداء عندما تبدأ الاختناقات التقنية في التأثير على الإيراد وسرعة الفريق.</span>
-          <span data-en>I work on REST APIs, auth systems, payment and third-party integrations, and performance tuning when backend bottlenecks start affecting revenue, delivery speed, or customer experience.</span>
+          <span data-i18n="index.auto_27">عملي يشمل تصميم REST APIs، أنظمة المصادقة والصلاحيات، التكامل مع بوابات الدفع والخدمات الخارجية، وتحسين الأداء عندما تبدأ الاختناقات التقنية في التأثير على الإيراد وسرعة الفريق.</span>
         </p>
         <div class="cta-inline">
-          <a href="#contact" class="btn-primary" data-ar>ابدأ مشروعك معي</a>
-          <a href="#contact" class="btn-primary" data-en>Start Your Project</a>
-          <a href="/services/" class="btn-ghost" data-ar>استعرض الخدمات</a>
-          <a href="/services/" class="btn-ghost" data-en>View Services</a>
+          <a href="#contact" class="btn-primary" data-i18n="index.auto_28">ابدأ مشروعك معي</a>
+          <a href="/services/" class="btn-ghost" data-i18n="index.auto_29">استعرض الخدمات</a>
         </div>
       </div>
 
       <aside class="panel">
         <div class="mini-title">
-          <span data-ar>دليل سريع</span>
-          <span data-en>Why Clients Hire Me</span>
+          <span data-i18n="index.auto_30">دليل سريع</span>
         </div>
         <ul class="result-list">
           <li>
-            <strong data-ar>تخصص واضح في الباك-إند</strong>
-            <strong data-en>Deep Backend Specialization</strong>
-            <span data-ar>Laravel وPHP وAPI architecture بدل تطوير عام لا يقدّم عمقًا هندسيًا كافيًا.</span>
-            <span data-en>Laravel, PHP, and API architecture instead of broad full-stack messaging with weak backend depth.</span>
+            <strong data-i18n="index.auto_31">تخصص واضح في الباك-إند</strong>
+            <span data-i18n="index.auto_32">Laravel وPHP وAPI architecture بدل تطوير عام لا يقدّم عمقًا هندسيًا كافيًا.</span>
           </li>
           <li>
-            <strong data-ar>نتائج قابلة للقياس</strong>
-            <strong data-en>Measurable Results</strong>
-            <span data-ar>تحسينات مثبتة في الأداء، سرعة التسليم، واستقرار الخدمات تحت الضغط.</span>
-            <span data-en>Documented improvements in performance, delivery speed, and service stability under load.</span>
+            <strong data-i18n="index.auto_33">نتائج قابلة للقياس</strong>
+            <span data-i18n="index.auto_34">تحسينات مثبتة في الأداء، سرعة التسليم، واستقرار الخدمات تحت الضغط.</span>
           </li>
           <li>
-            <strong data-ar>تنفيذ مفهوم لغير التقنيين أيضًا</strong>
-            <strong data-en>Execution Non-Technical Teams Can Trust</strong>
-            <span data-ar>خطة عمل أسبوعية، أولويات واضحة، وترجمة التقنية إلى أثر على المنتج والعمل.</span>
-            <span data-en>Clear weekly execution, visible priorities, and translation of technical work into product and business outcomes.</span>
+            <strong data-i18n="index.auto_35">تنفيذ مفهوم لغير التقنيين أيضًا</strong>
+            <span data-i18n="index.auto_36">خطة عمل أسبوعية، أولويات واضحة، وترجمة التقنية إلى أثر على المنتج والعمل.</span>
           </li>
         </ul>
       </aside>
@@ -1479,17 +1441,14 @@
 
   <section id="authority" aria-labelledby="authority-heading">
     <div class="section-label">
-      <span data-ar>إشارات الثقة</span>
-      <span data-en>Authority Signals</span>
+      <span data-i18n="index.auto_37">إشارات الثقة</span>
     </div>
     <div style="margin-bottom:2rem;">
       <h2 id="authority-heading" class="section-title">
-        <span data-ar>ما الذي يجعل هذا الموقع أقرب لصفحة توظيف حقيقية؟</span>
-        <span data-en>What makes this a hiring page, not just a portfolio</span>
+        <span data-i18n="index.auto_38">ما الذي يجعل هذا الموقع أقرب لصفحة توظيف حقيقية؟</span>
       </h2>
       <p style="color:var(--c-muted);">
-        <span data-ar>الهدف هنا ليس عرض المهارات فقط، بل إثبات أنني أستطيع تحسين المنتج، دعم الفريق، وتقليل المخاطر التقنية في المراحل الحساسة.</span>
-        <span data-en>The goal here is not just to list skills, but to show that I can improve product delivery, support engineering teams, and reduce technical risk when growth starts stressing the system.</span>
+        <span data-i18n="index.auto_39">الهدف هنا ليس عرض المهارات فقط، بل إثبات أنني أستطيع تحسين المنتج، دعم الفريق، وتقليل المخاطر التقنية في المراحل الحساسة.</span>
       </p>
     </div>
 
@@ -1497,36 +1456,30 @@
       <article class="authority-card">
         <span class="authority-meta">01</span>
         <blockquote>
-          <span data-ar>أُستدعى عادة عندما يحتاج المنتج إلى باك-إند أكثر وضوحًا واعتمادية بدل الترقيعات السريعة.</span>
-          <span data-en>I am typically hired when a product needs a clearer, more reliable backend instead of more short-term patches.</span>
+          <span data-i18n="index.auto_40">أُستدعى عادة عندما يحتاج المنتج إلى باك-إند أكثر وضوحًا واعتمادية بدل الترقيعات السريعة.</span>
         </blockquote>
         <p>
-          <span data-ar>مناسب للشركات الناشئة والمنتجات التشغيلية التي تريد بناء قاعدة قابلة للنمو بدل كود مؤقت.</span>
-          <span data-en>Fit for startups and operational products that want scalable backend foundations instead of temporary fixes.</span>
+          <span data-i18n="index.auto_41">مناسب للشركات الناشئة والمنتجات التشغيلية التي تريد بناء قاعدة قابلة للنمو بدل كود مؤقت.</span>
         </p>
       </article>
 
       <article class="authority-card">
         <span class="authority-meta">02</span>
         <blockquote>
-          <span data-ar>القيمة ليست فقط في الكود، بل في تقليل التأخير، توضيح المعمارية، وتحسين سرعة الفريق نفسه.</span>
-          <span data-en>The value is not only in the code, but in reducing latency, clarifying architecture, and improving the team’s delivery speed.</span>
+          <span data-i18n="index.auto_42">القيمة ليست فقط في الكود، بل في تقليل التأخير، توضيح المعمارية، وتحسين سرعة الفريق نفسه.</span>
         </blockquote>
         <p>
-          <span data-ar>هذا يهم خصوصًا عندما تكون هناك تكاملات دفع، طلبات لحظية، أو عمليات يومية لا تتحمل التوقف.</span>
-          <span data-en>This matters most when you have payments, real-time operations, or daily workflows that cannot afford instability.</span>
+          <span data-i18n="index.auto_43">هذا يهم خصوصًا عندما تكون هناك تكاملات دفع، طلبات لحظية، أو عمليات يومية لا تتحمل التوقف.</span>
         </p>
       </article>
 
       <article class="authority-card">
         <span class="authority-meta">03</span>
         <blockquote>
-          <span data-ar>أعمل بعقلية شريك تقني: مراجعة سريعة، أولويات واضحة، ثم تنفيذ يمكن قياس أثره.</span>
-          <span data-en>I work like a technical partner: fast review, clear priorities, then execution tied to measurable outcomes.</span>
+          <span data-i18n="index.auto_44">أعمل بعقلية شريك تقني: مراجعة سريعة، أولويات واضحة، ثم تنفيذ يمكن قياس أثره.</span>
         </blockquote>
         <p>
-          <span data-ar>هذا يجعل قرار التوظيف أسهل لرواد الأعمال ومديري المنتجات والـ CTOs.</span>
-          <span data-en>That makes hiring easier for founders, product leads, and CTOs who want clarity before they commit.</span>
+          <span data-i18n="index.auto_45">هذا يجعل قرار التوظيف أسهل لرواد الأعمال ومديري المنتجات والـ CTOs.</span>
         </p>
       </article>
     </div>
@@ -1534,87 +1487,69 @@
     <div class="authority-metrics">
       <div class="metric-box">
         <strong>40%</strong>
-        <span data-ar>تحسين سرعة CI/CD</span>
-        <span data-en>Faster CI/CD throughput</span>
+        <span data-i18n="index.auto_46">تحسين سرعة CI/CD</span>
       </div>
       <div class="metric-box">
         <strong>25%</strong>
-        <span data-ar>خفض زمن الاستجابة</span>
-        <span data-en>Lower response latency</span>
+        <span data-i18n="index.auto_47">خفض زمن الاستجابة</span>
       </div>
       <div class="metric-box">
         <strong>10K+</strong>
-        <span data-ar>استخدام متزامن في حالات تشغيلية</span>
-        <span data-en>Concurrent-usage scale scenarios</span>
+        <span data-i18n="index.auto_48">استخدام متزامن في حالات تشغيلية</span>
       </div>
       <div class="metric-box">
         <strong>Upwork</strong>
-        <span data-ar>قناة توظيف إضافية جاهزة</span>
-        <span data-en>Additional trusted hiring channel</span>
+        <span data-i18n="index.auto_49">قناة توظيف إضافية جاهزة</span>
       </div>
     </div>
 
     <div class="logo-strip" aria-label="Product sectors">
-      <span class="logo-pill" data-ar>منصات النقل والحركة</span>
-      <span class="logo-pill" data-en>Mobility Platforms</span>
-      <span class="logo-pill" data-ar>أنظمة التقنية المالية</span>
-      <span class="logo-pill" data-en>Fintech Systems</span>
-      <span class="logo-pill" data-ar>منتجات الرعاية الصحية</span>
-      <span class="logo-pill" data-en>Healthcare Products</span>
-      <span class="logo-pill" data-ar>تشغيل التجارة الإلكترونية</span>
-      <span class="logo-pill" data-en>E-commerce Operations</span>
-      <span class="logo-pill" data-ar>الخدمات عند الطلب</span>
-      <span class="logo-pill" data-en>On-demand Services</span>
+      <span class="logo-pill" data-i18n="index.auto_50">منصات النقل والحركة</span>
+      <span class="logo-pill" data-i18n="index.auto_51">أنظمة التقنية المالية</span>
+      <span class="logo-pill" data-i18n="index.auto_52">منتجات الرعاية الصحية</span>
+      <span class="logo-pill" data-i18n="index.auto_53">تشغيل التجارة الإلكترونية</span>
+      <span class="logo-pill" data-i18n="index.auto_54">الخدمات عند الطلب</span>
     </div>
   </section>
 
   <section id="testimonials" aria-labelledby="testimonials-heading">
     <div class="section-label">
-      <span data-ar>آراء وتوصيات</span>
-      <span data-en>Testimonials</span>
+      <span data-i18n="index.auto_55">آراء وتوصيات</span>
     </div>
     <div style="margin-bottom:2rem;">
       <h2 id="testimonials-heading" class="section-title">
-        <span data-ar>كيف أقدّم الثقة الآن حتى قبل إضافة شهادات العملاء الرسمية</span>
-        <span data-en>Trust signals while real testimonials are being added</span>
+        <span data-i18n="index.auto_56">كيف أقدّم الثقة الآن حتى قبل إضافة شهادات العملاء الرسمية</span>
       </h2>
       <p style="color:var(--c-muted);">
-        <span data-ar>هذه مساحة جاهزة لإضافة شهادات عملاء حقيقية. حاليًا أستخدم عبارات مبنية على نوع القيمة التي أقدّمها فعليًا، بدون اختلاق اقتباسات غير حقيقية.</span>
-        <span data-en>This block is ready for real client testimonials. For now, it uses honest trust statements based on actual delivery value instead of invented quotes.</span>
+        <span data-i18n="index.auto_57">هذه مساحة جاهزة لإضافة شهادات عملاء حقيقية. حاليًا أستخدم عبارات مبنية على نوع القيمة التي أقدّمها فعليًا، بدون اختلاق اقتباسات غير حقيقية.</span>
       </p>
     </div>
 
     <div class="testimonial-grid">
       <article class="testimonial-card">
         <blockquote>
-          <span data-ar>مناسب عندما يحتاج المنتج إلى تقليل الأعطال وتحسين الاعتمادية بدل الاستمرار في ترقيعات مؤقتة.</span>
-          <span data-en>Best fit when a product needs fewer incidents and stronger reliability instead of more temporary patches.</span>
+          <span data-i18n="index.auto_58">مناسب عندما يحتاج المنتج إلى تقليل الأعطال وتحسين الاعتمادية بدل الاستمرار في ترقيعات مؤقتة.</span>
         </blockquote>
         <div class="testimonial-source">
-          <span data-ar>ثقة مبنية على نتائج تشغيلية</span>
-          <span data-en>Operational proof signal</span>
+          <span data-i18n="index.auto_59">ثقة مبنية على نتائج تشغيلية</span>
         </div>
       </article>
 
       <article class="testimonial-card">
         <blockquote>
-          <span data-ar>القيمة تظهر عندما ينعكس العمل الهندسي على سرعة الفريق، جودة الإطلاق، وتجربة المستخدم.</span>
-          <span data-en>The value shows up when engineering work improves team speed, launch quality, and user experience.</span>
+          <span data-i18n="index.auto_60">القيمة تظهر عندما ينعكس العمل الهندسي على سرعة الفريق، جودة الإطلاق، وتجربة المستخدم.</span>
         </blockquote>
         <div class="testimonial-source">
-          <span data-ar>مناسب لرواد الأعمال ومديري المنتجات</span>
-          <span data-en>Fit for founders and product leads</span>
+          <span data-i18n="index.auto_61">مناسب لرواد الأعمال ومديري المنتجات</span>
         </div>
       </article>
 
       <article class="testimonial-card">
         <blockquote>
-          <span data-ar>أعمل بعقلية شريك تقني يشرح بوضوح، ينفّذ بسرعة، ويربط كل قرار هندسي بأثر مفهوم على المشروع.</span>
-          <span data-en>I work like a technical partner who explains clearly, executes fast, and ties engineering choices to visible business impact.</span>
+          <span data-i18n="index.auto_62">أعمل بعقلية شريك تقني يشرح بوضوح، ينفّذ بسرعة، ويربط كل قرار هندسي بأثر مفهوم على المشروع.</span>
         </blockquote>
         <div class="testimonial-source">
-          <span data-ar>جاهزة للاستبدال بشهادات حقيقية</span>
-          <span data-en>Ready to swap with real client quotes</span>
+          <span data-i18n="index.auto_63">جاهزة للاستبدال بشهادات حقيقية</span>
         </div>
       </article>
     </div>
@@ -1622,17 +1557,14 @@
 
   <section id="why-choose-me" aria-labelledby="why-choose-heading">
     <div class="section-label">
-      <span data-ar>لماذا أنا</span>
-      <span data-en>Why Choose Me</span>
+      <span data-i18n="index.auto_64">لماذا أنا</span>
     </div>
     <div style="margin-bottom:2rem;">
       <h2 id="why-choose-heading" class="section-title">
-        <span data-ar>لماذا يختارني العميل بدل أي مطور آخر</span>
-        <span data-en>Why clients choose me</span>
+        <span data-i18n="index.auto_65">لماذا يختارني العميل بدل أي مطور آخر</span>
       </h2>
       <p style="color:var(--c-muted);">
-        <span data-ar>هذه هي الرسائل التي تساعد في التحويل: وضوح هندسي، سرعة تنفيذ، كود جاهز للإنتاج، وتواصل يُسهّل اتخاذ القرار.</span>
-        <span data-en>These are the conversion messages that matter: architectural clarity, fast execution, production-ready code, and communication that makes decision-making easier.</span>
+        <span data-i18n="index.auto_66">هذه هي الرسائل التي تساعد في التحويل: وضوح هندسي، سرعة تنفيذ، كود جاهز للإنتاج، وتواصل يُسهّل اتخاذ القرار.</span>
       </p>
     </div>
 
@@ -1640,48 +1572,40 @@
       <article class="choose-card">
         <span class="process-step">01</span>
         <h3>
-          <span data-ar>معمارية نظيفة وقابلة للتوسع</span>
-          <span data-en>Clean scalable architecture</span>
+          <span data-i18n="index.auto_67">معمارية نظيفة وقابلة للتوسع</span>
         </h3>
         <p>
-          <span data-ar>بناء APIs وأنظمة Back-End يمكن تطويرها لاحقًا بدون فوضى تقنية مبكرة.</span>
-          <span data-en>Build backend systems that stay maintainable as the product grows.</span>
+          <span data-i18n="index.auto_68">بناء APIs وأنظمة Back-End يمكن تطويرها لاحقًا بدون فوضى تقنية مبكرة.</span>
         </p>
       </article>
 
       <article class="choose-card">
         <span class="process-step">02</span>
         <h3>
-          <span data-ar>تنفيذ سريع وواضح</span>
-          <span data-en>Fast delivery</span>
+          <span data-i18n="index.auto_69">تنفيذ سريع وواضح</span>
         </h3>
         <p>
-          <span data-ar>تسليمات قصيرة وواضحة بدل عمل طويل لا يرى العميل أثره إلا متأخرًا.</span>
-          <span data-en>Short, visible delivery cycles instead of long unclear implementation phases.</span>
+          <span data-i18n="index.auto_70">تسليمات قصيرة وواضحة بدل عمل طويل لا يرى العميل أثره إلا متأخرًا.</span>
         </p>
       </article>
 
       <article class="choose-card">
         <span class="process-step">03</span>
         <h3>
-          <span data-ar>كود جاهز للإنتاج</span>
-          <span data-en>Production-ready code</span>
+          <span data-i18n="index.auto_71">كود جاهز للإنتاج</span>
         </h3>
         <p>
-          <span data-ar>التركيز على الاستقرار، المراقبة، الأداء، وسهولة التشغيل بعد الإطلاق.</span>
-          <span data-en>Focus on stability, observability, performance, and smooth post-launch operation.</span>
+          <span data-i18n="index.auto_72">التركيز على الاستقرار، المراقبة، الأداء، وسهولة التشغيل بعد الإطلاق.</span>
         </p>
       </article>
 
       <article class="choose-card">
         <span class="process-step">04</span>
         <h3>
-          <span data-ar>تواصل قوي</span>
-          <span data-en>Strong communication</span>
+          <span data-i18n="index.auto_73">تواصل قوي</span>
         </h3>
         <p>
-          <span data-ar>شرح واضح للتقدّم والمخاطر والأولويات بحيث يبقى القرار أسهل لغير التقنيين أيضًا.</span>
-          <span data-en>Clear updates on progress, priorities, and risks so non-technical stakeholders stay aligned.</span>
+          <span data-i18n="index.auto_74">شرح واضح للتقدّم والمخاطر والأولويات بحيث يبقى القرار أسهل لغير التقنيين أيضًا.</span>
         </p>
       </article>
     </div>
@@ -1689,52 +1613,43 @@
 
   <section id="results-metrics" aria-labelledby="results-metrics-heading">
     <div class="section-label">
-      <span data-ar>أرقام حقيقية</span>
-      <span data-en>Real Metrics</span>
+      <span data-i18n="index.auto_75">أرقام حقيقية</span>
     </div>
     <div style="margin-bottom:2rem;">
       <h2 id="results-metrics-heading" class="section-title">
-        <span data-ar>النتائج التي تهم العميل فعلًا</span>
-        <span data-en>Results clients actually care about</span>
+        <span data-i18n="index.auto_76">النتائج التي تهم العميل فعلًا</span>
       </h2>
       <p style="color:var(--c-muted);">
-        <span data-ar>العميل لا يبحث عن stack فقط. هو يبحث عن سرعة أعلى، أعطال أقل، وتجربة أفضل للمستخدم. لهذا السبب هذه الأرقام تظهر بصيغة business outcome أولًا.</span>
-        <span data-en>Clients do not hire for stack alone. They hire for faster systems, fewer incidents, and better product experience, so these metrics are framed as business outcomes first.</span>
+        <span data-i18n="index.auto_77">العميل لا يبحث عن stack فقط. هو يبحث عن سرعة أعلى، أعطال أقل، وتجربة أفضل للمستخدم. لهذا السبب هذه الأرقام تظهر بصيغة business outcome أولًا.</span>
       </p>
     </div>
 
     <div class="authority-metrics">
       <div class="metric-box">
         <strong>35%+</strong>
-        <span data-ar>تحسين سرعة APIs بعد تحسينات الأداء وقواعد البيانات</span>
-        <span data-en>Improved API speed after performance and database optimization</span>
+        <span data-i18n="index.auto_78">تحسين سرعة APIs بعد تحسينات الأداء وقواعد البيانات</span>
       </div>
       <div class="metric-box">
         <strong>15K - 20K</strong>
-        <span data-ar>أنظمة تتحمل آلاف المستخدمين في سيناريوهات تشغيل وتوصيل لحظية</span>
-        <span data-en>Systems handling thousands of users in delivery and real-time operations</span>
+        <span data-i18n="index.auto_79">أنظمة تتحمل آلاف المستخدمين في سيناريوهات تشغيل وتوصيل لحظية</span>
       </div>
       <div class="metric-box">
         <strong>40%</strong>
-        <span data-ar>تحسين في سرعة CI/CD بعد إعادة الهيكلة التقنية</span>
-        <span data-en>Faster CI/CD throughput after architecture restructuring</span>
+        <span data-i18n="index.auto_80">تحسين في سرعة CI/CD بعد إعادة الهيكلة التقنية</span>
       </div>
       <div class="metric-box">
         <strong>25%</strong>
-        <span data-ar>خفض في زمن استجابة الخادم بعد تحسين الاستعلامات</span>
-        <span data-en>Lower server latency after query optimization</span>
+        <span data-i18n="index.auto_81">خفض في زمن استجابة الخادم بعد تحسين الاستعلامات</span>
       </div>
     </div>
   </section>
 
   <section id="stack" aria-labelledby="stack-heading">
     <div class="section-label">
-      <span data-ar>مكونات النظام</span>
-      <span data-en>System Components</span>
+      <span data-i18n="index.auto_82">مكونات النظام</span>
     </div>
     <h2 id="stack-heading" class="section-title" style="text-align:center; margin-bottom:1.5rem;">
-      <span data-ar>المهارات التقنية</span>
-      <span data-en>Technical Skills</span>
+      <span data-i18n="index.auto_83">المهارات التقنية</span>
     </h2>
     <div class="chips" role="list" aria-label="المهارات التقنية">
       <span class="chip chip-primary" role="listitem">PHP</span>
@@ -1755,40 +1670,33 @@
   <section id="work" aria-labelledby="work-heading">
     <div style="margin-bottom:2.5rem;">
       <h2 id="work-heading" class="section-title">
-        <span data-ar>دراسات حالة ومشاريع</span>
-        <span data-en>Case Studies & Projects</span>
+        <span data-i18n="index.auto_84">دراسات حالة ومشاريع</span>
       </h2>
       <p style="color:var(--c-muted);">
-        <span data-ar>هذه ليست مجرد showcase للمشاريع. كل مثال هنا يوضح ما كانت المشكلة، ماذا تم تنفيذه، وما النتيجة التي انعكست على الأداء أو التشغيل أو قابلية التوسع.</span>
-        <span data-en>This is not just a project showcase. Each example is meant to show the problem, what was implemented, and the result that affected performance, operations, or scalability.</span>
+        <span data-i18n="index.auto_85">هذه ليست مجرد showcase للمشاريع. كل مثال هنا يوضح ما كانت المشكلة، ماذا تم تنفيذه، وما النتيجة التي انعكست على الأداء أو التشغيل أو قابلية التوسع.</span>
       </p>
       <p style="color:var(--c-muted); margin-top:0.8rem;">
-        <span data-ar><strong style="color:var(--c-text)">دليل شامل:</strong> <a href="/web-system-development-gcc/" style="color:var(--c-primary)">عايز تعمل ويب سايت أو سيستم؟</a></span>
-        <span data-en><strong style="color:var(--c-text)">Pillar guide:</strong> <a href="/web-system-development-gcc/" style="color:var(--c-primary)">Need a website or system?</a></span>
+        <span data-i18n="index.auto_86"><strong style="color:var(--c-text)">دليل شامل:</strong> <a href="/web-system-development-gcc/" style="color:var(--c-primary)">عايز تعمل ويب سايت أو سيستم؟</a></span>
       </p>
       <p style="color:var(--c-muted); margin-top:0.6rem;" data-region-content>
-        <span data-ar><strong style="color:var(--c-text)">مقال مستهدف:</strong> <a href="/programmer-backend-egypt-saudi-guide/" style="color:var(--c-primary)">مبرمج باك اند مصر | أبي مبرمج يسوي سيستم</a></span>
-        <span data-en><strong style="color:var(--c-text)">Targeted article:</strong> <a href="/programmer-backend-egypt-saudi-guide/" style="color:var(--c-primary)">Backend programmer Egypt / Need a systems developer</a></span>
+        <span data-i18n="index.auto_87"><strong style="color:var(--c-text)">مقال مستهدف:</strong> <a href="/programmer-backend-egypt-saudi-guide/" style="color:var(--c-primary)">مبرمج باك اند مصر | أبي مبرمج يسوي سيستم</a></span>
       </p>
 
     </div>
 
     <div id="projects-grid" class="grid-3" role="list" aria-live="polite"></div>
     <div style="text-align:end; margin-top:0.9rem;">
-      <a href="/projects/" class="btn-ghost btn-with-icon" data-ar><span class="material-symbols-outlined" aria-hidden="true">arrow_outward</span>عرض كل المشاريع</a>
-      <a href="/projects/" class="btn-ghost btn-with-icon" data-en><span class="material-symbols-outlined" aria-hidden="true">arrow_outward</span>View All Projects</a>
+      <a href="/projects/" class="btn-ghost btn-with-icon" data-i18n="index.auto_88"><span class="material-symbols-outlined" aria-hidden="true">arrow_outward</span>عرض كل المشاريع</a>
     </div>
   </section>
 
   <section id="case-studies" aria-labelledby="case-studies-heading">
     <div style="margin-bottom:2rem;">
       <h2 id="case-studies-heading" class="section-title">
-        <span data-ar>دراسات حالة مختصرة</span>
-        <span data-en>Case Study Results</span>
+        <span data-i18n="index.auto_89">دراسات حالة مختصرة</span>
       </h2>
       <p style="color:var(--c-muted);">
-        <span data-ar>بدل عرض المشروع بشكل بصري فقط، هذه أمثلة مختصرة على المشكلة والحل والنتيجة.</span>
-        <span data-en>Instead of visual portfolio-only cards, these examples show problem, solution, and measurable outcomes.</span>
+        <span data-i18n="index.auto_90">بدل عرض المشروع بشكل بصري فقط، هذه أمثلة مختصرة على المشكلة والحل والنتيجة.</span>
       </p>
     </div>
 
@@ -1796,30 +1704,25 @@
       <article class="case-study">
         <span class="label">Delivery App Backend</span>
         <h3>
-          <span data-ar>نظام توصيل يحتاج إلى التوسع تحت ضغط الاستخدام</span>
-          <span data-en>Delivery app backend built for real-time scale</span>
+          <span data-i18n="index.auto_91">نظام توصيل يحتاج إلى التوسع تحت ضغط الاستخدام</span>
         </h3>
-        <p><strong data-ar>المشكلة:</strong><strong data-en>Problem:</strong></p>
+        <p><strong data-i18n="index.auto_92">المشكلة:</strong></p>
         <p>
-          <span data-ar>المنصة كانت تحتاج إلى التعامل مع أكثر من 10,000 مستخدم مع تتبع لحظي للطلبات والسائقين واختناقات متكررة في العمليات الخلفية.</span>
-          <span data-en>The platform needed to support 10K+ users with real-time order and driver tracking while reducing backend bottlenecks during peak load.</span>
+          <span data-i18n="index.auto_93">المنصة كانت تحتاج إلى التعامل مع أكثر من 10,000 مستخدم مع تتبع لحظي للطلبات والسائقين واختناقات متكررة في العمليات الخلفية.</span>
         </p>
-        <p style="margin-top:1rem;"><strong data-ar>الحل:</strong><strong data-en>Solution:</strong></p>
+        <p style="margin-top:1rem;"><strong data-i18n="index.auto_94">الحل:</strong></p>
         <p>
-          <span data-ar>بناء معمارية Laravel قابلة للتوسع باستخدام queue workers وRedis وتحسين توزيع المهام غير المتزامنة ومسارات الـ API الحساسة.</span>
-          <span data-en>Built a scalable Laravel architecture using queue workers, Redis, and tighter orchestration for async jobs and latency-sensitive APIs.</span>
+          <span data-i18n="index.auto_95">بناء معمارية Laravel قابلة للتوسع باستخدام queue workers وRedis وتحسين توزيع المهام غير المتزامنة ومسارات الـ API الحساسة.</span>
         </p>
-        <p style="margin-top:1rem;"><strong data-ar>النتيجة:</strong><strong data-en>Result:</strong></p>
+        <p style="margin-top:1rem;"><strong data-i18n="index.auto_96">النتيجة:</strong></p>
         <ul class="result-list" style="margin-top:0.8rem;">
           <li>
-            <strong>40% <span data-ar>أسرع</span><span data-en>Faster</span></strong>
-            <span data-ar>في استجابة واجهات API الأساسية</span>
-            <span data-en>Core API response times</span>
+            <strong>40% <span data-i18n="index.auto_97">أسرع</span></strong>
+            <span data-i18n="index.auto_98">في استجابة واجهات API الأساسية</span>
           </li>
           <li>
             <strong>15K+</strong>
-            <span data-ar>مستخدم متزامن في فترات الضغط</span>
-            <span data-en>Concurrent users handled during peak usage</span>
+            <span data-i18n="index.auto_99">مستخدم متزامن في فترات الضغط</span>
           </li>
         </ul>
       </article>
@@ -1827,30 +1730,25 @@
       <article class="case-study">
         <span class="label">Fintech API Platform</span>
         <h3>
-          <span data-ar>منصة مدفوعات وتعليم تحتاج موثوقية أعلى</span>
-          <span data-en>Payment and education platform with strict reliability needs</span>
+          <span data-i18n="index.auto_100">منصة مدفوعات وتعليم تحتاج موثوقية أعلى</span>
         </h3>
-        <p><strong data-ar>المشكلة:</strong><strong data-en>Problem:</strong></p>
+        <p><strong data-i18n="index.auto_101">المشكلة:</strong></p>
         <p>
-          <span data-ar>عمليات الدفع والتسوية كانت تتطلب دقة أكبر، مع حاجة لتقليل تأخير الخادم وتحسين قابلية التتبع.</span>
-          <span data-en>Payment and ledger flows required stronger consistency, better observability, and lower response latency.</span>
+          <span data-i18n="index.auto_102">عمليات الدفع والتسوية كانت تتطلب دقة أكبر، مع حاجة لتقليل تأخير الخادم وتحسين قابلية التتبع.</span>
         </p>
-        <p style="margin-top:1rem;"><strong data-ar>الحل:</strong><strong data-en>Solution:</strong></p>
+        <p style="margin-top:1rem;"><strong data-i18n="index.auto_103">الحل:</strong></p>
         <p>
-          <span data-ar>تصميم REST APIs مستقرة، تحسين استعلامات PostgreSQL، وإضافة طبقات مراقبة وتدقيق للعمليات المالية والتكاملات الخارجية.</span>
-          <span data-en>Designed stable REST APIs, optimized PostgreSQL queries, and added observability plus auditing around financial workflows and external integrations.</span>
+          <span data-i18n="index.auto_104">تصميم REST APIs مستقرة، تحسين استعلامات PostgreSQL، وإضافة طبقات مراقبة وتدقيق للعمليات المالية والتكاملات الخارجية.</span>
         </p>
-        <p style="margin-top:1rem;"><strong data-ar>النتيجة:</strong><strong data-en>Result:</strong></p>
+        <p style="margin-top:1rem;"><strong data-i18n="index.auto_105">النتيجة:</strong></p>
         <ul class="result-list" style="margin-top:0.8rem;">
           <li>
             <strong>25%</strong>
-            <span data-ar>انخفاض في زمن استجابة الخادم</span>
-            <span data-en>Reduction in server response latency</span>
+            <span data-i18n="index.auto_106">انخفاض في زمن استجابة الخادم</span>
           </li>
           <li>
-            <strong data-ar>أوضح</strong><strong data-en>Clearer</strong>
-            <span data-ar>تتبّع للأخطاء والعمليات الحساسة</span>
-            <span data-en>Error tracing and monitoring for critical flows</span>
+            <strong data-i18n="index.auto_107">أوضح</strong>
+            <span data-i18n="index.auto_108">تتبّع للأخطاء والعمليات الحساسة</span>
           </li>
         </ul>
       </article>
@@ -1859,69 +1757,51 @@
 
   <section id="services" aria-labelledby="services-heading">
     <div class="section-label">
-      <span data-ar>الخدمات</span>
-      <span data-en>Services</span>
+      <span data-i18n="index.auto_109">الخدمات</span>
     </div>
     <div class="service-shell">
       <div class="panel">
         <h2 id="services-heading" class="section-title">
-          <span data-ar>خدمات تطوير Laravel Backend</span>
-          <span data-en>Laravel Backend Development Services</span>
+          <span data-i18n="index.auto_110">خدمات تطوير Laravel Backend</span>
         </h2>
         <p style="color:var(--c-muted);">
-          <span data-ar>أقدّم خدمات تطوير Back-End احترافية تشمل:</span>
-          <span data-en>I provide professional backend development services including:</span>
+          <span data-i18n="index.auto_111">أقدّم خدمات تطوير Back-End احترافية تشمل:</span>
         </p>
         <ul class="service-list" style="margin-top:1.2rem;">
           <li>
-            <strong data-ar>تطوير Laravel API مخصص</strong>
-            <strong data-en>Custom Laravel API Development</strong>
-            <span data-ar>بناء REST APIs ولوحات إدارة وتدفّقات تشغيلية مناسبة للمنتجات الرقمية وSaaS.</span>
-            <span data-en>Build custom REST APIs, admin systems, and backend workflows for SaaS and digital products.</span>
+            <strong data-i18n="index.auto_112">تطوير Laravel API مخصص</strong>
+            <span data-i18n="index.auto_113">بناء REST APIs ولوحات إدارة وتدفّقات تشغيلية مناسبة للمنتجات الرقمية وSaaS.</span>
           </li>
           <li>
-            <strong data-ar>تصميم قواعد البيانات وتحسينها</strong>
-            <strong data-en>Database Design &amp; Optimization</strong>
-            <span data-ar>تصميم البنية البيانية، تحسين الاستعلامات، وتخفيض زمن الاستجابة في الأنظمة التي تتعامل مع ضغط فعلي.</span>
-            <span data-en>Structure data models, optimize queries, and reduce response times for production workloads.</span>
+            <strong data-i18n="index.auto_114">تصميم قواعد البيانات وتحسينها</strong>
+            <span data-i18n="index.auto_115">تصميم البنية البيانية، تحسين الاستعلامات، وتخفيض زمن الاستجابة في الأنظمة التي تتعامل مع ضغط فعلي.</span>
           </li>
           <li>
-            <strong data-ar>أنظمة المصادقة والأمان</strong>
-            <strong data-en>Authentication Systems (JWT, OAuth)</strong>
-            <span data-ar>تنفيذ JWT وOAuth وأنظمة صلاحيات مناسبة للتطبيقات ولوحات التحكم والخدمات الداخلية.</span>
-            <span data-en>Implement JWT, OAuth, and authorization flows for apps, admin dashboards, and internal platforms.</span>
+            <strong data-i18n="index.auto_116">أنظمة المصادقة والأمان</strong>
+            <span data-i18n="index.auto_117">تنفيذ JWT وOAuth وأنظمة صلاحيات مناسبة للتطبيقات ولوحات التحكم والخدمات الداخلية.</span>
           </li>
           <li>
-            <strong data-ar>تحسين الأداء وقابلية التوسع</strong>
-            <strong data-en>Performance Optimization</strong>
-            <span data-ar>استخدام caching وqueues وobservability وتحسين المعمارية لتوسيع النظام بدون فوضى تقنية.</span>
-            <span data-en>Use caching, queues, observability, and architecture improvements to scale cleanly.</span>
+            <strong data-i18n="index.auto_118">تحسين الأداء وقابلية التوسع</strong>
+            <span data-i18n="index.auto_119">استخدام caching وqueues وobservability وتحسين المعمارية لتوسيع النظام بدون فوضى تقنية.</span>
           </li>
         </ul>
       </div>
 
       <aside class="panel">
         <div class="mini-title">
-          <span data-ar>روابط داخلية مفيدة</span>
-          <span data-en>Internal Links</span>
+          <span data-i18n="index.auto_120">روابط داخلية مفيدة</span>
         </div>
         <p style="color:var(--c-muted);">
-          <span data-ar>لو تريد تقييمًا أسرع قبل التواصل، راجع الصفحات التالية:</span>
-          <span data-en>If you want faster qualification before reaching out, review these pages:</span>
+          <span data-i18n="index.auto_121">لو تريد تقييمًا أسرع قبل التواصل، راجع الصفحات التالية:</span>
         </p>
         <div class="link-cluster">
-          <a href="/services/" data-ar>صفحة الخدمات</a>
-          <a href="/services/" data-en>Services Page</a>
-          <a href="/offers/" data-ar>العروض</a>
-          <a href="/offers/" data-en>Offers</a>
-          <a href="/projects/" data-ar>كل المشاريع</a>
-          <a href="/projects/" data-en>All Projects</a>
-          <a href="/web-system-development-gcc/" data-ar>دليل بناء موقع أو سيستم</a>
-          <a href="/web-system-development-gcc/" data-en>Website or System Guide</a>
+          <a href="/services/" data-i18n="index.auto_122">صفحة الخدمات</a>
+          <a href="/offers/" data-i18n="index.auto_123">العروض</a>
+          <a href="/projects/" data-i18n="index.auto_124">كل المشاريع</a>
+          <a href="/web-system-development-gcc/" data-i18n="index.auto_125">دليل بناء موقع أو سيستم</a>
         </div>
         <div class="cta-inline">
-          <a href="mailto:info@abdotaher.me?subject=Let%27s%20Work%20Together%20-%20Backend%20Project" class="btn-primary" data-ar>لنبدأ العمل</a>
-          <a href="mailto:info@abdotaher.me?subject=Let%27s%20Work%20Together%20-%20Backend%20Project" class="btn-primary" data-en>Let’s Work Together</a>
+          <a href="mailto:info@abdotaher.me?subject=Let%27s%20Work%20Together%20-%20Backend%20Project" class="btn-primary" data-i18n="index.auto_126">لنبدأ العمل</a>
         </div>
       </aside>
     </div>
@@ -1929,17 +1809,14 @@
 
   <section id="process" aria-labelledby="process-heading">
     <div class="section-label">
-      <span data-ar>طريقة العمل</span>
-      <span data-en>Working Model</span>
+      <span data-i18n="index.auto_127">طريقة العمل</span>
     </div>
     <div style="margin-bottom:2rem;">
       <h2 id="process-heading" class="section-title">
-        <span data-ar>كيف أتعامل مع مشروع جديد خطوة بخطوة</span>
-        <span data-en>How I handle a backend project step by step</span>
+        <span data-i18n="index.auto_128">كيف أتعامل مع مشروع جديد خطوة بخطوة</span>
       </h2>
       <p style="color:var(--c-muted);">
-        <span data-ar>هذه الفقرة تخدم التوظيف والسيو معًا: توضح للعميل كيف يبدأ العمل، وتضيف محتوى غنيًا بنيّة البحث حول توظيف مطور Laravel Backend أو Backend Engineer.</span>
-        <span data-en>This section supports both conversions and SEO: it explains how work starts and adds intent-rich content for people searching to hire a Laravel backend developer or backend engineer.</span>
+        <span data-i18n="index.auto_129">هذه الفقرة تخدم التوظيف والسيو معًا: توضح للعميل كيف يبدأ العمل، وتضيف محتوى غنيًا بنيّة البحث حول توظيف مطور Laravel Backend أو Backend Engineer.</span>
       </p>
     </div>
 
@@ -1947,36 +1824,30 @@
       <article class="process-card">
         <span class="process-step">01</span>
         <h3>
-          <span data-ar>مراجعة سريعة للوضع الحالي</span>
-          <span data-en>Fast technical review</span>
+          <span data-i18n="index.auto_130">مراجعة سريعة للوضع الحالي</span>
         </h3>
         <p>
-          <span data-ar>أبدأ بفهم المنتج، المشاكل الحالية، الاختناقات، وحجم المخاطر في الأداء أو المعمارية أو التكاملات.</span>
-          <span data-en>I start by understanding the product, current bottlenecks, and risk around performance, architecture, or external integrations.</span>
+          <span data-i18n="index.auto_131">أبدأ بفهم المنتج، المشاكل الحالية، الاختناقات، وحجم المخاطر في الأداء أو المعمارية أو التكاملات.</span>
         </p>
       </article>
 
       <article class="process-card">
         <span class="process-step">02</span>
         <h3>
-          <span data-ar>خطة تنفيذ قابلة للقياس</span>
-          <span data-en>Measurable execution plan</span>
+          <span data-i18n="index.auto_132">خطة تنفيذ قابلة للقياس</span>
         </h3>
         <p>
-          <span data-ar>أحوّل المشاكل إلى أولويات واضحة: APIs، قواعد بيانات، caching، queues، observability، أو إعادة هيكلة نظام قائم.</span>
-          <span data-en>I turn problems into clear priorities: APIs, database work, caching, queues, observability, or restructuring an existing system.</span>
+          <span data-i18n="index.auto_133">أحوّل المشاكل إلى أولويات واضحة: APIs، قواعد بيانات، caching، queues، observability، أو إعادة هيكلة نظام قائم.</span>
         </p>
       </article>
 
       <article class="process-card">
         <span class="process-step">03</span>
         <h3>
-          <span data-ar>تنفيذ يركّز على النتيجة</span>
-          <span data-en>Execution tied to outcomes</span>
+          <span data-i18n="index.auto_134">تنفيذ يركّز على النتيجة</span>
         </h3>
         <p>
-          <span data-ar>الهدف النهائي ليس مجرد إنجاز مهام تقنية، بل تحسين سرعة المنتج، خفض الأعطال، ورفع جاهزية النظام للنمو أو الإطلاق.</span>
-          <span data-en>The end goal is not only to complete technical tasks, but to improve product speed, reduce incidents, and make the system ready for growth or launch.</span>
+          <span data-i18n="index.auto_135">الهدف النهائي ليس مجرد إنجاز مهام تقنية، بل تحسين سرعة المنتج، خفض الأعطال، ورفع جاهزية النظام للنمو أو الإطلاق.</span>
         </p>
       </article>
     </div>
@@ -1985,12 +1856,10 @@
   <section id="experience" aria-labelledby="experience-heading">
     <div style="margin-bottom:2.5rem;">
       <h2 id="experience-heading" class="section-title">
-        <span data-ar>المسيرة المهنية</span>
-        <span data-en>Career Logs</span>
+        <span data-i18n="index.auto_136">المسيرة المهنية</span>
       </h2>
       <p style="color:var(--c-muted);">
-        <span data-ar>التطور الزمني للقيادة التقنية.</span>
-        <span data-en>The chronological evolution of technical leadership.</span>
+        <span data-i18n="index.auto_137">التطور الزمني للقيادة التقنية.</span>
       </p>
     </div>
 
@@ -1998,17 +1867,14 @@
       <div class="timeline-item" role="listitem" itemscope itemtype="https://schema.org/OrganizationRole">
         <div class="dot" aria-hidden="true"></div>
         <p class="t-date">
-          <span data-ar>2022 — الحاضر</span>
-          <span data-en>2022 — PRESENT</span>
+          <span data-i18n="index.auto_138">2022 — الحاضر</span>
         </p>
         <h3 class="t-role" itemprop="roleName">
-          <span data-ar>مهندس باك-إند أول</span>
-          <span data-en>Senior Backend Engineer</span>
+          <span data-i18n="index.auto_139">مهندس باك-إند أول</span>
         </h3>
         <p class="t-company" itemprop="memberOf">Al Almiya Alhura</p>
         <p class="t-desc">
-          <span data-ar>قيادة الانتقال من المعمارية الأحادية إلى الميكروسيرفيسز. ريادة تبني gRPC للتواصل الداخلي بين الخدمات وتحسين إنتاجية CI/CD بنسبة 40%.</span>
-          <span data-en>Leading the transition from monolithic to microservices architecture. Spearheading the adoption of gRPC for internal service communication and improving CI/CD throughput by 40%.</span>
+          <span data-i18n="index.auto_140">قيادة الانتقال من المعمارية الأحادية إلى الميكروسيرفيسز. ريادة تبني gRPC للتواصل الداخلي بين الخدمات وتحسين إنتاجية CI/CD بنسبة 40%.</span>
         </p>
       </div>
 
@@ -2016,13 +1882,11 @@
         <div class="dot dot-muted" aria-hidden="true"></div>
         <p class="t-date">2020 — 2022</p>
         <h3 class="t-role" itemprop="roleName">
-          <span data-ar>مطور باك-إند</span>
-          <span data-en>Backend Developer</span>
+          <span data-i18n="index.auto_141">مطور باك-إند</span>
         </h3>
         <p class="t-company" itemprop="memberOf">ALEXON</p>
         <p class="t-desc">
-          <span data-ar>تطوير REST APIs عالية الأداء لتطبيقات SaaS متعددة المستأجرين. تحسين استعلامات قواعد البيانات بما أدى إلى تقليل زمن الاستجابة بنسبة 25%.</span>
-          <span data-en>Engineered high-performance REST APIs for multi-tenant SaaS applications. Optimized database queries resulting in a 25% reduction in server response latency.</span>
+          <span data-i18n="index.auto_142">تطوير REST APIs عالية الأداء لتطبيقات SaaS متعددة المستأجرين. تحسين استعلامات قواعد البيانات بما أدى إلى تقليل زمن الاستجابة بنسبة 25%.</span>
         </p>
       </div>
 
@@ -2030,13 +1894,11 @@
         <div class="dot dot-muted" aria-hidden="true"></div>
         <p class="t-date">2018 — 2020</p>
         <h3 class="t-role" itemprop="roleName">
-          <span data-ar>مهندس برمجيات مبتدئ</span>
-          <span data-en>Junior Software Engineer</span>
+          <span data-i18n="index.auto_143">مهندس برمجيات مبتدئ</span>
         </h3>
         <p class="t-company" itemprop="memberOf">IT-RAYS</p>
         <p class="t-desc">
-          <span data-ar>التركيز على تطوير حلول ويب قوية وإدارة ترحيل قواعد البيانات. المساهمة في صيانة البنية التحتية الأساسية وحل الأخطاء.</span>
-          <span data-en>Focused on developing robust web solutions and managing relational database migrations. Contributed to core infrastructure maintenance and bug resolution.</span>
+          <span data-i18n="index.auto_144">التركيز على تطوير حلول ويب قوية وإدارة ترحيل قواعد البيانات. المساهمة في صيانة البنية التحتية الأساسية وحل الأخطاء.</span>
         </p>
       </div>
     </div>
@@ -2045,21 +1907,17 @@
   <section aria-labelledby="cta-heading">
     <div class="cta-banner">
       <h2 id="cta-heading">
-        <span data-ar>تحتاج مطور Laravel Backend<br/><span class="gradient-text">يمكن توظيفه مباشرة؟</span></span>
-        <span data-en>Need a Laravel backend developer<br/><span class="gradient-text">you can hire right away?</span></span>
+        <span data-i18n="index.auto_145">تحتاج مطور Laravel Backend<br/><span class="gradient-text">يمكن توظيفه مباشرة؟</span></span>
       </h2>
       <p>
-        <span data-ar>إذا كان مشروعك يحتاج API موثوقة، أداء أفضل، أو هيكلة أوضح قبل النمو، يمكننا البدء بمراجعة سريعة ثم خطة تنفيذ مباشرة.</span>
-        <span data-en>If your product needs reliable APIs, better performance, or cleaner architecture before scaling, I can start with a fast review and a direct execution plan.</span>
+        <span data-i18n="index.auto_146">إذا كان مشروعك يحتاج API موثوقة، أداء أفضل، أو هيكلة أوضح قبل النمو، يمكننا البدء بمراجعة سريعة ثم خطة تنفيذ مباشرة.</span>
       </p>
       <div class="cta-inline" style="justify-content:center;">
       <a href="mailto:info@abdotaher.me?subject=Hire%20Me%20Now%20-%20Backend%20Review" class="btn-primary">
-        <span data-ar>وظفني الآن</span>
-        <span data-en>Hire Me Now</span>
+        <span data-i18n="index.auto_147">وظفني الآن</span>
       </a>
       <a href="mailto:info@abdotaher.me?subject=Book%20a%20Call%20-%20Backend%20Project" class="btn-ghost">
-        <span data-ar>احجز مكالمة</span>
-        <span data-en>Book a Call</span>
+        <span data-i18n="index.auto_148">احجز مكالمة</span>
       </a>
       </div>
     </div>
@@ -2068,132 +1926,112 @@
   <section aria-labelledby="articles-heading">
     <div style="margin-bottom:2.5rem;">
       <h2 id="articles-heading" class="section-title">
-        <span data-ar>مقالات مختارة</span>
-        <span data-en>Featured Articles</span>
+        <span data-i18n="index.auto_149">مقالات مختارة</span>
       </h2>
       <p style="color:var(--c-muted);">
-        <span data-ar>المدونة موجودة فعلًا وتخدم السيو وبناء الثقة، لأنها تجيب على أسئلة العملاء الفعلية حول الأداء، المعمارية، واختيار مطور Back-End مناسب.</span>
-        <span data-en>The blog already works as an SEO and authority asset because it answers real client questions about performance, architecture, and hiring the right backend engineer.</span>
+        <span data-i18n="index.auto_150">المدونة موجودة فعلًا وتخدم السيو وبناء الثقة، لأنها تجيب على أسئلة العملاء الفعلية حول الأداء، المعمارية، واختيار مطور Back-End مناسب.</span>
       </p>
     </div>
 
     <div class="grid-3" role="list">
       <article class="card" role="listitem">
         <a href="/programmer-backend-egypt-saudi-guide/" class="card-body" style="text-decoration:none; color:inherit;">
-          <h3 class="card-title"><span data-ar>كيف تختار مبرمج Backend مناسب؟</span><span data-en>Choosing the Right Backend Engineer</span></h3>
+          <h3 class="card-title"><span data-i18n="index.auto_151">كيف تختار مبرمج Backend مناسب؟</span></h3>
           <p class="card-desc">
-            <span data-ar>مقال عملي يشرح ماذا يعني Backend فعلًا، وكيف تفرق بين المبرمج الذي يكتب كودًا فقط والمبرمج الذي يبني نظامًا يمكن الاعتماد عليه.</span>
-            <span data-en>A practical article on what backend engineering really means and how to choose an engineer who builds reliable systems.</span>
+            <span data-i18n="index.auto_152">مقال عملي يشرح ماذا يعني Backend فعلًا، وكيف تفرق بين المبرمج الذي يكتب كودًا فقط والمبرمج الذي يبني نظامًا يمكن الاعتماد عليه.</span>
           </p>
         </a>
       </article>
 
       <article class="card" role="listitem">
         <a href="/website-vs-system-guide/" class="card-body" style="text-decoration:none; color:inherit;">
-          <h3 class="card-title"><span data-ar>الفرق بين الموقع والسيستم</span><span data-en>Website vs System</span></h3>
+          <h3 class="card-title"><span data-i18n="index.auto_153">الفرق بين الموقع والسيستم</span></h3>
           <p class="card-desc">
-            <span data-ar>لو أنت محتار تبدأ بموقع تعريفي أو نظام كامل، فهذا المقال يوضح الفرق ومتى تحتاج لوحة إدارة وواجهة API وبنية خلفية واضحة.</span>
-            <span data-en>If you are unsure whether you need a website or a full system, this article explains the difference and when backend architecture matters.</span>
+            <span data-i18n="index.auto_154">لو أنت محتار تبدأ بموقع تعريفي أو نظام كامل، فهذا المقال يوضح الفرق ومتى تحتاج لوحة إدارة وواجهة API وبنية خلفية واضحة.</span>
           </p>
         </a>
       </article>
 
       <article class="card" role="listitem">
         <a href="/how-to-choose-backend-engineer/" class="card-body" style="text-decoration:none; color:inherit;">
-          <h3 class="card-title"><span data-ar>كيف تختار مبرمج Backend لمشروعك؟</span><span data-en>How to Choose a Backend Engineer</span></h3>
+          <h3 class="card-title"><span data-i18n="index.auto_155">كيف تختار مبرمج Backend لمشروعك؟</span></h3>
           <p class="card-desc">
-            <span data-ar>مجموعة أسئلة عملية تساعدك تختار الشخص المناسب لبناء موقعك أو سيستمك بدون قرارات سريعة تؤذي المشروع لاحقًا.</span>
-            <span data-en>A short decision guide with practical questions that help you choose the right engineer for your product.</span>
+            <span data-i18n="index.auto_156">مجموعة أسئلة عملية تساعدك تختار الشخص المناسب لبناء موقعك أو سيستمك بدون قرارات سريعة تؤذي المشروع لاحقًا.</span>
           </p>
         </a>
       </article>
 
       <article class="card" role="listitem">
         <a href="/ai-automation-future-business/" class="card-body" style="text-decoration:none; color:inherit;">
-          <h3 class="card-title"><span data-ar>كيف يغيّر الذكاء الاصطناعي والأتمتة طريقة العمل؟</span><span data-en>How AI and Automation Are Changing Work</span></h3>
+          <h3 class="card-title"><span data-i18n="index.auto_157">كيف يغيّر الذكاء الاصطناعي والأتمتة طريقة العمل؟</span></h3>
           <p class="card-desc">
-            <span data-ar>مقال منظم عن كيف يغيّر الذكاء الاصطناعي الأعمال، ولماذا أصبحت الأتمتة خطوة أساسية لأي شركة تريد السرعة وتقليل الهدر.</span>
-            <span data-en>A structured article on how AI is reshaping business and why automation is now a core operational advantage.</span>
+            <span data-i18n="index.auto_158">مقال منظم عن كيف يغيّر الذكاء الاصطناعي الأعمال، ولماذا أصبحت الأتمتة خطوة أساسية لأي شركة تريد السرعة وتقليل الهدر.</span>
           </p>
         </a>
       </article>
     </div>
     <p style="color:var(--c-muted); margin-top:1rem;">
-      <span data-ar><strong style="color:var(--c-text)">كل المقالات:</strong> <a href="/blog/" style="color:var(--c-primary)">ادخل صفحة المدونة</a> فيها أكثر من 10 مقالات عن البرمجة والأنظمة والذكاء الاصطناعي والأتمتة.</span>
-      <span data-en><strong style="color:var(--c-text)">All articles:</strong> <a href="/blog/" style="color:var(--c-primary)">Visit the blog</a> for 10+ articles on programming, systems, AI, and automation.</span>
+      <span data-i18n="index.auto_159"><strong style="color:var(--c-text)">كل المقالات:</strong> <a href="/blog/" style="color:var(--c-primary)">ادخل صفحة المدونة</a> فيها أكثر من 10 مقالات عن البرمجة والأنظمة والذكاء الاصطناعي والأتمتة.</span>
     </p>
   </section>
 
   <section id="seo-content" aria-labelledby="seo-content-heading">
     <div class="section-label">
-      <span data-ar>محتوى سيو</span>
-      <span data-en>SEO Content</span>
+      <span data-i18n="index.auto_160">محتوى سيو</span>
     </div>
     <div style="margin-bottom:2rem;">
       <h2 id="seo-content-heading" class="section-title">
-        <span data-ar>إذا كنت تبحث عن مطور Laravel Backend أو Backend Engineer لمشروعك</span>
-        <span data-en>If you are looking to hire a Laravel backend developer</span>
+        <span data-i18n="index.auto_161">إذا كنت تبحث عن مطور Laravel Backend أو Backend Engineer لمشروعك</span>
       </h2>
       <p style="color:var(--c-muted);">
-        <span data-ar>هذه الفقرة مكتوبة لتخاطب نية البحث الحقيقية: صاحب مشروع أو شركة تريد توظيف مطور Laravel أو Backend Engineer لبناء API، تطوير نظام SaaS، تحسين الأداء، أو إعادة هيكلة نظام قائم.</span>
-        <span data-en>This section is written for true search intent: a founder or company looking to hire a Laravel developer or backend engineer for APIs, SaaS systems, performance improvements, or backend restructuring.</span>
+        <span data-i18n="index.auto_162">هذه الفقرة مكتوبة لتخاطب نية البحث الحقيقية: صاحب مشروع أو شركة تريد توظيف مطور Laravel أو Backend Engineer لبناء API، تطوير نظام SaaS، تحسين الأداء، أو إعادة هيكلة نظام قائم.</span>
       </p>
     </div>
 
     <div class="seo-grid">
       <article class="seo-card">
         <h3>
-          <span data-ar>توظيف مطور Laravel في مصر أو الخليج</span>
-          <span data-en>Hire a Laravel developer in Egypt or the GCC</span>
+          <span data-i18n="index.auto_163">توظيف مطور Laravel في مصر أو الخليج</span>
         </h3>
         <p>
-          <span data-ar>إذا كنت تبحث عن Laravel Developer في مصر أو Backend Developer يعمل مع السعودية والإمارات وباقي الخليج، فأنت تحتاج شخصًا يفهم التنفيذ والإنتاج وليس مجرد كتابة endpoints.</span>
-          <span data-en>If you want a Laravel developer in Egypt or a backend developer working with Saudi, UAE, and GCC teams, you need someone who understands production delivery, not just endpoint creation.</span>
+          <span data-i18n="index.auto_164">إذا كنت تبحث عن Laravel Developer في مصر أو Backend Developer يعمل مع السعودية والإمارات وباقي الخليج، فأنت تحتاج شخصًا يفهم التنفيذ والإنتاج وليس مجرد كتابة endpoints.</span>
         </p>
       </article>
 
       <article class="seo-card">
         <h3>
-          <span data-ar>بناء API وأنظمة قابلة للتوسع</span>
-          <span data-en>Build scalable APIs and backend systems</span>
+          <span data-i18n="index.auto_165">بناء API وأنظمة قابلة للتوسع</span>
         </h3>
         <p>
-          <span data-ar>أقدّم تطوير REST API، أنظمة صلاحيات ومصادقة، تكاملات دفع، queues، caching، وتحسين قواعد البيانات للمنتجات التي تحتاج أداء واستقرارًا فعليًا.</span>
-          <span data-en>I deliver REST APIs, auth systems, payment integrations, queues, caching, and database optimization for products that need real performance and reliability.</span>
+          <span data-i18n="index.auto_166">أقدّم تطوير REST API، أنظمة صلاحيات ومصادقة، تكاملات دفع، queues، caching، وتحسين قواعد البيانات للمنتجات التي تحتاج أداء واستقرارًا فعليًا.</span>
         </p>
       </article>
 
       <article class="seo-card">
         <h3>
-          <span data-ar>مناسب للـ SaaS والمنتجات التشغيلية</span>
-          <span data-en>Built for SaaS and operations-heavy products</span>
+          <span data-i18n="index.auto_167">مناسب للـ SaaS والمنتجات التشغيلية</span>
         </h3>
         <p>
-          <span data-ar>سواء كان لديك SaaS، منصة توصيل، منتج FinTech، أو نظام داخلي للشركة، فالتركيز يكون على تقليل الاختناقات، وضوح المعمارية، ودعم التوسع القادم.</span>
-          <span data-en>Whether you run SaaS, delivery, fintech, or internal operations software, the focus stays on removing bottlenecks, clarifying architecture, and supporting upcoming scale.</span>
+          <span data-i18n="index.auto_168">سواء كان لديك SaaS، منصة توصيل، منتج FinTech، أو نظام داخلي للشركة، فالتركيز يكون على تقليل الاختناقات، وضوح المعمارية، ودعم التوسع القادم.</span>
         </p>
       </article>
     </div>
 
     <p class="seo-copy">
-      <span data-ar>أستخدم هذه الصفحة كصفحة تعريف وLanding Page في الوقت نفسه: إذا كنت تبحث عن Senior Laravel Backend Developer أو PHP API Developer أو Backend Engineer لمصر والسعودية والإمارات، فستجد هنا الخدمات، المشاريع، المقالات، والصفحات المخصّصة بحسب السوق لتسهيل قرار التوظيف.</span>
-      <span data-en>This page works as both a portfolio and a landing page: if you are searching for a senior Laravel backend developer, PHP API developer, or backend engineer for Egypt, Saudi Arabia, or the UAE, you can use the services, projects, articles, and country pages here to qualify the fit quickly.</span>
+      <span data-i18n="index.auto_169">أستخدم هذه الصفحة كصفحة تعريف وLanding Page في الوقت نفسه: إذا كنت تبحث عن Senior Laravel Backend Developer أو PHP API Developer أو Backend Engineer لمصر والسعودية والإمارات، فستجد هنا الخدمات، المشاريع، المقالات، والصفحات المخصّصة بحسب السوق لتسهيل قرار التوظيف.</span>
     </p>
   </section>
 
   <section id="gcc" class="gcc-only" aria-labelledby="gcc-heading">
     <div style="margin-bottom:2.5rem;">
       <h2 id="gcc-heading" class="section-title">
-        <span data-ar>خدمات الباك-إند لدول الخليج</span>
-        <span data-en>Backend Services for GCC</span>
+        <span data-i18n="index.auto_170">خدمات الباك-إند لدول الخليج</span>
       </h2>
       <p style="color:var(--c-muted);">
-        <span data-ar>دعم تقني موجّه للشركات والمنتجات الرقمية في السعودية، الإمارات، قطر، الكويت، البحرين، وعُمان، مع تركيز على السرعة، الاعتمادية، والجاهزية للنمو.</span>
-        <span data-en>Technical delivery for startups and digital products in Saudi Arabia, UAE, Qatar, Kuwait, Bahrain, and Oman, focused on speed, reliability, and scale readiness.</span>
+        <span data-i18n="index.auto_171">دعم تقني موجّه للشركات والمنتجات الرقمية في السعودية، الإمارات، قطر، الكويت، البحرين، وعُمان، مع تركيز على السرعة، الاعتمادية، والجاهزية للنمو.</span>
       </p>
       <p style="color:var(--c-muted); margin-top:0.75rem;">
-        <span data-ar>مناسب للشركات الناشئة وشركات التشغيل في مجالات التجارة الإلكترونية، النقل، الفنتك، والخدمات عند الطلب.</span>
-        <span data-en>Designed for startup and operations-heavy products in e-commerce, mobility, fintech, and on-demand services.</span>
+        <span data-i18n="index.auto_172">مناسب للشركات الناشئة وشركات التشغيل في مجالات التجارة الإلكترونية، النقل، الفنتك، والخدمات عند الطلب.</span>
       </p>
     </div>
 
@@ -2201,12 +2039,10 @@
       <article class="card" role="listitem">
         <div class="card-body">
           <h3 class="card-title">
-            <span data-ar>تطوير API وأنظمة Back-End</span>
-            <span data-en>API & Backend Engineering</span>
+            <span data-i18n="index.auto_173">تطوير API وأنظمة Back-End</span>
           </h3>
           <p class="card-desc">
-            <span data-ar>تصميم وتطوير REST/gRPC APIs عالية الاعتمادية مع بنية قابلة للتوسع لتطبيقات SaaS وFinTech وMobility.</span>
-            <span data-en>Build reliable REST/gRPC APIs and scalable backend architecture for SaaS, FinTech, and mobility products.</span>
+            <span data-i18n="index.auto_174">تصميم وتطوير REST/gRPC APIs عالية الاعتمادية مع بنية قابلة للتوسع لتطبيقات SaaS وFinTech وMobility.</span>
           </p>
           <div class="card-tags">LARAVEL // NODE.JS // PYTHON</div>
         </div>
@@ -2215,12 +2051,10 @@
       <article class="card" role="listitem">
         <div class="card-body">
           <h3 class="card-title">
-            <span data-ar>تحسين الأداء والتكلفة</span>
-            <span data-en>Performance & Cost Optimization</span>
+            <span data-i18n="index.auto_175">تحسين الأداء والتكلفة</span>
           </h3>
           <p class="card-desc">
-            <span data-ar>تحسين استعلامات قواعد البيانات، الكاش، ومراقبة الخدمات لخفض زمن الاستجابة وتكلفة التشغيل.</span>
-            <span data-en>Optimize database queries, caching, and service observability to reduce latency and infrastructure cost.</span>
+            <span data-i18n="index.auto_176">تحسين استعلامات قواعد البيانات، الكاش، ومراقبة الخدمات لخفض زمن الاستجابة وتكلفة التشغيل.</span>
           </p>
           <div class="card-tags">POSTGRESQL // REDIS // AWS</div>
         </div>
@@ -2229,12 +2063,10 @@
       <article class="card" role="listitem">
         <div class="card-body">
           <h3 class="card-title">
-            <span data-ar>هندسة Microservices للمنتجات الخليجية</span>
-            <span data-en>Microservices for GCC Products</span>
+            <span data-i18n="index.auto_177">هندسة Microservices للمنتجات الخليجية</span>
           </h3>
           <p class="card-desc">
-            <span data-ar>إعادة هيكلة الأنظمة الأحادية إلى Microservices مع CI/CD واضح يناسب فرق التقنية في الخليج.</span>
-            <span data-en>Migrate monolith systems to microservices with robust CI/CD workflows for GCC engineering teams.</span>
+            <span data-i18n="index.auto_178">إعادة هيكلة الأنظمة الأحادية إلى Microservices مع CI/CD واضح يناسب فرق التقنية في الخليج.</span>
           </p>
           <div class="card-tags">DOCKER // KUBERNETES // CI/CD</div>
         </div>
@@ -2243,12 +2075,10 @@
       <article class="card" role="listitem">
         <div class="card-body">
           <h3 class="card-title">
-            <span data-ar>تكامل المدفوعات والخدمات الإقليمية</span>
-            <span data-en>Payments & Regional Integrations</span>
+            <span data-i18n="index.auto_179">تكامل المدفوعات والخدمات الإقليمية</span>
           </h3>
           <p class="card-desc">
-            <span data-ar>دمج بوابات الدفع والخدمات الطرفية في المنطقة مع طبقات أمان ومراقبة تشغيلية لضمان استقرار رحلة الدفع.</span>
-            <span data-en>Integrate regional payment gateways and third-party services with security and observability layers for stable transaction flows.</span>
+            <span data-i18n="index.auto_180">دمج بوابات الدفع والخدمات الطرفية في المنطقة مع طبقات أمان ومراقبة تشغيلية لضمان استقرار رحلة الدفع.</span>
           </p>
           <div class="card-tags">PAYMENTS // SECURITY // OBSERVABILITY</div>
         </div>
@@ -2257,12 +2087,10 @@
       <article class="card" role="listitem">
         <div class="card-body">
           <h3 class="card-title">
-            <span data-ar>خطة تنفيذ واضحة وتسليمات أسبوعية</span>
-            <span data-en>Clear Delivery Plan & Weekly Milestones</span>
+            <span data-i18n="index.auto_181">خطة تنفيذ واضحة وتسليمات أسبوعية</span>
           </h3>
           <p class="card-desc">
-            <span data-ar>تقسيم العمل إلى مراحل قصيرة قابلة للقياس مع تقارير تقدم واضحة حتى الإطلاق والاستقرار الإنتاجي.</span>
-            <span data-en>Work is split into measurable short phases with clear weekly updates until production launch and stabilization.</span>
+            <span data-i18n="index.auto_182">تقسيم العمل إلى مراحل قصيرة قابلة للقياس مع تقارير تقدم واضحة حتى الإطلاق والاستقرار الإنتاجي.</span>
           </p>
           <div class="card-tags">ROADMAP // DELIVERY // SUPPORT</div>
         </div>
@@ -2271,24 +2099,19 @@
 
     <div class="contact-section" style="margin-top:1.5rem;">
       <h3 style="font-size:1.35rem; font-weight:900; margin-bottom:0.8rem;">
-        <span data-ar>أسئلة شائعة لعملاء الخليج</span>
-        <span data-en>GCC FAQ</span>
+        <span data-i18n="index.auto_183">أسئلة شائعة لعملاء الخليج</span>
       </h3>
       <p style="color:var(--c-muted); margin-bottom:0.8rem;">
-        <span data-ar><strong style="color:var(--c-text)">هل تقدم خدمات في السعودية والإمارات؟</strong> نعم، متاح للعمل عن بُعد مع فرق الخليج مع خطة تنفيذ وتسليمات أسبوعية.</span>
-        <span data-en><strong style="color:var(--c-text)">Do you work with Saudi and UAE teams?</strong> Yes. I collaborate remotely with GCC teams using clear weekly delivery plans.</span>
+        <span data-i18n="index.auto_184"><strong style="color:var(--c-text)">هل تقدم خدمات في السعودية والإمارات؟</strong> نعم، متاح للعمل عن بُعد مع فرق الخليج مع خطة تنفيذ وتسليمات أسبوعية.</span>
       </p>
       <p style="color:var(--c-muted); margin-bottom:0.8rem;">
-        <span data-ar><strong style="color:var(--c-text)">هل تقدم استشارات مع التنفيذ؟</strong> نعم، من مراجعة المعمارية إلى التنفيذ والتحسين وقياس الأداء.</span>
-        <span data-en><strong style="color:var(--c-text)">Do you provide consulting plus implementation?</strong> Yes, from architecture reviews to execution and performance measurement.</span>
+        <span data-i18n="index.auto_185"><strong style="color:var(--c-text)">هل تقدم استشارات مع التنفيذ؟</strong> نعم، من مراجعة المعمارية إلى التنفيذ والتحسين وقياس الأداء.</span>
       </p>
       <p style="color:var(--c-muted);">
-        <span data-ar><strong style="color:var(--c-text)">هل مناسب للشركات الناشئة؟</strong> نعم، أبني حلولًا مرنة تنمو مع المنتج دون تعقيد مبكر.</span>
-        <span data-en><strong style="color:var(--c-text)">Is this suitable for startups?</strong> Yes, the architecture is designed to scale without early over-engineering.</span>
+        <span data-i18n="index.auto_186"><strong style="color:var(--c-text)">هل مناسب للشركات الناشئة؟</strong> نعم، أبني حلولًا مرنة تنمو مع المنتج دون تعقيد مبكر.</span>
       </p>
       <p style="color:var(--c-muted); margin-top:1rem;" data-region-content>
-        <span data-ar><strong style="color:var(--c-text)">صفحات بحسب السوق:</strong> <a href="/backend-engineer-egypt/" style="color:var(--c-primary)">لو تبدأ من مصر</a> • <a href="/backend-engineer-saudi-arabia/" style="color:var(--c-primary)">لو مشروعك في السعودية</a> • <a href="/backend-engineer-uae/" style="color:var(--c-primary)">لو تستهدف الإمارات</a> • <a href="/backend-engineer-qatar/" style="color:var(--c-primary)">لو مشروعك في قطر</a> • <a href="/backend-engineer-kuwait/" style="color:var(--c-primary)">لو تعمل في الكويت</a> • <a href="/backend-engineer-bahrain/" style="color:var(--c-primary)">لو تستهدف البحرين</a> • <a href="/backend-engineer-oman/" style="color:var(--c-primary)">لو مشروعك في عُمان</a></span>
-        <span data-en><strong style="color:var(--c-text)">Country pages:</strong> <a href="/backend-engineer-egypt/" style="color:var(--c-primary)">Egypt</a> • <a href="/backend-engineer-saudi-arabia/" style="color:var(--c-primary)">Saudi Arabia</a> • <a href="/backend-engineer-uae/" style="color:var(--c-primary)">UAE</a> • <a href="/backend-engineer-qatar/" style="color:var(--c-primary)">Qatar</a> • <a href="/backend-engineer-kuwait/" style="color:var(--c-primary)">Kuwait</a> • <a href="/backend-engineer-bahrain/" style="color:var(--c-primary)">Bahrain</a> • <a href="/backend-engineer-oman/" style="color:var(--c-primary)">Oman</a></span>
+        <span data-i18n="index.auto_187"><strong style="color:var(--c-text)">صفحات بحسب السوق:</strong> <a href="/backend-engineer-egypt/" style="color:var(--c-primary)">لو تبدأ من مصر</a> • <a href="/backend-engineer-saudi-arabia/" style="color:var(--c-primary)">لو مشروعك في السعودية</a> • <a href="/backend-engineer-uae/" style="color:var(--c-primary)">لو تستهدف الإمارات</a> • <a href="/backend-engineer-qatar/" style="color:var(--c-primary)">لو مشروعك في قطر</a> • <a href="/backend-engineer-kuwait/" style="color:var(--c-primary)">لو تعمل في الكويت</a> • <a href="/backend-engineer-bahrain/" style="color:var(--c-primary)">لو تستهدف البحرين</a> • <a href="/backend-engineer-oman/" style="color:var(--c-primary)">لو مشروعك في عُمان</a></span>
       </p>
     </div>
   </section>
@@ -2296,29 +2119,23 @@
   <section id="contact" aria-labelledby="contact-heading">
     <div class="contact-section">
       <h2 id="contact-heading">
-        <span data-ar>تواصل معي</span>
-        <span data-en>Contact Me</span>
+        <span data-i18n="index.auto_188">تواصل معي</span>
       </h2>
       <p style="color:var(--c-muted); margin-bottom:2rem;">
-        <span data-ar>جاهز لمناقشة مشروع Laravel، API جديد، أو تحسين نظام موجود. اختر القناة الأسرع لك.</span>
-        <span data-en>Available for Laravel projects, new API builds, or performance improvements on existing systems. Choose the fastest channel for you.</span>
+        <span data-i18n="index.auto_189">جاهز لمناقشة مشروع Laravel، API جديد، أو تحسين نظام موجود. اختر القناة الأسرع لك.</span>
       </p>
       <div style="display:flex; gap:1rem; flex-wrap:wrap; justify-content:center;">
         <a href="mailto:info@abdotaher.me?subject=Let%27s%20Work%20Together%20-%20Laravel%20Backend" class="btn-primary" aria-label="إرسال بريد إلكتروني">
-          <span data-ar>لنعمل معًا</span>
-          <span data-en>Let’s Work Together</span>
+          <span data-i18n="index.auto_190">لنعمل معًا</span>
         </a>
         <a href="mailto:info@abdotaher.me?subject=Book%20a%20Call%20-%20Laravel%20Backend" class="btn-ghost" aria-label="Book a call">
-          <span data-ar>احجز مكالمة</span>
-          <span data-en>Book a Call</span>
+          <span data-i18n="index.auto_191">احجز مكالمة</span>
         </a>
         <a href="https://wa.me/201008275881" target="_blank" rel="noopener noreferrer" class="btn-ghost" aria-label="تواصل عبر واتساب">
-          <span data-ar>واتساب</span>
-          <span data-en>WhatsApp</span>
+          <span data-i18n="index.auto_192">واتساب</span>
         </a>
         <a href="https://www.upwork.com/freelancers/~018ae3e5cfaa1804d1?mp_source=share" target="_blank" rel="noopener noreferrer" class="btn-ghost" aria-label="Hire via Upwork">
-          <span data-ar>وظفني عبر Upwork</span>
-          <span data-en>Hire via Upwork</span>
+          <span data-i18n="index.auto_193">وظفني عبر Upwork</span>
         </a>
       </div>
     </div>
@@ -2328,26 +2145,17 @@
 <footer>
   <div class="footer-inner">
     <p class="footer-copy">
-      <span data-ar>© 2026 عبدالرحمن طاهر // جميع الحقوق محفوظة</span>
-      <span data-en>© 2026 Architectural Core // ALL RIGHTS RESERVED</span>
+      <span data-i18n="index.auto_194">© 2026 عبدالرحمن طاهر // جميع الحقوق محفوظة</span>
     </p>
     <nav class="footer-links" aria-label="روابط التذييل">
-      <a href="#about" data-ar>من أنا</a>
-      <a href="#about" data-en>About</a>
-      <a href="/projects/" data-ar>المشاريع</a>
-      <a href="/projects/" data-en>Projects</a>
-      <a href="#services" data-ar>الخدمات</a>
-      <a href="#services" data-en>Services</a>
-      <a href="/offers/" class="nav-flag-link" data-ar>العروض <span class="nav-flag">HOT</span></a>
-      <a href="/offers/" class="nav-flag-link" data-en>Offers <span class="nav-flag">HOT</span></a>
-      <a href="#gcc" class="gcc-only" data-ar>الخليج</a>
-      <a href="#gcc" class="gcc-only" data-en>GCC</a>
-      <a href="#stack" data-ar>التقنيات</a>
-      <a href="#stack" data-en>Stack</a>
-      <a href="#experience" data-ar>الخبرة</a>
-      <a href="#experience" data-en>Logs</a>
-      <a href="#contact" data-ar>تواصل</a>
-      <a href="#contact" data-en>Contact</a>
+      <a href="#about" data-i18n="index.auto_195">من أنا</a>
+      <a href="/projects/" data-i18n="index.auto_196">المشاريع</a>
+      <a href="#services" data-i18n="index.auto_197">الخدمات</a>
+      <a href="/offers/" class="nav-flag-link" data-i18n="index.auto_198">العروض <span class="nav-flag">HOT</span></a>
+      <a href="#gcc" class="gcc-only" data-i18n="index.auto_199">الخليج</a>
+      <a href="#stack" data-i18n="index.auto_200">التقنيات</a>
+      <a href="#experience" data-i18n="index.auto_201">الخبرة</a>
+      <a href="#contact" data-i18n="index.auto_202">تواصل</a>
     </nav>
     <a href="mailto:info@abdotaher.me" class="footer-contact" aria-label="Email info@abdotaher.me">
       <span class="material-symbols-outlined" aria-hidden="true">mail</span>
@@ -2359,41 +2167,32 @@
 <nav class="mobile-nav" aria-label="التنقل السريع">
   <a href="#" class="active">
     <span class="material-symbols-outlined" aria-hidden="true">home</span>
-    <span data-ar>الرئيسية</span><span data-en>Home</span>
+    <span data-i18n="index.auto_203">الرئيسية</span>
   </a>
   <a href="#about">
     <span class="material-symbols-outlined" aria-hidden="true">person</span>
-    <span data-ar>من أنا</span><span data-en>About</span>
+    <span data-i18n="index.auto_204">من أنا</span>
   </a>
   <a href="/projects/">
     <span class="material-symbols-outlined" aria-hidden="true">architecture</span>
-    <span data-ar>مشاريع</span><span data-en>Projects</span>
+    <span data-i18n="index.auto_205">مشاريع</span>
   </a>
   <a href="#experience">
     <span class="material-symbols-outlined" aria-hidden="true">history</span>
-    <span data-ar>خبرة</span><span data-en>Logs</span>
+    <span data-i18n="index.auto_206">خبرة</span>
   </a>
   <a href="#services">
     <span class="material-symbols-outlined" aria-hidden="true">settings_suggest</span>
-    <span data-ar>خدمات</span><span data-en>Services</span>
+    <span data-i18n="index.auto_207">خدمات</span>
   </a>
   <a href="#contact">
     <span class="material-symbols-outlined" aria-hidden="true">mail</span>
-    <span data-ar>تواصل</span><span data-en>Contact</span>
+    <span data-i18n="index.auto_208">تواصل</span>
   </a>
 </nav>
 
 <script>
-  function setLang(lang) {
-    const body = document.body;
-    body.classList.remove('lang-ar', 'lang-en');
-    body.classList.add('lang-' + lang);
-    body.setAttribute('lang', lang === 'ar' ? 'ar' : 'en');
-    body.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
-
-    document.documentElement.setAttribute('lang', lang === 'ar' ? 'ar' : 'en');
-    document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
-
+  function applyLangSideEffects(lang) {
     ['ar', 'en'].forEach(l => {
       const btn = document.getElementById('btn-' + l);
       const btnM = document.getElementById('btn-' + l + '-m');
@@ -2424,12 +2223,23 @@
     document.querySelectorAll('[data-alt-ar][data-alt-en]').forEach((image) => {
       image.setAttribute('alt', lang === 'en' ? image.getAttribute('data-alt-en') : image.getAttribute('data-alt-ar'));
     });
+  }
 
+  function setLang(lang) {
+    if (window.siteI18n?.switchLanguage) {
+      window.siteI18n.switchLanguage(lang);
+    }
+    applyLangSideEffects(lang);
     try {
       localStorage.setItem('preferred-lang', lang);
     } catch (e) {}
   }
   window.setLang = setLang;
+
+  window.addEventListener('site:lang-change', (event) => {
+    const lang = event?.detail?.lang || 'ar';
+    applyLangSideEffects(lang);
+  });
 
   (function () {
     try {
@@ -2645,16 +2455,11 @@
               <span class="material-symbols-outlined" style="font-size:1rem; color:var(--c-primary);" aria-hidden="true">open_in_new</span>
             </a>
           </div>
-          <p class="card-desc" itemprop="description">
-            <span data-ar>${safeDescAr}</span>
-            <span data-en>${safeDescEn}</span>
-          </p>
+          <p class="card-desc" itemprop="description">${document.body.classList.contains('lang-en') ? safeDescEn : safeDescAr}</p>
           ${safeImpactAr || safeImpactEn ? `
           <div class="project-impact">
-            <strong data-ar>الأثر:</strong>
-            <strong data-en>Impact:</strong>
-            <span data-ar>${safeImpactAr}</span>
-            <span data-en>${safeImpactEn}</span>
+            <strong>${document.body.classList.contains('lang-en') ? 'Impact:' : 'الأثر:'}</strong>
+            <span>${document.body.classList.contains('lang-en') ? safeImpactEn : safeImpactAr}</span>
           </div>` : ''}
           <div class="card-tags">${safeTags}</div>
         </div>

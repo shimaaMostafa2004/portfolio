@@ -81,17 +81,12 @@ import HomeLikeFooter from '../components/HomeLikeFooter.astro';
     <section class="not-found">
       <article class="card">
         <p class="code">404</p>
-        <h1 data-ar>الصفحة غير موجودة</h1>
-        <h1 data-en>Page Not Found</h1>
-        <p data-ar>الرابط الذي فتحته غير متاح حاليًا. يمكنك العودة للرئيسية أو تصفح الخدمات والمشاريع.</p>
-        <p data-en>The page you requested is not available. You can return to home or continue browsing services and projects.</p>
+        <h1 data-i18n="not_found.title">الصفحة غير موجودة</h1>
+        <p data-i18n="not_found.description">الرابط الذي فتحته غير متاح حاليًا. يمكنك العودة للرئيسية أو تصفح الخدمات والمشاريع.</p>
         <div class="actions">
-          <a class="btn primary" href="/" data-ar>العودة للرئيسية</a>
-          <a class="btn primary" href="/" data-en>Back Home</a>
-          <a class="btn" href="/services/" data-ar>الخدمات</a>
-          <a class="btn" href="/services/" data-en>Services</a>
-          <a class="btn" href="/projects/" data-ar>المشاريع</a>
-          <a class="btn" href="/projects/" data-en>Projects</a>
+          <a class="btn primary" href="/" data-i18n="not_found.back_home">العودة للرئيسية</a>
+          <a class="btn" href="/services/" data-i18n="not_found.services">الخدمات</a>
+          <a class="btn" href="/projects/" data-i18n="not_found.projects">المشاريع</a>
         </div>
       </article>
     </section>
