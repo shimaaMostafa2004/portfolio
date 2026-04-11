@@ -72,6 +72,34 @@ import HomeLikeFooter from '../components/HomeLikeFooter.astro';
       gap: 1rem;
     }
 
+    .projects-summary {
+      margin-top: 0.9rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+    }
+
+    .summary-pill {
+      border: 1px solid rgba(112, 213, 230, 0.22);
+      background: rgba(255, 255, 255, 0.03);
+      color: rgba(231, 222, 255, 0.86);
+      border-radius: 999px;
+      padding: 0.42rem 0.72rem;
+      font-size: 0.66rem;
+      font-weight: 800;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    .projects-section-title {
+      margin: 1.15rem 0 0;
+      color: rgba(231, 222, 255, 0.92);
+      font-size: 0.9rem;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
     .project-card {
       background: rgba(30, 25, 51, 0.92);
       border: 1px solid rgba(112, 213, 230, 0.16);
@@ -145,6 +173,31 @@ import HomeLikeFooter from '../components/HomeLikeFooter.astro';
       color: #8ff700;
     }
 
+    .project-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      width: fit-content;
+      text-decoration: none;
+      color: #9bf0ff;
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .project-action:hover {
+      color: #ccf8ff;
+    }
+
+    .project-action-disabled {
+      color: rgba(231, 222, 255, 0.54);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
     .projects-state {
       margin-top: 1rem;
       background: rgba(255, 255, 255, 0.03);
@@ -206,9 +259,11 @@ import HomeLikeFooter from '../components/HomeLikeFooter.astro';
         <p class="projects-kicker">Portfolio</p>
         <h1 id="projects-heading" data-i18n="projects.hero_title">معرض أعمال يوضح التنفيذ الفعلي للمشاريع</h1>
         <p data-i18n="projects.hero_desc">صفحة تجمع المشاريع في مكان واحد مع وصف مختصر للتقنيات وسياق الاستخدام حتى ترى نوع الأعمال التي تم تنفيذها فعليًا.</p>
+        <div id="projects-summary" class="projects-summary" aria-live="polite"></div>
       </section>
 
       <div id="projects-state" class="projects-state" role="status" aria-live="polite" data-i18n="projects.loading">جاري تحميل المشاريع...</div>
+      <h2 class="projects-section-title">Latest Projects</h2>
       <section id="projects-grid" class="projects-grid" role="list" aria-label="Projects gallery"></section>
     </div>
 
@@ -235,6 +290,31 @@ import HomeLikeFooter from '../components/HomeLikeFooter.astro';
         };
       }
 
+      function splitTags(value) {
+        return String(value || '')
+          .split(/[|,\/•]/g)
+          .map((item) => item.trim())
+          .filter(Boolean);
+      }
+
+      function renderSummary(projects, lang) {
+        const summary = document.getElementById('projects-summary');
+        if (!summary) return;
+
+        const withLinks = projects.filter((item) => item.link).length;
+        const uniqueTech = new Set(projects.flatMap((item) => splitTags(item.tags))).size;
+
+        const projectsLabel = lang === 'en' ? 'Projects' : 'مشروع';
+        const linksLabel = lang === 'en' ? 'Live Links' : 'روابط مباشرة';
+        const stackLabel = lang === 'en' ? 'Technologies' : 'تقنيات';
+
+        summary.innerHTML = [
+          `<span class="summary-pill">${projects.length} ${projectsLabel}</span>`,
+          `<span class="summary-pill">${withLinks} ${linksLabel}</span>`,
+          `<span class="summary-pill">${uniqueTech} ${stackLabel}</span>`
+        ].join('');
+      }
+
       function renderProjects(projects) {
         const grid = document.getElementById('projects-grid');
         const state = document.getElementById('projects-state');
@@ -251,6 +331,7 @@ import HomeLikeFooter from '../components/HomeLikeFooter.astro';
         }
 
         state.style.display = 'none';
+        renderSummary(valid, lang);
 
         grid.innerHTML = valid.map((project) => {
           const safeName = escapeHtml(project.name);
@@ -261,7 +342,9 @@ import HomeLikeFooter from '../components/HomeLikeFooter.astro';
           const safeDesc = escapeHtml(currentDesc);
           const safeTags = escapeHtml(project.tags || '');
           const safeLink = escapeHtml(project.link || '#');
-          const isExternal = Boolean(project.link);
+          const hasLink = Boolean(project.link);
+          const openLabel = lang === 'en' ? 'Open Project' : 'فتح المشروع';
+          const noLinkLabel = lang === 'en' ? 'Private Project' : 'مشروع خاص';
 
           return `
           <article class="project-card" role="listitem" itemscope itemtype="https://schema.org/SoftwareApplication">
@@ -271,12 +354,16 @@ import HomeLikeFooter from '../components/HomeLikeFooter.astro';
             <div class="project-body">
               <h2 class="project-title">
                 <span itemprop="name">${safeName}</span>
-                <a href="${safeLink}" ${isExternal ? 'target="_blank" rel="noopener noreferrer"' : ''} aria-label="${safeName}">
-                  <span class="material-symbols-outlined" aria-hidden="true">open_in_new</span>
-                </a>
               </h2>
               <p class="project-desc" itemprop="description">${safeDesc}</p>
               <div class="project-tags">${safeTags}</div>
+              ${hasLink
+                ? `<a class="project-action" href="${safeLink}" target="_blank" rel="noopener noreferrer" aria-label="${safeName}">
+                  <span>${openLabel}</span>
+                  <span class="material-symbols-outlined" aria-hidden="true">open_in_new</span>
+                </a>`
+                : `<span class="project-action-disabled">${noLinkLabel}</span>`
+              }
             </div>
           </article>`;
         }).join('');
