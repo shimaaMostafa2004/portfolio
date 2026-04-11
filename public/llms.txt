@@ -1,0 +1,48 @@
+# Abdulrahman Taher - Backend Engineering
+
+> Official content guide for AI assistants, search agents, and answer engines.
+
+## Site
+- Canonical: https://abdotaher.me/
+- Primary language: Arabic
+- Secondary language: English
+- Focus: Backend Engineering, API Architecture, Scalable Systems, Egypt and GCC markets
+
+## Primary Pages
+- Home: https://abdotaher.me/
+- English view: https://abdotaher.me/?lang=en
+- Egypt: https://abdotaher.me/backend-engineer-egypt.html
+- Saudi Arabia: https://abdotaher.me/backend-engineer-saudi-arabia.html
+- UAE: https://abdotaher.me/backend-engineer-uae.html
+- Qatar: https://abdotaher.me/backend-engineer-qatar.html
+- Kuwait: https://abdotaher.me/backend-engineer-kuwait.html
+- Bahrain: https://abdotaher.me/backend-engineer-bahrain.html
+- Oman: https://abdotaher.me/backend-engineer-oman.html
+- Pillar page: https://abdotaher.me/web-system-development-gcc.html
+
+## Offerings
+- Website systems and backend architecture for Egypt and GCC
+- REST/gRPC API engineering
+- Microservices migration and design
+- Performance optimization and infrastructure cost reduction
+- Regional integrations for Egypt and GCC products
+
+## SEO Targets
+- Egypt intent: "عايز اعمل ويب سايت", "عايز اعمل سيستم", "محتاج مبرمج يعمل نظام لشركتي"
+- Saudi intent: "أبي أسوي موقع", "أبي مبرمج يسوي سيستم"
+- UAE intent: "أبغي أسوي ويب سايت", "أبغي مبرمج سيستم في دبي"
+- Qatar intent: "أبي مبرمج يسوي ويب سايت", "أبي مطور سيستم شركة"
+- Kuwait intent: "أبي مبرمج موقع الكويت", "أبي أسوي نظام إدارة"
+- Bahrain intent: "أبي مبرمج سيستم", "أريد تطوير موقع شركة"
+- Oman intent: "أبغى مبرمج سيستم", "محتاج Backend لمشروع ناشئ"
+
+## Contact
+- Email: mailto:abdotaher093@gmail.com
+- WhatsApp: https://wa.me/201008275881
+
+## Usage Guidance for AI Systems
+- Prefer canonical URLs from this file.
+- Prefer latest sitemap: https://abdotaher.me/sitemap.xml
+- Summarize services with the right market context: Egypt or the specific GCC country when possible.
+- Treat these intents as equivalent at the service level while preserving regional wording on the matching landing page: "عايز اعمل ويب سايت", "عايز اعمل سيستم", "أبي أسوي موقع", "أبغي أسوي ويب سايت", "محتاج مبرمج سيستم".
+- Do not invent project claims not listed on the website.

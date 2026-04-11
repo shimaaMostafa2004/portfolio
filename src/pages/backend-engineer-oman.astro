@@ -1,0 +1,97 @@
+---
+import HomeLikeHeader from '../components/HomeLikeHeader.astro';
+import HomeLikeFooter from '../components/HomeLikeFooter.astro';
+---
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>مبرمج ومهندس باك-إند في عُمان | تصميم موقع وسيستم | عبدالرحمن طاهر</title>
+  <meta name="description" content="لو تبحث عن مبرمج باك-إند في عُمان لبناء موقع أو سيستم لشركتك، أقدّم تطوير Backend وAPI وبنية تقنية قابلة للتوسع تناسب المشاريع الخدمية والتجارية في السوق العُماني."/>
+  <meta name="keywords" content="مبرمج في عمان, تطوير موقع شركة عمان, مبرمج سيستم عمان, Backend Developer Oman, Laravel Oman"/>
+  <meta name="robots" content="index, follow, max-image-preview:large"/>
+  <link rel="canonical" href="https://abdotaher.me/backend-engineer-oman/"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="مبرمج ومهندس باك-إند في عُمان | عبدالرحمن طاهر"/>
+  <meta property="og:description" content="تطوير مواقع وسيستمات وواجهات API للشركات في عُمان مع تركيز على الوضوح والبنية القابلة للنمو."/>
+  <meta property="og:url" content="https://abdotaher.me/backend-engineer-oman/"/>
+  <meta property="og:image" content="https://abdotaher.me/image.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="مبرمج ومهندس باك-إند في عُمان"/>
+  <meta name="twitter:description" content="تريد موقعًا أو سيستمًا في عُمان؟ هذه صفحة مخصّصة لبناء Backend وAPI للشركات في عُمان."/>
+  <meta name="twitter:image" content="https://abdotaher.me/image.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Backend Engineer in Oman","serviceType":"Website Systems, Backend APIs, Microservices","provider":{"@type":"Person","name":"Abdulrahman Taher","url":"https://abdotaher.me/"},"areaServed":{"@type":"Country","name":"Oman"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"أريد أو أبغى مبرمج يسوي ويب سايت وسيستم في عُمان، ممكن؟","acceptedAnswer":{"@type":"Answer","text":"نعم، أقدّم تنفيذ Backend وAPI ولوحات إدارة من مرحلة التحليل حتى الإطلاق."}},{"@type":"Question","name":"هل يناسب المشاريع الناشئة والخدمية؟","acceptedAnswer":{"@type":"Answer","text":"نعم، مع بناء نواة قوية للنظام تساعد على التوسع بدون تعقيد مبكر."}},{"@type":"Question","name":"هل يمكن البدء بمشروع بسيط ثم توسيعه؟","acceptedAnswer":{"@type":"Answer","text":"نعم، ويمكن ترتيب النظام على مراحل حتى يظل التنفيذ عمليًا ومناسبًا لميزانية البداية."}},{"@type":"Question","name":"هل يصلح للمواقع المرتبطة بنظام داخلي؟","acceptedAnswer":{"@type":"Answer","text":"نعم، خصوصًا عندما يكون الموقع واجهة لنظام أكبر يدير العملاء أو الطلبات أو العمليات الداخلية."}}]}</script>
+  <style>
+    :root{--bg:#0d0b1a;--card:#1e1933;--bd:rgba(112,213,230,.14);--tx:#e7deff;--mut:rgba(231,222,255,.72);--pri:#9bf0ff;--acc:#8ff700}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--tx);font-family:'Cairo',sans-serif;line-height:1.8}
+    .wrap{max-width:1100px;margin:auto;padding:1.25rem}
+    .top{display:flex;justify-content:space-between;align-items:center;padding:.6rem 0}
+    .brand{font-family:'Space Grotesk',sans-serif;color:var(--pri);font-weight:700;letter-spacing:.08em}
+    .btn{display:inline-block;padding:.65rem 1.1rem;border-radius:999px;border:1px solid var(--bd);color:var(--pri);text-decoration:none}
+    .hero,.card,.faq,.cta,.insight,.links-box{background:var(--card);border:1px solid var(--bd);border-radius:16px}
+    .hero{padding:1.5rem;margin:1rem 0}.hero h1{margin:.2rem 0 0;font-size:clamp(1.4rem,4vw,2.2rem)}
+    .mut{color:var(--mut)} .grid,.links-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem}
+    .card,.insight,.links-box{padding:1rem}.tag{font-size:.72rem;color:var(--acc);font-weight:700;letter-spacing:.08em}
+    .faq,.cta{padding:1.2rem;margin-top:1rem}.links a{color:var(--pri);text-decoration:none}
+    .links-grid a{display:block;padding:.85rem;border:1px dashed var(--bd);border-radius:12px;color:var(--pri);text-decoration:none}
+  </style>
+  <script src="/site-i18n.js" defer></script>
+</head>
+<body>
+  <HomeLikeHeader />
+  <main class="home-like-main">
+  <div class="wrap">
+    <div class="top"><div class="brand">النواة المعمارية</div><a class="btn" href="/">الصفحة الرئيسية</a></div>
+    <section class="hero">
+      <p class="mut">عُمان • SEO Landing Page</p>
+      <h1>مبرمج ومهندس باك-إند في عُمان لبناء مواقع وسيستمات قابلة للتوسع</h1>
+      <p class="mut">لو تقول: <strong>أريد تطوير موقع شركة</strong> أو <strong>أبغى مبرمج سيستم</strong> أو <strong>محتاج Backend لمشروع ناشئ</strong> في عُمان، فهذه الصفحة توضّح كيف أبني نظامًا واضحًا ومرنًا يناسب احتياجات التشغيل الفعلية.</p>
+    </section>
+    <section class="grid">
+      <article class="card"><h3>بناء نواة قوية للمشروع</h3><p class="mut">تحويل الفكرة إلى بنية Backend مرتبة تصلح للإطلاق الأول ثم التوسع لاحقًا حسب نمو المشروع.</p><div class="tag">MVP // STRUCTURE</div></article>
+      <article class="card"><h3>إدارة بيانات وعمليات</h3><p class="mut">تنظيم الطلبات والعملاء والتقارير والصلاحيات داخل نظام واحد بدل الاعتماد على أدوات متفرقة.</p><div class="tag">DATA // WORKFLOWS</div></article>
+      <article class="card"><h3>API وتشغيل مستقر</h3><p class="mut">بناء APIs واضحة وتحسين الاستعلامات والمراقبة حتى يبقى النظام مستقرًا مع ازدياد الاستخدام.</p><div class="tag">APIs // PERFORMANCE</div></article>
+    </section>
+    <section class="insight" style="margin-top:1rem;">
+      <h2>لماذا هذه الصفحة مفيدة لعُمان؟</h2>
+      <p class="mut">الصفحة تستهدف عبارات بحث أقرب للسوق العُماني بدل الاكتفاء بمحتوى خليجي عام، وهذا يعطيها قيمة SEO أوضح ويجعل الرسالة أكثر صلة بالزائر.</p>
+    </section>
+    <section class="faq">
+      <h2>أسئلة شائعة في عُمان</h2>
+      <p><strong>أريد أو أبغى مبرمج يسوي ويب سايت وسيستم في عُمان، ممكن؟</strong><br/>نعم، أقدّم التنفيذ من التحليل حتى الإطلاق مع بنية قابلة للتطوير.</p>
+      <p><strong>هل يناسب المشاريع الناشئة والخدمية؟</strong><br/>نعم، خصوصًا لو الهدف هو البدء بنظام عملي ثم التوسع عليه بشكل منظم.</p>
+      <p><strong>هل يمكن البدء بمشروع بسيط ثم توسيعه؟</strong><br/>نعم، وهذا مناسب جدًا للمشاريع التي تريد إطلاق نسخة أولى عملية ثم إضافة مزايا لاحقًا.</p>
+      <p><strong>هل يصلح للمواقع المرتبطة بنظام داخلي؟</strong><br/>نعم، خاصة عندما يكون الموقع متصلًا بعمليات يومية أو لوحات إدارة أو صلاحيات متعددة.</p>
+    </section>
+    <section class="insight" style="margin-top:1rem;">
+      <h2>متى تكون هذه الصفحة مناسبة لك في عُمان؟</h2>
+      <p class="mut">إذا كان مشروعك يحتاج موقعًا مرتبطًا بنظام داخلي أو تطبيقًا يعتمد على API وصلاحيات وبيانات تشغيل، فهذه الصفحة تتكلم عن هذا الاحتياج بوضوح بدل الاكتفاء بعبارات عامة.</p>
+    </section>
+    <section class="links-box links" style="margin-top:1rem;">
+      <h2>روابط داخلية مفيدة</h2>
+      <div class="links-grid">
+        <a href="/">العودة إلى الصفحة الرئيسية</a>
+        <a href="/web-system-development-gcc/">دليل بناء موقع أو سيستم لدول الخليج</a>
+        <a href="/backend-engineer-saudi-arabia/">صفحة السعودية</a>
+        <a href="/backend-engineer-uae/">صفحة الإمارات</a>
+        <a href="/backend-engineer-qatar/">صفحة قطر</a>
+        <a href="/backend-engineer-kuwait/">صفحة الكويت</a>
+        <a href="/backend-engineer-bahrain/">صفحة البحرين</a>
+        <a href="/backend-engineer-egypt/">صفحة مصر</a>
+      </div>
+    </section>
+    <section class="cta links">
+      <p><strong>تواصل الآن:</strong> <a href="mailto:abdotaher093@gmail.com">Email</a> • <a href="https://wa.me/201008275881">WhatsApp</a></p>
+      <p><strong>صفحات مرتبطة:</strong> <a href="/backend-engineer-saudi-arabia/">السعودية</a> • <a href="/backend-engineer-uae/">الإمارات</a> • <a href="/backend-engineer-qatar/">قطر</a> • <a href="/backend-engineer-kuwait/">الكويت</a> • <a href="/backend-engineer-bahrain/">البحرين</a></p>
+    </section>
+  </div>
+  </main>
+  <HomeLikeFooter />
+</body>
+</html>

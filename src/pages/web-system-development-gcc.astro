@@ -1,0 +1,235 @@
+---
+import HomeLikeHeader from '../components/HomeLikeHeader.astro';
+import HomeLikeFooter from '../components/HomeLikeFooter.astro';
+---
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>عايز اعمل ويب سايت أو سيستم؟ | مبرمج باك-إند للخليج | عبدالرحمن طاهر</title>
+  <meta name="description" content="لو عايز/أبي/أبغي تعمل ويب سايت أو سيستم لشركتك في الخليج، أقدّم بناء Backend وAPI ومعمارية قابلة للتوسع للشركات في السعودية والإمارات وقطر والكويت والبحرين وعُمان."/>
+  <meta name="keywords" content="عايز اعمل ويب سايت, عايز اعمل سيستم, محتاج مبرمج سيستم, أبي أسوي موقع, أبي مبرمج يسوي نظام, أبغي أسوي ويب سايت, أبغي مبرمج باك اند, مبرمج يعمل سيستم شركة, Backend Developer GCC, API developer"/>
+  <meta name="robots" content="index, follow, max-image-preview:large"/>
+  <link rel="canonical" href="https://abdotaher.me/web-system-development-gcc/"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="عايز اعمل ويب سايت أو سيستم؟ | مبرمج باك-إند للخليج"/>
+  <meta property="og:description" content="خدمات تطوير سيستمات ومواقع قابلة للتوسع للشركات في دول الخليج."/>
+  <meta property="og:url" content="https://abdotaher.me/web-system-development-gcc/"/>
+  <meta property="og:image" content="https://abdotaher.me/image.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="عايز اعمل ويب سايت أو سيستم؟"/>
+  <meta name="twitter:description" content="دليل عملي لبناء سيستم شركتك مع مبرمج باك-إند موجّه للخليج."/>
+  <meta name="twitter:image" content="https://abdotaher.me/image.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet"/>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebPage",
+    "name":"Web System Development for GCC",
+    "url":"https://abdotaher.me/web-system-development-gcc/",
+    "inLanguage":"ar",
+    "about":{"@type":"Service","name":"Website and System Development for GCC"}
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Service",
+    "name":"Website and System Development for GCC Companies",
+    "serviceType":"Backend Development, API Engineering, System Architecture",
+    "provider":{"@type":"Person","name":"Abdulrahman Taher","url":"https://abdotaher.me/"},
+    "areaServed":["SA","AE","QA","KW","BH","OM"]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"عايز اعمل ويب سايت لشركتي، أبدأ بإيه؟",
+        "acceptedAnswer":{"@type":"Answer","text":"ابدأ بتحديد الهدف التجاري، رحلة المستخدم، ونطاق الخصائص الأساسية. بعدها يتم تصميم API والبنية الخلفية بما يناسب النمو."}
+      },
+      {
+        "@type":"Question",
+        "name":"محتاج مبرمج سيستم، هل يكفي ويب سايت فقط؟",
+        "acceptedAnswer":{"@type":"Answer","text":"في أغلب الحالات تحتاج سيستم Backend متكامل وليس واجهة فقط، خصوصًا لو عندك عملاء، طلبات، مدفوعات، أو تقارير تشغيل."}
+      },
+      {
+        "@type":"Question",
+        "name":"كم يستغرق تنفيذ سيستم MVP؟",
+        "acceptedAnswer":{"@type":"Answer","text":"غالبًا من 4 إلى 10 أسابيع حسب نطاق المشروع، مع تسليمات مرحلية قابلة للقياس."}
+      },
+      {
+        "@type":"Question",
+        "name":"أبي أسوي موقع أو سيستم في السعودية، تنفع؟",
+        "acceptedAnswer":{"@type":"Answer","text":"نعم، التنفيذ يشمل تحليل المتطلبات، بناء API، تطوير البنية الخلفية، وتجهيز خطة إطلاق تناسب السوق السعودي."}
+      },
+      {
+        "@type":"Question",
+        "name":"أبغي مبرمج ويب سايت وسيستم في الإمارات، متاح؟",
+        "acceptedAnswer":{"@type":"Answer","text":"نعم، متاح تنفيذ سيستمات ومواقع للشركات في الإمارات مع تسليمات أسبوعية ومعمارية قابلة للتوسع."}
+      },
+      {
+        "@type":"Question",
+        "name":"أبي مبرمج سيستم في الكويت أو قطر أو البحرين أو عُمان، ممكن؟",
+        "acceptedAnswer":{"@type":"Answer","text":"نعم، الخدمات متاحة لكل دول الخليج مع تخصيص التنفيذ حسب نوع المشروع والقطاع."}
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root { --bg:#0d0b1a; --card:#1e1933; --bd:rgba(112,213,230,.14); --tx:#e7deff; --mut:rgba(231,222,255,.72); --pri:#9bf0ff; --acc:#8ff700; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--tx); font-family:'Cairo',sans-serif; line-height:1.8; }
+    .wrap { max-width:1120px; margin:auto; padding:1.25rem; }
+    .top { display:flex; justify-content:space-between; align-items:center; padding:.6rem 0; }
+    .brand { font-family:'Space Grotesk',sans-serif; color:var(--pri); font-weight:700; letter-spacing:.08em; }
+    .btn { display:inline-block; padding:.65rem 1.1rem; border-radius:999px; border:1px solid var(--bd); color:var(--pri); text-decoration:none; }
+    .hero,.card,.faq,.cta,.dialects,.compare { background:var(--card); border:1px solid var(--bd); border-radius:16px; }
+    .hero { padding:1.5rem; margin:1rem 0; }
+    .hero h1 { margin:.2rem 0 0; font-size:clamp(1.4rem,4vw,2.2rem); }
+    .mut { color:var(--mut); }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem; }
+    .card { padding:1rem; }
+    .tag { font-size:.72rem; color:var(--acc); font-weight:700; letter-spacing:.08em; }
+    .faq,.cta,.dialects,.compare { padding:1.2rem; margin-top:1rem; }
+    .links a { color:var(--pri); text-decoration:none; }
+    .dialect-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:.9rem; margin-top:.8rem; }
+    .dialect-item { border:1px dashed var(--bd); border-radius:12px; padding:.8rem; background:rgba(255,255,255,.01); }
+    .dialect-item h3 { margin:.1rem 0 .35rem; font-size:1rem; }
+    .dialect-item p { margin:.2rem 0; color:var(--mut); }
+    .compare-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem; margin-top:.8rem; }
+    .compare-card { border:1px dashed var(--bd); border-radius:12px; padding:.95rem; background:rgba(255,255,255,.01); }
+    .compare-card h3 { margin:.1rem 0 .5rem; }
+    .compare-card p { margin:.35rem 0; color:var(--mut); }
+  </style>
+  <script src="/site-i18n.js" defer></script>
+</head>
+<body>
+  <HomeLikeHeader />
+  <main class="home-like-main">
+  <div class="wrap">
+    <div class="top">
+      <div class="brand">النواة المعمارية</div>
+      <a class="btn" href="/">الصفحة الرئيسية</a>
+    </div>
+
+    <section class="hero">
+      <p class="mut">Pillar Page • GCC Search Intent</p>
+      <h1>عايز اعمل ويب سايت أو سيستم؟ خلّيه متأسس صح من البداية</h1>
+      <p class="mut">لو بتدور على مبرمج يبني موقع شركتك أو سيستم تشغيلي كامل، الأهم مش الواجهة فقط، لكن البنية الخلفية وواجهة الـ API اللي تضمن استقرار ونمو المشروع.</p>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h3>تحليل الفكرة وتحويلها لنظام</h3>
+        <p class="mut">تحديد المتطلبات الأساسية، أدوار المستخدمين، صلاحيات الإدارة، وتدفقات العمليات.</p>
+        <div class="tag">DISCOVERY // ARCHITECTURE</div>
+      </article>
+      <article class="card">
+        <h3>بناء Backend وAPI قابلين للتوسع</h3>
+        <p class="mut">تنفيذ هندسي واضح لتطبيقات الويب والموبايل مع إدارة بيانات آمنة وسريعة.</p>
+        <div class="tag">LARAVEL // NODE.JS // PYTHON</div>
+      </article>
+      <article class="card">
+        <h3>تشغيل ومراقبة وتحسين الأداء</h3>
+        <p class="mut">تقليل بطء النظام وتكلفة التشغيل عبر تحسين الاستعلامات والكاش والبنية السحابية.</p>
+        <div class="tag">POSTGRESQL // REDIS // AWS</div>
+      </article>
+    </section>
+
+    <section class="faq">
+      <h2>أسئلة شائعة</h2>
+      <p><strong>إيه الفرق بين ويب سايت وسيستم؟</strong><br/>الويب سايت غالبًا عرض معلومات، أما السيستم فهو إدارة عمليات وبيانات وصلاحيات وتقارير.</p>
+      <p><strong>هل ينفع نبدأ MVP صغير؟</strong><br/>نعم، الأفضل البدء بنواة قوية ثم التوسع تدريجيًا حسب السوق.</p>
+    </section>
+
+    <section class="compare">
+      <h2>تخصيص مصر مع توضيح الفرق عن السعودية</h2>
+      <p class="mut">لو عايز صفحة مخصّصة لمصر، الأفضل تبنيها بصياغة مصرية واضحة بدل تكرار النص السعودي. النية الشرائية متشابهة، لكن مفردات البحث مختلفة، وده يخلي الرسالة أدق للزائر.</p>
+      <div class="compare-grid">
+        <article class="compare-card">
+          <h3>صياغة مصر</h3>
+          <p>عايز اعمل ويب سايت</p>
+          <p>عايز اعمل سيستم</p>
+          <p>محتاج مبرمج يعمل نظام لشركتي</p>
+          <p><a href="/backend-engineer-egypt/">صفحة مصر</a></p>
+        </article>
+        <article class="compare-card">
+          <h3>صياغة السعودية</h3>
+          <p>أبي أسوي موقع لشركتي</p>
+          <p>أبي مبرمج يسوي سيستم</p>
+          <p>محتاج مطور باك-إند للسعودية</p>
+          <p><a href="/backend-engineer-saudi-arabia/">صفحة السعودية</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="dialects links">
+      <h2>مرادفات البحث بكل اللهجات</h2>
+      <p class="mut">العميل ممكن يكتب نفس الطلب بطرق مختلفة. هنا أهم العبارات الشائعة، وكلها نفس النية: بناء موقع أو سيستم قوي للشركة.</p>
+      <div class="dialect-grid">
+        <article class="dialect-item">
+          <h3>مصر</h3>
+          <p>عايز اعمل ويب سايت</p>
+          <p>عايز اعمل سيستم</p>
+          <p>محتاج مبرمج يعمل نظام لشركتي</p>
+          <p><a href="/backend-engineer-egypt/">صفحة مصر</a></p>
+        </article>
+        <article class="dialect-item">
+          <h3>السعودية</h3>
+          <p>أبي أسوي موقع لشركتي</p>
+          <p>أبي مبرمج يسوي سيستم</p>
+          <p>محتاج مطور باك-إند للسعودية</p>
+          <p><a href="/backend-engineer-saudi-arabia/">صفحة السعودية</a></p>
+        </article>
+        <article class="dialect-item">
+          <h3>الإمارات</h3>
+          <p>أبغي أسوي ويب سايت</p>
+          <p>أبغي مبرمج سيستم في دبي</p>
+          <p>محتاج Backend Developer للإمارات</p>
+          <p><a href="/backend-engineer-uae/">صفحة الإمارات</a></p>
+        </article>
+        <article class="dialect-item">
+          <h3>الكويت</h3>
+          <p>أبي مبرمج موقع الكويت</p>
+          <p>أبي أسوي نظام إدارة</p>
+          <p>محتاج مبرمج باك-إند بالكويت</p>
+          <p><a href="/backend-engineer-kuwait/">صفحة الكويت</a></p>
+        </article>
+        <article class="dialect-item">
+          <h3>قطر</h3>
+          <p>أبي مبرمج يسوي ويب سايت</p>
+          <p>أبي مطور سيستم شركة</p>
+          <p>محتاج API Developer في قطر</p>
+          <p><a href="/backend-engineer-qatar/">صفحة قطر</a></p>
+        </article>
+        <article class="dialect-item">
+          <h3>البحرين وعُمان</h3>
+          <p>أبي/أبغى مبرمج سيستم</p>
+          <p>أريد تطوير موقع شركة</p>
+          <p>محتاج Backend لمشروع ناشئ</p>
+          <p><a href="/backend-engineer-bahrain/">صفحة البحرين</a> • <a href="/backend-engineer-oman/">صفحة عُمان</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta links">
+      <p><strong>تواصل:</strong> <a href="mailto:abdotaher093@gmail.com">Email</a> • <a href="https://wa.me/201008275881">WhatsApp</a></p>
+      <p><strong>صفحات الدول:</strong> <a href="/backend-engineer-egypt/">مصر</a> • <a href="/backend-engineer-saudi-arabia/">السعودية</a> • <a href="/backend-engineer-uae/">الإمارات</a> • <a href="/backend-engineer-qatar/">قطر</a> • <a href="/backend-engineer-kuwait/">الكويت</a> • <a href="/backend-engineer-bahrain/">البحرين</a> • <a href="/backend-engineer-oman/">عُمان</a></p>
+    </section>
+  </div>
+  </main>
+  <HomeLikeFooter />
+</body>
+</html>

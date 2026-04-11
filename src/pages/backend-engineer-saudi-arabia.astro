@@ -1,0 +1,97 @@
+---
+import HomeLikeHeader from '../components/HomeLikeHeader.astro';
+import HomeLikeFooter from '../components/HomeLikeFooter.astro';
+---
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>مبرمج ومهندس باك-إند في السعودية | تصميم موقع وسيستم | عبدالرحمن طاهر</title>
+  <meta name="description" content="لو تبحث عن مبرمج باك-إند في السعودية لبناء موقع أو سيستم لشركتك، أقدّم تطوير Backend وAPI ومعمارية قابلة للتوسع تناسب منتجات السوق السعودي باستخدام Laravel وNode.js وPython."/>
+  <meta name="keywords" content="مبرمج في السعودية, أبي أسوي موقع, أبي مبرمج يسوي سيستم, Backend Developer Saudi Arabia, Laravel Saudi, API Development Saudi"/>
+  <meta name="robots" content="index, follow, max-image-preview:large"/>
+  <link rel="canonical" href="https://abdotaher.me/backend-engineer-saudi-arabia/"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="مبرمج ومهندس باك-إند في السعودية | عبدالرحمن طاهر"/>
+  <meta property="og:description" content="تطوير مواقع وسيستمات وواجهات API للشركات في السعودية مع بنية تقنية جاهزة للنمو والتكاملات التشغيلية."/>
+  <meta property="og:url" content="https://abdotaher.me/backend-engineer-saudi-arabia/"/>
+  <meta property="og:image" content="https://abdotaher.me/image.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="مبرمج ومهندس باك-إند في السعودية"/>
+  <meta name="twitter:description" content="أبي أسوي موقع أو سيستم في السعودية؟ هذه صفحة مخصّصة لبناء Backend وAPI مناسبين للسوق السعودي."/>
+  <meta name="twitter:image" content="https://abdotaher.me/image.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Backend Engineer in Saudi Arabia","serviceType":"Website Systems, Backend APIs, Microservices","provider":{"@type":"Person","name":"Abdulrahman Taher","url":"https://abdotaher.me/"},"areaServed":{"@type":"Country","name":"Saudi Arabia"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"أبي مبرمج يسوي ويب سايت أو سيستم في السعودية، تقدر؟","acceptedAnswer":{"@type":"Answer","text":"نعم، أقدّم تنفيذ يبدأ من تحليل الفكرة إلى بناء الـ API ولوحة الإدارة والبنية الخلفية المناسبة للنمو."}},{"@type":"Question","name":"هل هذا مناسب للشركات التشغيلية في السعودية؟","acceptedAnswer":{"@type":"Answer","text":"نعم، خصوصًا للمنتجات التي تحتاج إدارة طلبات أو مناديب أو مدفوعات أو تقارير تشغيل لحظية."}},{"@type":"Question","name":"هل أبدأ بموقع تعريفي أو نظام تشغيل كامل؟","acceptedAnswer":{"@type":"Answer","text":"إذا كان المشروع فيه طلبات أو مناديب أو تقارير أو صلاحيات، فالأفضل البدء ببنية نظام واضحة حتى لو كانت الواجهة الأولى بسيطة."}},{"@type":"Question","name":"هل ينفع تنفيذ MVP ثم التوسع؟","acceptedAnswer":{"@type":"Answer","text":"نعم، يمكن بناء MVP قوي يركّز على الأساسيات ثم تطويره لاحقًا حسب نتائج التشغيل."}}]}</script>
+  <style>
+    :root{--bg:#0d0b1a;--card:#1e1933;--bd:rgba(112,213,230,.14);--tx:#e7deff;--mut:rgba(231,222,255,.72);--pri:#9bf0ff;--acc:#8ff700}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--tx);font-family:'Cairo',sans-serif;line-height:1.8}
+    .wrap{max-width:1100px;margin:auto;padding:1.25rem}
+    .top{display:flex;justify-content:space-between;align-items:center;padding:.6rem 0}
+    .brand{font-family:'Space Grotesk',sans-serif;color:var(--pri);font-weight:700;letter-spacing:.08em}
+    .btn{display:inline-block;padding:.65rem 1.1rem;border-radius:999px;border:1px solid var(--bd);color:var(--pri);text-decoration:none}
+    .hero,.card,.faq,.cta,.insight,.links-box{background:var(--card);border:1px solid var(--bd);border-radius:16px}
+    .hero{padding:1.5rem;margin:1rem 0}.hero h1{margin:.2rem 0 0;font-size:clamp(1.4rem,4vw,2.2rem)}
+    .mut{color:var(--mut)} .grid,.links-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem}
+    .card,.insight,.links-box{padding:1rem}.tag{font-size:.72rem;color:var(--acc);font-weight:700;letter-spacing:.08em}
+    .faq,.cta{padding:1.2rem;margin-top:1rem}.links a{color:var(--pri);text-decoration:none}
+    .links-grid a{display:block;padding:.85rem;border:1px dashed var(--bd);border-radius:12px;color:var(--pri);text-decoration:none}
+  </style>
+  <script src="/site-i18n.js" defer></script>
+</head>
+<body>
+  <HomeLikeHeader />
+  <main class="home-like-main">
+  <div class="wrap">
+    <div class="top"><div class="brand">النواة المعمارية</div><a class="btn" href="/">الصفحة الرئيسية</a></div>
+    <section class="hero">
+      <p class="mut">السعودية • SEO Landing Page</p>
+      <h1>مبرمج ومهندس باك-إند في السعودية لبناء مواقع وسيستمات قابلة للتوسع</h1>
+      <p class="mut">لو تقول: <strong>أبي أسوي موقع لشركتي</strong> أو <strong>أبي مبرمج يسوي سيستم</strong> أو <strong>محتاج مطور باك-إند للسعودية</strong>، فهذه الصفحة موجّهة لسوق السعودية بصياغة مناسبة واهتمام واضح بأنظمة التشغيل وواجهات الـ API والتوسّع.</p>
+    </section>
+    <section class="grid">
+      <article class="card"><h3>أنظمة تشغيل ومنصات طلبات</h3><p class="mut">بناء Backend ينظّم الطلبات، الفروع، المناديب، التقارير، والإشعارات بما يناسب المنتجات التشغيلية السريعة.</p><div class="tag">OPERATIONS // DASHBOARDS</div></article>
+      <article class="card"><h3>API Architecture قابلة للتوسع</h3><p class="mut">تصميم REST وgRPC APIs ثابتة لتطبيقات الويب والجوال مع تنظيم واضح للصلاحيات والتكاملات.</p><div class="tag">REST // gRPC // AUTH</div></article>
+      <article class="card"><h3>أداء وتكلفة وتشغيل</h3><p class="mut">تحسين قواعد البيانات والكاش والبنية السحابية لتقليل البطء مع المحافظة على وضوح التشغيل.</p><div class="tag">POSTGRESQL // REDIS // AWS</div></article>
+    </section>
+    <section class="insight" style="margin-top:1rem;">
+      <h2>لماذا هذه الصفحة مختلفة للسعودية؟</h2>
+      <p class="mut">النية هنا ليست مجرد "تصميم موقع" فقط، بل غالبًا بناء سيستم يدير عمليات الشركة ويعطي الفريق رؤية واضحة للأداء. لذلك صغت هذه الصفحة بعبارات بحث شائعة في السعودية وربطتها بنوع الأنظمة التي تحتاجها الشركات هناك فعلًا.</p>
+    </section>
+    <section class="faq">
+      <h2>أسئلة شائعة في السعودية</h2>
+      <p><strong>أبي مبرمج يسوي ويب سايت أو سيستم في السعودية، تقدر؟</strong><br/>نعم، من مرحلة التحليل إلى الإطلاق، مع تسليمات واضحة وخطة تنفيذ قصيرة المدى.</p>
+      <p><strong>هل ينفع لمشروع جديد أو MVP؟</strong><br/>نعم، أبدأ بالنواة الأساسية للنظام حتى يطلع المنتج بسرعة بدون تعقيد مبكر.</p>
+      <p><strong>هل أبدأ بموقع تعريفي أو نظام تشغيل كامل؟</strong><br/>إذا كان عندك طلبات أو تقارير أو إدارة فروع أو صلاحيات، فالأفضل بناء Backend مرتب من البداية حتى يكون التوسع طبيعيًا.</p>
+      <p><strong>هل مناسب لمنتجات التوصيل والخدمات؟</strong><br/>نعم، خصوصًا لو المشروع يحتاج إدارة عمليات لحظية وتوزيع مهام وتكاملات تشغيلية.</p>
+    </section>
+    <section class="insight" style="margin-top:1rem;">
+      <h2>متى تكون هذه الصفحة مناسبة لك في السعودية؟</h2>
+      <p class="mut">إذا كنت تبني منصة طلبات، تطبيق خدمات، سيستم داخلي لإدارة العمليات، أو منتج SaaS يحتاج API ولوحات إدارة وصلاحيات، فهذه الصفحة أقرب لاحتياجك من صفحات عامة عن تصميم المواقع فقط.</p>
+    </section>
+    <section class="links-box links" style="margin-top:1rem;">
+      <h2>روابط داخلية مفيدة</h2>
+      <div class="links-grid">
+        <a href="/">العودة إلى الصفحة الرئيسية</a>
+        <a href="/web-system-development-gcc/">دليل بناء موقع أو سيستم بلهجات الخليج</a>
+        <a href="/backend-engineer-egypt/">قارن مع صفحة مصر</a>
+        <a href="/backend-engineer-uae/">صفحة الإمارات</a>
+        <a href="/backend-engineer-qatar/">صفحة قطر</a>
+        <a href="/backend-engineer-kuwait/">صفحة الكويت</a>
+        <a href="/backend-engineer-bahrain/">صفحة البحرين</a>
+        <a href="/backend-engineer-oman/">صفحة عُمان</a>
+      </div>
+    </section>
+    <section class="cta links">
+      <p><strong>تواصل الآن:</strong> <a href="mailto:abdotaher093@gmail.com">Email</a> • <a href="https://wa.me/201008275881">WhatsApp</a></p>
+      <p><strong>صفحات مرتبطة:</strong> <a href="/backend-engineer-uae/">الإمارات</a> • <a href="/backend-engineer-qatar/">قطر</a> • <a href="/backend-engineer-kuwait/">الكويت</a> • <a href="/backend-engineer-bahrain/">البحرين</a> • <a href="/backend-engineer-oman/">عُمان</a></p>
+    </section>
+  </div>
+  </main>
+  <HomeLikeFooter />
+</body>
+</html>

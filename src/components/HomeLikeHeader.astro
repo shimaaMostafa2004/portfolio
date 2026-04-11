@@ -1,0 +1,335 @@
+<header>
+  <nav aria-label="التنقل الرئيسي">
+    <div class="nav-brand">
+      <span class="material-symbols-outlined" aria-hidden="true">terminal</span>
+      <span data-ar>النواة المعمارية</span>
+      <span data-en>Architectural Core</span>
+    </div>
+
+    <div class="nav-links">
+      <a href="/projects/" data-ar>المشاريع</a>
+      <a href="/projects/" data-en>Projects</a>
+      <a href="/services/" data-ar>الخدمات</a>
+      <a href="/services/" data-en>Services</a>
+      <a href="/offers/" class="nav-flag-link" data-ar>العروض <span class="nav-flag">HOT</span></a>
+      <a href="/offers/" class="nav-flag-link" data-en>Offers <span class="nav-flag">HOT</span></a>
+      <a href="/blog/" data-ar>المقالات</a>
+      <a href="/blog/" data-en>Articles</a>
+      <a href="/#stack" data-ar>التقنيات</a>
+      <a href="/#stack" data-en>Stack</a>
+      <a href="/#experience" data-ar>الخبرة</a>
+      <a href="/#experience" data-en>Experience</a>
+
+      <div class="lang-toggle" role="group" aria-label="اختيار اللغة">
+        <a class="lang-btn" href="?lang=ar">عربي</a>
+        <a class="lang-btn" href="?lang=en">EN</a>
+      </div>
+
+      <a href="/#contact" class="btn-contact" data-ar>تواصل معي</a>
+      <a href="/#contact" class="btn-contact" data-en>Contact</a>
+    </div>
+  </nav>
+</header>
+
+<nav class="mobile-nav" aria-label="التنقل السريع">
+  <a href="/">
+    <span class="material-symbols-outlined" aria-hidden="true">home</span>
+    <span data-ar>الرئيسية</span><span data-en>Home</span>
+  </a>
+  <a href="/#about">
+    <span class="material-symbols-outlined" aria-hidden="true">person</span>
+    <span data-ar>من أنا</span><span data-en>About</span>
+  </a>
+  <a href="/projects/">
+    <span class="material-symbols-outlined" aria-hidden="true">architecture</span>
+    <span data-ar>مشاريع</span><span data-en>Projects</span>
+  </a>
+  <a href="/#experience">
+    <span class="material-symbols-outlined" aria-hidden="true">history</span>
+    <span data-ar>خبرة</span><span data-en>Logs</span>
+  </a>
+  <a href="/#services">
+    <span class="material-symbols-outlined" aria-hidden="true">settings_suggest</span>
+    <span data-ar>خدمات</span><span data-en>Services</span>
+  </a>
+  <a href="/#contact">
+    <span class="material-symbols-outlined" aria-hidden="true">mail</span>
+    <span data-ar>تواصل</span><span data-en>Contact</span>
+  </a>
+</nav>
+
+<style is:global>
+  @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
+  :root {
+    --c-bg: #0d0b1a;
+    --c-card: #1e1933;
+    --c-border: rgba(112, 213, 230, 0.12);
+    --c-primary: #9bf0ff;
+    --c-text: #e7deff;
+    --c-muted: rgba(231, 222, 255, 0.5);
+    --font-ar: 'Cairo', sans-serif;
+    --font-en: 'Space Grotesk', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    background: var(--c-bg);
+    color: var(--c-text);
+    font-family: var(--font-ar);
+    min-height: 100dvh;
+  }
+
+  body.lang-en {
+    font-family: var(--font-en);
+    direction: ltr;
+  }
+
+  body.lang-en [data-ar] {
+    display: none !important;
+  }
+
+  body.lang-ar [data-en] {
+    display: none !important;
+  }
+
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    vertical-align: middle;
+  }
+
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background: rgba(13, 11, 26, 0.75);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--c-border);
+  }
+
+  nav {
+    max-width: 1280px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+    height: 4.5rem;
+  }
+
+  .nav-brand {
+    font-family: var(--font-mono);
+    color: var(--c-primary);
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .nav-links a {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--c-muted);
+    text-decoration: none;
+    transition: color 0.25s;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    color: var(--c-primary);
+  }
+
+  .nav-flag-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+  }
+
+  .nav-flag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.22rem 0.48rem;
+    border-radius: 999px;
+    font-size: 0.52rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    color: #ffe9d6;
+    background: linear-gradient(135deg, #ff7a18, #ff3d00);
+    box-shadow: 0 0 18px rgba(255, 90, 0, 0.28);
+  }
+
+  .btn-contact {
+    background: var(--c-primary);
+    color: #000000;
+    padding: 0.5rem 1.5rem;
+    border-radius: 9999px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .nav-links a.btn-contact,
+  .nav-links a.btn-contact:hover,
+  .nav-links a.btn-contact:active,
+  .nav-links a.btn-contact:visited {
+    color: #000000;
+  }
+
+  .lang-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    background: rgba(155, 240, 255, 0.08);
+    border: 1px solid var(--c-border);
+    border-radius: 9999px;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .lang-toggle .lang-btn {
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    color: var(--c-muted);
+    text-decoration: none;
+  }
+
+  .lang-toggle .lang-btn:hover {
+    color: var(--c-primary);
+  }
+
+  .home-like-main {
+    max-width: 1280px;
+    margin: auto;
+    padding: 6rem 1.5rem 4rem;
+    min-height: 68vh;
+  }
+
+  .top,
+  .topbar {
+    display: none !important;
+  }
+
+  footer {
+    background: #0a0814;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 3rem 1.5rem;
+  }
+
+  .footer-inner {
+    max-width: 1280px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .footer-copy {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--c-muted);
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .footer-links a {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--c-muted);
+    text-decoration: none;
+  }
+
+  .footer-links a:hover {
+    color: var(--c-primary);
+  }
+
+  .footer-contact {
+    margin-inline-start: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.45rem 0.85rem;
+    border-radius: 999px;
+    border: 1px solid rgba(155, 240, 255, 0.24);
+    background: rgba(155, 240, 255, 0.06);
+    color: var(--c-primary);
+    text-decoration: none;
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+  }
+
+  .mobile-nav {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(13, 11, 26, 0.85);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid var(--c-border);
+    justify-content: space-around;
+    align-items: center;
+    height: 4rem;
+  }
+
+  .mobile-nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    font-size: 0.55rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--c-muted);
+    text-decoration: none;
+  }
+
+  .mobile-nav a.active,
+  .mobile-nav a:hover {
+    color: var(--c-primary);
+  }
+
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+
+    .mobile-nav {
+      display: flex;
+    }
+
+    .home-like-main {
+      padding-bottom: 5.5rem;
+    }
+  }
+</style>

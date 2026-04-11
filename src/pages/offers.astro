@@ -1,0 +1,374 @@
+---
+import HomeLikeHeader from '../components/HomeLikeHeader.astro';
+import HomeLikeFooter from '../components/HomeLikeFooter.astro';
+---
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>العروض المناسبة | MVP وبناء السيستم والدعم المستمر | عبدالرحمن طاهر</title>
+  <meta name="description" content="صفحة عروض مستقلة توضح 3 مسارات مناسبة للعمل: إطلاق MVP، بناء سيستم متكامل، أو تطوير ودعم مستمر للأنظمة القائمة."/>
+  <meta name="keywords" content="عروض برمجة, عرض MVP, عرض بناء سيستم, دعم backend, باقات تطوير"/>
+  <meta name="robots" content="index, follow, max-image-preview:large"/>
+  <link rel="canonical" href="https://abdotaher.me/offers/"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="العروض المناسبة | MVP وبناء السيستم والدعم المستمر"/>
+  <meta property="og:description" content="3 عروض واضحة تساعدك تختار المسار المناسب لمشروعك: MVP أو سيستم متكامل أو دعم مستمر."/>
+  <meta property="og:url" content="https://abdotaher.me/offers/"/>
+  <meta property="og:image" content="https://abdotaher.me/image.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="العروض المناسبة"/>
+  <meta name="twitter:description" content="اختر بين MVP، بناء سيستم، أو دعم مستمر حسب مرحلة مشروعك."/>
+  <meta name="twitter:image" content="https://abdotaher.me/image.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Backend Offers","provider":{"@type":"Person","name":"Abdulrahman Taher","url":"https://abdotaher.me/"},"serviceType":"MVP Launch, System Build, Ongoing Backend Support","areaServed":["Egypt","Saudi Arabia","United Arab Emirates","Qatar","Kuwait","Bahrain","Oman"],"inLanguage":"ar"}</script>
+  <style>
+    :root{--bg:#0d0b1a;--card:#1e1933;--soft:rgba(30,25,51,.88);--bd:rgba(112,213,230,.14);--tx:#e7deff;--mut:rgba(231,222,255,.72);--pri:#9bf0ff;--acc:#8ff700}
+    *{box-sizing:border-box}
+    body{margin:0;background:
+      radial-gradient(circle at top right, rgba(155,240,255,.08), transparent 30%),
+      radial-gradient(circle at bottom left, rgba(143,247,0,.06), transparent 28%),
+      var(--bg);color:var(--tx);font-family:'Cairo',sans-serif;line-height:1.9;padding-top:6.5rem}
+    .wrap{max-width:1120px;margin:auto;padding:1.25rem}
+    .top{position:fixed;top:.5rem;left:50%;transform:translateX(-50%);z-index:100;width:min(calc(100% - 1rem),1120px);display:flex;justify-content:space-between;align-items:center;padding:.9rem 1rem;background:rgba(13,11,26,.88);backdrop-filter:blur(18px);border:1px solid var(--bd);border-radius:18px;box-shadow:0 16px 40px rgba(0,0,0,.22)}
+    .brand{font-family:'Space Grotesk',sans-serif;color:var(--pri);font-weight:700;letter-spacing:.08em}
+    .nav-actions{display:flex;gap:.6rem;flex-wrap:wrap}
+    .btn{display:inline-block;padding:.65rem 1.1rem;border-radius:999px;border:1px solid var(--bd);color:var(--pri);text-decoration:none}
+    .btn-flag-link{display:inline-flex;align-items:center;gap:.45rem}
+    .btn-flag{display:inline-flex;align-items:center;justify-content:center;padding:.22rem .48rem;border-radius:999px;font-size:.52rem;font-weight:900;letter-spacing:.12em;color:#ffe9d6;background:linear-gradient(135deg,#ff7a18,#ff3d00);box-shadow:0 0 18px rgba(255,90,0,.28)}
+    .btn-tab-active{background:rgba(155,240,255,.12);border-color:rgba(155,240,255,.34);color:var(--tx);box-shadow:inset 0 0 0 1px rgba(155,240,255,.08)}
+    .btn-primary{background:var(--pri);color:#001f24;border-color:transparent;font-weight:800}
+    .hero,.section,.offer-card,.offer-detail,.cta{background:var(--soft);border:1px solid var(--bd);border-radius:20px;box-shadow:0 18px 48px rgba(0,0,0,.18)}
+    .hero,.section,.cta,.offer-detail{padding:1.45rem;margin-top:1rem}
+    .hero{position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;top:-40px;left:-30px;width:190px;height:190px;border-radius:50%;background:radial-gradient(circle, rgba(155,240,255,.16), transparent 70%)}
+    .eyebrow{display:inline-flex;align-items:center;gap:.55rem;padding:.45rem .8rem;border-radius:999px;border:1px solid rgba(155,240,255,.14);background:rgba(255,255,255,.02);color:var(--pri);font-size:.78rem;font-weight:700}
+    h1{margin:.85rem 0;font-size:clamp(1.95rem,4.6vw,3.2rem);line-height:1.3;max-width:15ch}
+    h2{margin:.1rem 0 .8rem;font-size:1.45rem}
+    h3{margin:.1rem 0 .6rem;font-size:1.1rem}
+    p,li{color:var(--mut)}
+    strong,a{color:var(--pri)}
+    .lead{font-size:1.03rem;max-width:66ch}
+    .section-kicker{font-size:.75rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--acc);margin-bottom:.35rem}
+    .offers-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin-top:1rem}
+    .offer-card{padding:1.25rem;position:relative}
+    .offer-card.featured{border-color:rgba(155,240,255,.36);box-shadow:0 22px 56px rgba(0,0,0,.22)}
+    .offer-badge{display:inline-block;padding:.35rem .7rem;border-radius:999px;background:rgba(143,247,0,.12);border:1px solid rgba(143,247,0,.24);color:var(--acc);font-size:.72rem;font-weight:800;letter-spacing:.08em}
+    .offer-sub{font-size:.92rem;margin-bottom:.9rem}
+    .offer-card ul{margin:.65rem 0 0;padding-inline-start:1.1rem}
+    .offer-card li{margin-bottom:.38rem}
+    .price-note{margin-top:1rem;padding-top:.9rem;border-top:1px dashed var(--bd)}
+    .offer-link{display:inline-flex;align-items:center;gap:.4rem;margin-top:1rem;font-weight:800}
+    .offer-detail-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:1rem;align-items:start}
+    .detail-box{border:1px dashed var(--bd);border-radius:16px;padding:1rem;background:rgba(255,255,255,.02)}
+    .detail-box ul{margin:.45rem 0 0;padding-inline-start:1.1rem}
+    .detail-box li{margin-bottom:.38rem}
+    .example-list{display:grid;gap:.65rem;margin-top:.75rem}
+    .example-item{padding:.75rem .85rem;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid rgba(155,240,255,.08)}
+    .example-item strong{display:block;margin-bottom:.2rem;color:var(--tx)}
+    .detail-meta{display:grid;gap:.8rem}
+    .detail-pill{display:inline-flex;align-items:center;padding:.38rem .72rem;border-radius:999px;background:rgba(255,255,255,.03);border:1px solid rgba(155,240,255,.12);color:var(--pri);font-size:.74rem;font-weight:800}
+    .cta-inline{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem}
+    .price-request{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--bd)}
+    .channel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+    .channel-card{border:1px dashed var(--bd);border-radius:16px;padding:1rem;background:rgba(255,255,255,.02)}
+    .channel-card p{margin-bottom:.9rem}
+    .mini-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+    .mini-card{border:1px dashed var(--bd);border-radius:16px;padding:1rem;background:rgba(255,255,255,.02)}
+    .cta-actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1rem}
+    @media (max-width:760px){.top{align-items:flex-start}h1{max-width:none}.offer-detail-grid{grid-template-columns:1fr}}
+  </style>
+  <script src="/site-i18n.js" defer></script>
+</head>
+<body>
+  <HomeLikeHeader />
+  <main class="home-like-main">
+  <div class="wrap">
+    <div class="top">
+      <div class="brand">النواة المعمارية</div>
+      <div class="nav-actions">
+        <a class="btn" href="/">الرئيسية</a>
+        <a class="btn" href="/services/">الخدمات</a>
+        <a class="btn btn-tab-active btn-flag-link" href="/offers/" aria-current="page">العروض <span class="btn-flag">HOT</span></a>
+        <a class="btn" href="/blog/">المقالات</a>
+        <a class="btn btn-primary" href="/#contact">تواصل</a>
+      </div>
+    </div>
+
+    <section class="hero">
+      <span class="eyebrow">العروض • اختر المسار المناسب</span>
+      <h1>3 عروض واضحة حسب مرحلة مشروعك، بدل أن تبدأ بشكل مرتبك</h1>
+      <p class="lead">ليس كل مشروع يحتاج نفس نوع العمل. أحيانًا تحتاج MVP سريعًا، وأحيانًا تحتاج سيستمًا متكاملًا من البداية، وأحيانًا يكون لديك نظام قائم يحتاج تطويرًا ودعمًا مستمرًا. هذه الصفحة تساعدك تختار العرض الأقرب لاحتياجك.</p>
+    </section>
+
+    <section class="section">
+      <div class="section-kicker">نظرة سريعة</div>
+      <h2>العروض المناسبة</h2>
+      <p>لو تريد مقارنة سريعة، فهذه هي الفروق الأساسية. وبعدها ستجد تحتها شرحًا أعمق لكل عرض على حدة.</p>
+      <div class="offers-grid">
+        <article class="offer-card">
+          <span class="offer-badge">MVP</span>
+          <h3>إطلاق MVP</h3>
+          <p class="offer-sub">مناسب إذا كنت تريد اختبار الفكرة بسرعة، لكن بأساس تقني محترم.</p>
+          <ul>
+            <li>تحليل مختصر وواضح للنطاق الأول</li>
+            <li>Backend وAPI للوظائف الأساسية</li>
+            <li>لوحة إدارة بسيطة أو تشغيلية حسب الحاجة</li>
+            <li>ترتيب الأولويات لتقليل الهدر</li>
+          </ul>
+          <div class="price-note">
+            <p><strong>مناسب لمن:</strong> الشركات الناشئة، الفكرة الجديدة، النسخة الأولى.</p>
+          </div>
+          <a class="offer-link" href="#offer-mvp">تفاصيل العرض</a>
+        </article>
+
+        <article class="offer-card featured">
+          <span class="offer-badge">SYSTEM BUILD</span>
+          <h3>بناء سيستم متكامل</h3>
+          <p class="offer-sub">مناسب إذا كان عندك عمليات واضحة، مستخدمون وصلاحيات، وتحتاج نظامًا يخدم العمل فعليًا.</p>
+          <ul>
+            <li>تحليل العمليات وتحويلها إلى متطلبات</li>
+            <li>تصميم قاعدة البيانات والبنية الخلفية</li>
+            <li>بناء API ولوحات الإدارة والتقارير الأساسية</li>
+            <li>تهيئة أفضل للتوسع من البداية</li>
+          </ul>
+          <div class="price-note">
+            <p><strong>مناسب لمن:</strong> الشركات التشغيلية، SaaS، الحجوزات، الطلبات، الأنظمة الداخلية.</p>
+          </div>
+          <a class="offer-link" href="#offer-build">تفاصيل العرض</a>
+        </article>
+
+        <article class="offer-card">
+          <span class="offer-badge">ONGOING SUPPORT</span>
+          <h3>تطوير ودعم مستمر</h3>
+          <p class="offer-sub">مناسب إذا كان لديك نظام قائم وتحتاج شخصًا يطوره ويثبّت تشغيله بدل الحلول المؤقتة.</p>
+          <ul>
+            <li>إضافة خصائص وتحسينات جديدة</li>
+            <li>تحسين الأداء والاستقرار</li>
+            <li>تنظيف أجزاء مرهقة في النظام</li>
+            <li>متابعة ما بعد الإطلاق والدعم الفني</li>
+          </ul>
+          <div class="price-note">
+            <p><strong>مناسب لمن:</strong> المنتجات القائمة، الأنظمة المتعبة، فرق تحتاج شريكًا تقنيًا مستمرًا.</p>
+          </div>
+          <a class="offer-link" href="#offer-support">تفاصيل العرض</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="offer-mvp" class="offer-detail">
+      <div class="section-kicker">Offer 01</div>
+      <h2>إطلاق MVP</h2>
+      <div class="offer-detail-grid">
+        <div class="detail-box">
+          <p>هذا العرض مناسب عندما تكون الفكرة موجودة، لكنك لا تريد أن تستهلك كل الوقت والميزانية في نسخة ضخمة قبل أن تختبر السوق أو الاستخدام الفعلي. هنا نركّز على بناء النسخة الأولى التي تحمل جوهر المنتج، وتسمح لك أن تبدأ بشكل صحيح بدل البدء بشكل سريع ثم إعادة كل شيء لاحقًا.</p>
+          <p>الهدف من هذا العرض ليس أن يكون "أرخص نسخة" فقط، بل أن يكون <strong>أذكى نقطة بداية</strong>: وظائف أساسية واضحة، بنية خلفية نظيفة، وإطلاق يمكن البناء عليه.</p>
+          <ul>
+            <li>تحليل نطاق الإصدار الأول فقط</li>
+            <li>ترتيب الأولويات وفصل الضروري عن المؤجل</li>
+            <li>بناء Backend وAPI والبيانات الأساسية</li>
+            <li>لوحة تشغيل أو إدارة بسيطة حسب الحاجة</li>
+            <li>خطة واضحة لما بعد أول إطلاق</li>
+          </ul>
+          <div class="price-request">
+            <p><strong>اطلب تسعير هذا العرض:</strong> اختر القناة المناسبة وسأفتح لك رسالة جاهزة بالتفاصيل المطلوبة.</p>
+            <div class="cta-inline">
+              <a class="btn btn-primary" href="mailto:info@abdotaher.me?subject=%D8%B7%D9%84%D8%A8%20%D8%AA%D8%B3%D8%B9%D9%8A%D8%B1%20-%20%D8%A5%D8%B7%D9%84%D8%A7%D9%82%20MVP&body=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%0A%0A%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%AA%D8%B3%D8%B9%D9%8A%D8%B1%20%D8%B9%D8%B1%D8%B6%20%D8%A5%D8%B7%D9%84%D8%A7%D9%82%20MVP.%0A%0A%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D8%A7%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%3A%0A-%20%D9%86%D9%88%D8%B9%20%D8%A7%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%3A%0A-%20%D9%81%D9%83%D8%B1%D8%A9%20%D9%85%D8%AE%D8%AA%D8%B5%D8%B1%D8%A9%3A%0A-%20%D8%A3%D9%87%D9%85%20%D8%A7%D9%84%D9%88%D8%B8%D8%A7%D8%A6%D9%81%20%D9%81%D9%8A%20%D8%A7%D9%84%D9%86%D8%B3%D8%AE%D8%A9%20%D8%A7%D9%84%D8%A3%D9%88%D9%84%D9%89%3A%0A-%20%D9%87%D9%84%20%D9%8A%D9%88%D8%AC%D8%AF%20%D9%84%D9%88%D8%AD%D8%A9%20%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9%D8%9F%0A-%20%D9%87%D9%84%20%D9%87%D9%88%20%D9%88%D9%8A%D8%A8%20%D9%81%D9%82%D8%B7%20%D8%A3%D9%85%20%D9%8A%D9%88%D8%AC%D8%AF%20%D9%85%D9%88%D8%A8%D8%A7%D9%8A%D9%84%D8%9F%0A-%20%D8%A7%D9%84%D9%85%D8%AF%D8%A9%20%D8%A7%D9%84%D9%85%D8%AA%D9%88%D9%82%D8%B9%D8%A9%20%D9%84%D8%AF%D9%8A%D9%83%3A%0A-%20%D8%A3%D9%8A%20%D8%B1%D9%88%D8%A7%D8%A8%D8%B7%20%D8%A3%D9%88%20%D9%85%D8%B1%D8%A7%D8%AC%D8%B9%20%D9%85%D9%87%D9%85%D8%A9%3A">اطلب السعر عبر البريد</a>
+              <a class="btn" href="https://wa.me/201008275881?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%0A%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%AA%D8%B3%D8%B9%D9%8A%D8%B1%20%D8%B9%D8%B1%D8%B6%20%D8%A5%D8%B7%D9%84%D8%A7%D9%82%20MVP.%0A%0A%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D8%A7%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%3A%0A-%20%D9%86%D9%88%D8%B9%20%D8%A7%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%3A%0A-%20%D9%81%D9%83%D8%B1%D8%A9%20%D9%85%D8%AE%D8%AA%D8%B5%D8%B1%D8%A9%3A%0A-%20%D8%A3%D9%87%D9%85%20%D8%A7%D9%84%D9%88%D8%B8%D8%A7%D8%A6%D9%81%20%D9%81%D9%8A%20%D8%A7%D9%84%D9%86%D8%B3%D8%AE%D8%A9%20%D8%A7%D9%84%D8%A3%D9%88%D9%84%D9%89%3A%0A-%20%D9%87%D9%84%20%D9%8A%D9%88%D8%AC%D8%AF%20%D9%84%D9%88%D8%AD%D8%A9%20%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9%D8%9F%0A-%20%D9%87%D9%84%20%D9%87%D9%88%20%D9%88%D9%8A%D8%A8%20%D9%81%D9%82%D8%B7%20%D8%A3%D9%85%20%D9%8A%D9%88%D8%AC%D8%AF%20%D9%85%D9%88%D8%A8%D8%A7%D9%8A%D9%84%D8%9F%0A-%20%D8%A7%D9%84%D9%85%D8%AF%D8%A9%20%D8%A7%D9%84%D9%85%D8%AA%D9%88%D9%82%D8%B9%D8%A9%20%D9%84%D8%AF%D9%8A%D9%83%3A%0A-%20%D8%A3%D9%8A%20%D8%B1%D9%88%D8%A7%D8%A8%D8%B7%20%D8%A3%D9%88%20%D9%85%D8%B1%D8%A7%D8%AC%D8%B9%20%D9%85%D9%87%D9%85%D8%A9%3A">اطلب السعر عبر واتساب</a>
+            </div>
+          </div>
+          <div class="cta-inline">
+            <a class="btn btn-primary" href="mailto:info@abdotaher.me?subject=MVP Offer">ابدأ بهذا العرض</a>
+            <a class="btn" href="/estimating-mvp-cost-and-scope/">اقرأ عن تقدير MVP</a>
+          </div>
+        </div>
+        <div class="detail-meta">
+          <div class="detail-box">
+            <span class="detail-pill">الأفضل إذا كنت</span>
+            <p>تختبر فكرة جديدة، تطلق منتجًا لأول مرة، أو تريد الدخول للسوق بسرعة لكن بقاعدة تقنية محترمة.</p>
+          </div>
+          <div class="detail-box">
+            <span class="detail-pill">النتيجة المتوقعة</span>
+            <p>نسخة أولى واضحة ومستخدمة فعليًا، بدل مشروع كبير يتأخر دون اختبار حقيقي.</p>
+          </div>
+          <div class="detail-box">
+            <span class="detail-pill">أمثلة مناسبة</span>
+            <div class="example-list">
+              <div class="example-item">
+                <strong>منصة حجز أولية</strong>
+                نسخة أولى تتيح التسجيل، إنشاء الحجز، ولوحة بسيطة لمتابعة الطلبات.
+              </div>
+              <div class="example-item">
+                <strong>فكرة SaaS في أول السوق</strong>
+                بناء الوظائف الأساسية فقط مع API مرتب يسمح بتوسيع المنتج لاحقًا.
+              </div>
+              <div class="example-item">
+                <strong>Dashboard تشغيل داخلي</strong>
+                لوحة تساعد الفريق يبدأ الشغل بسرعة بدل إدارة العمليات يدويًا من يومه الأول.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="offer-build" class="offer-detail">
+      <div class="section-kicker">Offer 02</div>
+      <h2>بناء سيستم متكامل</h2>
+      <div class="offer-detail-grid">
+        <div class="detail-box">
+          <p>هذا العرض مناسب عندما يكون المشروع أكثر من مجرد فكرة أولية. ربما عندك عمليات واضحة داخل الشركة، أنواع مستخدمين مختلفة، صلاحيات، حالات، تقارير، وتدفق عمل يجب أن يديره النظام. هنا لا نتعامل مع الأمر كـ MVP بسيط، بل كنظام فعلي يحتاج تصميمًا أوضح من البداية.</p>
+          <p>الفكرة هنا ليست فقط "بناء شاشات"، بل ترجمة العمليات إلى نظام يمكن تشغيله عليه، ويخدم الفريق فعليًا كل يوم.</p>
+          <ul>
+            <li>تحليل العمليات وتحويلها إلى متطلبات واضحة</li>
+            <li>تصميم قاعدة البيانات وهيكل النظام</li>
+            <li>بناء API ولوحات الإدارة والصلاحيات</li>
+            <li>تجهيز النظام للتوسع والتعديلات المستقبلية</li>
+            <li>ترتيب منطقي للإطلاق ثم التوسع بعده</li>
+          </ul>
+          <div class="price-request">
+            <p><strong>اطلب تسعير هذا العرض:</strong> اختر القناة المناسبة وسأفتح لك رسالة جاهزة بالتفاصيل المطلوبة.</p>
+            <div class="cta-inline">
+              <a class="btn btn-primary" href="mailto:info@abdotaher.me?subject=%D8%B7%D9%84%D8%A8%20%D8%AA%D8%B3%D8%B9%D9%8A%D8%B1%20-%20%D8%A8%D9%86%D8%A7%D8%A1%20%D8%B3%D9%8A%D8%B3%D8%AA%D9%85%20%D9%85%D8%AA%D9%83%D8%A7%D9%85%D9%84&body=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%0A%0A%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%AA%D8%B3%D8%B9%D9%8A%D8%B1%20%D8%B9%D8%B1%D8%B6%20%D8%A8%D9%86%D8%A7%D8%A1%20%D8%B3%D9%8A%D8%B3%D8%AA%D9%85%20%D9%85%D8%AA%D9%83%D8%A7%D9%85%D9%84.%0A%0A%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D8%A7%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%3A%0A-%20%D9%86%D9%88%D8%B9%20%D8%A7%D9%84%D9%86%D8%B8%D8%A7%D9%85%3A%0A-%20%D8%A7%D9%84%D9%81%D8%A6%D8%A7%D8%AA%20%D8%A7%D9%84%D8%AA%D9%8A%20%D8%B3%D8%AA%D8%B3%D8%AA%D8%AE%D8%AF%D9%85%D9%87%3A%0A-%20%D8%A3%D9%87%D9%85%20%D8%A7%D9%84%D8%B9%D9%85%D9%84%D9%8A%D8%A7%D8%AA%20%D8%A7%D9%84%D8%AA%D9%8A%20%D9%8A%D8%AC%D8%A8%20%D8%A3%D9%86%20%D9%8A%D8%AF%D9%8A%D8%B1%D9%87%D8%A7%20%D8%A7%D9%84%D9%86%D8%B8%D8%A7%D9%85%3A%0A-%20%D9%87%D9%84%20%D8%AA%D8%AD%D8%AA%D8%A7%D8%AC%20%D9%84%D9%88%D8%AD%D8%A9%20%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9%D8%9F%0A-%20%D9%87%D9%84%20%D8%AA%D9%88%D8%AC%D8%AF%20%D8%B5%D9%84%D8%A7%D8%AD%D9%8A%D8%A7%D8%AA%20%D9%88%D8%AA%D9%82%D8%A7%D8%B1%D9%8A%D8%B1%D8%9F%0A-%20%D9%87%D9%84%20%D8%AA%D9%88%D8%AC%D8%AF%20%D8%AA%D9%83%D8%A7%D9%85%D9%84%D8%A7%D8%AA%20%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A%D8%A9%D8%9F%0A-%20%D8%A3%D9%8A%20%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D8%A3%D9%88%20%D9%85%D8%B1%D8%A7%D8%AC%D8%B9%20%D9%85%D9%87%D9%85%D8%A9%3A">اطلب السعر عبر البريد</a>
+              <a class="btn" href="https://wa.me/201008275881?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%0A%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%AA%D8%B3%D8%B9%D9%8A%D8%B1%20%D8%B9%D8%B1%D8%B6%20%D8%A8%D9%86%D8%A7%D8%A1%20%D8%B3%D9%8A%D8%B3%D8%AA%D9%85%20%D9%85%D8%AA%D9%83%D8%A7%D9%85%D9%84.%0A%0A%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D8%A7%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%3A%0A-%20%D9%86%D9%88%D8%B9%20%D8%A7%D9%84%D9%86%D8%B8%D8%A7%D9%85%3A%0A-%20%D8%A7%D9%84%D9%81%D8%A6%D8%A7%D8%AA%20%D8%A7%D9%84%D8%AA%D9%8A%20%D8%B3%D8%AA%D8%B3%D8%AA%D8%AE%D8%AF%D9%85%D9%87%3A%0A-%20%D8%A3%D9%87%D9%85%20%D8%A7%D9%84%D8%B9%D9%85%D9%84%D9%8A%D8%A7%D8%AA%20%D8%A7%D9%84%D8%AA%D9%8A%20%D9%8A%D8%AC%D8%A8%20%D8%A3%D9%86%20%D9%8A%D8%AF%D9%8A%D8%B1%D9%87%D8%A7%20%D8%A7%D9%84%D9%86%D8%B8%D8%A7%D9%85%3A%0A-%20%D9%87%D9%84%20%D8%AA%D8%AD%D8%AA%D8%A7%D8%AC%20%D9%84%D9%88%D8%AD%D8%A9%20%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9%D8%9F%0A-%20%D9%87%D9%84%20%D8%AA%D9%88%D8%AC%D8%AF%20%D8%B5%D9%84%D8%A7%D8%AD%D9%8A%D8%A7%D8%AA%20%D9%88%D8%AA%D9%82%D8%A7%D8%B1%D9%8A%D8%B1%D8%9F%0A-%20%D9%87%D9%84%20%D8%AA%D9%88%D8%AC%D8%AF%20%D8%AA%D9%83%D8%A7%D9%85%D9%84%D8%A7%D8%AA%20%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A%D8%A9%D8%9F%0A-%20%D8%A3%D9%8A%20%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D8%A3%D9%88%20%D9%85%D8%B1%D8%A7%D8%AC%D8%B9%20%D9%85%D9%87%D9%85%D8%A9%3A">اطلب السعر عبر واتساب</a>
+            </div>
+          </div>
+          <div class="cta-inline">
+            <a class="btn btn-primary" href="mailto:info@abdotaher.me?subject=System Build Offer">ابدأ بهذا العرض</a>
+            <a class="btn" href="/turning-business-process-into-system/">اقرأ عن تحويل العمليات إلى سيستم</a>
+          </div>
+        </div>
+        <div class="detail-meta">
+          <div class="detail-box">
+            <span class="detail-pill">الأفضل إذا كنت</span>
+            <p>تبني SaaS، لوحة إدارة، نظام حجوزات، عمليات داخلية، أو أي منتج يعتمد على بيانات وصلاحيات وتدفقات واضحة.</p>
+          </div>
+          <div class="detail-box">
+            <span class="detail-pill">النتيجة المتوقعة</span>
+            <p>نظام قابل للتشغيل الفعلي والنمو، لا مجرد نسخة أولية يصعب توسيعها لاحقًا.</p>
+          </div>
+          <div class="detail-box">
+            <span class="detail-pill">أمثلة مناسبة</span>
+            <div class="example-list">
+              <div class="example-item">
+                <strong>نظام إدارة شركة</strong>
+                صلاحيات متعددة، حالات عمل، تقارير، وسجل واضح لكل عملية داخل الفريق.
+              </div>
+              <div class="example-item">
+                <strong>سيستم طلبات أو حجوزات</strong>
+                من استقبال الطلب إلى المتابعة والتنفيذ مع لوحة إدارة وتشغيل كاملة.
+              </div>
+              <div class="example-item">
+                <strong>منتج SaaS متكامل</strong>
+                مستخدمون، اشتراكات، صلاحيات، API، وبنية جاهزة للنمو بدون إعادة بناء مبكرة.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="offer-support" class="offer-detail">
+      <div class="section-kicker">Offer 03</div>
+      <h2>تطوير ودعم مستمر</h2>
+      <div class="offer-detail-grid">
+        <div class="detail-box">
+          <p>هذا العرض مناسب إذا كان لديك نظام قائم بالفعل، لكنك تحتاج شخصًا يطوره ويثبّت تشغيله بدل الاكتفاء بإصلاحات سريعة متفرقة. أحيانًا لا تحتاج إعادة بناء كاملة، بل تحتاج من يفهم ما عندك، يحدد مناطق الألم، ويبدأ بتحسينات فعلية تخفف الضغط وتزيد الاعتمادية.</p>
+          <p>هنا القيمة ليست فقط في "حل bug"، بل في التعامل مع النظام كمنتج مستمر يحتاج صيانة واعية، تطوير، وتحسين بعد الإطلاق.</p>
+          <ul>
+            <li>إضافة خصائص وتحسينات جديدة</li>
+            <li>تحسين الأداء وقاعدة البيانات والبنية</li>
+            <li>تقليل الأعطال والمشاكل المتكررة</li>
+            <li>تنظيف أجزاء مرهقة أو معقدة في النظام</li>
+            <li>متابعة ما بعد الإطلاق والدعم المستمر</li>
+          </ul>
+          <div class="price-request">
+            <p><strong>اطلب تسعير هذا العرض:</strong> اختر القناة المناسبة وسأفتح لك رسالة جاهزة بالتفاصيل المطلوبة.</p>
+            <div class="cta-inline">
+              <a class="btn btn-primary" href="mailto:info@abdotaher.me?subject=%D8%B7%D9%84%D8%A8%20%D8%AA%D8%B3%D8%B9%D9%8A%D8%B1%20-%20%D8%AA%D8%B7%D9%88%D9%8A%D8%B1%20%D9%88%D8%AF%D8%B9%D9%85%20%D9%85%D8%B3%D8%AA%D9%85%D8%B1&body=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%0A%0A%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%AA%D8%B3%D8%B9%D9%8A%D8%B1%20%D8%B9%D8%B1%D8%B6%20%D8%AA%D8%B7%D9%88%D9%8A%D8%B1%20%D9%88%D8%AF%D8%B9%D9%85%20%D9%85%D8%B3%D8%AA%D9%85%D8%B1.%0A%0A%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D8%A7%D9%84%D9%86%D8%B8%D8%A7%D9%85%20%D8%A7%D9%84%D8%AD%D8%A7%D9%84%D9%8A%3A%0A-%20%D9%86%D9%88%D8%B9%20%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%AC%20%D8%A3%D9%88%20%D8%A7%D9%84%D9%86%D8%B8%D8%A7%D9%85%3A%0A-%20%D9%85%D8%A7%20%D8%A3%D9%87%D9%85%20%D8%A7%D9%84%D9%85%D8%B4%D8%A7%D9%83%D9%84%20%D8%A7%D9%84%D8%AD%D8%A7%D9%84%D9%8A%D8%A9%D8%9F%0A-%20%D9%87%D9%84%20%D8%A7%D9%84%D9%85%D8%B7%D9%84%D9%88%D8%A8%20%D8%AA%D8%B7%D9%88%D9%8A%D8%B1%20%D8%AC%D8%AF%D9%8A%D8%AF%20%D8%A3%D9%85%20%D8%AA%D8%AD%D8%B3%D9%8A%D9%86%20%D9%84%D9%84%D9%85%D9%88%D8%AC%D9%88%D8%AF%D8%9F%0A-%20%D9%87%D9%84%20%D8%AA%D9%88%D8%AC%D8%AF%20%D9%85%D8%B4%D8%A7%D9%83%D9%84%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A3%D8%AF%D8%A7%D8%A1%20%D8%A3%D9%88%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%82%D8%B1%D8%A7%D8%B1%D8%9F%0A-%20%D9%87%D9%84%20%D8%AA%D8%AD%D8%AA%D8%A7%D8%AC%20%D9%85%D8%AA%D8%A7%D8%A8%D8%B9%D8%A9%20%D8%AF%D9%88%D8%B1%D9%8A%D8%A9%D8%9F%0A-%20%D8%A3%D9%8A%20%D8%B1%D9%88%D8%A7%D8%A8%D8%B7%20%D8%A3%D9%88%20%D9%85%D9%84%D8%A7%D8%AD%D8%B8%D8%A7%D8%AA%20%D9%85%D9%87%D9%85%D8%A9%3A">اطلب السعر عبر البريد</a>
+              <a class="btn" href="https://wa.me/201008275881?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%0A%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%AA%D8%B3%D8%B9%D9%8A%D8%B1%20%D8%B9%D8%B1%D8%B6%20%D8%AA%D8%B7%D9%88%D9%8A%D8%B1%20%D9%88%D8%AF%D8%B9%D9%85%20%D9%85%D8%B3%D8%AA%D9%85%D8%B1.%0A%0A%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D8%A7%D9%84%D9%86%D8%B8%D8%A7%D9%85%20%D8%A7%D9%84%D8%AD%D8%A7%D9%84%D9%8A%3A%0A-%20%D9%86%D9%88%D8%B9%20%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%AC%20%D8%A3%D9%88%20%D8%A7%D9%84%D9%86%D8%B8%D8%A7%D9%85%3A%0A-%20%D9%85%D8%A7%20%D8%A3%D9%87%D9%85%20%D8%A7%D9%84%D9%85%D8%B4%D8%A7%D9%83%D9%84%20%D8%A7%D9%84%D8%AD%D8%A7%D9%84%D9%8A%D8%A9%D8%9F%0A-%20%D9%87%D9%84%20%D8%A7%D9%84%D9%85%D8%B7%D9%84%D9%88%D8%A8%20%D8%AA%D8%B7%D9%88%D9%8A%D8%B1%20%D8%AC%D8%AF%D9%8A%D8%AF%20%D8%A3%D9%85%20%D8%AA%D8%AD%D8%B3%D9%8A%D9%86%20%D9%84%D9%84%D9%85%D9%88%D8%AC%D9%88%D8%AF%D8%9F%0A-%20%D9%87%D9%84%20%D8%AA%D9%88%D8%AC%D8%AF%20%D9%85%D8%B4%D8%A7%D9%83%D9%84%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A3%D8%AF%D8%A7%D8%A1%20%D8%A3%D9%88%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%82%D8%B1%D8%A7%D8%B1%D8%9F%0A-%20%D9%87%D9%84%20%D8%AA%D8%AD%D8%AA%D8%A7%D8%AC%20%D9%85%D8%AA%D8%A7%D8%A8%D8%B9%D8%A9%20%D8%AF%D9%88%D8%B1%D9%8A%D8%A9%D8%9F%0A-%20%D8%A3%D9%8A%20%D8%B1%D9%88%D8%A7%D8%A8%D8%B7%20%D8%A3%D9%88%20%D9%85%D9%84%D8%A7%D8%AD%D8%B8%D8%A7%D8%AA%20%D9%85%D9%87%D9%85%D8%A9%3A">اطلب السعر عبر واتساب</a>
+            </div>
+          </div>
+          <div class="cta-inline">
+            <a class="btn btn-primary" href="mailto:info@abdotaher.me?subject=Ongoing Support Offer">ابدأ بهذا العرض</a>
+            <a class="btn" href="/after-launch-system-operations-guide/">اقرأ عن ما بعد الإطلاق</a>
+          </div>
+        </div>
+        <div class="detail-meta">
+          <div class="detail-box">
+            <span class="detail-pill">الأفضل إذا كنت</span>
+            <p>تملك منتجًا قائمًا، أو نظامًا داخليًا، أو Backend يحتاج ترتيبًا وتحسينًا مستمرًا.</p>
+          </div>
+          <div class="detail-box">
+            <span class="detail-pill">النتيجة المتوقعة</span>
+            <p>تحسن تدريجي واضح في الاستقرار، السرعة، وقابلية التطوير بدل تراكم الترقيعات.</p>
+          </div>
+          <div class="detail-box">
+            <span class="detail-pill">أمثلة مناسبة</span>
+            <div class="example-list">
+              <div class="example-item">
+                <strong>نظام بطيء تحت الضغط</strong>
+                تحسين الاستعلامات والكاش ومسارات التنفيذ لتقليل البطء والأعطال.
+              </div>
+              <div class="example-item">
+                <strong>منتج قائم يحتاج خصائص جديدة</strong>
+                إضافة ميزات جديدة بدون تخريب الاستقرار أو زيادة التعقيد في الكود.
+              </div>
+              <div class="example-item">
+                <strong>Dashboard داخلية مرهقة</strong>
+                ترتيب الأجزاء المرهقة تدريجيًا حتى يصبح التطوير اليومي أسهل وأوضح.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-kicker">كيف تختار</div>
+      <h2>كيف تختار العرض المناسب؟</h2>
+      <div class="mini-grid">
+        <article class="mini-card">
+          <h3>لو ما زالت الفكرة في بدايتها</h3>
+          <p>ابدأ بـ <strong>إطلاق MVP</strong> حتى تختبر الفكرة، بدل دفع كل الوقت والميزانية في نسخة مبكرة أكبر من المطلوب.</p>
+        </article>
+        <article class="mini-card">
+          <h3>لو العمليات واضحة من البداية</h3>
+          <p>اختر <strong>بناء سيستم متكامل</strong> إذا كنت تعرف المستخدمين، الصلاحيات، ومسارات العمل التي يجب أن يديرها النظام.</p>
+        </article>
+        <article class="mini-card">
+          <h3>لو عندك نظام قائم بالفعل</h3>
+          <p>اختر <strong>تطوير ودعم مستمر</strong> إذا كان المطلوب هو تحسين الموجود، لا البدء من الصفر.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="section-kicker">الخطوة التالية</div>
+      <h2>اختر العرض الأقرب لمرحلة مشروعك، وبعدها نرتب التفاصيل بهدوء ووضوح</h2>
+      <p>إذا كنت محتارًا بين أكثر من مسار، يكفي أن تشرح بإيجاز أين وصل مشروعك الآن، وما الذي تريد الوصول إليه، وسأساعدك في تحديد العرض الأنسب بدل أن تبدأ في اتجاه غير مناسب.</p>
+      <div class="channel-grid">
+        <article class="channel-card">
+          <h3>تريدها عبر البريد؟</h3>
+          <p>افتح رسالة جاهزة على الإيميل، واملأ التفاصيل الأساسية عن مشروعك حتى يكون طلب التسعير واضحًا من البداية.</p>
+          <a class="btn btn-primary" href="mailto:info@abdotaher.me?subject=%D8%B7%D9%84%D8%A8%20%D8%AA%D8%B3%D8%B9%D9%8A%D8%B1%20%D8%B9%D8%B1%D8%B6&body=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%0A%0A%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%AA%D8%B3%D8%B9%D9%8A%D8%B1%20%D8%B9%D8%B1%D8%B6%20%D9%85%D9%86%20%D8%B5%D9%81%D8%AD%D8%A9%20%D8%A7%D9%84%D8%B9%D8%B1%D9%88%D8%B6.%0A%0A%D8%A7%D8%B3%D9%85%20%D8%A7%D9%84%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D9%85%D9%86%D8%A7%D8%B3%D8%A8%20%D9%84%D9%8A%3A%0A-%20%D8%A5%D8%B7%D9%84%D8%A7%D9%82%20MVP%0A-%20%D8%A8%D9%86%D8%A7%D8%A1%20%D8%B3%D9%8A%D8%B3%D8%AA%D9%85%20%D9%85%D8%AA%D9%83%D8%A7%D9%85%D9%84%0A-%20%D8%AA%D8%B7%D9%88%D9%8A%D8%B1%20%D9%88%D8%AF%D8%B9%D9%85%20%D9%85%D8%B3%D8%AA%D9%85%D8%B1%0A%0A%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D9%85%D8%AE%D8%AA%D8%B5%D8%B1%D8%A9%20%D8%B9%D9%86%20%D8%A7%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%3A%0A-%20%D9%86%D9%88%D8%B9%20%D8%A7%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%3A%0A-%20%D9%85%D8%B1%D8%AD%D9%84%D8%A9%20%D8%A7%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%20%D8%A7%D9%84%D8%AD%D8%A7%D9%84%D9%8A%D8%A9%3A%0A-%20%D8%A3%D9%87%D9%85%20%D9%85%D8%A7%20%D8%AA%D8%AD%D8%AA%D8%A7%D8%AC%D9%87%20%D8%A7%D9%84%D8%A2%D9%86%3A%0A-%20%D8%A3%D9%8A%20%D8%B1%D9%88%D8%A7%D8%A8%D8%B7%20%D8%A3%D9%88%20%D9%85%D8%B1%D8%A7%D8%AC%D8%B9%20%D9%85%D9%87%D9%85%D8%A9%3A">اكتب عبر الإيميل</a>
+        </article>
+        <article class="channel-card">
+          <h3>أم تفضّل واتساب؟</h3>
+          <p>افتح رسالة واتساب جاهزة بنفس العناصر المهمة حتى ترسل الطلب أسرع ومن دون نسيان التفاصيل الأساسية.</p>
+          <a class="btn" href="https://wa.me/201008275881?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%0A%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%AA%D8%B3%D8%B9%D9%8A%D8%B1%20%D8%B9%D8%B1%D8%B6%20%D9%85%D9%86%20%D8%B5%D9%81%D8%AD%D8%A9%20%D8%A7%D9%84%D8%B9%D8%B1%D9%88%D8%B6.%0A%0A%D8%A7%D8%B3%D9%85%20%D8%A7%D9%84%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D9%85%D9%86%D8%A7%D8%B3%D8%A8%20%D9%84%D9%8A%3A%0A-%20%D8%A5%D8%B7%D9%84%D8%A7%D9%82%20MVP%0A-%20%D8%A8%D9%86%D8%A7%D8%A1%20%D8%B3%D9%8A%D8%B3%D8%AA%D9%85%20%D9%85%D8%AA%D9%83%D8%A7%D9%85%D9%84%0A-%20%D8%AA%D8%B7%D9%88%D9%8A%D8%B1%20%D9%88%D8%AF%D8%B9%D9%85%20%D9%85%D8%B3%D8%AA%D9%85%D8%B1%0A%0A%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D9%85%D8%AE%D8%AA%D8%B5%D8%B1%D8%A9%20%D8%B9%D9%86%20%D8%A7%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%3A%0A-%20%D9%86%D9%88%D8%B9%20%D8%A7%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%3A%0A-%20%D9%85%D8%B1%D8%AD%D9%84%D8%A9%20%D8%A7%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%20%D8%A7%D9%84%D8%AD%D8%A7%D9%84%D9%8A%D8%A9%3A%0A-%20%D8%A3%D9%87%D9%85%20%D9%85%D8%A7%20%D8%AA%D8%AD%D8%AA%D8%A7%D8%AC%D9%87%20%D8%A7%D9%84%D8%A2%D9%86%3A%0A-%20%D8%A3%D9%8A%20%D8%B1%D9%88%D8%A7%D8%A8%D8%B7%20%D8%A3%D9%88%20%D9%85%D8%B1%D8%A7%D8%AC%D8%B9%20%D9%85%D9%87%D9%85%D8%A9%3A">اكتب عبر واتساب</a>
+        </article>
+      </div>
+      <div class="cta-actions">
+        <a class="btn" href="/services/">العودة إلى الخدمات</a>
+      </div>
+    </section>
+  </div>
+  </main>
+  <HomeLikeFooter />
+</body>
+</html>

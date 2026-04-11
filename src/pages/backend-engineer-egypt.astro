@@ -1,0 +1,163 @@
+---
+import HomeLikeHeader from '../components/HomeLikeHeader.astro';
+import HomeLikeFooter from '../components/HomeLikeFooter.astro';
+---
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>مبرمج ومهندس باك-إند في مصر | تصميم موقع وسيستم | عبدالرحمن طاهر</title>
+  <meta name="description" content="دليل عملي لمن يريد بناء موقع أو سيستم في مصر: متى يكفي موقع تعريفي، ومتى تحتاج Backend وAPI ولوحة إدارة، وكيف تبدأ المشروع بشكل صحيح وقابل للتوسع."/>
+  <meta name="keywords" content="مبرمج في مصر, عايز اعمل ويب سايت, عايز اعمل سيستم, مبرمج باك اند مصر, Backend Developer Egypt, Laravel Egypt, API Development Egypt"/>
+  <meta name="robots" content="index, follow, max-image-preview:large"/>
+  <link rel="canonical" href="https://abdotaher.me/backend-engineer-egypt/"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="مبرمج ومهندس باك-إند في مصر | عبدالرحمن طاهر"/>
+  <meta property="og:description" content="تطوير مواقع وسيستمات وواجهات API للشركات في مصر مع صفحة توضّح الفرق بين صياغة البحث المصرية والسعودية."/>
+  <meta property="og:url" content="https://abdotaher.me/backend-engineer-egypt/"/>
+  <meta property="og:image" content="https://abdotaher.me/image.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="مبرمج ومهندس باك-إند في مصر"/>
+  <meta name="twitter:description" content="عايز تعمل ويب سايت أو سيستم في مصر؟ هنا صفحة مخصّصة بصياغة مصرية مع توضيح الفرق عن السعودية."/>
+  <meta name="twitter:image" content="https://abdotaher.me/image.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Backend Engineer in Egypt","serviceType":"Website Systems, Backend APIs, Microservices","provider":{"@type":"Person","name":"Abdulrahman Taher","url":"https://abdotaher.me/"},"areaServed":{"@type":"Country","name":"Egypt"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"عايز مبرمج يعمل ويب سايت أو سيستم في مصر، ينفع؟","acceptedAnswer":{"@type":"Answer","text":"نعم، أقدّم تنفيذ من تحليل الفكرة حتى بناء الـ API واللوحة الخلفية والبنية المناسبة للتوسع."}},{"@type":"Question","name":"إيه الفرق بين الصياغة المصرية والسعودية في نفس الطلب؟","acceptedAnswer":{"@type":"Answer","text":"في مصر غالبًا نقول عايز اعمل ويب سايت أو سيستم، بينما في السعودية الصياغة الأقرب تكون أبي أسوي موقع أو أبي مبرمج يسوي سيستم، لكن النية الشرائية واحدة."}},{"@type":"Question","name":"إمتى أحتاج سيستم مش مجرد موقع تعريفي؟","acceptedAnswer":{"@type":"Answer","text":"لما المشروع يحتاج تسجيل مستخدمين أو طلبات أو صلاحيات أو لوحة تحكم أو تقارير، فغالبًا أنت تحتاج Backend وسيستم كامل وليس مجرد موقع تعريفي."}},{"@type":"Question","name":"هل ينفع أبدأ بـ MVP صغير ثم أوسّع؟","acceptedAnswer":{"@type":"Answer","text":"نعم، وغالبًا هذا أفضل مسار: نبدأ بالنواة الأساسية ثم نضيف الوظائف حسب الاستخدام الحقيقي واحتياجات السوق."}}]}</script>
+  <style>
+    :root{--bg:#0d0b1a;--card:#1e1933;--bd:rgba(112,213,230,.14);--tx:#e7deff;--mut:rgba(231,222,255,.72);--pri:#9bf0ff;--acc:#8ff700}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--tx);font-family:'Cairo',sans-serif;line-height:1.8}
+    .wrap{max-width:1100px;margin:auto;padding:1.25rem}
+    .top{display:flex;justify-content:space-between;align-items:center;padding:.6rem 0}
+    .brand{font-family:'Space Grotesk',sans-serif;color:var(--pri);font-weight:700;letter-spacing:.08em}
+    .btn{display:inline-block;padding:.65rem 1.1rem;border-radius:999px;border:1px solid var(--bd);color:var(--pri);text-decoration:none}
+    .hero,.card,.faq,.cta,.compare,.links-box,.journey,.note-box{background:var(--card);border:1px solid var(--bd);border-radius:16px}
+    .hero{padding:1.5rem;margin:1rem 0}.hero h1{margin:.2rem 0 0;font-size:clamp(1.4rem,4vw,2.2rem)}
+    .mut{color:var(--mut)} .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem}
+    .card,.compare,.journey,.note-box{padding:1rem}.tag{font-size:.72rem;color:var(--acc);font-weight:700;letter-spacing:.08em}
+    .faq,.cta,.links-box{padding:1.2rem;margin-top:1rem}.links a{color:var(--pri);text-decoration:none}
+    .compare-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+    .compare h3{margin-top:0}
+    .phrase{display:block;padding:.55rem .75rem;margin:.45rem 0;border:1px dashed var(--bd);border-radius:12px;color:var(--mut)}
+    .links-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem}
+    .links-grid a{display:block;padding:.85rem;border:1px dashed var(--bd);border-radius:12px;color:var(--pri);text-decoration:none}
+    .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+    .step-title{margin:.2rem 0 .55rem;font-weight:700;color:var(--tx)}
+  </style>
+  <script src="/site-i18n.js" defer></script>
+</head>
+<body>
+  <HomeLikeHeader />
+  <main class="home-like-main">
+  <div class="wrap">
+    <div class="top"><div class="brand">النواة المعمارية</div><a class="btn" href="/">الصفحة الرئيسية</a></div>
+    <section class="hero">
+      <p class="mut">مصر • دليل عملي لبناء موقع أو سيستم بشكل صحيح</p>
+      <h1>عايز تعمل ويب سايت أو سيستم في مصر؟ الأهم إن البداية تكون مبنية صح</h1>
+      <p class="mut">كثير من المشاريع تبدأ بسؤال بسيط: <strong>عايز اعمل ويب سايت</strong> أو <strong>عايز اعمل سيستم</strong>. لكن القرار الحقيقي ليس اسم المشروع، بل نوع البنية التي يحتاجها: هل يكفي موقع تعريفي؟ أم أنك تحتاج Backend وAPI ولوحة إدارة وصلاحيات من أول مرحلة؟</p>
+    </section>
+    <section class="grid">
+      <article class="card"><h3>تحويل الفكرة إلى نظام واضح</h3><p class="mut">قبل البرمجة نفسها، نحدد ما الذي سيحدث داخل المشروع: المستخدمون، الصلاحيات، خطوات الطلب أو الحجز أو الإدارة، وأين ستظهر القيمة الحقيقية في النظام.</p><div class="tag">DISCOVERY // ARCHITECTURE</div></article>
+      <article class="card"><h3>بناء Backend وAPI عمليين</h3><p class="mut">لو المشروع يحتاج تطبيق، لوحة إدارة، تسجيل مستخدمين، أو بيانات متغيرة، فهنا يأتي دور Backend الواضح وواجهات API القابلة للتوسع.</p><div class="tag">LARAVEL // NODE.JS // PYTHON</div></article>
+      <article class="card"><h3>تشغيل مستقر وتكلفة أهدأ</h3><p class="mut">الفكرة ليست فقط أن يعمل النظام اليوم، بل أن يظل ثابتًا وسريعًا مع الاستخدام الحقيقي، من خلال قواعد بيانات جيدة وكاش وبنية مناسبة للنمو.</p><div class="tag">POSTGRESQL // REDIS // AWS</div></article>
+    </section>
+    <section class="journey" style="margin-top:1rem;">
+      <h2>كيف نقرر: موقع أم سيستم؟</h2>
+      <div class="steps">
+        <article class="note-box">
+          <div class="step-title">يكفي موقع</div>
+          <p class="mut">إذا كان المطلوب عرض خدمات، صفحة تعريف بالشركة، معلومات ثابتة، أو نموذج تواصل بسيط، فغالبًا موقع مرتب يكفي كبداية.</p>
+        </article>
+        <article class="note-box">
+          <div class="step-title">تحتاج سيستم</div>
+          <p class="mut">إذا كان عندك مستخدمون، طلبات، حجوزات، صلاحيات، تقارير، أو لوحة تحكم، فأنت تحتاج نظامًا حقيقيًا وليس مجرد صفحات عرض.</p>
+        </article>
+        <article class="note-box">
+          <div class="step-title">تحتاج بداية ذكية</div>
+          <p class="mut">أحيانًا أفضل حل هو MVP صغير لكن مبني على أساس Backend صحيح، بدل نسخة سريعة تضطر لإعادة بنائها بعد أول نمو جدي.</p>
+        </article>
+      </div>
+    </section>
+    <section class="compare" style="margin-top:1rem;">
+      <h2>ما الذي يهم قبل بدء التنفيذ؟</h2>
+      <p class="mut">الخطأ الشائع أن يبدأ المشروع من شكل الواجهة فقط. لكن قبل أي تنفيذ، هناك أسئلة أهم: من سيستخدم النظام؟ ما الصلاحيات؟ هل تحتاج إدارة محتوى؟ هل في مدفوعات أو تقارير أو تكاملات؟ هذه الأسئلة هي التي تحدد إذا كنت تحتاج موقعًا بسيطًا أو نظامًا كاملًا.</p>
+      <div class="compare-grid">
+        <article>
+          <h3>أسئلة البداية</h3>
+          <span class="phrase">مين هيستخدم النظام؟</span>
+          <span class="phrase">ما العمليات التي ستتم داخله؟</span>
+          <span class="phrase">هل في صلاحيات وإدارة وتقارير؟</span>
+        </article>
+        <article>
+          <h3>نتيجة القرار</h3>
+          <span class="phrase">موقع تعريفي منظم</span>
+          <span class="phrase">سيستم داخلي أو SaaS</span>
+          <span class="phrase">لوحة إدارة + API + قاعدة بيانات</span>
+        </article>
+      </div>
+    </section>
+    <section class="compare" style="margin-top:1rem;">
+      <h2>الصياغة التي يستخدمها الناس في مصر</h2>
+      <p class="mut">المحتوى هنا مكتوب بلغة مفهومة للمستخدم المصري، لكن في داخله أيضًا نية البحث الحقيقية التي يأتي بها الزوار من جوجل.</p>
+      <div class="compare-grid">
+        <article>
+          <h3>في مصر</h3>
+          <span class="phrase">عايز اعمل ويب سايت</span>
+          <span class="phrase">عايز اعمل سيستم</span>
+          <span class="phrase">محتاج مبرمج يعمل نظام لشركتي</span>
+        </article>
+        <article>
+          <h3>المعنى التقني خلفها</h3>
+          <span class="phrase">موقع تعريفي أو صفحة خدمات</span>
+          <span class="phrase">نظام إدارة أو تشغيل داخلي</span>
+          <span class="phrase">Backend Developer + API + Dashboard</span>
+        </article>
+      </div>
+    </section>
+    <section class="faq">
+      <h2>أسئلة مهمة قبل ما تبدأ</h2>
+      <p><strong>عايز أبدأ بموقع ولا بسيستم كامل؟</strong><br/>يعتمد على هدف المشروع. لو الغرض عرض فقط، فالموقع يكفي. لو هناك تشغيل أو بيانات أو إدارة، فالأفضل بناء سيستم من البداية ولو بشكل MVP.</p>
+      <p><strong>إمتى أحتاج Backend حقيقي؟</strong><br/>عندما تحتاج تسجيل مستخدمين، صلاحيات، طلبات، تقارير، إشعارات، مدفوعات، أو ربط موبايل وويب على نفس البيانات.</p>
+      <p><strong>هل ينفع أبدأ صغير وبعدها أوسّع؟</strong><br/>نعم، وهذا غالبًا أفضل مسار. المهم أن تكون النواة الأساسية صحيحة حتى لا تتحول النسخة الأولى إلى عبء عند التوسع.</p>
+      <p><strong>هل ينفع نفس النظام يخدم مصر وأسواق ثانية؟</strong><br/>نعم، مع تخصيص المحتوى واللغة وبعض التكاملات أو التدفقات حسب كل سوق.</p>
+    </section>
+    <section class="journey" style="margin-top:1rem;">
+      <h2>متى تكون هذه الصفحة مناسبة لك؟</h2>
+      <p class="mut">إذا كنت تعمل على مشروع خدمات، منصة حجوزات، SaaS، لوحة إدارة داخلية، تجارة إلكترونية، أو تطبيق يحتاج API وبيانات وصلاحيات، فهذه الصفحة كتبت لتكون مفيدة لك عمليًا، لا مجرد صفحة تسويقية.</p>
+      <div class="steps">
+        <article class="note-box">
+          <div class="step-title">لو أنت صاحب مشروع</div>
+          <p class="mut">ستستفيد من فهم الفرق بين ما تحتاجه الآن وما يمكن تأجيله، حتى لا تدفع في اتجاه غير مناسب.</p>
+        </article>
+        <article class="note-box">
+          <div class="step-title">لو أنت تبدأ MVP</div>
+          <p class="mut">الهدف هنا هو الخروج بنسخة أولى تخدم السوق، لكن دون كسر الأساس التقني من أول شهر.</p>
+        </article>
+        <article class="note-box">
+          <div class="step-title">لو عندك نظام قائم</div>
+          <p class="mut">ممكن أيضًا إعادة تنظيم الـ Backend أو تحسين الأداء أو فصل المسؤوليات بدل الاستمرار فوق بنية مرهقة.</p>
+        </article>
+      </div>
+    </section>
+    <section class="links-box links">
+      <h2>محتوى مرتبط قد يفيدك</h2>
+      <div class="links-grid">
+        <a href="/website-vs-system-guide/">الفرق بين الموقع والسيستم</a>
+        <a href="/how-to-choose-backend-engineer/">كيف تختار مبرمج Backend مناسب</a>
+        <a href="/blog/">تصفّح المقالات</a>
+        <a href="/web-system-development-gcc/">دليل بناء موقع أو سيستم</a>
+        <a href="/backend-engineer-saudi-arabia/">قارن مع صفحة السعودية</a>
+        <a href="/backend-engineer-uae/">صفحة الإمارات</a>
+      </div>
+    </section>
+    <section class="cta links">
+      <p><strong>لو وصلت هنا لأنك تبحث عن مبرمج في مصر أو تريد بناء سيستم لشركتك:</strong> الأهم أن تبدأ بخطة واضحة، لا بمجرد تنفيذ سريع. لو تحب نرتب الفكرة بشكل صحيح من البداية، تقدر تتواصل عبر <a href="mailto:abdotaher093@gmail.com">Email</a> أو <a href="https://wa.me/201008275881">WhatsApp</a>.</p>
+    </section>
+  </div>
+  </main>
+  <HomeLikeFooter />
+</body>
+</html>

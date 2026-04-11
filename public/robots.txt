@@ -1,0 +1,33 @@
+User-agent: *
+Allow: /
+Allow: /backend-engineer-egypt.html
+Allow: /backend-engineer-saudi-arabia.html
+Allow: /backend-engineer-uae.html
+Allow: /backend-engineer-qatar.html
+Allow: /backend-engineer-kuwait.html
+Allow: /backend-engineer-bahrain.html
+Allow: /backend-engineer-oman.html
+Allow: /web-system-development-gcc.html
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://abdotaher.me/sitemap.xml
