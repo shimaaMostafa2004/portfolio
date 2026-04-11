@@ -160,8 +160,41 @@ import HomeLikeFooter from '../components/HomeLikeFooter.astro';
       color: #ffd1d1;
     }
 
+    @media (max-width: 1024px) {
+      .projects-wrap {
+        padding: 1rem;
+      }
+
+      .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      }
+    }
+
     @media (max-width: 760px) {
       .projects-wrap { padding: 1rem; }
+
+      .projects-hero,
+      .project-body {
+        padding: 0.95rem;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .projects-hero h1 {
+        font-size: clamp(1.45rem, 8vw, 1.95rem);
+      }
+
+      .project-title {
+        font-size: 0.95rem;
+      }
+
+      .project-desc {
+        font-size: 0.84rem;
+      }
     }
   </style>
 </head>

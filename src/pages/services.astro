@@ -220,6 +220,26 @@ import HomeLikeFooter from '../components/HomeLikeFooter.astro';
       color: #ece6ff;
     }
 
+    @media (max-width: 1024px) {
+      .services-wrap {
+        padding: 1rem;
+      }
+
+      .hero,
+      .section,
+      .cta {
+        padding: 1.2rem;
+      }
+
+      .grid,
+      .proof-list,
+      .steps,
+      .link-grid,
+      .result-grid {
+        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      }
+    }
+
     @media (max-width: 840px) {
       .hero-grid,
       .split {
@@ -233,6 +253,35 @@ import HomeLikeFooter from '../components/HomeLikeFooter.astro';
 
     @media (max-width: 760px) {
       .services-wrap { padding: 1rem; }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .cta-actions {
+        gap: 0.5rem;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .hero h1 {
+        font-size: clamp(1.5rem, 8vw, 2rem);
+      }
+
+      .section-head h2,
+      .cta h2 {
+        font-size: 1.3rem;
+      }
+
+      .offer,
+      .proof,
+      .step,
+      .mini,
+      .result-card,
+      .link-card {
+        padding: 0.85rem;
+      }
     }
   </style>
 </head>
