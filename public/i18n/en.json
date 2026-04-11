@@ -1,0 +1,45 @@
+{
+  "site": {
+    "brand": "Architectural Core"
+  },
+  "lang": {
+    "ar_short": "Arabic",
+    "en_short": "EN"
+  },
+  "nav": {
+    "projects": "Projects",
+    "services": "Services",
+    "offers": "Offers",
+    "hot": "HOT",
+    "articles": "Articles",
+    "stack": "Stack",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "mobile": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "logs": "Logs",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "footer": {
+    "copy_prefix": "©",
+    "copy_suffix": "Architectural Core // ALL RIGHTS RESERVED",
+    "about": "About",
+    "projects": "Projects",
+    "services": "Services",
+    "offers": "Offers",
+    "stack": "Stack",
+    "logs": "Logs",
+    "contact": "Contact"
+  },
+  "projects": {
+    "hero_title": "A Portfolio Showing Real Product Execution",
+    "hero_desc": "A single page collecting shipped projects with concise technical context to make evaluation easier for recruiters and clients.",
+    "loading": "Loading projects...",
+    "empty": "No projects available right now.",
+    "fetch_error": "Could not load projects data. Please try again later."
+  }
+}

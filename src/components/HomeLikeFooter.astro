@@ -1,24 +1,21 @@
 <footer>
   <div class="footer-inner">
     <p class="footer-copy">
-      <span data-ar>© <span id="home-like-year"></span> عبدالرحمن طاهر // جميع الحقوق محفوظة</span>
-      <span data-en>© <span id="home-like-year-en"></span> Architectural Core // ALL RIGHTS RESERVED</span>
+      <span data-i18n="footer.copy_prefix">©</span>
+      <span id="home-like-year"></span>
+      <span data-i18n="footer.copy_suffix">عبدالرحمن طاهر // جميع الحقوق محفوظة</span>
     </p>
     <nav class="footer-links" aria-label="روابط التذييل">
-      <a href="/#about" data-ar>من أنا</a>
-      <a href="/#about" data-en>About</a>
-      <a href="/projects/" data-ar>المشاريع</a>
-      <a href="/projects/" data-en>Projects</a>
-      <a href="/#services" data-ar>الخدمات</a>
-      <a href="/#services" data-en>Services</a>
-      <a href="/offers/" class="nav-flag-link" data-ar>العروض <span class="nav-flag">HOT</span></a>
-      <a href="/offers/" class="nav-flag-link" data-en>Offers <span class="nav-flag">HOT</span></a>
-      <a href="/#stack" data-ar>التقنيات</a>
-      <a href="/#stack" data-en>Stack</a>
-      <a href="/#experience" data-ar>الخبرة</a>
-      <a href="/#experience" data-en>Logs</a>
-      <a href="/#contact" data-ar>تواصل</a>
-      <a href="/#contact" data-en>Contact</a>
+      <a href="/#about" data-i18n="footer.about">من أنا</a>
+      <a href="/projects/" data-i18n="footer.projects">المشاريع</a>
+      <a href="/#services" data-i18n="footer.services">الخدمات</a>
+      <a href="/offers/" class="nav-flag-link">
+        <span data-i18n="footer.offers">العروض</span>
+        <span class="nav-flag" data-i18n="nav.hot">HOT</span>
+      </a>
+      <a href="/#stack" data-i18n="footer.stack">التقنيات</a>
+      <a href="/#experience" data-i18n="footer.logs">الخبرة</a>
+      <a href="/#contact" data-i18n="footer.contact">تواصل</a>
     </nav>
     <a href="mailto:info@abdotaher.me" class="footer-contact" aria-label="Email info@abdotaher.me">
       <span class="material-symbols-outlined" aria-hidden="true">mail</span>
@@ -30,6 +27,4 @@
 <script>
   const yearNode = document.getElementById('home-like-year');
   if (yearNode) yearNode.textContent = String(new Date().getFullYear());
-  const yearNodeEn = document.getElementById('home-like-year-en');
-  if (yearNodeEn) yearNodeEn.textContent = String(new Date().getFullYear());
 </script>

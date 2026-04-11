@@ -204,12 +204,11 @@ import HomeLikeFooter from '../components/HomeLikeFooter.astro';
     <div class="projects-wrap">
       <section class="projects-hero" aria-labelledby="projects-heading">
         <p class="projects-kicker">Portfolio</p>
-        <h1 id="projects-heading"><span data-ar>معرض أعمال يوضح التنفيذ الفعلي للمشاريع</span><span data-en>A Portfolio Showing Real Product Execution</span></h1>
-        <p data-ar>صفحة تجمع المشاريع في مكان واحد مع وصف مختصر للتقنيات وسياق الاستخدام حتى ترى نوع الأعمال التي تم تنفيذها فعليًا.</p>
-        <p data-en>A single page collecting shipped projects with concise technical context to make evaluation easier for recruiters and clients.</p>
+        <h1 id="projects-heading" data-i18n="projects.hero_title">معرض أعمال يوضح التنفيذ الفعلي للمشاريع</h1>
+        <p data-i18n="projects.hero_desc">صفحة تجمع المشاريع في مكان واحد مع وصف مختصر للتقنيات وسياق الاستخدام حتى ترى نوع الأعمال التي تم تنفيذها فعليًا.</p>
       </section>
 
-      <div id="projects-state" class="projects-state" role="status" aria-live="polite">جاري تحميل المشاريع...</div>
+      <div id="projects-state" class="projects-state" role="status" aria-live="polite" data-i18n="projects.loading">جاري تحميل المشاريع...</div>
       <section id="projects-grid" class="projects-grid" role="list" aria-label="Projects gallery"></section>
     </div>
 
@@ -241,14 +240,13 @@ import HomeLikeFooter from '../components/HomeLikeFooter.astro';
         const state = document.getElementById('projects-state');
         if (!grid || !state) return;
 
-        const lang = document.body.classList.contains('lang-en') ? 'en' : 'ar';
+        const lang = window.siteI18n?.getLang?.() || (document.body.classList.contains('lang-en') ? 'en' : 'ar');
         const valid = projects.filter((item) => item && item.name && item.image);
 
         if (!valid.length) {
           state.classList.add('error');
-          state.textContent = lang === 'en'
-            ? 'No projects available right now.'
-            : 'لا توجد مشاريع متاحة حاليًا.';
+          state.textContent = window.siteI18n?.t?.('projects.empty', lang === 'en' ? 'No projects available right now.' : 'لا توجد مشاريع متاحة حاليًا.')
+            || (lang === 'en' ? 'No projects available right now.' : 'لا توجد مشاريع متاحة حاليًا.');
           return;
         }
 
@@ -284,21 +282,31 @@ import HomeLikeFooter from '../components/HomeLikeFooter.astro';
         }).join('');
       }
 
+      let sourceProjects = [];
+
       fetch('/projects.json', { cache: 'no-cache' })
         .then((res) => {
           if (!res.ok) throw new Error('Failed to fetch projects.json');
           return res.json();
         })
-        .then((projects) => renderProjects((projects || []).map(normalizeProject)))
+        .then((projects) => {
+          sourceProjects = (projects || []).map(normalizeProject);
+          renderProjects(sourceProjects);
+        })
         .catch(() => {
           const state = document.getElementById('projects-state');
           if (state) {
             state.classList.add('error');
-            state.textContent = document.body.classList.contains('lang-en')
+            const fallback = document.body.classList.contains('lang-en')
               ? 'Could not load projects data. Please try again later.'
               : 'تعذر تحميل بيانات المشاريع الآن. حاول مرة أخرى لاحقًا.';
+            state.textContent = window.siteI18n?.t?.('projects.fetch_error', fallback) || fallback;
           }
         });
+
+      window.addEventListener('site:lang-change', () => {
+        if (sourceProjects.length) renderProjects(sourceProjects);
+      });
     </script>
   </main>
   <HomeLikeFooter />

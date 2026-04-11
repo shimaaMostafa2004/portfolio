@@ -1,8 +1,15 @@
 ---
 const currentPath = Astro.url.pathname;
+const normalizePath = (path) => {
+  if (!path) return '/';
+  const normalized = path.endsWith('/') && path !== '/' ? path.slice(0, -1) : path;
+  return normalized || '/';
+};
 const isActive = (href) => {
-  if (href === '/') return currentPath === '/';
-  return currentPath === href || currentPath.startsWith(href);
+  const normalizedCurrent = normalizePath(currentPath);
+  const normalizedHref = normalizePath(href);
+  if (normalizedHref === '/') return normalizedCurrent === '/';
+  return normalizedCurrent === normalizedHref || normalizedCurrent.startsWith(`${normalizedHref}/`);
 };
 ---
 
@@ -10,31 +17,26 @@ const isActive = (href) => {
   <nav aria-label="التنقل الرئيسي">
     <a class="nav-brand" href="/" aria-label="Home">
       <span class="material-symbols-outlined" aria-hidden="true">terminal</span>
-      <span data-ar>النواة المعمارية</span>
-      <span data-en>Architectural Core</span>
+      <span data-i18n="site.brand">النواة المعمارية</span>
     </a>
 
     <div class="nav-links">
-      <a href="/projects/" aria-current={isActive('/projects/') ? 'page' : undefined} data-ar>المشاريع</a>
-      <a href="/projects/" aria-current={isActive('/projects/') ? 'page' : undefined} data-en>Projects</a>
-      <a href="/services/" aria-current={isActive('/services/') ? 'page' : undefined} data-ar>الخدمات</a>
-      <a href="/services/" aria-current={isActive('/services/') ? 'page' : undefined} data-en>Services</a>
-      <a href="/offers/" class="nav-flag-link" aria-current={isActive('/offers/') ? 'page' : undefined} data-ar>العروض <span class="nav-flag">HOT</span></a>
-      <a href="/offers/" class="nav-flag-link" aria-current={isActive('/offers/') ? 'page' : undefined} data-en>Offers <span class="nav-flag">HOT</span></a>
-      <a href="/blog/" aria-current={isActive('/blog/') ? 'page' : undefined} data-ar>المقالات</a>
-      <a href="/blog/" aria-current={isActive('/blog/') ? 'page' : undefined} data-en>Articles</a>
-      <a href="/#stack" data-ar>التقنيات</a>
-      <a href="/#stack" data-en>Stack</a>
-      <a href="/#experience" data-ar>الخبرة</a>
-      <a href="/#experience" data-en>Experience</a>
+      <a href="/projects/" aria-current={isActive('/projects/') ? 'page' : undefined} data-i18n="nav.projects">المشاريع</a>
+      <a href="/services/" aria-current={isActive('/services/') ? 'page' : undefined} data-i18n="nav.services">الخدمات</a>
+      <a href="/offers/" class="nav-flag-link" aria-current={isActive('/offers/') ? 'page' : undefined}>
+        <span data-i18n="nav.offers">العروض</span>
+        <span class="nav-flag" data-i18n="nav.hot">HOT</span>
+      </a>
+      <a href="/blog/" aria-current={isActive('/blog/') ? 'page' : undefined} data-i18n="nav.articles">المقالات</a>
+      <a href="/#stack" data-i18n="nav.stack">التقنيات</a>
+      <a href="/#experience" data-i18n="nav.experience">الخبرة</a>
 
       <div class="lang-toggle" role="group" aria-label="اختيار اللغة">
-        <a class="lang-btn" href="?lang=ar">عربي</a>
-        <a class="lang-btn" href="?lang=en">EN</a>
+        <a class="lang-btn" href="?lang=ar" data-i18n="lang.ar_short">عربي</a>
+        <a class="lang-btn" href="?lang=en" data-i18n="lang.en_short">EN</a>
       </div>
 
-      <a href="/#contact" class="btn-contact" data-ar>تواصل معي</a>
-      <a href="/#contact" class="btn-contact" data-en>Contact</a>
+      <a href="/#contact" class="btn-contact" data-i18n="nav.contact">تواصل معي</a>
     </div>
   </nav>
 </header>
@@ -42,27 +44,27 @@ const isActive = (href) => {
 <nav class="mobile-nav" aria-label="التنقل السريع">
   <a href="/" aria-current={isActive('/') ? 'page' : undefined}>
     <span class="material-symbols-outlined" aria-hidden="true">home</span>
-    <span data-ar>الرئيسية</span><span data-en>Home</span>
+    <span data-i18n="mobile.home">الرئيسية</span>
   </a>
   <a href="/#about">
     <span class="material-symbols-outlined" aria-hidden="true">person</span>
-    <span data-ar>من أنا</span><span data-en>About</span>
+    <span data-i18n="mobile.about">من أنا</span>
   </a>
   <a href="/projects/" aria-current={isActive('/projects/') ? 'page' : undefined}>
     <span class="material-symbols-outlined" aria-hidden="true">architecture</span>
-    <span data-ar>مشاريع</span><span data-en>Projects</span>
+    <span data-i18n="mobile.projects">مشاريع</span>
   </a>
   <a href="/#experience">
     <span class="material-symbols-outlined" aria-hidden="true">history</span>
-    <span data-ar>خبرة</span><span data-en>Logs</span>
+    <span data-i18n="mobile.logs">خبرة</span>
   </a>
   <a href="/services/" aria-current={isActive('/services/') ? 'page' : undefined}>
     <span class="material-symbols-outlined" aria-hidden="true">settings_suggest</span>
-    <span data-ar>خدمات</span><span data-en>Services</span>
+    <span data-i18n="mobile.services">خدمات</span>
   </a>
   <a href="/#contact">
     <span class="material-symbols-outlined" aria-hidden="true">mail</span>
-    <span data-ar>تواصل</span><span data-en>Contact</span>
+    <span data-i18n="mobile.contact">تواصل</span>
   </a>
 </nav>
 
@@ -358,6 +360,7 @@ const isActive = (href) => {
     .nav-links { display: none; }
     .mobile-nav { display: flex; }
     .home-like-main { padding-bottom: 5rem; }
+    footer { display: none; }
   }
 
   @media (max-width: 640px) {
