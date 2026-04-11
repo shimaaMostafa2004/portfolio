@@ -9,12 +9,12 @@ import HomeLikeFooter from '../components/HomeLikeFooter.astro';
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>معرض الأعمال | عبدالرحمن طاهر</title>
-  <meta name="description" content="صفحة تضم كل مشاريع عبدالرحمن طاهر في مكان واحد."/>
+  <meta name="description" content="استعرض مشاريع عبدالرحمن طاهر في الأنظمة الخلفية ومنتجات التشغيل وتطبيقات الموبايل مع وصف مختصر وتقنيات التنفيذ."/>
   <meta name="robots" content="index, follow, max-image-preview:large"/>
   <link rel="canonical" href="https://abdotaher.me/projects/"/>
   <meta property="og:type" content="website"/>
   <meta property="og:title" content="معرض الأعمال | عبدالرحمن طاهر"/>
-  <meta property="og:description" content="كل المشاريع والتطبيقات في صفحة واحدة."/>
+  <meta property="og:description" content="كل المشاريع والتطبيقات في صفحة واحدة مع عرض واضح للتقنيات والنتائج."/>
   <meta property="og:url" content="https://abdotaher.me/projects/"/>
   <meta property="og:image" content="https://abdotaher.me/image.png"/>
   <meta name="twitter:card" content="summary_large_image"/>
@@ -24,346 +24,249 @@ import HomeLikeFooter from '../components/HomeLikeFooter.astro';
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
   <script src="/site-i18n.js" defer></script>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/image.png"/>
+  <link rel="apple-touch-icon" href="/image.png"/>
   <style>
-    :root {
-      --c-bg: #0d0b1a;
-      --c-card: #1e1933;
-      --c-border: rgba(112,213,230,0.14);
-      --c-primary: #9bf0ff;
-      --c-text: #e7deff;
-      --c-muted: rgba(231,222,255,0.72);
+    .projects-wrap {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 1.25rem;
     }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      background: var(--c-bg);
-      color: var(--c-text);
-      font-family: 'Cairo', sans-serif;
-      line-height: 1.8;
-      padding-top: 5.5rem;
-    }
-    .wrap { max-width: 1200px; margin: auto; padding: 1.25rem; }
-    .top {
-      position: fixed;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 100;
-      width: min(calc(100% - 1rem), 1200px);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 0.8rem;
-      padding: .9rem 1rem;
-      background: rgba(13,11,26,0.88);
-      backdrop-filter: blur(18px);
-      border: 1px solid var(--c-border);
-      border-radius: 0 0 16px 16px;
-    }
-    .brand {
-      font-family: 'JetBrains Mono', monospace;
-      color: var(--c-primary);
-      font-weight: 700;
-      font-size: .82rem;
-      letter-spacing: .08em;
-    }
-    .btn {
-      display: inline-block;
-      padding: .65rem 1.1rem;
-      border-radius: 999px;
-      border: 1px solid var(--c-border);
-      color: var(--c-primary);
-      text-decoration: none;
-      font-size: .75rem;
-      font-weight: 700;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-    .hero {
-      background: var(--c-card);
-      border: 1px solid var(--c-border);
-      border-radius: 16px;
-      padding: 1.3rem;
-      margin-top: 1rem;
-      text-align: center;
-    }
-    .hero h1 { margin: .2rem 0 0; font-size: clamp(1.5rem, 4vw, 2.4rem); }
-    .muted { color: var(--c-muted); }
 
-    .grid {
-      margin-top: 1.1rem;
+    .projects-hero {
+      background: linear-gradient(135deg, rgba(155, 240, 255, 0.08), rgba(30, 25, 51, 0.96) 45%);
+      border: 1px solid rgba(112, 213, 230, 0.18);
+      border-radius: 22px;
+      padding: 1.5rem;
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.22);
+    }
+
+    .projects-kicker {
+      color: #8ff700;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    .projects-hero h1 {
+      margin: 0.45rem 0 0;
+      font-size: clamp(1.7rem, 4vw, 2.5rem);
+      line-height: 1.3;
+      color: #e7deff;
+    }
+
+    .projects-hero p {
+      margin: 0.65rem 0 0;
+      color: rgba(231, 222, 255, 0.78);
+      max-width: 74ch;
+    }
+
+    .projects-grid {
+      margin-top: 1.2rem;
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
       gap: 1rem;
     }
-    .card {
-      background: var(--c-card);
-      border: 1px solid var(--c-border);
-      border-radius: 1rem;
+
+    .project-card {
+      background: rgba(30, 25, 51, 0.92);
+      border: 1px solid rgba(112, 213, 230, 0.16);
+      border-radius: 18px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
+      transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
     }
-    .card-img { height: 180px; overflow: hidden; }
-    .card-img img {
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(155, 240, 255, 0.44);
+      box-shadow: 0 24px 56px rgba(0, 0, 0, 0.32);
+    }
+
+    .project-image {
+      aspect-ratio: 16 / 9;
+      background: rgba(255, 255, 255, 0.03);
+      overflow: hidden;
+    }
+
+    .project-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
     }
-    .card-body { padding: 1rem; display: flex; flex-direction: column; gap: .6rem; }
-    .card-title {
+
+    .project-body {
+      padding: 1rem;
+      display: grid;
+      gap: 0.6rem;
+    }
+
+    .project-title {
       margin: 0;
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
-      gap: .6rem;
+      gap: 0.65rem;
+      color: #e7deff;
       font-size: 1rem;
+      line-height: 1.45;
     }
-    .card-title a {
-      color: var(--c-primary);
+
+    .project-title a {
+      color: #9bf0ff;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
+      border-radius: 8px;
     }
-    .card-desc { margin: 0; color: var(--c-muted); font-size: .86rem; }
-    .card-tags {
-      margin-top: .2rem;
-      font-size: .62rem;
+
+    .project-title a:hover {
+      color: #ccf8ff;
+    }
+
+    .project-desc {
+      margin: 0;
+      color: rgba(231, 222, 255, 0.76);
+      font-size: 0.88rem;
+      line-height: 1.75;
+    }
+
+    .project-tags {
+      font-size: 0.63rem;
       font-weight: 800;
-      letter-spacing: .14em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--c-primary);
+      color: #8ff700;
+    }
+
+    .projects-state {
+      margin-top: 1rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px dashed rgba(112, 213, 230, 0.22);
+      border-radius: 14px;
+      padding: 0.95rem 1rem;
+      color: rgba(231, 222, 255, 0.74);
+      font-size: 0.9rem;
+    }
+
+    .projects-state.error {
+      border-color: rgba(255, 122, 122, 0.42);
+      color: #ffd1d1;
+    }
+
+    @media (max-width: 760px) {
+      .projects-wrap { padding: 1rem; }
     }
   </style>
-<link rel="icon" href="/favicon.svg" type="image/svg+xml"/><link rel="icon" type="image/png" sizes="32x32" href="/image.png"/><link rel="apple-touch-icon" href="/image.png"/></head>
+</head>
 <body>
   <HomeLikeHeader />
   <main class="home-like-main">
-  <div class="wrap">
-    <div class="top">
-      <div class="brand">النواة المعمارية</div>
-      <div style="display:flex;gap:.6rem;flex-wrap:wrap;">
-        <a class="btn" href="/">الرئيسية</a>
-        <a class="btn" href="https://wa.me/201008275881" target="_blank" rel="noopener noreferrer">واتساب</a>
-      </div>
+    <div class="projects-wrap">
+      <section class="projects-hero" aria-labelledby="projects-heading">
+        <p class="projects-kicker">Portfolio</p>
+        <h1 id="projects-heading"><span data-ar>معرض أعمال يوضح التنفيذ الفعلي للمشاريع</span><span data-en>A Portfolio Showing Real Product Execution</span></h1>
+        <p data-ar>صفحة تجمع المشاريع في مكان واحد مع وصف مختصر للتقنيات وسياق الاستخدام حتى ترى نوع الأعمال التي تم تنفيذها فعليًا.</p>
+        <p data-en>A single page collecting shipped projects with concise technical context to make evaluation easier for recruiters and clients.</p>
+      </section>
+
+      <div id="projects-state" class="projects-state" role="status" aria-live="polite">جاري تحميل المشاريع...</div>
+      <section id="projects-grid" class="projects-grid" role="list" aria-label="Projects gallery"></section>
     </div>
 
-    <section class="hero">
-      <p class="muted" style="margin:0;">Portfolio</p>
-      <h1>معرض الأعمال</h1>
-      <p class="muted" style="margin:.5rem 0 0;">كل المشاريع والتطبيقات في صفحة واحدة.</p>
-    </section>
-
-    <section id="projects-grid" class="grid" role="list" aria-live="polite"></section>
-  </div>
-
-  <script>
-    function escapeHtml(value) {
-      return String(value || '')
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/\"/g, '&quot;')
-        .replace(/'/g, '&#039;');
-    }
-
-    function normalizeProject(project) {
-      return {
-        name: project.name || project.title || project.project || '',
-        image: project.image || project.image_url || project.img || '',
-        altAr: project.altAr || project.alt_ar || project.altar || '',
-        altEn: project.altEn || project.alt_en || project.alten || '',
-        descAr: project.descAr || project.desc_ar || project.description_ar || '',
-        descEn: project.descEn || project.desc_en || project.description_en || '',
-        tags: project.tags || project.stack || '',
-        link: project.link || project.url || project.href || ''
-      };
-    }
-
-    function renderProjects(projects) {
-      const grid = document.getElementById('projects-grid');
-      if (!grid) return;
-
-      const valid = projects.filter(item => item && item.name && item.image);
-      grid.innerHTML = valid.map(project => {
-        const safeName = escapeHtml(project.name);
-        const safeImage = escapeHtml(project.image);
-        const safeAltAr = escapeHtml(project.altAr || `${project.name} – مشروع`);
-        const safeDescAr = escapeHtml(project.descAr || project.descEn || '');
-        const safeTags = escapeHtml(project.tags || '');
-        const safeLink = escapeHtml(project.link || '#');
-        const isExternal = !!project.link;
-
-        return `
-        <article class="card" role="listitem" itemscope itemtype="https://schema.org/SoftwareApplication">
-          <div class="card-img">
-            <img src="${safeImage}" alt="${safeAltAr}" width="400" height="180" loading="lazy" itemprop="image"/>
-          </div>
-          <div class="card-body">
-            <h2 class="card-title">
-              <span itemprop="name">${safeName}</span>
-              <a href="${safeLink}" ${isExternal ? 'target="_blank" rel="noopener noreferrer"' : ''} aria-label="${safeName}">
-                <span class="material-symbols-outlined" aria-hidden="true">open_in_new</span>
-              </a>
-            </h2>
-            <p class="card-desc" itemprop="description">${safeDescAr}</p>
-            <div class="card-tags">${safeTags}</div>
-          </div>
-        </article>`;
-      }).join('');
-    }
-
-    const PROJECTS_FALLBACK = [
-      {
-        "name": "CaptainOne",
-        "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuC6uqqBhXkYQBWEMyrSZ-xLAV-TCzmTNpXrMeth1jZ75ctsGmLmR9sZSedpR8-FxsZSsrxtHE0fwA8-dHJ1aAWroprXGgEpIsmgbWxXnu7p3kJOmWP4hqtkbkU-g4ZyiA4aTVO3Laax0qljAaXRDE05tftZcTqV9YPENi64KxdZ-FeZ26o-kL3AUeD80XIW0GNljLQGeynHw_CE-zA1XQsbbhl9nVU7dKrM643TASNr1uLBw-GxH9MBk9qiOIz0jnmu0ZlaVi64cm_7",
-        "alt_ar": "CaptainOne – نظام باك-إند لتطبيق الأجرة",
-        "alt_en": "CaptainOne – ride-hailing backend platform",
-        "desc_ar": "نظام باك-إند متكامل لتطبيق الأجرة. يشمل خوارزميات مطابقة السائقين في الوقت الحقيقي وتحسين التوجيه لحركة المرور عالية التزامن.",
-        "desc_en": "A complex ride-hailing ecosystem backend. Engineered real-time driver matching and optimized routing algorithms for high-concurrency traffic.",
-        "tags": "LARAVEL // REDIS",
-        "link": ""
-      },
-      {
-        "name": "EDU-CASH",
-        "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBg72GLXRCn2vshuDe0rHDfaQ8Rfw_kuOM2FiTnBOhzr7WhueXnb8lUnump8-ZO4msB40r9JxDjhc2PtnJ8KpC1ZCQI3dd9QnSIwOYk2EKDFeOnfmJD30i_D09TRWgynAgf9AFQ7ni38sfIJ3x_PkJXn5nN03jWd1WlXkFPeZ2WbG3qTJzPoQRgv2zNjsgToOM5qcTjTMgdN-cCPOLdPXHC2g4EMDzOm9qZrWu8zq4MXYi1nBNzOfO4cBwCFLCP3krpiwWJCjJgH9nG",
-        "alt_ar": "EDU-CASH – منصة تمويل تعليمي",
-        "alt_en": "EDU-CASH – fintech education platform",
-        "desc_ar": "منصة فينتك متخصصة في التمويل الصغير للتعليم. تكامل مع بوابات دفع متعددة مع تدقيق متقدم لدفاتر الحسابات.",
-        "desc_en": "FinTech platform specializing in educational micro-finance. Integrated multi-gateway payment systems with advanced ledger auditing.",
-        "tags": "NODE.JS // POSTGRES",
-        "link": ""
-      },
-      {
-        "name": "Healthcare LMS",
-        "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCgVk81ng3QzE9UlzHj42U1Y8oER7WWvT201D3uxNCuC6dHAPkAw4wZ5ey83kL7jQvaUHMlY0d2MiBTKza9A9hoyU37MQm7n8R4PhQuPny_N8a2O8ELBs6Ms9HJT50h13Q4NBbPJmaA_1ooa5lr44pzkQMetmfm3pecCpXiVk_XZ5MxRmRKgOXsbNI6FFvE9Nh0k2y1oT2-7Bo5yVwn-eWYQV5fQFuWRfl5QQOssTwdAUAgJU1rEsXvwzEm-7O91-0sK058_vcCMpTn",
-        "alt_ar": "Healthcare LMS – نظام إدارة بيانات الرعاية الصحية",
-        "alt_en": "Healthcare LMS – healthcare data management system",
-        "desc_ar": "نظام إدارة بيانات لمقدمي الرعاية الصحية. طبّق طبقات تشفير متوافقة مع HIPAA ومعالجة تلقائية لتقارير المختبرات.",
-        "desc_en": "Data management system for clinical providers. Implemented HIPAA-compliant encryption layers and automated laboratory report processing.",
-        "tags": "PYTHON // DJANGO",
-        "link": ""
-      },
-      {
-        "name": "لوحات الامارات",
-        "image": "https://play-lh.googleusercontent.com/Rg6qoePedp9dUr292hb22Cnb2DBkzYGwQSXTjhLQ5iu_GCz6IKLcmK9mokXVQkS3Z7WCf30N7rsoAnujlu6_cA=w240-h480",
-        "alt_ar": "لوحات الامارات – منصة ذكية لشراء وبيع لوحات السيارات داخل الإمارات",
-        "alt_en": "Emirates Plates – smart platform for buying and selling car plates in the UAE",
-        "desc_ar": "منصة ذكية لشراء وبيع لوحات السيارات داخل الإمارات، تتيح عرض اللوحات أو تصفح آلاف اللوحات بسهولة مع إشعارات فورية ومشاركة الإعلانات ووسائل دفع آمنة.",
-        "desc_en": "A smart platform for buying and selling car plates within the UAE, allowing users to list or browse thousands of plates with instant notifications, ad sharing, and secure payment methods.",
-        "tags": "ANDROID // SHOPPING",
-        "link": "https://play.google.com/store/apps/details?id=com.alalmiyaalhura.lohatalemarat"
-      },
-      {
-        "name": "مشاعر الحج",
-        "image": "https://play-lh.googleusercontent.com/pzUH2-HXfWvyYCrwc0Hp6E-Igq6kxOWAo_A_78z6ANvfn6Lct3wK5ZKeDCuaToRiy3l70J2zLonjGm3MAAWsrhc=w240-h480",
-        "alt_ar": "مشاعر الحج – تطبيق ذكي لمساعدة الحجاج في أداء المناسك بسهولة وأمان",
-        "alt_en": "Mashair – smart Hajj assistant app",
-        "desc_ar": "تطبيق ذكي يساعد الحجاج على أداء المناسك بسهولة وأمان، مع خريطة تفاعلية للمشاعر، محتوى تعليمي، قسم للفتاوى، مساعد ذكي، تنبيهات، وزر طوارئ لإرسال طلب مساعدة مع الموقع.",
-        "desc_en": "A smart app designed to help pilgrims perform Hajj rituals safely and easily, with an interactive holy-sites map, educational content, fatwas, a smart assistant, alerts, and an emergency help button with location sharing.",
-        "tags": "ANDROID // TRAVEL",
-        "link": "https://play.google.com/store/apps/details?id=com.alalmiya.mashaerapp"
-      },
-      {
-        "name": "OrderUp",
-        "image": "https://play-lh.googleusercontent.com/b3oUgDlDk0WypCF0USTVz2qJcPbA1MP8SWpn2M1AQa8Os5FA9J8eVnSus26Uf4-rcjESL0aQFMy3ADV2Lr_Gtg=w240-h480",
-        "alt_ar": "OrderUp – تطبيق حجز رحلات وخدمات نقل داخل السعودية",
-        "alt_en": "OrderUp – ride booking app in Saudi Arabia",
-        "desc_ar": "تطبيق لحجز الرحلات داخل السعودية يركز على الراحة والأمان وتنوع الخدمات، ويحوّل عملية حجز الرحلة إلى تجربة سهلة وسريعة عبر التقنية.",
-        "desc_en": "A ride-booking app in Saudi Arabia focused on comfort, safety, and service variety, turning trip booking into a smooth and enjoyable technology-driven experience.",
-        "tags": "ANDROID // TRANSPORT",
-        "link": "https://play.google.com/store/apps/details?id=com.orderup.client"
-      },
-      {
-        "name": "Coconut - كوكونت",
-        "image": "https://play-lh.googleusercontent.com/OIELFLYqt7mFVIqEwYOH8qcXvmrKGjuOdxfNiXlVD32aY8XmjIwBQX3Fim_qKHBzORnF_I6Nguwb19015iH4zJw=w240-h480",
-        "alt_ar": "Coconut - كوكونت – تطبيق تسوق إلكتروني لشراء البقالة والمواد الغذائية",
-        "alt_en": "CocoNet – online grocery shopping app",
-        "desc_ar": "تطبيق تسوق إلكتروني يتيح شراء البقالة والمواد الغذائية بسهولة من الهاتف، مع تصفح المنتجات، إضافة للسلة، تتبع الطلبات، وخيارات دفع مريحة.",
-        "desc_en": "An online shopping app for groceries and food items, with product browsing, cart management, order tracking, and convenient payment options.",
-        "tags": "ANDROID // SHOPPING",
-        "link": "https://play.google.com/store/apps/details?id=com.alalmiyalhura.coconut"
-      },
-      {
-        "name": "Tamm Order Driver",
-        "image": "https://play-lh.googleusercontent.com/nGdvBwaJo2UkQIFZPQ-26fuVrk9UTFwVANQY0iVf6yJKlFsHnnMT_KDxDdcNRC5b9TmShfMfxTpAvxoI3C0QN6M=w240-h480",
-        "alt_ar": "Tamm Order Driver – تطبيق ضمن منصة Tamm Order",
-        "alt_en": "Tamm Order Driver – app within the Tamm Order platform",
-        "desc_ar": "منصة متكاملة لطلب الخدمات والمنتجات بسرعة وسهولة، مع تجربة سلسة لتقديم الطلبات وتتبعها حتى التسليم، وخيارات دفع مرنة وخدمة توصيل موثوقة.",
-        "desc_en": "An all-in-one platform for ordering services and products quickly and conveniently, with smooth order placement, real-time tracking, flexible payments, and reliable delivery.",
-        "tags": "ANDROID // BUSINESS",
-        "link": "https://play.google.com/store/apps/details?id=com.alalmiyaalhura.tammorderdriver"
-      },
-      {
-        "name": "Tamm order Provider",
-        "image": "https://play-lh.googleusercontent.com/4yhAGC3PK1frAqP9zbAd9K0CwVJWsO3r-fQxoM0vSwqsLr4k4EEwFPmEy2sItnKpPcdmL6MJC1xicCQ8rCkJ=w240-h480",
-        "alt_ar": "Tamm order Provider – تطبيق ضمن منصة Tamm Order",
-        "alt_en": "Tamm order Provider – app within the Tamm Order platform",
-        "desc_ar": "منصة متكاملة لطلب الخدمات والمنتجات بسرعة وسهولة، مع تجربة استخدام سلسة لتقديم الطلبات وتتبعها حتى التسليم وربط المستخدمين بالمتاجر ومزودي الخدمات الموثوقين.",
-        "desc_en": "An all-in-one platform for ordering services and products, offering a smooth experience for placing and tracking orders while connecting users with trusted stores and service providers.",
-        "tags": "ANDROID // BUSINESS",
-        "link": "https://play.google.com/store/apps/details?id=com.alalmiyaalhura.tammorderprovider"
-      },
-      {
-        "name": "Gomla Online Markt",
-        "image": "https://play-lh.googleusercontent.com/8AQlwx5q3r2JMFEHENsXizz-8GmLT28tn8PGGvI46wcaqtp87a242HMLNl9tJT6OL1TReVnoOqwpqd-Dy9t5Wg=w240-h480",
-        "alt_ar": "Gomla Online Markt – منصة تجارة إلكترونية للتجار وأصحاب المحلات",
-        "alt_en": "Gomla Online Markt – wholesale e-commerce platform",
-        "desc_ar": "منصة تجارة إلكترونية متكاملة تتيح للتجار وأصحاب المحلات شراء المنتجات بأسعار الجملة بسهولة وأمان، مع تصفح منظم، سلة مشتريات، تتبع الطلبات، وطرق دفع متعددة.",
-        "desc_en": "A wholesale e-commerce platform for merchants and shop owners to buy products at wholesale prices with organized browsing, cart support, order tracking, and multiple payment options.",
-        "tags": "ANDROID // E-COMMERCE",
-        "link": "https://play.google.com/store/apps/details?id=com.alalmiyalhura.gomlaonline"
-      },
-      {
-        "name": "Tamm Order",
-        "image": "https://play-lh.googleusercontent.com/qE9Z7qBqib20Xw9jMpVbQTJxpzqtVyADrfxS3fg74BUW7d0DNAQ-ZCEbFe_jT17p8z0fCzfhL5npubPx19u3iQ=w240-h480",
-        "alt_ar": "Tamm Order – منصة متكاملة لطلب الخدمات والمنتجات",
-        "alt_en": "Tamm Order – all-in-one ordering platform",
-        "desc_ar": "منصة متكاملة لطلب الخدمات والمنتجات بسرعة وسهولة، مع تجربة مستخدم سلسة لتقديم الطلبات خلال ثوانٍ وتتبعها حتى التسليم.",
-        "desc_en": "An all-in-one platform designed to make ordering services and products fast, simple, and convenient, with a smooth user experience and delivery tracking.",
-        "tags": "ANDROID // ORDERING",
-        "link": "https://play.google.com/store/apps/details?id=com.alalmiyaalhura.tammorderclient"
-      },
-      {
-        "name": "اجيك كابتن السائق",
-        "image": "https://play-lh.googleusercontent.com/BzXQ-NwDBRrVysuVWPX12ZvWZhXKUFdwwWPr5v8nSKa4j__kQAeXOYX8x845I2xOo0qrZxzfrOEagEkVb2SI=w240-h480",
-        "alt_ar": "اجيك كابتن السائق – تطبيق للسائقين لاستقبال وإدارة طلبات الرحلات",
-        "alt_en": "Ajik Captain Driver – driver app for trip management",
-        "desc_ar": "تطبيق مخصص للسائقين لاستقبال وإدارة طلبات الرحلات وتحقيق دخل مرن، مع عرض تفاصيل الرحلة قبل القبول، تتبع مباشر، سجل رحلات كامل، ونظام أرباح واضح.",
-        "desc_en": "A driver-focused app for receiving and managing ride requests with flexible earnings, trip details before acceptance, live tracking, full trip history, and a clear earnings system.",
-        "tags": "ANDROID // DRIVER",
-        "link": "https://play.google.com/store/apps/details?id=com.alalmiya.ajeekcaptain"
-      },
-      {
-        "name": "اجيك كابتن",
-        "image": "https://play-lh.googleusercontent.com/O5UEhhVDu633yY4Dw-RQRmqnvsl_-fpRDh806iD9TNosJFI0MP438lUG5JnCRf2P-ehFRK0GqjMsWABJfYXkZ78=w240-h480",
-        "alt_ar": "اجيك كابتن – تطبيق ذكي لحجز الرحلات داخل المدن بسهولة وأمان",
-        "alt_en": "Ajik Captain – smart city ride-booking app",
-        "desc_ar": "تطبيق ذكي لحجز الرحلات داخل المدن بسهولة وأمان، مع تتبع مباشر للسائق، تحديد الوجهة على الخريطة، واختيار نوع المركبة وطريقة الدفع مع تقدير مسبق للتكلفة.",
-        "desc_en": "A smart app for booking rides within cities safely and easily, with real-time driver tracking, map-based destination selection, preferred vehicle and payment method, and estimated fares.",
-        "tags": "ANDROID // RIDE-HAILING",
-        "link": "https://play.google.com/store/apps/details?id=com.alalmiya.ajeek"
+    <script>
+      function escapeHtml(value) {
+        return String(value || '')
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/\"/g, '&quot;')
+          .replace(/'/g, '&#039;');
       }
-    ];
 
-    fetch('./projects.json', { cache: 'no-cache' })
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error('Failed to fetch projects.json');
+      function normalizeProject(project) {
+        return {
+          name: project.name || project.title || project.project || '',
+          image: project.image || project.image_url || project.img || '',
+          altAr: project.altAr || project.alt_ar || project.altar || '',
+          altEn: project.altEn || project.alt_en || project.alten || '',
+          descAr: project.descAr || project.desc_ar || project.description_ar || '',
+          descEn: project.descEn || project.desc_en || project.description_en || '',
+          tags: project.tags || project.stack || '',
+          link: project.link || project.url || project.href || ''
+        };
+      }
+
+      function renderProjects(projects) {
+        const grid = document.getElementById('projects-grid');
+        const state = document.getElementById('projects-state');
+        if (!grid || !state) return;
+
+        const lang = document.body.classList.contains('lang-en') ? 'en' : 'ar';
+        const valid = projects.filter((item) => item && item.name && item.image);
+
+        if (!valid.length) {
+          state.classList.add('error');
+          state.textContent = lang === 'en'
+            ? 'No projects available right now.'
+            : 'لا توجد مشاريع متاحة حاليًا.';
+          return;
         }
-        return res.json();
-      })
-      .then((projects) => {
-        const source = Array.isArray(projects) && projects.length ? projects : PROJECTS_FALLBACK;
-        renderProjects(source.map(normalizeProject));
-      })
-      .catch(() => {
-        renderProjects(PROJECTS_FALLBACK.map(normalizeProject));
-      });
-  </script>
+
+        state.style.display = 'none';
+
+        grid.innerHTML = valid.map((project) => {
+          const safeName = escapeHtml(project.name);
+          const safeImage = escapeHtml(project.image);
+          const currentAlt = lang === 'en' ? (project.altEn || project.altAr || project.name) : (project.altAr || project.altEn || project.name);
+          const currentDesc = lang === 'en' ? (project.descEn || project.descAr || '') : (project.descAr || project.descEn || '');
+          const safeAlt = escapeHtml(currentAlt);
+          const safeDesc = escapeHtml(currentDesc);
+          const safeTags = escapeHtml(project.tags || '');
+          const safeLink = escapeHtml(project.link || '#');
+          const isExternal = Boolean(project.link);
+
+          return `
+          <article class="project-card" role="listitem" itemscope itemtype="https://schema.org/SoftwareApplication">
+            <div class="project-image">
+              <img src="${safeImage}" alt="${safeAlt}" width="560" height="315" loading="lazy" decoding="async" itemprop="image" />
+            </div>
+            <div class="project-body">
+              <h2 class="project-title">
+                <span itemprop="name">${safeName}</span>
+                <a href="${safeLink}" ${isExternal ? 'target="_blank" rel="noopener noreferrer"' : ''} aria-label="${safeName}">
+                  <span class="material-symbols-outlined" aria-hidden="true">open_in_new</span>
+                </a>
+              </h2>
+              <p class="project-desc" itemprop="description">${safeDesc}</p>
+              <div class="project-tags">${safeTags}</div>
+            </div>
+          </article>`;
+        }).join('');
+      }
+
+      fetch('/projects.json', { cache: 'no-cache' })
+        .then((res) => {
+          if (!res.ok) throw new Error('Failed to fetch projects.json');
+          return res.json();
+        })
+        .then((projects) => renderProjects((projects || []).map(normalizeProject)))
+        .catch(() => {
+          const state = document.getElementById('projects-state');
+          if (state) {
+            state.classList.add('error');
+            state.textContent = document.body.classList.contains('lang-en')
+              ? 'Could not load projects data. Please try again later.'
+              : 'تعذر تحميل بيانات المشاريع الآن. حاول مرة أخرى لاحقًا.';
+          }
+        });
+    </script>
   </main>
   <HomeLikeFooter />
 </body>

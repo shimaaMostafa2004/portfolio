@@ -9,315 +9,333 @@ import HomeLikeFooter from '../components/HomeLikeFooter.astro';
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>خدمات Backend وتطوير الأنظمة | عبدالرحمن طاهر</title>
-  <meta name="description" content="صفحة خدمات منظمة لعرض ما أقدمه: بناء مواقع وسيستمات من الصفر، تطوير MVP، تصميم Backend وAPI، إدارة الأنظمة بعد الإطلاق، وتحسين الأداء والتشغيل."/>
-  <meta name="keywords" content="خدمات backend, تطوير سيستم, بناء موقع من الصفر, تطوير MVP, إدارة الأنظمة, Laravel, Node.js, Python"/>
+  <meta name="description" content="خدمات احترافية لبناء Backend وAPI وأنظمة تشغيلية واضحة: من MVP إلى الإطلاق والتحسين المستمر."/>
+  <meta name="keywords" content="خدمات backend, تطوير سيستم, بناء MVP, تصميم API, Laravel, Node.js, Python"/>
   <meta name="robots" content="index, follow, max-image-preview:large"/>
   <link rel="canonical" href="https://abdotaher.me/services/"/>
   <meta property="og:type" content="website"/>
   <meta property="og:title" content="خدمات Backend وتطوير الأنظمة | عبدالرحمن طاهر"/>
-  <meta property="og:description" content="أبني المواقع والسيستمات من الصفر، وأساعد أيضًا في إدارة الأنظمة وتحسينها بعد الإطلاق."/>
+  <meta property="og:description" content="تنفيذ Backend من الصفر، تطوير MVP، ودعم ما بعد الإطلاق مع تركيز على الأداء والاستقرار."/>
   <meta property="og:url" content="https://abdotaher.me/services/"/>
   <meta property="og:image" content="https://abdotaher.me/image.png"/>
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="خدمات Backend وتطوير الأنظمة"/>
-  <meta name="twitter:description" content="بناء الأنظمة من الصفر، تطوير MVP، إدارة وتشغيل الأنظمة، وتحسين الأداء."/>
+  <meta name="twitter:description" content="بناء الأنظمة من الصفر، تطوير MVP، وإدارة التشغيل والتحسين."/>
   <meta name="twitter:image" content="https://abdotaher.me/image.png"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet"/>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Backend Engineering Services","provider":{"@type":"Person","name":"Abdulrahman Taher","url":"https://abdotaher.me/"},"serviceType":"Backend Development, API Architecture, MVP Delivery, Operations Support","areaServed":["Egypt","Saudi Arabia","United Arab Emirates","Qatar","Kuwait","Bahrain","Oman"],"inLanguage":"ar"}</script>
+  <script src="/site-i18n.js" defer></script>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/image.png"/>
+  <link rel="apple-touch-icon" href="/image.png"/>
   <style>
-    :root{--bg:#0d0b1a;--card:#1e1933;--soft:rgba(30,25,51,.88);--bd:rgba(112,213,230,.14);--tx:#e7deff;--mut:rgba(231,222,255,.72);--pri:#9bf0ff;--acc:#8ff700}
-    *{box-sizing:border-box}
-    body{margin:0;background:
-      radial-gradient(circle at top right, rgba(155,240,255,.08), transparent 30%),
-      radial-gradient(circle at bottom left, rgba(143,247,0,.06), transparent 28%),
-      var(--bg);color:var(--tx);font-family:'Cairo',sans-serif;line-height:1.85;padding-top:6.5rem}
-    .wrap{max-width:1120px;margin:auto;padding:1.25rem}
-    .top{position:fixed;top:.5rem;left:50%;transform:translateX(-50%);z-index:100;width:min(calc(100% - 1rem),1120px);display:flex;justify-content:space-between;align-items:center;padding:.9rem 1rem;background:rgba(13,11,26,.88);backdrop-filter:blur(18px);border:1px solid var(--bd);border-radius:18px;box-shadow:0 16px 40px rgba(0,0,0,.22)}
-    .brand{font-family:'Space Grotesk',sans-serif;color:var(--pri);font-weight:700;letter-spacing:.08em}
-    .nav-actions{display:flex;gap:.6rem;flex-wrap:wrap}
-    .btn{display:inline-block;padding:.65rem 1.1rem;border-radius:999px;border:1px solid var(--bd);color:var(--pri);text-decoration:none}
-    .btn-flag-link{display:inline-flex;align-items:center;gap:.45rem}
-    .btn-flag{display:inline-flex;align-items:center;justify-content:center;padding:.22rem .48rem;border-radius:999px;font-size:.52rem;font-weight:900;letter-spacing:.12em;color:#ffe9d6;background:linear-gradient(135deg,#ff7a18,#ff3d00);box-shadow:0 0 18px rgba(255,90,0,.28)}
-    .btn-tab-active{background:rgba(155,240,255,.12);border-color:rgba(155,240,255,.34);color:var(--tx);box-shadow:inset 0 0 0 1px rgba(155,240,255,.08)}
-    .btn-primary{background:var(--pri);color:#001f24;border-color:transparent;font-weight:800}
-    .hero,.section,.cta,.offer,.proof{background:var(--soft);border:1px solid var(--bd);border-radius:20px;box-shadow:0 18px 48px rgba(0,0,0,.18)}
-    .hero,.section,.cta{padding:1.4rem;margin-top:1rem}
-    .hero{padding:1.7rem;position:relative;overflow:hidden}
-    .hero::before{content:'';position:absolute;top:-30px;left:-40px;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle, rgba(155,240,255,.18), transparent 70%)}
-    .hero::after{content:'';position:absolute;bottom:-55px;right:-35px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle, rgba(143,247,0,.08), transparent 70%)}
-    .eyebrow{display:inline-flex;align-items:center;gap:.55rem;padding:.45rem .8rem;border-radius:999px;border:1px solid rgba(155,240,255,.14);background:rgba(255,255,255,.02);color:var(--pri);font-size:.78rem;font-weight:700}
-    h1{margin:.85rem 0;font-size:clamp(1.95rem,4.6vw,3.3rem);line-height:1.3;max-width:15ch}
-    h2{margin:.1rem 0 .8rem;font-size:1.45rem}
-    h3{margin:.1rem 0 .6rem;font-size:1.08rem}
-    p,li{color:var(--mut)}
-    strong{color:var(--tx)}
-    a{color:var(--pri);text-decoration:none}
-    .lead{font-size:1.03rem;max-width:66ch}
-    .section-header{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;margin-bottom:.85rem}
-    .kicker{font-size:.75rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--acc)}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
-    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:1rem;align-items:start}
-    .offer{padding:1.1rem}
-    .offer ul{margin:.45rem 0 0;padding-inline-start:1.1rem}
-    .offer li{margin-bottom:.35rem}
-    .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
-    .step,.mini-card,.link-card,.result-card,.proof{border:1px dashed var(--bd);border-radius:16px;padding:1rem;background:rgba(255,255,255,.02)}
-    .split{display:grid;grid-template-columns:1.15fr .85fr;gap:1rem;align-items:start}
-    .result-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.9rem;margin-top:1rem}
-    .result-card strong{display:block;font-size:1.7rem;color:var(--pri);margin-bottom:.35rem}
-    .hero-list{margin:.8rem 0 0;padding-inline-start:1.1rem}
-    .hero-list li{margin-bottom:.35rem}
-    .proof-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.9rem}
-    .proof h3{margin-bottom:.35rem}
-    .link-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.85rem}
-    .link-card strong{display:block;margin-bottom:.35rem}
-    .cta{background:linear-gradient(135deg, rgba(155,240,255,.07), rgba(30,25,51,.92) 40%), var(--soft)}
-    .cta-actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1rem}
-    @media (max-width:760px){
+    .services-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.25rem;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .hero,
+    .section,
+    .cta {
+      background: rgba(30, 25, 51, 0.9);
+      border: 1px solid rgba(112, 213, 230, 0.16);
+      border-radius: 22px;
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.22);
+      padding: 1.45rem;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, rgba(155, 240, 255, 0.08), rgba(30, 25, 51, 0.95) 45%);
+    }
+
+    .kicker {
+      margin: 0;
+      color: #8ff700;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin: 0.5rem 0 0;
+      font-size: clamp(1.85rem, 4.8vw, 3rem);
+      line-height: 1.3;
+      max-width: 18ch;
+      color: #ece6ff;
+    }
+
+    .hero p,
+    .section p,
+    .offer p,
+    .step p,
+    .mini p,
+    .proof p,
+    .link-card span {
+      color: rgba(231, 222, 255, 0.78);
+      line-height: 1.85;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 1rem;
+      align-items: start;
+      margin-top: 0.8rem;
+    }
+
+    .hero-list,
+    .offer ul,
+    .mini ul {
+      margin: 0.8rem 0 0;
+      padding-inline-start: 1.1rem;
+    }
+
+    .hero-list li,
+    .offer li,
+    .mini li {
+      color: rgba(231, 222, 255, 0.76);
+      margin-bottom: 0.35rem;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 0.65rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.62rem 1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(112, 213, 230, 0.18);
+      color: #9bf0ff;
+      text-decoration: none;
+      font-size: 0.74rem;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      font-weight: 800;
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      background: rgba(155, 240, 255, 0.09);
+      border-color: rgba(155, 240, 255, 0.38);
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, #9bf0ff, #7de6ff);
+      color: #042129;
+      border-color: transparent;
+    }
+
+    .section-head {
+      margin-bottom: 0.9rem;
+    }
+
+    .section-head h2 {
+      margin: 0.35rem 0 0;
+      font-size: 1.5rem;
+      color: #ece6ff;
+      line-height: 1.45;
+    }
+
+    .grid,
+    .proof-list,
+    .steps,
+    .link-grid,
+    .result-grid {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .grid,
+    .proof-list,
+    .steps,
+    .link-grid,
+    .result-grid {
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    }
+
+    .offer,
+    .proof,
+    .step,
+    .mini,
+    .result-card,
+    .link-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px dashed rgba(112, 213, 230, 0.2);
+      border-radius: 16px;
+      padding: 1rem;
+    }
+
+    .offer h3,
+    .proof h3 {
+      margin: 0;
+      color: #ece6ff;
+      font-size: 1.06rem;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 0.9rem;
+      align-items: start;
+    }
+
+    .result-card strong {
+      display: block;
+      color: #9bf0ff;
+      margin-bottom: 0.35rem;
+      font-size: 1.15rem;
+    }
+
+    .link-card {
+      text-decoration: none;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .link-card strong {
+      color: #9bf0ff;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .link-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(155, 240, 255, 0.4);
+    }
+
+    .cta h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      line-height: 1.5;
+      color: #ece6ff;
+    }
+
+    @media (max-width: 840px) {
       .hero-grid,
-      .split{grid-template-columns:1fr}
-      h1{max-width:none}
-      .top{align-items:flex-start}
+      .split {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        max-width: none;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .services-wrap { padding: 1rem; }
     }
   </style>
-  <script src="/site-i18n.js" defer></script>
-<link rel="icon" href="/favicon.svg" type="image/svg+xml"/><link rel="icon" type="image/png" sizes="32x32" href="/image.png"/><link rel="apple-touch-icon" href="/image.png"/></head>
+</head>
 <body>
   <HomeLikeHeader />
   <main class="home-like-main">
-  <div class="wrap">
-    <div class="top">
-      <div class="brand">النواة المعمارية</div>
-      <div class="nav-actions">
-        <a class="btn" href="/">الرئيسية</a>
-        <a class="btn btn-tab-active" href="/services/" aria-current="page">الخدمات</a>
-        <a class="btn btn-flag-link" href="/offers/">العروض <span class="btn-flag">HOT</span></a>
-        <a class="btn" href="/blog/">المقالات</a>
-        <a class="btn" href="/web-system-development-gcc/">الدليل</a>
-        <a class="btn btn-primary" href="/#contact">تواصل</a>
-      </div>
-    </div>
-
-    <section class="hero">
-      <div class="hero-grid">
-        <div>
-          <span class="eyebrow">الخدمات • الباك-إند والأنظمة</span>
-          <h1>أبني لك النظام من الصفر، وأساعدك أيضًا في تشغيله وتطويره بعد الإطلاق</h1>
-          <p class="lead">إذا كنت صاحب مشروع أو شركة وتريد موقعًا أو سيستمًا يخدم العمل فعلًا، فهدفي ليس فقط كتابة الكود، بل بناء أساس واضح يمكن الاعتماد عليه. أساعدك في تحويل الفكرة إلى منتج حقيقي، ثم أواصل معك في التطوير والتحسين والإدارة إذا احتجت ذلك.</p>
-          <ul class="hero-list">
-            <li>بناء موقع أو سيستم أو MVP من البداية</li>
-            <li>تصميم Backend وAPI وقاعدة البيانات بشكل واضح</li>
-            <li>إدارة النظام وتطويره بعد الإطلاق بدل تركه يتعقد مع الوقت</li>
-          </ul>
-          <div class="cta-actions">
-            <a class="btn btn-primary" href="/#contact">ابدأ التواصل</a>
-            <a class="btn" href="https://wa.me/201008275881">واتساب</a>
-            <a class="btn" href="/backend-engineer-egypt/">لو تبدأ من مصر</a>
+    <div class="services-wrap">
+      <section class="hero" aria-labelledby="services-heading">
+        <p class="kicker">الخدمات • الباك-إند والأنظمة</p>
+        <h1 id="services-heading">أبني لك النظام من الصفر وأطوره بعد الإطلاق بثبات ووضوح</h1>
+        <div class="hero-grid">
+          <div>
+            <p>إذا كنت صاحب مشروع أو شركة وتريد موقعًا أو سيستمًا يخدم العمل فعلًا، فالهدف ليس مجرد كود، بل بناء أساس تقني واضح يمكن الاعتماد عليه والتوسع فوقه.</p>
+            <ul class="hero-list">
+              <li>بناء موقع أو سيستم أو MVP من البداية</li>
+              <li>تصميم Backend وAPI وقاعدة بيانات منظمة</li>
+              <li>دعم وتحسين النظام بعد الإطلاق</li>
+            </ul>
+            <div class="cta-actions">
+              <a class="btn primary" href="/#contact">ابدأ التواصل</a>
+              <a class="btn" href="https://wa.me/201008275881">واتساب</a>
+              <a class="btn" href="/offers/">العروض</a>
+            </div>
           </div>
+          <aside class="proof">
+            <h3>ماذا ستحصل فعليًا؟</h3>
+            <p>تنفيذ واضح، قرارات تقنية منطقية، وتسليمات تدريجية قابلة للقياس بدل البناء العشوائي الذي يستهلك وقت وميزانية.</p>
+          </aside>
         </div>
-        <aside class="proof">
-          <h3>ماذا تستفيد فعليًا؟</h3>
-          <p>بدل أن تبدأ مشروعك بشكل مرتبك أو تنفق وقتًا طويلًا في تعديلات عشوائية، تحصل على:</p>
-          <ul>
-            <li>خطة تنفيذ واضحة من البداية</li>
-            <li>بنية قابلة للتوسع بدل إعادة البناء لاحقًا</li>
-            <li>رؤية أوضح لما يجب بناؤه الآن وما يمكن تأجيله</li>
-            <li>شخص يفهم البناء والتشغيل، لا مجرد صفحات وواجهة فقط</li>
-          </ul>
-        </aside>
-      </div>
-      <div class="result-grid">
-        <article class="result-card">
-          <strong>من الفكرة</strong>
-          <p>نحوّل احتياجك إلى نطاق واضح وخطوات قابلة للتنفيذ.</p>
-        </article>
-        <article class="result-card">
-          <strong>إلى الإطلاق</strong>
-          <p>نبني الأساس التقني الذي يخدم المشروع فعليًا عند أول إطلاق.</p>
-        </article>
-        <article class="result-card">
-          <strong>ثم التطوير</strong>
-          <p>أساعدك بعد الإطلاق في التحسين، الإضافة، والإدارة المستمرة.</p>
-        </article>
-      </div>
-    </section>
+      </section>
 
-    <section class="section">
-      <div class="section-header">
-        <div>
-          <div class="kicker">العروض</div>
-          <h2>تريدها بصيغة أوضح وأسرع؟</h2>
+      <section class="section">
+        <div class="section-head">
+          <p class="kicker">الخدمات الأساسية</p>
+          <h2>ما الذي أقدمه لك في المشاريع التشغيلية؟</h2>
         </div>
-      </div>
-      <p>أضفت صفحة مستقلة باسم <strong>العروض</strong> فيها 3 مسارات واضحة حسب مرحلة مشروعك: MVP، بناء سيستم، أو دعم مستمر.</p>
-      <p><a href="/offers/">اذهب إلى صفحة العروض</a></p>
-    </section>
+        <div class="grid">
+          <article class="offer">
+            <h3>بناء المنتج من الصفر</h3>
+            <p>تحويل الفكرة إلى نظام عملي منظم: متطلبات واضحة، قاعدة بيانات نظيفة، وواجهات API قابلة للتوسع.</p>
+          </article>
+          <article class="offer">
+            <h3>تطوير MVP بذكاء</h3>
+            <p>إطلاق سريع دون تكديس تعقيد تقني مبكر مع اختيار أولويات الإصدار الأول بدقة.</p>
+          </article>
+          <article class="offer">
+            <h3>تحسين الأنظمة القائمة</h3>
+            <p>ترتيب الـ flows، خفض الأعطال، وتوسيع النظام الحالي بدلاً من الترقيع المستمر.</p>
+          </article>
+          <article class="offer">
+            <h3>أداء وتشغيل</h3>
+            <p>تحسين استعلامات البيانات والكاش ومراقبة الخدمة للحفاظ على استقرار الأداء مع نمو الاستخدام.</p>
+          </article>
+        </div>
+      </section>
 
-    <section class="section">
-      <div class="section-header">
-        <div>
-          <div class="kicker">الخدمات</div>
-          <h2>الخدمات التي أقدّمها</h2>
+      <section class="section">
+        <div class="section-head">
+          <p class="kicker">النتيجة</p>
+          <h2>لماذا هذا المسار عملي لأصحاب المشاريع؟</h2>
         </div>
-      </div>
-      <div class="grid">
-        <article class="offer">
-          <h3>بناء المنتج من الصفر</h3>
-          <p>إذا عندك فكرة لموقع أو سيستم أو SaaS، أساعدك في تحويلها إلى منتج واضح يبدأ بالمتطلبات الصحيحة وينتهي بنسخة يمكن استخدامها والاعتماد عليها.</p>
-          <ul>
-            <li>تحليل الفكرة والـ flows الأساسية</li>
-            <li>تصميم قاعدة البيانات وواجهة الـ API</li>
-            <li>بناء لوحة الإدارة والعمليات الأساسية</li>
-          </ul>
-        </article>
-        <article class="offer">
-          <h3>تطوير MVP بسرعة ووعي</h3>
-          <p>بناء نسخة أولى تخرج للسوق بسرعة، لكن بدون قرارات تضر المنتج لاحقًا أو تجعلك تعيد كل شيء من جديد بعد أول نمو.</p>
-          <ul>
-            <li>تحديد الأولويات الصحيحة</li>
-            <li>تقليل الخصائص غير الضرورية في البداية</li>
-            <li>تسليمات مرحلية واضحة</li>
-          </ul>
-        </article>
-        <article class="offer">
-          <h3>إدارة وتطوير الأنظمة القائمة</h3>
-          <p>لو عندك سيستم شغال بالفعل وتحتاج شخصًا يطوره أو يديره بشكل أفضل، فأنا لا أتعامل معه كإصلاحات سريعة فقط، بل كمنتج يحتاج تنظيمًا واستقرارًا ونموًا.</p>
-          <ul>
-            <li>إضافة موديولات وخصائص جديدة</li>
-            <li>تنظيف الأكواد والـ flows المعقدة</li>
-            <li>تقليل الأعطال والبطء</li>
-          </ul>
-        </article>
-        <article class="offer">
-          <h3>تحسين الأداء والتشغيل</h3>
-          <p>الهدف ليس فقط أن يعمل النظام، بل أن يعمل بسرعة وثبات وتكلفة معقولة، خاصة عندما يبدأ الاستخدام الحقيقي ويظهر الضغط على النظام.</p>
-          <ul>
-            <li>تحسين استعلامات قواعد البيانات</li>
-            <li>الكاش وإدارة الجلسات والخدمات</li>
-            <li>متابعة الاستقرار والاختناقات</li>
-          </ul>
-        </article>
-      </div>
-    </section>
+        <div class="result-grid">
+          <article class="result-card"><strong>وضوح في البداية</strong><p>قبل التنفيذ نحدد ما يجب بناؤه فعلًا.</p></article>
+          <article class="result-card"><strong>إطلاق أسرع</strong><p>تنفيذ مرحلي يختصر الوقت ويقلل ارتباك الفريق.</p></article>
+          <article class="result-card"><strong>استمرارية أفضل</strong><p>النظام يبقى قابل للتطوير بدل إعادة البناء كل فترة.</p></article>
+        </div>
+      </section>
 
-    <section class="section">
-      <div class="section-header">
-        <div>
-          <div class="kicker">القيمة</div>
-          <h2>لماذا هذا مهم لك كعميل؟</h2>
+      <section class="section">
+        <div class="section-head">
+          <p class="kicker">طريقة العمل</p>
+          <h2>كيف نمشي من الفكرة إلى التنفيذ؟</h2>
         </div>
-      </div>
-      <div class="proof-list">
-        <article class="proof">
-          <h3>لأنك لا تريد بناء شيء ثم تكتشف أنه غير مناسب</h3>
-          <p>كثير من المشاريع تبدأ بسرعة، ثم تتعثر لأن القرار التقني الأول لم يكن صحيحًا. أنا أساعدك في تقليل هذا النوع من الهدر من البداية.</p>
-        </article>
-        <article class="proof">
-          <h3>لأنك تحتاج شخصًا يرى الصورة كاملة</h3>
-          <p>ليس فقط شاشة أو endpoint منفصل، بل كيف يعمل المنتج ككل: الصلاحيات، البيانات، التقارير، والعمليات بعد الإطلاق.</p>
-        </article>
-        <article class="proof">
-          <h3>لأن الإطلاق ليس نهاية المشروع</h3>
-          <p>بعد الإطلاق تبدأ المرحلة الأهم: التحسين، التوسع، والتعامل مع الاستخدام الحقيقي. وهنا تكون قيمة وجود شخص يدير هذا بشكل واعٍ.</p>
-        </article>
-      </div>
-    </section>
+        <div class="steps">
+          <article class="step"><strong>1. فهم الاحتياج</strong><p>نحدد طبيعة المشروع ومسار القيمة الحقيقي.</p></article>
+          <article class="step"><strong>2. تحديد النطاق</strong><p>تقسيم التنفيذ إلى مراحل واضحة وقابلة للقياس.</p></article>
+          <article class="step"><strong>3. التنفيذ المرحلي</strong><p>بناء backend وواجهات API والعمليات الأساسية.</p></article>
+          <article class="step"><strong>4. ما بعد الإطلاق</strong><p>دعم وتحسين مستمر حسب الاستخدام الفعلي.</p></article>
+        </div>
+      </section>
 
-    <section class="section">
-      <div class="section-header">
-        <div>
-          <div class="kicker">طريقة العمل</div>
-          <h2>كيف يتم العمل عادةً</h2>
+      <section class="section">
+        <div class="section-head">
+          <p class="kicker">صفحات مرتبطة</p>
+          <h2>روابط تساعدك تقرر أسرع</h2>
         </div>
-      </div>
-      <div class="steps">
-        <article class="step">
-          <strong>1. فهم الفكرة</strong>
-          <p>نحدد ما الذي تريد بناءه فعلًا: موقع تعريفي، سيستم، منصة، أو MVP، وما الذي يجب أن يحدث داخل المنتج.</p>
-        </article>
-        <article class="step">
-          <strong>2. تحديد النطاق</strong>
-          <p>نقسم العمل إلى مراحل واضحة حتى تعرف ما الذي ستحصل عليه، ومتى، وبدون توسع غير منضبط في المطلوب.</p>
-        </article>
-        <article class="step">
-          <strong>3. البناء والتنفيذ</strong>
-          <p>تنفيذ Backend وAPI وقاعدة البيانات والوظائف الأساسية، مع وضوح في التقدم، والمراجعة، والتسليم المرحلي.</p>
-        </article>
-        <article class="step">
-          <strong>4. ما بعد الإطلاق</strong>
-          <p>متابعة الأداء، إصلاح المشاكل، وتحسين البنية حسب استخدام المنتج الفعلي، بدل أن يتوقف كل شيء بمجرد النشر.</p>
-        </article>
-      </div>
-    </section>
+        <div class="link-grid">
+          <a class="link-card" href="/offers/"><strong>صفحة العروض</strong><span>3 مسارات واضحة حسب مرحلة مشروعك.</span></a>
+          <a class="link-card" href="/web-system-development-gcc/"><strong>دليل موقع أم سيستم</strong><span>يساعدك تحسم نوع المنتج المناسب.</span></a>
+          <a class="link-card" href="/how-to-choose-backend-engineer/"><strong>كيف تختار Backend Engineer</strong><span>أسئلة عملية قبل التعاقد والتنفيذ.</span></a>
+          <a class="link-card" href="/projects/"><strong>معرض الأعمال</strong><span>اطلع على مشاريع منفذة وسياقاتها.</span></a>
+        </div>
+      </section>
 
-    <section class="section">
-      <div class="section-header">
-        <div>
-          <div class="kicker">مناسب لمن</div>
-          <h2>متى تكون هذه الخدمات مناسبة لك؟</h2>
+      <section class="cta">
+        <h2>إذا كنت تريد تنفيذًا محترفًا من البداية أو إعادة تنظيم نظام قائم، نقدر نبدأ بخطوة واضحة الآن.</h2>
+        <p>راسلني مباشرة لنحدد نقطة البداية المناسبة لمشروعك والزمن المتوقع للتنفيذ.</p>
+        <div class="cta-actions">
+          <a class="btn primary" href="mailto:abdotaher093@gmail.com">راسلني عبر البريد</a>
+          <a class="btn" href="https://wa.me/201008275881">تواصل واتساب</a>
         </div>
-      </div>
-      <div class="split">
-        <div class="mini-card">
-          <p>هذه الخدمات مناسبة إذا كنت:</p>
-          <ul>
-            <li>تريد بناء موقع أو سيستم لشركتك من البداية</li>
-            <li>تحتاج MVP محترم بدل نسخة عشوائية سريعة</li>
-            <li>تملك نظامًا قائمًا وتحتاج تطويره أو تنظيمه</li>
-            <li>تبحث عن Backend واضح بدل تركيز كامل على الواجهة فقط</li>
-          </ul>
-        </div>
-        <div class="mini-card">
-          <p>غالبًا أساعد في مشاريع مثل:</p>
-          <ul>
-            <li>لوحات إدارة داخلية</li>
-            <li>منصات حجوزات وطلبات</li>
-            <li>SaaS وتطبيقات أعمال</li>
-            <li>أنظمة تحتاج API وربط ويب وموبايل</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-header">
-        <div>
-          <div class="kicker">صفحات مرتبطة</div>
-          <h2>صفحات قد تهمك</h2>
-        </div>
-      </div>
-      <div class="link-grid">
-        <a class="link-card" href="/backend-engineer-egypt/">
-          <strong>لو تبدأ من مصر</strong>
-          <span>شرح عملي يساعدك تفهم كيف تختار البداية المناسبة لمشروعك داخل السوق المصري.</span>
-        </a>
-        <a class="link-card" href="/backend-engineer-saudi-arabia/">
-          <strong>لو مشروعك في السعودية</strong>
-          <span>محتوى يوضح احتياج المشاريع في السعودية وكيف تختلف طريقة عرض الخدمة والطلب هناك.</span>
-        </a>
-        <a class="link-card" href="/web-system-development-gcc/">
-          <strong>دليل موقع أم سيستم</strong>
-          <span>يساعدك تحسم هل تحتاج موقعًا تعريفيًا أم نظامًا كاملًا.</span>
-        </a>
-        <a class="link-card" href="/how-to-choose-backend-engineer/">
-          <strong>كيف تختار مبرمج Backend</strong>
-          <span>أسئلة مهمة قبل أن تبدأ التنفيذ أو التعاقد.</span>
-        </a>
-      </div>
-    </section>
-
-    <section class="cta">
-      <h2>إذا كنت تريد منتجًا يُبنى بشكل صحيح، أو نظامًا قائمًا يعمل بشكل أفضل، فهذه هي الخطوة المناسبة</h2>
-      <p>سواء كنت تبدأ من الصفر أو لديك نظام يحتاج ترتيب وتحسين، يمكننا تحويل الفكرة إلى خطة واضحة، ثم تنفيذها بطريقة تخدم المشروع على المدى القريب والبعيد.</p>
-      <div class="cta-actions">
-        <a class="btn btn-primary" href="mailto:abdotaher093@gmail.com">راسلني عبر البريد</a>
-        <a class="btn" href="https://wa.me/201008275881">تواصل واتساب</a>
-        <a class="btn" href="/programmer-backend-egypt-saudi-guide/">اقرأ المقال التعريفي</a>
-      </div>
-    </section>
-  </div>
+      </section>
+    </div>
   </main>
   <HomeLikeFooter />
 </body>
