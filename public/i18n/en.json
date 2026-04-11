@@ -36,8 +36,16 @@
     "contact": "Contact"
   },
   "projects": {
+    "kicker": "Portfolio",
     "hero_title": "A Portfolio Showing Real Product Execution",
     "hero_desc": "A single page collecting shipped projects with concise technical context to make evaluation easier for recruiters and clients.",
+    "section_title": "Latest Projects",
+    "gallery_aria": "Projects gallery",
+    "summary_projects": "Projects",
+    "summary_links": "Live Links",
+    "summary_tech": "Technologies",
+    "open_project": "Open Project",
+    "private_project": "Private Project",
     "loading": "Loading projects...",
     "empty": "No projects available right now.",
     "fetch_error": "Could not load projects data. Please try again later."

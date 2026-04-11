@@ -256,15 +256,15 @@ import HomeLikeFooter from '../components/HomeLikeFooter.astro';
   <main class="home-like-main">
     <div class="projects-wrap">
       <section class="projects-hero" aria-labelledby="projects-heading">
-        <p class="projects-kicker">Portfolio</p>
+        <p class="projects-kicker" data-i18n="projects.kicker">Portfolio</p>
         <h1 id="projects-heading" data-i18n="projects.hero_title">معرض أعمال يوضح التنفيذ الفعلي للمشاريع</h1>
         <p data-i18n="projects.hero_desc">صفحة تجمع المشاريع في مكان واحد مع وصف مختصر للتقنيات وسياق الاستخدام حتى ترى نوع الأعمال التي تم تنفيذها فعليًا.</p>
         <div id="projects-summary" class="projects-summary" aria-live="polite"></div>
       </section>
 
       <div id="projects-state" class="projects-state" role="status" aria-live="polite" data-i18n="projects.loading">جاري تحميل المشاريع...</div>
-      <h2 class="projects-section-title">Latest Projects</h2>
-      <section id="projects-grid" class="projects-grid" role="list" aria-label="Projects gallery"></section>
+      <h2 class="projects-section-title" data-i18n="projects.section_title">Latest Projects</h2>
+      <section id="projects-grid" class="projects-grid" role="list" data-i18n-attr="aria-label:projects.gallery_aria" aria-label="Projects gallery"></section>
     </div>
 
     <script>
@@ -304,9 +304,12 @@ import HomeLikeFooter from '../components/HomeLikeFooter.astro';
         const withLinks = projects.filter((item) => item.link).length;
         const uniqueTech = new Set(projects.flatMap((item) => splitTags(item.tags))).size;
 
-        const projectsLabel = lang === 'en' ? 'Projects' : 'مشروع';
-        const linksLabel = lang === 'en' ? 'Live Links' : 'روابط مباشرة';
-        const stackLabel = lang === 'en' ? 'Technologies' : 'تقنيات';
+        const projectsLabel = window.siteI18n?.t?.('projects.summary_projects', lang === 'en' ? 'Projects' : 'مشروع')
+          || (lang === 'en' ? 'Projects' : 'مشروع');
+        const linksLabel = window.siteI18n?.t?.('projects.summary_links', lang === 'en' ? 'Live Links' : 'روابط مباشرة')
+          || (lang === 'en' ? 'Live Links' : 'روابط مباشرة');
+        const stackLabel = window.siteI18n?.t?.('projects.summary_tech', lang === 'en' ? 'Technologies' : 'تقنيات')
+          || (lang === 'en' ? 'Technologies' : 'تقنيات');
 
         summary.innerHTML = [
           `<span class="summary-pill">${projects.length} ${projectsLabel}</span>`,
@@ -343,8 +346,10 @@ import HomeLikeFooter from '../components/HomeLikeFooter.astro';
           const safeTags = escapeHtml(project.tags || '');
           const safeLink = escapeHtml(project.link || '#');
           const hasLink = Boolean(project.link);
-          const openLabel = lang === 'en' ? 'Open Project' : 'فتح المشروع';
-          const noLinkLabel = lang === 'en' ? 'Private Project' : 'مشروع خاص';
+          const openLabel = window.siteI18n?.t?.('projects.open_project', lang === 'en' ? 'Open Project' : 'فتح المشروع')
+            || (lang === 'en' ? 'Open Project' : 'فتح المشروع');
+          const noLinkLabel = window.siteI18n?.t?.('projects.private_project', lang === 'en' ? 'Private Project' : 'مشروع خاص')
+            || (lang === 'en' ? 'Private Project' : 'مشروع خاص');
 
           return `
           <article class="project-card" role="listitem" itemscope itemtype="https://schema.org/SoftwareApplication">
