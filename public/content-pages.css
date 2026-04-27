@@ -27,6 +27,21 @@ body{
   padding-top:6.4rem;
 }
 
+.wrap,
+.hero,
+.section,
+.cta,
+.note,
+.card,
+.mini{
+  width:100%;
+  max-width:100%;
+}
+
+p,li,a,strong,span,h1,h2,h3{
+  overflow-wrap:anywhere;
+}
+
 .wrap{max-width:1080px;margin:auto;padding:1.25rem}
 
 .top{
@@ -197,7 +212,19 @@ img{max-width:100%;height:auto;display:block}
 
 @media (max-width:760px){
   .wrap{padding:1rem}
-  body{padding-top:7rem}
+  body{
+    padding-top:7rem;
+    overflow-x:hidden;
+  }
   .top{top:5rem;align-items:flex-start}
   .btn{font-size:.7rem;padding:.55rem .85rem}
+  .hero,.section,.cta,.note{padding:1.15rem}
+  .hero,.section,.cta,.note{margin-top:.85rem}
+  .grid,
+  .proof-list,
+  .example-list,
+  .channel-grid,
+  .mini-grid{
+    grid-template-columns:1fr;
+  }
 }

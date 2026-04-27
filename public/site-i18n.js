@@ -2,9 +2,22 @@
   var STORAGE_KEY = 'preferred-lang';
   var PARAM_KEY = 'lang';
   var SUPPORTED = { ar: true, en: true };
-  var DEFAULT_LANG = 'ar';
+  var DEFAULT_LANG = 'en';
   var currentLang = DEFAULT_LANG;
   var bundles = {};
+
+  function shouldPreferEnglishDefault() {
+    return !!document.querySelector('[data-i18n-default="en"]');
+  }
+
+  function detectBrowserLang() {
+    var browserLang = '';
+    try {
+      browserLang = String(navigator.language || navigator.userLanguage || '').toLowerCase();
+    } catch (error) {}
+    if (browserLang.indexOf('ar') === 0) return 'ar';
+    return 'en';
+  }
 
   function getInitialLang() {
     try {
@@ -18,7 +31,9 @@
       var stored = localStorage.getItem(STORAGE_KEY);
       if (SUPPORTED[stored]) return stored;
     } catch (error) {}
-    return DEFAULT_LANG;
+
+    if (shouldPreferEnglishDefault()) return detectBrowserLang();
+    return 'ar';
   }
 
   function getByPath(source, path) {
@@ -67,9 +82,14 @@
       var key = node.getAttribute('data-i18n');
       if (!key) return;
       var fallback = node.getAttribute('data-i18n-fallback');
-      if (!fallback) fallback = (node.textContent || '').trim();
+      if (!fallback) fallback = (node.innerHTML || '').trim();
       var value = t(key, fallback);
-      if (value) node.textContent = value;
+      if (!value) return;
+      if (/<[a-z][\s\S]*>/i.test(value) || node.children.length > 0) {
+        node.innerHTML = value;
+      } else {
+        node.textContent = value;
+      }
     });
 
     var attrNodes = document.querySelectorAll('[data-i18n-attr]');
@@ -140,7 +160,23 @@
     loadBundle(currentLang).then(applyLanguage);
   }
 
+  function bindHeaderLangLinks() {
+    var links = document.querySelectorAll('.lang-btn[href*="lang="]');
+    links.forEach(function (link) {
+      if (link.getAttribute('data-i18n-bound') === 'true') return;
+      link.setAttribute('data-i18n-bound', 'true');
+      link.addEventListener('click', function (event) {
+        var href = link.getAttribute('href') || '';
+        var match = href.match(/(?:\?|&)lang=(ar|en)\b/);
+        if (!match) return;
+        event.preventDefault();
+        switchLanguage(match[1]);
+      });
+    });
+  }
+
   function injectToggle() {
+    if (document.querySelector('.lang-toggle, [data-inline-lang-switch]')) return;
     if (document.querySelector('.site-lang-switch')) return;
 
     var wrapper = document.createElement('div');
@@ -168,6 +204,7 @@
 
   function init() {
     injectStyles();
+    bindHeaderLangLinks();
     currentLang = getInitialLang();
 
     Promise.all([loadBundle(DEFAULT_LANG), loadBundle(currentLang)]).then(function () {

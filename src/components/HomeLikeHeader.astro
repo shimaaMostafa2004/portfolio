@@ -38,6 +38,11 @@ const isActive = (href) => {
 
       <a href="/#contact" class="btn-contact" data-i18n="nav.contact">تواصل معي</a>
     </div>
+
+    <div class="lang-toggle mobile-lang-toggle" role="group" aria-label="اختيار اللغة">
+      <a class="lang-btn" href="?lang=ar" data-i18n="lang.ar_short">ع</a>
+      <a class="lang-btn" href="?lang=en" data-i18n="lang.en_short">EN</a>
+    </div>
   </nav>
 </header>
 
@@ -234,6 +239,16 @@ const isActive = (href) => {
     margin: auto;
     padding: 6rem 1.5rem 4rem;
     min-height: 68vh;
+    width: 100%;
+  }
+
+  .home-like-main * {
+    max-width: 100%;
+  }
+
+  .mobile-lang-toggle {
+    display: none;
+    margin-inline-start: auto;
   }
 
   .top,
@@ -356,7 +371,11 @@ const isActive = (href) => {
   @media (max-width: 1080px) {
     .nav-links { display: none; }
     .mobile-nav { display: flex; }
-    .home-like-main { padding-bottom: 5rem; }
+    .mobile-lang-toggle { display: flex; }
+    .home-like-main {
+      padding-bottom: calc(5rem + env(safe-area-inset-bottom));
+      overflow-x: hidden;
+    }
     footer { display: none; }
   }
 
@@ -384,6 +403,8 @@ const isActive = (href) => {
     .mobile-nav a {
       font-size: 0.5rem;
       letter-spacing: 0.06em;
+      min-height: 44px;
+      justify-content: center;
     }
   }
 

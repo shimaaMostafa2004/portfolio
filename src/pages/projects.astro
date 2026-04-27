@@ -68,8 +68,8 @@ import HomeLikeFooter from '../components/HomeLikeFooter.astro';
     .projects-grid {
       margin-top: 1.2rem;
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.15rem;
     }
 
     .projects-summary {
@@ -101,12 +101,13 @@ import HomeLikeFooter from '../components/HomeLikeFooter.astro';
     }
 
     .project-card {
-      background: rgba(30, 25, 51, 0.92);
-      border: 1px solid rgba(112, 213, 230, 0.16);
-      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(30, 25, 51, 0.96), rgba(13, 11, 26, 0.96));
+      border: 1px solid rgba(112, 213, 230, 0.2);
+      border-radius: 20px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
+      min-height: 100%;
       transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
     }
 
@@ -116,9 +117,15 @@ import HomeLikeFooter from '../components/HomeLikeFooter.astro';
       box-shadow: 0 24px 56px rgba(0, 0, 0, 0.32);
     }
 
+    .project-card.featured {
+      border-color: rgba(143, 247, 0, 0.32);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3), inset 0 0 0 1px rgba(143, 247, 0, 0.12);
+    }
+
     .project-image {
       aspect-ratio: 16 / 9;
       background: rgba(255, 255, 255, 0.03);
+      border-bottom: 1px solid rgba(112, 213, 230, 0.14);
       overflow: hidden;
     }
 
@@ -129,65 +136,115 @@ import HomeLikeFooter from '../components/HomeLikeFooter.astro';
       display: block;
     }
 
-    .project-body {
-      padding: 1rem;
+    .project-image.is-placeholder {
       display: grid;
-      gap: 0.6rem;
-    }
-
-    .project-title {
-      margin: 0;
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 0.65rem;
-      color: #e7deff;
-      font-size: 1rem;
-      line-height: 1.45;
-    }
-
-    .project-title a {
-      color: #9bf0ff;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      border-radius: 8px;
-    }
-
-    .project-title a:hover {
-      color: #ccf8ff;
-    }
-
-    .project-desc {
-      margin: 0;
-      color: rgba(231, 222, 255, 0.76);
-      font-size: 0.88rem;
-      line-height: 1.75;
-    }
-
-    .project-tags {
-      font-size: 0.63rem;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #8ff700;
-    }
-
-    .project-action {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      width: fit-content;
-      text-decoration: none;
-      color: #9bf0ff;
+      place-items: center;
+      color: rgba(231, 222, 255, 0.64);
       font-size: 0.74rem;
       font-weight: 800;
       letter-spacing: 0.09em;
       text-transform: uppercase;
     }
 
-    .project-action:hover {
-      color: #ccf8ff;
+    .project-body {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      gap: 0.68rem;
+      min-width: 0;
+    }
+
+    .project-title {
+      margin: 0;
+      color: #e7deff;
+      font-size: 1.03rem;
+      line-height: 1.4;
+      font-weight: 800;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .project-desc {
+      margin: 0;
+      color: rgba(231, 222, 255, 0.76);
+      font-size: 0.88rem;
+      line-height: 1.72;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .project-stack {
+      margin-top: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .project-tag {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      border: 1px solid rgba(155, 240, 255, 0.24);
+      background: rgba(255, 255, 255, 0.03);
+      color: #9bf0ff;
+      padding: 0.22rem 0.56rem;
+      font-size: 0.63rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      max-width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .project-actions {
+      margin-top: 0.1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+    }
+
+    .project-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.28rem;
+      min-height: 44px;
+      padding: 0.58rem 0.8rem;
+      border-radius: 0.72rem;
+      text-decoration: none;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .project-action.primary {
+      background: linear-gradient(135deg, #9bf0ff, #7de6ff);
+      color: #052129;
+      border: 1px solid transparent;
+    }
+
+    .project-action.primary:hover {
+      background: linear-gradient(135deg, #bcf6ff, #8be9fb);
+    }
+
+    .project-action.ghost {
+      color: #9bf0ff;
+      border: 1px solid rgba(155, 240, 255, 0.24);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .project-action.ghost:hover {
+      color: #d8fbff;
+      border-color: rgba(155, 240, 255, 0.42);
+      background: rgba(155, 240, 255, 0.08);
     }
 
     .project-action-disabled {
@@ -219,7 +276,7 @@ import HomeLikeFooter from '../components/HomeLikeFooter.astro';
       }
 
       .projects-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
@@ -233,6 +290,12 @@ import HomeLikeFooter from '../components/HomeLikeFooter.astro';
 
       .projects-grid {
         grid-template-columns: 1fr;
+      }
+      .project-actions {
+        flex-direction: column;
+      }
+      .project-action {
+        width: 100%;
       }
     }
 
@@ -324,7 +387,7 @@ import HomeLikeFooter from '../components/HomeLikeFooter.astro';
         if (!grid || !state) return;
 
         const lang = window.siteI18n?.getLang?.() || (document.body.classList.contains('lang-en') ? 'en' : 'ar');
-        const valid = projects.filter((item) => item && item.name && item.image);
+        const valid = projects.filter((item) => item && item.name);
 
         if (!valid.length) {
           state.classList.add('error');
@@ -336,39 +399,48 @@ import HomeLikeFooter from '../components/HomeLikeFooter.astro';
         state.style.display = 'none';
         renderSummary(valid, lang);
 
-        grid.innerHTML = valid.map((project) => {
+        grid.innerHTML = valid.map((project, index) => {
           const safeName = escapeHtml(project.name);
           const safeImage = escapeHtml(project.image);
           const currentAlt = lang === 'en' ? (project.altEn || project.altAr || project.name) : (project.altAr || project.altEn || project.name);
           const currentDesc = lang === 'en' ? (project.descEn || project.descAr || '') : (project.descAr || project.descEn || '');
           const safeAlt = escapeHtml(currentAlt);
           const safeDesc = escapeHtml(currentDesc);
-          const safeTags = escapeHtml(project.tags || '');
+          const parsedTags = splitTags(project.tags).slice(0, 4);
+          const stackHtml = (parsedTags.length ? parsedTags : [lang === 'en' ? 'Backend' : 'Back-End'])
+            .map((tag) => `<span class="project-tag">${escapeHtml(tag)}</span>`)
+            .join('');
           const safeLink = escapeHtml(project.link || '#');
           const hasLink = Boolean(project.link);
-          const openLabel = window.siteI18n?.t?.('projects.open_project', lang === 'en' ? 'Open Project' : 'فتح المشروع')
-            || (lang === 'en' ? 'Open Project' : 'فتح المشروع');
-          const noLinkLabel = window.siteI18n?.t?.('projects.private_project', lang === 'en' ? 'Private Project' : 'مشروع خاص')
-            || (lang === 'en' ? 'Private Project' : 'مشروع خاص');
+          const openLabel = lang === 'en' ? 'View Project' : 'عرض المشروع';
+          const contactLabel = lang === 'en' ? 'Contact' : 'تواصل';
+          const requestLabel = lang === 'en' ? 'Request Access' : 'اطلب التفاصيل';
+          const fallbackDesc = lang === 'en'
+            ? 'Scalable software project with production-focused architecture and delivery.'
+            : 'مشروع قابل للتوسع مع تنفيذ هندسي يركز على الجاهزية للإنتاج.';
 
           return `
-          <article class="project-card" role="listitem" itemscope itemtype="https://schema.org/SoftwareApplication">
-            <div class="project-image">
-              <img src="${safeImage}" alt="${safeAlt}" width="560" height="315" loading="lazy" decoding="async" itemprop="image" />
+          <article class="project-card ${index === 0 ? 'featured' : ''}" role="listitem" itemscope itemtype="https://schema.org/SoftwareApplication">
+            <div class="project-image ${project.image ? '' : 'is-placeholder'}">
+              ${project.image
+                ? `<img src="${safeImage}" alt="${safeAlt}" width="640" height="360" loading="lazy" decoding="async" itemprop="image" />`
+                : `<span>${lang === 'en' ? 'Project Preview' : 'معاينة المشروع'}</span>`
+              }
             </div>
             <div class="project-body">
-              <h2 class="project-title">
+              <h2 class="project-title" title="${safeName}">
                 <span itemprop="name">${safeName}</span>
               </h2>
-              <p class="project-desc" itemprop="description">${safeDesc}</p>
-              <div class="project-tags">${safeTags}</div>
-              ${hasLink
-                ? `<a class="project-action" href="${safeLink}" target="_blank" rel="noopener noreferrer" aria-label="${safeName}">
-                  <span>${openLabel}</span>
-                  <span class="material-symbols-outlined" aria-hidden="true">open_in_new</span>
-                </a>`
-                : `<span class="project-action-disabled">${noLinkLabel}</span>`
-              }
+              <p class="project-desc" itemprop="description">${safeDesc || fallbackDesc}</p>
+              <div class="project-stack">${stackHtml}</div>
+              <div class="project-actions">
+                <a class="project-action primary" href="${hasLink ? safeLink : '/#contact'}" ${hasLink ? 'target="_blank" rel="noopener noreferrer"' : ''} aria-label="${safeName}">
+                  <span>${hasLink ? openLabel : requestLabel}</span>
+                </a>
+                <a class="project-action ghost" href="/#contact" aria-label="${contactLabel}: ${safeName}">
+                  <span>${contactLabel}</span>
+                </a>
+              </div>
             </div>
           </article>`;
         }).join('');
