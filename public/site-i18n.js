@@ -5,6 +5,8 @@
   var DEFAULT_LANG = 'en';
   var currentLang = DEFAULT_LANG;
   var bundles = {};
+  var requestedLang = DEFAULT_LANG;
+  var PAGE_I18N_PREFIXES = ['site.', 'lang.', 'nav.', 'mobile.', 'footer.'];
 
   function shouldPreferEnglishDefault() {
     return !!document.querySelector('[data-i18n-default="en"]');
@@ -32,8 +34,59 @@
       if (SUPPORTED[stored]) return stored;
     } catch (error) {}
 
-    if (shouldPreferEnglishDefault()) return detectBrowserLang();
-    return 'ar';
+    return DEFAULT_LANG;
+  }
+
+  function hasTranslatedPageContent() {
+    var nodes = document.querySelectorAll('[data-i18n]');
+    if (!nodes.length) return false;
+
+    for (var i = 0; i < nodes.length; i += 1) {
+      var key = nodes[i].getAttribute('data-i18n') || '';
+      if (!key) continue;
+      var isGlobalOnly = PAGE_I18N_PREFIXES.some(function (prefix) {
+        return key.indexOf(prefix) === 0;
+      });
+      if (!isGlobalOnly) return true;
+    }
+
+    return false;
+  }
+
+  function canRenderEnglishContent() {
+    if (shouldPreferEnglishDefault()) return true;
+    return hasTranslatedPageContent();
+  }
+
+  function removeTranslationNotice() {
+    var node = document.getElementById('site-i18n-untranslated-note');
+    if (node) node.remove();
+  }
+
+  function injectUntranslatedNotice() {
+    if (document.getElementById('site-i18n-untranslated-note')) return;
+
+    var notice = document.createElement('div');
+    notice.id = 'site-i18n-untranslated-note';
+    notice.setAttribute('role', 'status');
+    notice.style.cssText = [
+      'margin:0 auto',
+      'max-width:1280px',
+      'padding:.7rem 1rem',
+      'background:rgba(155,240,255,.08)',
+      'border:1px solid rgba(155,240,255,.18)',
+      'color:#dff8ff',
+      'font-size:.82rem',
+      'line-height:1.55',
+      'text-align:center'
+    ].join(';');
+    notice.textContent = 'This article is currently available in Arabic only. English translation is coming soon.';
+    document.body.insertBefore(notice, document.body.firstChild);
+  }
+
+  function resolveEffectiveLang(nextLang) {
+    if (nextLang !== 'en') return nextLang;
+    return canRenderEnglishContent() ? 'en' : 'ar';
   }
 
   function getByPath(source, path) {
@@ -152,12 +205,20 @@
 
   function switchLanguage(nextLang) {
     if (!SUPPORTED[nextLang]) return;
-    currentLang = nextLang;
+    requestedLang = nextLang;
+    currentLang = resolveEffectiveLang(nextLang);
     try {
-      localStorage.setItem(STORAGE_KEY, currentLang);
+      localStorage.setItem(STORAGE_KEY, nextLang);
     } catch (error) {}
 
-    loadBundle(currentLang).then(applyLanguage);
+    loadBundle(currentLang).then(function () {
+      applyLanguage();
+      if (nextLang === 'en' && currentLang === 'ar') {
+        injectUntranslatedNotice();
+      } else {
+        removeTranslationNotice();
+      }
+    });
   }
 
   function bindHeaderLangLinks() {
@@ -205,10 +266,16 @@
   function init() {
     injectStyles();
     bindHeaderLangLinks();
-    currentLang = getInitialLang();
+    requestedLang = getInitialLang();
+    currentLang = resolveEffectiveLang(requestedLang);
 
     Promise.all([loadBundle(DEFAULT_LANG), loadBundle(currentLang)]).then(function () {
       applyLanguage();
+      if (requestedLang === 'en' && currentLang === 'ar') {
+        injectUntranslatedNotice();
+      } else {
+        removeTranslationNotice();
+      }
       injectToggle();
       updateButtons();
     });
