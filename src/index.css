@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Cairo", "Inter", system-ui, -apple-system, sans-serif;
+  --font-space: "Space Grotesk", "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", "Courier New", monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Smooth, elegant professional scrollbar custom built */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f5f9;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+    border: 1px solid #e2e8f0;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #6366f1;
+  }
+}
+
+/* Background Glowing Ambient Orbs for a futuristic developer feel */
+.glowing-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(120px);
+  opacity: 0.25;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.05);
+  }
+}
+
+.float-animation {
+  animation: float 8s ease-in-out infinite;
+}
+
+/* =======================================
+   Custom styled code blocks inside blogs
+   ======================================= */
+.blog-body {
+  line-height: 1.8;
+  font-family: var(--font-sans);
+}
+
+.blog-body h2 {
+  font-family: var(--font-space);
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #c7d2fe; /* Light indigo */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+  padding-bottom: 0.5rem;
+}
+
+html[data-theme='light'] .blog-body h2,
+.light .blog-body h2 {
+  color: #312e81; /* Indigo-900 */
+  border-bottom-color: rgba(99, 102, 241, 0.15);
+}
+
+.blog-body h3 {
+  font-family: var(--font-space);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+  color: #a5b4fc; /* Indigo-300 */
+}
+
+html[data-theme='light'] .blog-body h3,
+.light .blog-body h3 {
+  color: #4f46e5; /* Indigo-600 */
+}
+
+.blog-body p {
+  margin-bottom: 1.25rem;
+  opacity: 0.9;
+}
+
+.blog-body ul {
+  list-style-type: disc !important;
+  padding-left: 1.5rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+/* For Arabic support, adjust list padding direction */
+[dir="rtl"] .blog-body ul {
+  padding-left: 0 !important;
+  padding-right: 1.5rem !important;
+}
+
+.blog-body li {
+  margin-bottom: 0.5rem;
+  opacity: 0.95;
+}
+
+/* Code Snippet Styles */
+.blog-body pre {
+  margin: 1.75rem 0;
+  padding: 1.25rem;
+  background-color: #0b071e !important;
+  border: 1px solid rgba(99, 102, 241, 0.25) !important;
+  border-radius: 0.75rem !important;
+  overflow-x: auto;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+html[data-theme='light'] .blog-body pre,
+.light .blog-body pre {
+  background-color: #0f172a !important; /* Keep code block attractive dark even in light mode */
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.15);
+}
+
+.blog-body pre code {
+  font-family: var(--font-mono) !important;
+  font-size: 0.85rem !important;
+  line-height: 1.6 !important;
+  color: #cbd5e1 !important;
+  background: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  display: block;
+}
+
+/* Inline code highlight */
+.blog-body :not(pre) > code {
+  font-family: var(--font-mono) !important;
+  font-size: 0.85em !important;
+  color: #818cf8 !important;
+  background-color: rgba(99, 102, 241, 0.15) !important;
+  border: 1px solid rgba(99, 102, 241, 0.24) !important;
+  padding: 0.125rem 0.35rem !important;
+  border-radius: 0.375rem !important;
+  font-weight: 500 !important;
+}
+
+html[data-theme='light'] .blog-body :not(pre) > code,
+.light .blog-body :not(pre) > code {
+  color: #4f46e5 !important;
+  background-color: #f5f3ff !important;
+  border: 1px solid #ddd6fe !important;
+}
