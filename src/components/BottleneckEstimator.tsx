@@ -96,7 +96,7 @@ export const BottleneckEstimator: React.FC<Props> = ({ t, isAr, theme }) => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 relative">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 relative items-stretch">
         {/* Sliders Input Area */}
         <div className="lg:col-span-7 flex flex-col gap-6">
           {/* Slider 1 */}
@@ -197,7 +197,7 @@ export const BottleneckEstimator: React.FC<Props> = ({ t, isAr, theme }) => {
         </div>
 
         {/* Diagnostic Output Area */}
-        <div className={`rounded-xl p-6 flex flex-col justify-between self-start w-full min-h-[300px] border ${
+        <div className={`lg:col-span-5 rounded-xl p-6 flex flex-col justify-between w-full border ${
           isDark
             ? "bg-[#0a0916] border-indigo-950/80"
             : "bg-slate-50 border-slate-200"
