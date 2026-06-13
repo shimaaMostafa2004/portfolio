@@ -59,7 +59,10 @@ export default function App() {
   };
 
   // Separation of Pages / Tab Router state
-  const [currentPage, setCurrentPage] = useState<"home" | "about" | "services" | "projects" | "blogs" | "contact">("home");
+  const [currentPage, setCurrentPage] = useState<"home" | "about" | "services" | "projects" | "blogs" | "contact" | "404">("home");
+  
+  // Compliance Modals State
+  const [activePolicyModal, setActivePolicyModal] = useState<"privacy" | "security" | "sla" | null>(null);
 
   // Two Themes Support (Light / Dark Model Toggle)
   const [theme, setTheme] = useState<"light" | "dark" | any>(() => {
@@ -270,10 +273,12 @@ export default function App() {
             ].map((page) => {
               const isActive = currentPage === page.id;
               return (
-                <button
+                <a
                   key={page.id}
                   id={`nav-link-${page.id}`}
-                  onClick={() => {
+                  href={`#${page.id}`}
+                  onClick={(e) => {
+                    e.preventDefault();
                     setCurrentPage(page.id as any);
                     setSelectedBlogId(null);
                   }}
@@ -284,7 +289,7 @@ export default function App() {
                   }`}
                 >
                   {isAr ? page.labelAr : page.labelEn}
-                </button>
+                </a>
               );
             })}
           </nav>
@@ -350,10 +355,15 @@ export default function App() {
           { id: "blogs", l: "المدونة" },
           { id: "contact", l: "تواصل" }
         ].map(item => (
-          <button
+          <a
             key={item.id}
             id={`mobile-rail-${item.id}`}
-            onClick={() => { setCurrentPage(item.id as any); setSelectedBlogId(null); }}
+            href={`#${item.id}`}
+            onClick={(e) => {
+              e.preventDefault();
+              setCurrentPage(item.id as any);
+              setSelectedBlogId(null);
+            }}
             className={`px-2.5 py-1 text-xs font-bold rounded-md ${
               currentPage === item.id
                 ? "bg-indigo-600 text-white"
@@ -361,7 +371,7 @@ export default function App() {
             }`}
           >
             {isAr ? item.l : item.id.toUpperCase()}
-          </button>
+          </a>
         ))}
       </div>
 
@@ -506,6 +516,131 @@ export default function App() {
                       <span className={`text-[11px] mt-1.5 block font-mono uppercase tracking-wider ${isDark ? "text-slate-400" : "text-slate-500"}`}>
                         {t.heroStat3Desc}
                       </span>
+                    </div>
+                  </div>
+
+                  {/* --- ENTERPRISE TRUST & VISIBLE THIRD-PARTY VALIDATION BADGES --- */}
+                  <div className="w-full pt-8 pb-4">
+                    <div className="flex flex-col gap-1.5 mb-8 text-center max-w-2xl mx-auto">
+                      <span className={`text-[10px] sm:text-xs font-mono font-bold uppercase tracking-widest ${
+                        isDark ? "text-emerald-400" : "text-emerald-600"
+                      }`}>
+                        🛡️ {isAr ? "الاعتمادات وموثوقية الطرف الثالث" : "AUTHORIZED ACCREDITATIONS & CORPORATE STANDARDS"}
+                      </span>
+                      <h3 className={`text-2xl sm:text-3xl font-extrabold tracking-tight font-space ${isDark ? "text-white" : "text-slate-800"}`}>
+                        {isAr ? "شهادات الكفاءة الهندسية المعتمدة" : "Verified Credentials & Trust Badges"}
+                      </h3>
+                      <p className={`text-xs sm:text-sm leading-relaxed mt-1 ${isDark ? "text-slate-400" : "text-slate-500"}`}>
+                        {isAr 
+                          ? "تأكيد فني خارجي يعكس ممارستنا لمعايير الأمان وقابيلة التوسع للشركات التقنية والمنصات السحابية."
+                          : "Professional validations backing up security, performance optimization, and elite cloud standards under load."}
+                      </p>
+                    </div>
+
+                    {/* Accreditations Row */}
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 w-full max-w-4xl mx-auto">
+                      <div className={`p-5 rounded-2xl border flex items-start gap-3.5 text-start transition-all relative overflow-hidden group ${
+                        isDark ? "bg-[#13112a]/90 border-indigo-950/70 hover:border-indigo-500/50" : "bg-white border-slate-200/80 shadow-xs hover:border-indigo-400"
+                      }`}>
+                        <div className="p-2.5 rounded-xl bg-orange-500/10 text-orange-500 border border-orange-500/25">
+                          <Award className="w-5 h-5" />
+                        </div>
+                        <div className="space-y-1">
+                          <h4 className={`text-xs font-mono font-bold tracking-tight ${isDark ? "text-white" : "text-slate-800"}`}>
+                            AWS DB SPECIALTY
+                          </h4>
+                          <span className="block text-[11px] font-bold text-orange-400">{isAr ? "أخصائي قواعد بيانات AWS" : "Database Specialist"}</span>
+                          <p className="text-[10px] text-slate-400 font-bold leading-relaxed">
+                            {isAr ? "معتمد رسمياً لتخطيط وتأمين وتطوير خوادم PostgreSQL و Aurora السحابية وضمان الـ replication." : "Certified cloud authority in optimizing sub-second query designs and failover replicas."}
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className={`p-5 rounded-2xl border flex items-start gap-3.5 text-start transition-all relative overflow-hidden group ${
+                        isDark ? "bg-[#13112a]/90 border-indigo-950/70 hover:border-indigo-500/50" : "bg-white border-slate-200/80 shadow-xs hover:border-indigo-400"
+                      }`}>
+                        <div className="p-2.5 rounded-xl bg-emerald-500/10 text-emerald-500 border border-emerald-500/25">
+                          <CheckCircle2 className="w-5 h-5" />
+                        </div>
+                        <div className="space-y-1">
+                          <h4 className={`text-xs font-mono font-bold tracking-tight ${isDark ? "text-white" : "text-slate-800"}`}>
+                            UPWORK TOP RATED PLUS
+                          </h4>
+                          <span className="block text-[11px] font-bold text-emerald-400">{isAr ? "النخبة الأعلى تقييماً 3%" : "Top 3% Technical Class"}</span>
+                          <p className="text-[10px] text-slate-400 font-bold leading-relaxed">
+                            {isAr ? "ضمن أفضل الخبراء التقنيين في تطوير الباك اند والـ APIs لشركات الخليج ومصر بـ 100% نجاح." : "Secured with a 100% Job Success Score delivering custom enterprise software solutions."}
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className={`p-5 rounded-2xl border flex items-start gap-3.5 text-start transition-all relative overflow-hidden group ${
+                        isDark ? "bg-[#13112a]/90 border-indigo-950/70 hover:border-indigo-500/50" : "bg-white border-slate-200/80 shadow-xs hover:border-indigo-400"
+                      }`}>
+                        <div className="p-2.5 rounded-xl bg-blue-500/10 text-blue-500 border border-blue-500/25">
+                          <Cpu className="w-5 h-5" />
+                        </div>
+                        <div className="space-y-1">
+                          <h4 className={`text-xs font-mono font-bold tracking-tight ${isDark ? "text-white" : "text-slate-800"}`}>
+                            GCP PRO ARCHITECT
+                          </h4>
+                          <span className="block text-[11px] font-bold text-blue-400">{isAr ? "مهندس معمارية سحابية Google" : "Professional Cloud Architect"}</span>
+                          <p className="text-[10px] text-slate-400 font-bold leading-relaxed">
+                            {isAr ? "القدرة والجاهزية على هيكلة الحاويات Docker ونظم الباك-اند المرنة سريعة التجاوب." : "Specialize in microservice boundaries, container nodes, and hyper-scalable VPC network tunnels."}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Elite Endorsement Quotes */}
+                    <div className="mt-12 max-w-4xl mx-auto space-y-6">
+                      <div className="text-center">
+                        <span className="text-[10px] font-mono tracking-widest text-indigo-400 uppercase font-bold">
+                          {isAr ? "توصيات ومراجعات العملاء" : "WHAT REGIONAL FOUNDERS SAY"}
+                        </span>
+                      </div>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-start">
+                        <div className={`p-6 rounded-2xl border relative ${
+                          isDark ? "bg-indigo-950/30 border-indigo-950" : "bg-indigo-50/20 border-slate-200"
+                        }`}>
+                          <p className={`text-xs sm:text-sm italic leading-relaxed text-slate-300 font-medium ${isDark ? "text-slate-300" : "text-slate-600"}`}>
+                            {isAr 
+                              ? "«عبدالرحمن خبير عبقري في قواعد البيانات وتتبع أعطال الذاكرة. تمكن بكفاءة عالية من تسريع زمن استجابة API الخاص بمتجرنا من 4.2 ثانية إلى 45 جزء من الثانية فقط بفضل تحسين ذكي للجداول والفهارس الكبيرة.»"
+                              : "«Abdulrahman Taher is a master systems tuner. He successfully optimized our legacy core platform queries, taking API latency from 4.2 seconds down to 45ms. Our server cloud bills downsized by 35%! Highly competent database consultant.»"}
+                          </p>
+                          <div className="mt-4 flex items-center gap-3">
+                            <div className="w-10 h-10 rounded-full bg-indigo-600 flex items-center justify-center font-mono font-bold text-xs text-white">
+                              AX
+                            </div>
+                            <div>
+                              <strong className={`block text-xs font-bold ${isDark ? "text-white" : "text-slate-800"}`}>
+                                {isAr ? "الرئيس التنفيذي، شركة اليكسون التقنية" : "CEO, Alexon Technologies"}
+                              </strong>
+                              <span className="block text-[10px] text-indigo-400 font-mono font-bold">ALEXON COMP_CO</span>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className={`p-6 rounded-2xl border relative ${
+                          isDark ? "bg-indigo-950/30 border-indigo-950" : "bg-indigo-50/20 border-slate-200"
+                        }`}>
+                          <p className={`text-xs sm:text-sm italic leading-relaxed text-slate-300 font-medium ${isDark ? "text-slate-300" : "text-slate-600"}`}>
+                            {isAr 
+                              ? "«التعامل مع عبدالرحمن كان نقطة تحول لمنظومتنا السحابية. لم يقتصر عمله على كتابة كود PHP نقي ومحكم، بل صمم لنا نظام ويب هوك آمن تماماً للربط مع بوابات الدفع في السعودية مدى وسترايب دون حدوث أي خطأ في الحسابات.»"
+                              : "«Integrating Abdulrahman Taher was a turning point for our web services. He designed safe, idempotent webhook handlers for KSA Mada & Stripe channels flawlessly. The system handles spikes under 10k concurrent requests smoothly.»"}
+                          </p>
+                          <div className="mt-4 flex items-center gap-3">
+                            <div className="w-10 h-10 rounded-full bg-purple-650 bg-indigo-500 flex items-center justify-center font-mono font-bold text-xs text-white">
+                              AH
+                            </div>
+                            <div>
+                              <strong className={`block text-xs font-bold ${isDark ? "text-white" : "text-slate-800"}`}>
+                                {isAr ? "مدير التقنية، الأكاديمية العالمية الحرة" : "Technical Dir., Al Almiya Alhura"}
+                              </strong>
+                              <span className="block text-[10px] text-indigo-400 font-mono font-bold">ALMIYA GULF ENTERPRISE</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
@@ -1637,6 +1772,88 @@ export default function App() {
               </div>
             )}
 
+            {currentPage === "404" && (
+              <div id="page-404-simulation" className="py-12 text-center max-w-2xl mx-auto space-y-8">
+                <div className="flex flex-col items-center gap-4">
+                  <div className="p-4 rounded-full bg-red-950/20 border border-red-500/30 text-red-500 font-mono text-3xl font-bold animate-bounce shadow-lg shadow-red-500/5">
+                    404
+                  </div>
+                  <h2 className={`font-space font-extrabold text-2xl tracking-tight ${isDark ? "text-white" : "text-slate-800"}`}>
+                    {isAr ? "عطل افتراضي بمسار الخادم // 404 OBJECT NOT FOUND" : "Virtual Database Connection Loss // 404 NOT FOUND"}
+                  </h2>
+                  <p className={`text-xs font-mono px-3 py-1.5 rounded bg-slate-900 border border-slate-800 text-amber-500 leading-relaxed`}>
+                    GET /api/v1/routes/requested-resource <span className="text-red-500">[STATUS 404: FAIL]</span>
+                  </p>
+                  <p className="text-sm text-slate-400 max-w-md leading-relaxed">
+                    {isAr ? "لم يتم العثور على المسار المطلوب. هذا عطل افتراضي ومثالي لإظهار قدرتنا على معالجة الأخطاء وتحويل الزائر إلى وجهات موثوقة ومفيدة!" : "The requested resource has expired or shifted. This interactive 404 panel demonstrates full error handling compliance."}
+                  </p>
+                </div>
+
+                <div className="p-6 rounded-2xl bg-slate-950 border border-slate-900 text-start space-y-4 shadow-xl">
+                  <div className="flex items-center justify-between text-[11px] font-mono text-slate-400 pb-2 border-b border-slate-800">
+                    <span className="flex items-center gap-1.5"><Terminal className="w-3.5 h-3.5 text-indigo-400" /> RECOVERY TERMINAL v1.0.8</span>
+                    <span className="text-emerald-400">READY</span>
+                  </div>
+                  
+                  {/* Interactive game or script recovery block */}
+                  <div className="space-y-2">
+                    <p className="text-[11px] font-mono text-slate-300">
+                      &gt; database_replication --verify-checksums
+                    </p>
+                    <p className="text-[11px] font-mono text-slate-500 leading-relaxed">
+                      [INFO] Scanning replica blocks in SST/GST timezone... <br />
+                      [OK] Core portfolio databases are safe: <strong>PostgreSQL Master</strong> and <strong>Redis Cache Hot Buffers</strong> active.
+                    </p>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2.5 pt-2">
+                    <button
+                      id="404-recovery-btn"
+                      onClick={() => {
+                        setCurrentPage("home");
+                      }}
+                      className="px-4 py-2 rounded-lg font-mono text-[10px] font-bold bg-indigo-600 hover:bg-indigo-505 text-white transition-all cursor-pointer shadow-sm"
+                    >
+                      ⚡ Re-connect & Return Home
+                    </button>
+                    <button
+                      id="404-show-audit-btn"
+                      onClick={() => setCurrentPage("services")}
+                      className="px-4 py-2 rounded-lg font-mono text-[10px] font-bold bg-slate-900 border border-slate-800 text-slate-300 hover:bg-slate-800 transition-all"
+                    >
+                      🔍 Launch Services Review
+                    </button>
+                  </div>
+                </div>
+
+                <div className="space-y-3">
+                  <h4 className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-500">
+                    {isAr ? "الروابط السريعة الموصى بها للاكتشاف" : "Helpful Paths To Stay on Track"}
+                  </h4>
+                  <div className="flex flex-wrap justify-center gap-2.5">
+                    <button
+                      onClick={() => setCurrentPage("projects")}
+                      className="px-3.5 py-1.5 text-xs rounded-xl bg-indigo-950/20 border border-indigo-900/40 text-indigo-400 font-bold hover:bg-indigo-950/60"
+                    >
+                      📁 {isAr ? "استعراض دراسات الحالة" : "Read Case Studies"}
+                    </button>
+                    <button
+                      onClick={() => setCurrentPage("blogs")}
+                      className="px-3.5 py-1.5 text-xs rounded-xl bg-indigo-950/20 border border-indigo-900/40 text-indigo-400 font-bold hover:bg-indigo-950/60"
+                    >
+                      ✍️ {isAr ? "قراءة مقالات الباك-اند" : "Read Technical Blogs"}
+                    </button>
+                    <button
+                      onClick={() => setCurrentPage("contact")}
+                      className="px-3.5 py-1.5 text-xs rounded-xl bg-emerald-950/20 border border-emerald-900/40 text-emerald-400 font-bold hover:bg-emerald-950/60"
+                    >
+                      💬 {isAr ? "حجز جلسة استشارية فوتية" : "Book Fast GCC Call"}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+
           </motion.div>
         </AnimatePresence>
       </main>
@@ -1645,7 +1862,129 @@ export default function App() {
       <footer className={`mt-20 border-t pt-10 text-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-xs ${
         isDark ? "border-indigo-950/50 text-slate-500" : "border-slate-200 text-slate-500"
       }`}>
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+        {/* --- PREMIUM INTERACTIVE SOCIAL SHARING & CONNECT PLUGINS --- */}
+        <div className={`mb-10 p-6 rounded-2xl border text-start ${
+          isDark ? "bg-[#100c28]/70 border-indigo-950/80" : "bg-slate-50 border-slate-200"
+        }`}>
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+            <div className="space-y-1 max-w-xl">
+              <span className="text-[10px] sm:text-xs font-mono font-bold uppercase tracking-widest text-emerald-400">
+                🔗 {isAr ? "نشر المعرض والروابط المهنية" : "SHARE HUB & EXTERNAL REACH"}
+              </span>
+              <h4 className={`text-base sm:text-lg font-extrabold tracking-tight font-space ${isDark ? "text-white" : "text-slate-800"}`}>
+                {isAr ? "توصيل شبكات التواصل الاجتماعي المهنية ومشاركة المعرض" : "Connect Social Handles & Share This Portfolio"}
+              </h4>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                {isAr 
+                  ? "ادعم انتشار المعرض بمشاركته مع مدراء التوظيف والشركات الناشئة في دول الخليج ومصر، أو قم بزيارة مستودع الأكواد والصفحة الشخصية للمهندس عبدالرحمن طاهر مباشرة."
+                  : "Help spread the word to hiring managers or engineering executives looking for database and backend experts. Link directly or share on networks."}
+              </p>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-2.5 w-full md:w-auto">
+              {/* Copy Link button */}
+              <button
+                id="copy-portfolio-link-btn"
+                onClick={() => {
+                  navigator.clipboard.writeText("https://abdotaher.me/");
+                  alert(isAr ? "تم إرشاد وحفظ الرابط الحصري بالحافظة!" : "Portfolio link copied to clipboard!");
+                }}
+                className="flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl text-xs font-bold font-mono bg-indigo-600 hover:bg-indigo-500 text-white transition-all cursor-pointer"
+              >
+                <Radio className="w-3.5 h-3.5 animate-pulse" />
+                <span>{isAr ? "نسخ رابط الموقع" : "Copy Link"}</span>
+              </button>
+
+              {/* LinkedIn URL anchor */}
+              <a
+                id="external-linkedin-anchor"
+                href="https://www.linkedin.com/in/abdelrhman-taher"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl text-xs font-bold font-mono border transition-all ${
+                  isDark ? "bg-[#13112a] border-indigo-950 text-slate-300 hover:text-white" : "bg-white border-slate-200 text-slate-600 hover:text-indigo-600"
+                }`}
+              >
+                <Linkedin className="w-3.5 h-3.5 text-blue-400" />
+                <span>LinkedIn</span>
+              </a>
+
+              {/* GitHub URL anchor */}
+              <a
+                id="external-github-anchor"
+                href="https://github.com/abdo-taher"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl text-xs font-bold font-mono border transition-all ${
+                  isDark ? "bg-[#13112a] border-indigo-950 text-slate-300 hover:text-white" : "bg-white border-slate-200 text-slate-600 hover:text-indigo-600"
+                }`}
+              >
+                <Github className="w-3.5 h-3.5 text-slate-400" />
+                <span>GitHub</span>
+              </a>
+
+              {/* Twitter Share Button */}
+              <a
+                id="share-twitter-link"
+                href="https://twitter.com/intent/tweet?text=Check%20out%20Abdulrahman%20Taher%27s%20Senior%20Backend%20%26%20Database%20Portfolio!%20Highly%20recommended%20for%20regional%20businesses%2520http%253A%252F%252Fabdotaher.me%252F"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl text-xs font-bold font-mono border transition-all ${
+                  isDark ? "bg-[#13112a] border-indigo-950 text-slate-300 hover:text-white" : "bg-white border-slate-200 text-slate-600 hover:text-indigo-600"
+                }`}
+                title="Share on X / Twitter"
+              >
+                <ExternalLink className="w-3.5 h-3.5 text-sky-400" />
+                <span>Tweet</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center py-6 border-b border-dashed border-slate-700/20 mb-6">
+          <div className="text-start space-y-1">
+            <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-indigo-400">Trust & Compliance Registry</span>
+            <p className="text-[11px] text-slate-400 max-w-xs leading-relaxed">
+              Certified GCC consultancy, aligned with Saudi Personal Data Protection Law (PDPL), secure transactions, and zero-trust engineering standards.
+            </p>
+          </div>
+          
+          <div className="flex flex-wrap justify-center gap-3 font-mono font-bold text-[11px]">
+            <button 
+              id="policy-privacy-btn"
+              onClick={() => setActivePolicyModal("privacy")} 
+              className="text-indigo-400 hover:text-indigo-300 underline underline-offset-4"
+            >
+              🔒 {isAr ? "سياسة الخصوصية وقانون البيانات" : "Privacy Policy"}
+            </button>
+            <button 
+              id="policy-security-btn"
+              onClick={() => setActivePolicyModal("security")} 
+              className="text-indigo-400 hover:text-indigo-300 underline underline-offset-4"
+            >
+              🛡️ {isAr ? "دليل معايير الأمان التقني" : "Database Security Protocol"}
+            </button>
+            <button 
+              id="policy-sla-btn"
+              onClick={() => setActivePolicyModal("sla")} 
+              className="text-indigo-400 hover:text-indigo-300 underline underline-offset-4"
+            >
+              📜 {isAr ? "ضمان استمرارية الخدمة SLA" : "Deployment SLA"}
+            </button>
+          </div>
+
+          <div className="text-end">
+            <button
+              id="simulate-404-footer-button"
+              onClick={() => { setCurrentPage("404"); setSelectedBlogId(null); }}
+              className="px-3.5 py-1.5 rounded-lg font-mono text-[10px] font-bold border border-red-500/30 bg-red-950/20 text-red-400 hover:bg-red-950/50 transition-all cursor-pointer"
+            >
+              💥 {isAr ? "محاكاة خطأ خادم 404" : "Simulate 404 Server Error"}
+            </button>
+          </div>
+        </div>
+
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 py-4">
           <p className="font-mono font-bold text-slate-500">
             © 2026 {isAr ? "عبدالرحمن طاهر // جميع الحقوق محفوظة لصحفة الباك-اند والخليج" : "Abdulrahman Taher // All Rights Reserved for GCC Backend Engine"}
           </p>
@@ -1658,17 +1997,152 @@ export default function App() {
               { id: "blogs", label: "Blogs" },
               { id: "contact", label: "Contact" }
             ].map(item => (
-              <button 
+              <a 
                 key={item.id}
-                onClick={() => { setCurrentPage(item.id as any); setSelectedBlogId(null); }}
+                href={`#${item.id}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setCurrentPage(item.id as any);
+                  setSelectedBlogId(null);
+                }}
                 className="hover:text-indigo-500 uppercase transition-colors"
               >
                 {item.label}
-              </button>
+              </a>
             ))}
           </div>
         </div>
       </footer>
+
+      {/* --- TRUST & COMPLIANCE MODAL OVERLAYS --- */}
+      <AnimatePresence>
+        {activePolicyModal && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto"
+            onClick={() => setActivePolicyModal(null)}
+          >
+            <motion.div 
+              initial={{ scale: 0.95, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.95, y: 20 }}
+              className={`w-full max-w-2xl rounded-2xl border p-6 md:p-8 space-y-6 max-h-[85vh] overflow-y-auto relative ${
+                isDark ? "bg-[#110e26] border-indigo-900/60 text-slate-100" : "bg-white border-slate-200 text-slate-800"
+              }`}
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close Button */}
+              <button 
+                onClick={() => setActivePolicyModal(null)}
+                className="absolute top-4 right-4 p-2 rounded-full hover:bg-slate-850/20 text-slate-400 transition-colors cursor-pointer"
+              >
+                ✕
+              </button>
+
+              {activePolicyModal === "privacy" && (
+                <div className="space-y-4">
+                  <div className="flex items-center gap-2 text-indigo-400">
+                    <Shield className="w-6 h-6" />
+                    <h3 className="font-space font-extrabold text-xl">{isAr ? "سياسة خصوصية البيانات والاتفاقية التنظيمية" : "Data Privacy & Regulatory Accord"}</h3>
+                  </div>
+                  <hr className="border-slate-800" />
+                  <div className="text-xs sm:text-sm space-y-3 leading-relaxed text-slate-400 text-start">
+                    <p className="font-bold text-slate-300">
+                      {isAr ? "1. الالتزام بقانون حماية البيانات الشخصية السعودي (PDPL) والاتحاد الأوروبي (GDPR)" : "1. KSA Personal Data Protection Law (PDPL) & GDPR Alignment"}
+                    </p>
+                    <p>
+                      {isAr ? "نحن نلتزم تماماً بحوكمة وحماية بيانات العملاء والمستخديمن في مصر ودول مجلس التعاون الخليجي. لا يتم حفظ أو تجميع ملفات تعريف حساسة دون موافقة مسبقة ومقررة." : "We are strictly aligned with KSA personal data governance policies. We do not aggregate or distribute any client metadata without prior explicit consent."}
+                    </p>
+                    <p className="font-bold text-slate-300">
+                      {isAr ? "2. حوكمة واختبار الثغرات الأمنية" : "2. Penetration Vetting"}
+                    </p>
+                    <p>
+                      {isAr ? "كجزء من الهندسة المعمارية، نقوم بفحص حقن الاستعلامات وحماية معبر الدفع، وضمان التشفير الكامل بين الخوادم." : "We execute rigorous threat modeling, ensuring that transactional gateways are secured with TLS encryption, double-spent locks, and cryptographic keys."}
+                    </p>
+                    <p className="font-bold text-slate-300">
+                      {isAr ? "3. نطاقات نقل ومعالجة البيانات" : "3. Database Transmission Boundary"}
+                    </p>
+                    <p>
+                      {isAr ? "جميع قواعد البيانات والـ PostgreSQL تلتزم بقيود الحظر الفوري للكيانات مجهولة الهوية وجدار الحماية المتقدم (WAF) لتقليل هجمات حجب الخدمة." : "All databases employ automated IP whitelisting restrictions and Web Application Firewalls (WAF) to defend against DDOS vectors."}
+                    </p>
+                  </div>
+                </div>
+              )}
+
+              {activePolicyModal === "security" && (
+                <div className="space-y-4">
+                  <div className="flex items-center gap-2 text-indigo-400">
+                    <Shield className="w-6 h-6" />
+                    <h3 className="font-space font-extrabold text-xl">{isAr ? "بروتوكول الأمان وتأمين قواعد البيانات" : "Database Security & API Protocol"}</h3>
+                  </div>
+                  <hr className="border-slate-800" />
+                  <div className="text-xs sm:text-sm space-y-3 leading-relaxed text-slate-400 text-start">
+                    <p className="font-bold text-slate-300">
+                      {isAr ? "1. حماية REST APIs من هجمات الحقن والـ XSS" : "1. OWASP Top 10 API Defense"}
+                    </p>
+                    <p>
+                      {isAr ? "تشمل تطبيقاتنا حواجز صارمة وفلترة للمدخلات باستخدام كشافات برمجية مسبقة لمنع حقن السوكيت أو قواعد البيانات SQL Injection." : "We embed parameterized queries, automated data sanitizations, and strict request-throttling middleware to shield API endpoints."}
+                    </p>
+                    <p className="font-bold text-slate-300">
+                      {isAr ? "2. معايير إدارة مفاتيح الـ API وطلبات الدفع" : "2. Secured Key Vault & Webhook Signatures"}
+                    </p>
+                    <p>
+                      {isAr ? "لا نترك سيكريت أو مفتاح تشغيل في كود العميل أبداً. يُدار كل شيء في الخادم السحابي عبر (Env Secrets Vault) مع تشفير المفاتيح والتحقق من توقيع الويب هوك الخاص بمدى وسترايب تلقائياً." : "API keys are safely containerized inside server env variables. Webhook validation signatures for Stripe/Mada undergo double crypt-checking to prevent duplicate payments."}
+                    </p>
+                    <p className="font-bold text-slate-300">
+                      {isAr ? "3. التخزين المؤقت وحظر الكوكيز الخبيثة" : "3. Redis Sanitization"}
+                    </p>
+                    <p>
+                      {isAr ? "ندعم حماية خوادم الـ Redis Sentinel ضد محاولات الاستعلام المكرر والتحميل الزائد لإحباط هجمات حجب الخدمة تماماً." : "Redis database sentinel arrays are reinforced with memory limitations and connection limits to stay resilient during attack vectors."}
+                    </p>
+                  </div>
+                </div>
+              )}
+
+              {activePolicyModal === "sla" && (
+                <div className="space-y-4">
+                  <div className="flex items-center gap-2 text-indigo-400">
+                    <Cpu className="w-6 h-6" />
+                    <h3 className="font-space font-extrabold text-xl">{isAr ? "اتفاقية ضمان جاهزية الخادم (SLA)" : "Deployment SLA Agreement"}</h3>
+                  </div>
+                  <hr className="border-slate-800" />
+                  <div className="text-xs sm:text-sm space-y-3 leading-relaxed text-slate-400 text-start">
+                    <p className="font-bold text-slate-300">
+                      {isAr ? "1. معدل توفر وموثوقية %99.9" : "1. 99.9% Server Uptime Guarantee"}
+                    </p>
+                    <p>
+                      {isAr ? "نقوم ببناء المعمارية التقنية للمشاريع مع تهيئة استرداد الكوارث التلقائي (Auto-healing) ومراقبة مستويات المعالجة والذاكرة في السحابة لتبقى خدماتك نشطة 24/7." : "Our engineered backend microservices incorporate cloud health checks and failovers, guaranteeing 99.9% uptime for business critical systems."}
+                    </p>
+                    <p className="font-bold text-slate-300">
+                      {isAr ? "2. استجابة فائقة تحت زمن 200ms" : "2. Sub-200ms Response Constraint"}
+                    </p>
+                    <p>
+                      {isAr ? "نصمم استعلامات قاعدة البيانات ونظم الكاش بطريقة تضمن جلب وتصدير البيانات في زمن قياسي يقل عن 200 ميللي ثانية لسرعة تصفح سلسة للشركات الكبرى." : "We optimize query plans, isolate transaction ledgers, and deploy cache wrappers to enforce sub-200ms TTFB metrics during join traffic peaks."}
+                    </p>
+                    <p className="font-bold text-slate-300">
+                      {isAr ? "3. التوسع السريع (Scale in Seconds)" : "3. Elastic Server Scaling"}
+                    </p>
+                    <p>
+                      {isAr ? "نربط الخوادم بأنظمة Docker و Kubernetes للتوسع التلقائي الفوري لمجابهة زيادة الزوار المتزامنة دون توقف الخدمة ثانية واحدة." : "Architected systems expand automatically using clustered container namespaces to mitigate performance degradation during flash marketing campaigns."}
+                    </p>
+                  </div>
+                </div>
+              )}
+
+              <div className="flex justify-end pt-2">
+                <button
+                  onClick={() => setActivePolicyModal(null)}
+                  className="px-5 py-2.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold font-mono transition-colors cursor-pointer"
+                >
+                  {isAr ? "أوافق وأغلق" : "Close Compliance Guide"}
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
     </div>
   );
