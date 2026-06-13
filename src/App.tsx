@@ -3,6 +3,8 @@ import { translations, sampleProjects } from "./translations";
 import { blogArticles, BlogArticle } from "./data/blogs";
 import { BottleneckEstimator } from "./components/BottleneckEstimator";
 import { ProjectCard } from "./components/ProjectCard";
+import { CyberFingersBackground } from "./components/CyberFingersBackground";
+import { InteractiveConsole } from "./components/InteractiveConsole";
 import { motion, AnimatePresence } from "motion/react";
 import { 
   Terminal, 
@@ -34,13 +36,27 @@ import {
   Clock,
   Shield,
   Cpu,
-  Bookmark
+  Bookmark,
+  Code,
+  Zap,
+  Radio
 } from "lucide-react";
 
 export default function App() {
   const [lang, setLang] = useState<"ar" | "en">("ar"); 
   const t = translations[lang];
   const isAr = lang === "ar";
+
+  // Safe Image Fallbacks
+  const handleProfileError = (e: React.SyntheticEvent<HTMLImageElement>) => {
+    e.currentTarget.onerror = null;
+    e.currentTarget.src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&h=400&q=80";
+  };
+
+  const handleBlogImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
+    e.currentTarget.onerror = null;
+    e.currentTarget.src = "https://images.unsplash.com/photo-1618401471353-b98aedd07871?auto=format&fit=crop&w=800&q=80";
+  };
 
   // Separation of Pages / Tab Router state
   const [currentPage, setCurrentPage] = useState<"home" | "about" | "services" | "projects" | "blogs" | "contact">("home");
@@ -86,266 +102,75 @@ export default function App() {
   }, [currentPage, selectedBlogId]);
 
   // Premium Technical SEO: Dynamic Title, html attributes, and dynamic JSON-LD Schema
-  // Hash Routing and Synchronization
   useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash;
-      if (!hash || hash === "#home" || hash === "#") {
-        setCurrentPage("home");
-        setSelectedBlogId(null);
-      } else if (hash === "#about") {
-        setCurrentPage("about");
-        setSelectedBlogId(null);
-      } else if (hash === "#services") {
-        setCurrentPage("services");
-        setSelectedBlogId(null);
-      } else if (hash === "#projects") {
-        setCurrentPage("projects");
-        setSelectedBlogId(null);
-      } else if (hash === "#blogs") {
-        setCurrentPage("blogs");
-        setSelectedBlogId(null);
-      } else if (hash === "#contact") {
-        setCurrentPage("contact");
-        setSelectedBlogId(null);
-      } else if (hash.startsWith("#blog-")) {
-        const blogId = hash.replace("#blog-", "");
-        setCurrentPage("blogs");
-        setSelectedBlogId(blogId);
-      } else if (hash.startsWith("#blogs/")) {
-        const blogId = hash.replace("#blogs/", "");
-        setCurrentPage("blogs");
-        setSelectedBlogId(blogId);
-      }
-    };
-
-    handleHashChange();
-
-    window.addEventListener("hashchange", handleHashChange);
-    return () => window.removeEventListener("hashchange", handleHashChange);
-  }, []);
-
-  useEffect(() => {
-    const hash = window.location.hash;
-    let targetHash = "";
-    if (currentPage === "home") {
-      targetHash = "";
-    } else if (currentPage === "blogs" && selectedBlogId) {
-      targetHash = `#blog-${selectedBlogId}`;
-    } else {
-      targetHash = `#${currentPage}`;
-    }
-
-    const currentHash = window.location.hash;
-    const normalizedCurrent = currentHash.replace(/^#/, "");
-    const normalizedTarget = targetHash.replace(/^#/, "");
-
-    const isEquivalent = (normalizedCurrent === "" && normalizedTarget === "") || 
-                         (normalizedCurrent === "home" && normalizedTarget === "") ||
-                         (normalizedCurrent === "" && normalizedTarget === "home") ||
-                         (normalizedCurrent === normalizedTarget);
-
-    if (!isEquivalent) {
-      window.location.hash = targetHash;
-    }
-  }, [currentPage, selectedBlogId]);
-
-  // Premium Technical SEO: Dynamic Title, Meta Tags, and Structured JSON-LD Schema
-  useEffect(() => {
-    let title = "";
-    let desc = "";
-    let kws = "";
-    let image = "https://abdotaher.me/image.png";
-    let pageUrl = "https://abdotaher.me/";
-
-    if (currentPage === "blogs" && selectedBlogId) {
-      const article = blogArticles.find(b => b.id === selectedBlogId);
-      if (article) {
-        title = isAr ? `${article.titleAr} | عبدالرحمن طاهر` : `${article.titleEn} | Abdulrahman Taher`;
-        desc = isAr ? article.excerptAr : article.excerptEn;
-        kws = article.keywords.join(", ");
-        image = article.image;
-        pageUrl = `https://abdotaher.me/#blog-${article.id}`;
-      }
-    } else {
-      if (currentPage === "home") {
-        title = isAr 
-          ? "عبدالرحمن طاهر | مطور لارافيل أول ومهندس باك اند محترف"
-          : "Abdulrahman Taher | Senior Laravel Developer & Backend Engineer";
-        desc = isAr
-          ? "مهندس باك اند لارافيل أول متخصص في بناء واجهات برمجية (APIs) قابلة للتوسع، معمارية SaaS، تحسين أداء قواعد البيانات، وتصميم الأنظمة البرمجية النظيفة."
-          : "Senior Laravel backend engineer specializing in scalable APIs, SaaS backend architecture, database performance tuning, and clean system design.";
-        kws = isAr
-          ? "مطور لارافيل, مهندس باك اند, معمارية APIs, تطوير باك اند لارافيل, خبير لارافيل مصر, السعودية, الخليج, دبي"
-          : "Laravel Developer, Backend Engineer, API Architecture, SaaS Backend, Remote Laravel Expert, Egypt, GCC, Saudi Arabia, Dubai";
-        pageUrl = "https://abdotaher.me/";
-      } else if (currentPage === "about") {
-        title = isAr
-          ? "من أنا | عبدالرحمن طاهر - مبرمج لارافيل أول"
-          : "About Me | Abdulrahman Taher - Senior Laravel Developer";
-        desc = isAr
-          ? "تعرف على عبدالرحمن طاهر، مهندس باك اند ومطور لارافيل أول. أكثر من 5 سنوات من الخبرة في تصميم معمارية برمجية صلبة وآمنة للشركات."
-          : "Learn more about Abdulrahman Taher, a senior Laravel backend developer. Over 5 years of experience building secure, scalable backend architectures.";
-        kws = isAr
-          ? "من هو عبدالرحمن طاهر, خبرة مبرمج لارافيل, مهندس باك اند مصر, سيرة ذاتية مبرمج"
-          : "About Abdulrahman Taher, Laravel Developer career, Backend Engineer profile, Egypt Laravel expert";
-        pageUrl = "https://abdotaher.me/#about";
-      } else if (currentPage === "services") {
-        title = isAr
-          ? "الخدمات الهندسية | عبدالرحمن طاهر - مهندس باك اند لارافيل"
-          : "Backend Services | Abdulrahman Taher - Laravel Developer";
-        desc = isAr
-          ? "خدمات هندسية متكاملة للباك اند: تطوير Laravel مخصص، تحسين أداء قواعد البيانات، ربط بوابات الدفع الإقليمية (مدى، Moyasar)، وأتمتة الذكاء الاصطناعي."
-          : "Professional backend engineering services: custom Laravel development, database performance tuning, payment gateway integration, and AI automation.";
-        kws = isAr
-          ? "خدمات لارافيل, تحسين قواعد البيانات, ربط بوابة مدى, أتمتة الذكاء الاصطناعي, مبرمج باك اند"
-          : "Laravel services, Database tuning, payment integration GCC, Redis caching, AI integration";
-        pageUrl = "https://abdotaher.me/#services";
-      } else if (currentPage === "projects") {
-        title = isAr
-          ? "معرض المشاريع ودراسات الحالة | عبدالرحمن طاهر"
-          : "Portfolio & Case Studies | Abdulrahman Taher";
-        desc = isAr
-          ? "استعرض دراسات الحالة الهندسية وأنظمة الباك اند التي قام عبدالرحمن طاهر بتطويرها. نتائج مثبتة في توسيع الأنظمة وتأمين المدفوعات."
-          : "Explore technical case studies and backend systems built by Abdulrahman Taher. Proven results in scaling APIs, secure payment systems, and databases.";
-        kws = isAr
-          ? "مشاريع لارافيل, معرض أعمال مبرمج باك اند, دراسات حالة برمجية, أنظمة الدفع"
-          : "Laravel projects, Backend portfolio, Case studies database, SaaS architecture portfolio";
-        pageUrl = "https://abdotaher.me/#projects";
-      } else if (currentPage === "blogs") {
-        title = isAr
-          ? "المدونة التقنية ومقالات السيو | عبدالرحمن طاهر"
-          : "Backend Engineering Blog & SEO Hub | Abdulrahman Taher";
-        desc = isAr
-          ? "اقرأ مقالات هندسية معمقة حول توسيع أنظمة Laravel، تحسين أداء قواعد بيانات PostgreSQL، والربط الآمن لبوابات الدفع بالخليج."
-          : "Read in-depth articles on scaling Laravel, database performance tuning, secure payment integrations, and cloud architectures.";
-        kws = isAr
-          ? "مدونة تقنية باك اند, مقالات لارافيل, تحسين أداء PostgreSQL, سيو المواقع التقنية"
-          : "Backend blog, Laravel scaling blog, Database optimization articles, technical SEO tips";
-        pageUrl = "https://abdotaher.me/#blogs";
-      } else if (currentPage === "contact") {
-        title = isAr
-          ? "تواصل واستشارة فنية | عبدالرحمن طاهر"
-          : "Contact & Consultation | Abdulrahman Taher";
-        desc = isAr
-          ? "تواصل مع المهندس عبدالرحمن طاهر لمناقشة مشروع Laravel جديد، أو طلب مراجعة فنية للأنظمة، أو استشارة لحل مشاكل الأداء وقواعد البيانات."
-          : "Get in touch with Abdulrahman Taher for custom Laravel development, architectural audits, database performance optimization, or freelance consultations.";
-        kws = isAr
-          ? "توظيف مطور لارافيل, تواصل مع مبرمج باك اند, استشارة تقنية مجانية, حجز جلسة استشارية"
-          : "Hire Laravel developer, Contact backend engineer, consult Laravel architect, remote PHP developer";
-        pageUrl = "https://abdotaher.me/#contact";
-      }
-    }
-
-    document.title = title;
+    const seoTitle = isAr 
+      ? `عبدالرحمن طاهر | مهندس برمجيات باك اند ومستشار تقني محترف - ${currentPage.toUpperCase()}`
+      : `Abdulrahman Taher | Senior Backend & Database Architect - ${currentPage.toUpperCase()}`;
+    document.title = seoTitle;
+    
     document.documentElement.lang = lang;
     document.documentElement.dir = isAr ? "rtl" : "ltr";
 
-    const setMetaTag = (attrName: "name" | "property", attrVal: string, content: string) => {
-      let element = document.querySelector(`meta[${attrName}="${attrVal}"]`);
-      if (!element) {
-        element = document.createElement("meta");
-        element.setAttribute(attrName, attrVal);
-        document.head.appendChild(element);
-      }
-      element.setAttribute("content", content);
+    // Dynamic Graph-based JSON-LD Structured Schema Injection for pristine search indexing
+    const schema = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://abdotaher.me/#person",
+          "name": "Abdulrahman Taher",
+          "alternateName": "عبدالرحمن طاهر",
+          "jobTitle": "Senior Backend & Database Architect",
+          "url": "https://abdotaher.me",
+          "sameAs": [
+            "https://www.upwork.com/freelancers/~018ae3e5cfaa1804d1",
+            "https://wa.me/201008275881",
+            "mailto:abdotaher093@gmail.com"
+          ],
+          "knowsLanguage": ["Arabic", "English"],
+          "knowsAbout": [
+            "High-Performance API Architecture",
+            "PostgreSQL Performance Tuning",
+            "RabbitMQ & Redis queue processors",
+            "Payment integration Saudi Arabia Mada Gateway"
+          ],
+          "description": "Professional Backend developer in Egypt building custom systems and low-latency APIs for GCC business enterprises."
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://abdotaher.me/#website",
+          "url": "https://abdotaher.me",
+          "name": "عبدالرحمن طاهر | مهندس برمجيات باك اند ومطور قواعد بيانات",
+          "publisher": { "@id": "https://abdotaher.me/#person" },
+          "inLanguage": ["ar", "en"]
+        },
+        {
+          "@type": "WebPage",
+          "@id": `https://abdotaher.me/#${currentPage}`,
+          "url": `https://abdotaher.me/#${currentPage}`,
+          "name": isAr ? `عبدالرحمن طاهر | مهندس برمجيات باك اند ومستشار تقني محترف - ${currentPage.toUpperCase()}` : `Abdulrahman Taher | Senior Backend & Database Architect - ${currentPage.toUpperCase()}`,
+          "isPartOf": { "@id": "https://abdotaher.me/#website" },
+          "about": { "@id": "https://abdotaher.me/#person" },
+          "description": isAr ? "عبدالرحمن طاهر، مهندس برمجيات باك اند وقواعد بيانات محترف لبناء أنظمة و APIs قوية وسريعة خالية من المشاكل البرمجية." : "Abdulrahman Taher | Senior Backend & Database Architect in Egypt building scalable, high-performance APIs and database applications.",
+          "inLanguage": ["ar", "en"]
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://abdotaher.me/#service",
+          "name": "Abdulrahman Taher Backend Engineering Services",
+          "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&h=400&q=80",
+          "telePhone": "+201008275881",
+          "url": "https://abdotaher.me",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Cairo",
+            "addressCountry": "EG"
+          },
+          "priceRange": "$$",
+          "areaServed": ["SA", "AE", "EG", "KW", "QA", "OM"]
+        }
+      ]
     };
-
-    const setLinkTag = (rel: string, href: string) => {
-      let element = document.querySelector(`link[rel="${rel}"]`);
-      if (!element) {
-        element = document.createElement("link");
-        element.setAttribute("rel", rel);
-        document.head.appendChild(element);
-      }
-      element.setAttribute("href", href);
-    };
-
-    setMetaTag("name", "description", desc);
-    setMetaTag("name", "keywords", kws);
-    
-    // Open Graph
-    setMetaTag("property", "og:title", title);
-    setMetaTag("property", "og:description", desc);
-    setMetaTag("property", "og:image", image);
-    setMetaTag("property", "og:url", pageUrl);
-
-    // Twitter
-    setMetaTag("property", "twitter:title", title);
-    setMetaTag("property", "twitter:description", desc);
-    setMetaTag("property", "twitter:image", image);
-    setMetaTag("property", "twitter:url", pageUrl);
-
-    // Canonical link
-    setLinkTag("canonical", pageUrl);
-
-    // Dynamic JSON-LD Structured Schema Injection
-    let schema: any;
-    if (currentPage === "blogs" && selectedBlogId) {
-      const article = blogArticles.find(b => b.id === selectedBlogId);
-      if (article) {
-        const isoDate = (() => {
-          try {
-            const d = new Date(article.dateEn);
-            if (!isNaN(d.getTime())) {
-              return d.toISOString().split("T")[0];
-            }
-          } catch (e) {}
-          return "2026-06-12";
-        })();
-        schema = {
-          "@context": "https://schema.org",
-          "@type": "BlogPosting",
-          "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": pageUrl
-          },
-          "headline": isAr ? article.titleAr : article.titleEn,
-          "description": isAr ? article.excerptAr : article.excerptEn,
-          "image": article.image,
-          "datePublished": isoDate,
-          "author": {
-            "@type": "Person",
-            "name": "Abdulrahman Taher",
-            "url": "https://abdotaher.me/"
-          },
-          "publisher": {
-            "@type": "Organization",
-            "name": "Abdulrahman Taher Portfolio",
-            "logo": {
-              "@type": "ImageObject",
-              "url": "https://abdotaher.me/image.png"
-            }
-          },
-          "keywords": article.keywords.join(", ")
-        };
-      }
-    }
-    
-    if (!schema) {
-      schema = {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Abdulrahman Taher",
-        "jobTitle": "Senior Laravel Backend Engineer",
-        "url": "https://abdotaher.me/",
-        "sameAs": [
-          "https://www.upwork.com/freelancers/~018ae3e5cfaa1804d1",
-          "https://wa.me/201008275881",
-          "mailto:abdotaher093@gmail.com"
-        ],
-        "knowsLanguage": ["Arabic", "English"],
-        "knowsAbout": [
-          "Laravel API Architecture",
-          "PostgreSQL Performance Tuning",
-          "RabbitMQ & Redis queue processors",
-          "Payment integration Saudi Arabia Mada Gateway"
-        ],
-        "description": isAr 
-          ? "مطور باك اند محترف في مصر يبني أنظمة مخصصة وواجهات برمجية منخفضة زمن الاستجابة لمؤسسات الأعمال في الخليج العربي."
-          : "Professional Backend developer in Egypt building custom systems and low-latency APIs for GCC business enterprises."
-      };
-    }
 
     const scriptId = "developer-seo-schema";
     let script = document.getElementById(scriptId) as HTMLScriptElement;
@@ -356,7 +181,7 @@ export default function App() {
       document.head.appendChild(script);
     }
     script.text = JSON.stringify(schema);
-  }, [lang, isAr, currentPage, selectedBlogId]);
+  }, [lang, isAr, currentPage]);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -394,6 +219,9 @@ export default function App() {
     <div className={`min-h-screen font-sans antialiased overflow-x-hidden transition-colors duration-300 pb-16 ${
       isDark ? "bg-[#0b0918] text-slate-100" : "bg-[#f8fafc] text-slate-700"
     }`}>
+      {/* Cyber fingers & active mouse background animations */}
+      <CyberFingersBackground isDark={isDark} />
+
       {/* Dynamic Glowing Background Orbs */}
       <div className={`glowing-orb top-20 left-[10%] w-[350px] h-[350px] float-animation ${isDark ? "bg-indigo-500/10" : "bg-indigo-500/5"}`} />
       <div className={`glowing-orb top-[40%] right-[5%] w-[450px] h-[450px] float-animation ${isDark ? "bg-purple-500/5" : "bg-purple-500/3"}`} style={{ animationDelay: "2s" }} />
@@ -417,11 +245,11 @@ export default function App() {
               <Terminal className="w-5 h-5" />
             </span>
             <div className="flex flex-col">
-              <span className={`font-space font-extrabold text-base tracking-tight leading-tight transition-colors ${
+              <h1 className={`font-space font-extrabold text-base tracking-tight leading-tight transition-colors ${
                 isDark ? "text-white group-hover:text-indigo-400" : "text-slate-800 group-hover:text-indigo-600"
               }`}>
                 {isAr ? "عبدالرحمن طاهر" : "Abdulrahman Taher"}
-              </span>
+              </h1>
               <span className={`text-[9px] font-mono font-bold uppercase tracking-widest leading-none ${
                 isDark ? "text-indigo-400" : "text-indigo-600"
               }`}>
@@ -437,7 +265,7 @@ export default function App() {
               { id: "about", labelAr: "من أنا", labelEn: "About" },
               { id: "services", labelAr: "الخدمات الهندسية", labelEn: "Services" },
               { id: "projects", labelAr: "معرض المشاريع", labelEn: "Portfolio" },
-              { id: "blogs", labelAr: "المدونة والسيو", labelEn: "Blog Hub" },
+              { id: "blogs", labelAr: "المدونة", labelEn: "Blog" },
               { id: "contact", labelAr: "تواصل واستشارة", labelEn: "Contact" }
             ].map((page) => {
               const isActive = currentPage === page.id;
@@ -566,6 +394,7 @@ export default function App() {
                         alt="Abdulrahman Taher PHP Developer" 
                         className={`w-full h-full rounded-full object-cover border-2 ${isDark ? "border-[#0b0918] bg-slate-900" : "border-[#f8fafc] bg-white"}`}
                         referrerPolicy="no-referrer"
+                        onError={handleProfileError}
                       />
                     </div>
                     <div className="absolute bottom-1 right-2 bg-emerald-500 text-white font-mono font-bold text-[9px] px-2.5 py-0.5 rounded-full border-2 border-[#f8fafc] flex items-center gap-1 shadow-lg z-20">
@@ -578,14 +407,14 @@ export default function App() {
                     <span className={`inline-flex py-1 px-3.5 mx-auto rounded-full font-mono text-xs font-bold tracking-widest uppercase border ${
                       isDark ? "bg-indigo-950/60 border-indigo-800/40 text-indigo-400" : "bg-indigo-50 border-indigo-100 text-indigo-600"
                     }`}>
-                      🚀 Senior Laravel Architect for GCC
+                      🚀 Senior Backend & Database Architect for GCC
                     </span>
 
-                    <h1 className={`text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight font-space ${
+                    <h2 className={`text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight font-space ${
                       isDark ? "text-white" : "text-slate-800"
                     }`}>
                       {t.heroTitle}
-                    </h1>
+                    </h2>
 
                     <p className={`text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-medium ${
                       isDark ? "text-slate-300" : "text-slate-600"
@@ -634,7 +463,7 @@ export default function App() {
                         }`}
                       >
                         <BookOpen className="w-4 h-4 text-indigo-500 animate-pulse" />
-                        <span>{isAr ? "اقرأ المدونة والسيو" : "Read Blog & SEO Tools"}</span>
+                        <span>{isAr ? "اقرأ المدونة" : "Read Blog"}</span>
                       </button>
                       <a 
                         href="https://wa.me/201008275881" 
@@ -678,6 +507,166 @@ export default function App() {
                         {t.heroStat3Desc}
                       </span>
                     </div>
+                  </div>
+
+                  {/* SPOTLIGHT CORE TECH PILLARS */}
+                  <div className="w-full pt-12">
+                    <div className="flex flex-col gap-1 mb-8 text-center max-w-2xl mx-auto">
+                      <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#6366f1]">
+                        {isAr ? "الركائز التقنية والمكدس البرمجي" : "ARCHITECTURAL TOOL STACK SPOTLIGHT"}
+                      </span>
+                      <h3 className={`text-2xl sm:text-3xl font-extrabold tracking-tight font-space ${isDark ? "text-white" : "text-slate-800"}`}>
+                        {isAr ? "التقنيات والنظم المفضلة للإنتاج" : "Production-Tested Tooling & Frameworks"}
+                      </h3>
+                      <p className={`text-xs sm:text-sm leading-relaxed mt-1 ${isDark ? "text-slate-400" : "text-slate-500"}`}>
+                        {isAr 
+                          ? "بيئة العمل التي أفضّلها لبناء أنظمة باك اند متكاملة، سريعة الفهم، وخالية من المشاكل البرمجية تحت الضغط العالي."
+                          : "The absolute reliable choices for delivering low-latency microservices, responsive API routes, and high-availability database setups."}
+                      </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 w-full max-w-5xl mx-auto">
+                      {[
+                        {
+                          titleAr: "بناء المعمارية (Core Architecture)",
+                          titleEn: "Core Architecture Support",
+                          descAr: "تقنيات متقدمة لهندسة الميدلوير، وحقن الاعتمادات، وبناء معمارية نظيفة قابلة للتعديل والنمو.",
+                          descEn: "Advanced middleware engineering, deep dependency injection, and scalable MVC/domain-driven clean architectures.",
+                          icon: <Code className="w-5 h-5 text-indigo-500" />
+                        },
+                        {
+                          titleAr: "قاعدة بيانات PostgreSQL",
+                          titleEn: "PostgreSQL & Indexing",
+                          descAr: "تحسين الاستعلامات المعقدة، تقسيم الجداول الكبيرة، مراجعة خطط التنفيذ (EXPLAIN ANALYZE) والتحجيم.",
+                          descEn: "Complex subquery tuning, table partitions, composite indexes, and executing EXPLAIN ANALYZE bottlenecks profiling.",
+                          icon: <Database className="w-5 h-5 text-indigo-500" />
+                        },
+                        {
+                          titleAr: "ذاكرة كاش Redis",
+                          titleEn: "Redis Cache Sentinel",
+                          descAr: "التخزين المؤقت للبيانات الساخنة، صمام أمان الجدران الائتمانية وامتصاص ضغط طلبات الـ API المتزامنة.",
+                          descEn: "High-capacity in-memory data structures, cache locks, and rate limiters protecting checkout loops.",
+                          icon: <Zap className="w-5 h-5 text-amber-500" />
+                        },
+                        {
+                          titleAr: "الكيوهات وبول-ريديس",
+                          titleEn: "Queue Horizon Workers",
+                          descAr: "معالجة المهام الثقيلة في الخلفية بشكل غير متزامن لتفادي فترات الانتظار الطويلة بالخوادم.",
+                          descEn: "Decoupled asynchronous queue processing, transactional mail sends, and scalable cron processing pipelines.",
+                          icon: <Radio className="w-5 h-5 text-indigo-500" />
+                        }
+                      ].map((pillar, pIdx) => (
+                        <div 
+                          key={pIdx} 
+                          className={`p-5 rounded-xl border flex flex-col justify-between transition-all hover:scale-[1.02] ${
+                            isDark 
+                              ? "bg-[#13112a] border-indigo-950/60 hover:border-indigo-500/50 hover:shadow-[0_0_20px_rgba(99,102,241,0.15)]" 
+                              : "bg-white border-slate-200 hover:border-indigo-500/30 hover:shadow-lg"
+                          }`}
+                        >
+                          <div>
+                            <span className={`p-2.5 rounded-lg border inline-block mb-3.5 ${
+                              isDark ? "bg-indigo-950/40 border-indigo-800/20" : "bg-indigo-50 border-indigo-100"
+                            }`}>
+                              {pillar.icon}
+                            </span>
+                            <h4 className={`text-sm font-bold font-space ${isDark ? "text-white" : "text-slate-800"}`}>
+                              {isAr ? pillar.titleAr : pillar.titleEn}
+                            </h4>
+                            <p className={`text-xs mt-2 leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}>
+                              {isAr ? pillar.descAr : pillar.descEn}
+                            </p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* THE REGIONAL ENTERPRISE WORKFLOW */}
+                  <div className="w-full pt-14 pb-4">
+                    <div className="flex flex-col gap-1 mb-8 text-center max-w-2xl mx-auto">
+                      <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#6366f1]">
+                        {isAr ? "دورة حياة بناء النظم وهندستها" : "THE REGIONAL GULF CO-OPERATION STANDARD"}
+                      </span>
+                      <h3 className={`text-2xl sm:text-3xl font-extrabold tracking-tight font-space ${isDark ? "text-white" : "text-slate-800"}`}>
+                        {isAr ? "خطة العمل الهندسية القياسية للخليج ومصر" : "4-Stage Action Plan for Seamless Engineering"}
+                      </h3>
+                      <p className={`text-xs sm:text-sm leading-relaxed mt-1 ${isDark ? "text-slate-400" : "text-slate-500"}`}>
+                        {isAr 
+                          ? "خطوات مدروسة بدقة تضمن الانتقال الآمن للبيانات، وتلاشي فترات توقف الخوادم وحقن التوسيع بسلاسة تامة."
+                          : "A systematic approach to profiling bottlenecks, fixing slow structural queries, securing API threads, and safe pipeline shipping."}
+                      </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-6 w-full max-w-5xl mx-auto relative">
+                      {[
+                        {
+                          step: "01",
+                          titleAr: "تشخيص وقياس الأداء",
+                          titleEn: "Database & API Audit",
+                          descAr: "قياس زمن الاستجابة الفعلي لطلبات الـ HTTP وتحديد مصايد الاستعلامات البطيئة في PostgreSQL.",
+                          descEn: "Measuring real-time transactional overhead, identifying query loops, and exposing database blocks."
+                        },
+                        {
+                          step: "02",
+                          titleAr: "إعادة الهيكلة والتفريع",
+                          titleEn: "Reindexing & Layering",
+                          descAr: "بناء فهارس مركبة ذكية وتطبيق أنظمة التخزين المؤقت (Redis) وتفريع البيانات دون التسبب بهلاك الخادم.",
+                          descEn: "Applying smart composite indexes, introducing cache layers, and structural schema normalization."
+                        },
+                        {
+                          step: "03",
+                          titleAr: "معالجة المهام والكيوهات",
+                          titleEn: "Asynchronous Pipelines",
+                          descAr: "عزل المهام الثقيلة (إصدار الفواتير، الإشعارات الفورية) وتشغيلها في خلفية النظام لتقليص زمن الانتظار لأقل من 50 مللي ثانية.",
+                          descEn: "Isolating heavy operations like instant invoice alerts into background processes ensuring ultra-fast API returns."
+                        },
+                        {
+                          step: "04",
+                          titleAr: "التأمين الشامل والمثاقلة",
+                          titleEn: "Security & Scale Test",
+                          descAr: "أرشفة وحماية النظم من ثغرات SQLi وتأمين بوابات الدفع (Mada) وتشغيل سيناريوهات Pen-test مكثفة.",
+                          descEn: "Preventing SQLi exposure, deploying secure signature verification webhooks, and ensuring A+ grade integrity."
+                        }
+                      ].map((item, idx) => (
+                        <div 
+                          key={idx} 
+                          className={`p-6 rounded-xl border relative flex flex-col justify-between transition-all ${
+                            isDark 
+                              ? "bg-[#13112a] border-indigo-950/60" 
+                              : "bg-white border-slate-200 shadow-xs"
+                          }`}
+                        >
+                          <div>
+                            <span className="font-mono text-3xl font-extrabold text-indigo-500/30 block mb-2">{item.step}</span>
+                            <h4 className={`text-sm sm:text-base font-bold font-space ${isDark ? "text-white" : "text-slate-800"}`}>
+                              {isAr ? item.titleAr : item.titleEn}
+                            </h4>
+                            <p className={`text-xs mt-2.5 leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}>
+                              {isAr ? item.descAr : item.descEn}
+                            </p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* INTERACTIVE SERVER SHELL SIMULATOR */}
+                  <div className="w-full pt-10 pb-4">
+                    <div className="flex flex-col gap-1 mb-8 text-center max-w-2xl mx-auto">
+                      <span className="text-xs font-mono font-bold uppercase tracking-widest text-indigo-500">
+                        {isAr ? "مختبر معالجة الأكواد البرمجية الفوري" : "Live Code Architecture Testing Ground"}
+                      </span>
+                      <h3 className={`text-2xl sm:text-3xl font-extrabold tracking-tight font-space ${isDark ? "text-white" : "text-slate-800"}`}>
+                        {isAr ? "اختبر كفاءة وسرعة الباك-إند والـ APIs" : "Live Benchmarking of Backend Services"}
+                      </h3>
+                      <p className={`text-xs sm:text-sm leading-relaxed mt-1 ${isDark ? "text-slate-400" : "text-slate-500"}`}>
+                        {isAr 
+                          ? "قم بتشغيل محاكي ضغط البيانات الفني لمعاينة فهارس قواعد البيانات وسرعة ذوبان طلبات الـ HTTP في أجزاء من الميلي ثانية."
+                          : "Execute benchmark threads to test high-capacity index scans, fast Redis responses, queues and security filters in real-time."}
+                      </p>
+                    </div>
+                    <InteractiveConsole isAr={isAr} isDark={isDark} />
                   </div>
 
                 </div>
@@ -762,7 +751,7 @@ export default function App() {
                     {isAr ? "هل تبحث عن مهندس متمكن يسرّع تسليم البرمجيات بمصر والخليج؟" : "Need to secure your databases and prevent checkout bottlenecks?"}
                   </h3>
                   <p className={`text-sm mt-2 max-w-2xl mx-auto leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
-                    {isAr ? "أعمل بنموذج خطة عمل هندسية واضحة لتأمين الاستفسارات، وتوسيع سيرفرات PHP/Laravel، ومراجعة جاهزية الأنظمة لتطبيقات التوصيل والمدفوعات والمستأجرين المتعددين." : "Deploy clean, production-certified PHP/Laravel microservice architectures, integrate and reconcile financial ledger webhooks."}
+                    {isAr ? "أعمل بنموذج خطة عمل هندسية واضحة لتأمين الاستفسارات، وتوسيع السيرفرات وقواعد البيانات، ومراجعة جاهزية الأنظمة لتطبيقات التوصيل والمدفوعات والمستأجرين المتعددين." : "Deploy clean, production-certified scalable microservice architectures, integrate and reconcile financial ledger webhooks."}
                   </p>
                   <div className="flex justify-center gap-3 mt-6">
                     <button 
@@ -792,9 +781,9 @@ export default function App() {
                 
                 <div className="text-center max-w-3xl mx-auto space-y-3">
                   <span className="text-xs font-mono font-bold uppercase tracking-widest text-indigo-500">{t.aboutLabel}</span>
-                  <h1 className={`text-3xl sm:text-4xl font-extrabold tracking-tight font-space ${isDark ? "text-white" : "text-slate-855"}`}>
+                  <h2 className={`text-3xl sm:text-4xl font-extrabold tracking-tight font-space ${isDark ? "text-white" : "text-slate-855"}`}>
                     {t.aboutTitle}
-                  </h1>
+                  </h2>
                   <p className={`text-sm leading-relaxed ${isDark ? "text-slate-400" : "text-slate-500"}`}>
                     {isAr ? "نبذة كاملة ومسار خبرة المهندس عبدالرحمن طاهر في تلبية الاحتياجات التقنية لدول الخليج للباك-إند" : "Detailed corporate briefing on Eng. Abdulrahman Taher's backend specialization profile."}
                   </p>
@@ -805,7 +794,7 @@ export default function App() {
                     isDark ? "bg-[#13112a] border-indigo-950/60" : "bg-white border-slate-200 shadow-sm"
                   }`}>
                     <h3 className={`text-xl font-bold font-space ${isDark ? "text-white" : "text-slate-800"}`}>
-                      {isAr ? "أنا مطور Laravel مكرس لتأكيد إنتاجية الأنظمة" : "Senior Laravel Specialization Overview"}
+                      {isAr ? "أنا مهندس أنظمة باك-إند حريص على إنتاجية النظم واستقرارها" : "Senior Systems Audit & Optimization Specialist"}
                     </h3>
                     
                     <div className={`text-sm sm:text-base leading-relaxed space-y-4 font-medium ${
@@ -912,9 +901,9 @@ export default function App() {
                 
                 <div className="text-center max-w-3xl mx-auto space-y-3">
                   <span className="text-xs font-mono font-bold uppercase tracking-widest text-indigo-500">{t.servicesLabel}</span>
-                  <h1 className={`text-3xl sm:text-4xl font-extrabold tracking-tight font-space ${isDark ? "text-white" : "text-slate-855"}`}>
+                  <h2 className={`text-3xl sm:text-4xl font-extrabold tracking-tight font-space ${isDark ? "text-white" : "text-slate-855"}`}>
                     {t.servicesTitle}
-                  </h1>
+                  </h2>
                   <p className={`text-sm leading-relaxed ${isDark ? "text-slate-400" : "text-slate-500"}`}>
                     {t.servicesDesc}
                   </p>
@@ -935,8 +924,8 @@ export default function App() {
                       {t.servicesItem1Desc}
                     </p>
                     <div className="p-3.5 bg-slate-900/40 rounded-lg text-xs font-mono border border-indigo-950/60 space-y-1 text-slate-300">
-                      <div>✔️ Laravel Enterprise Structure</div>
-                      <div>✔️ Advanced Laravel Admin Panels & Nova / Filament</div>
+                      <div>✔️ Enterprise API Structure</div>
+                      <div>✔️ Advanced Management Admin Panels & Custom Dashboards</div>
                       <div>✔️ REST API / Webhooks / GraphQL / SDK integrations</div>
                     </div>
                   </article>
@@ -996,7 +985,7 @@ export default function App() {
                     </p>
                     <div className="p-3.5 bg-slate-900/40 rounded-lg text-xs font-mono border border-indigo-950/60 space-y-1 text-slate-300">
                       <div>✔️ Redis cache wrappers & buffers</div>
-                      <div>✔️ Active worker queues (Laravel Horizon queues)</div>
+                      <div>✔️ Active worker queues & task distribution pipelines</div>
                       <div>✔️ Containerization namespaces (Docker, AWS ECS)</div>
                     </div>
                   </article>
@@ -1071,9 +1060,9 @@ export default function App() {
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 pb-4">
                   <div className="flex flex-col gap-2">
                     <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#6366f1]">{t.projectsLabel}</span>
-                    <h1 className={`text-3xl font-bold tracking-tight font-space ${isDark ? "text-white" : "text-slate-800"}`}>
+                    <h2 className={`text-3xl font-bold tracking-tight font-space ${isDark ? "text-white" : "text-slate-800"}`}>
                       {isAr ? "دراسات حالة فنية وحلول برمجية" : "Technical Case Studies & Scaled Solutions"}
-                    </h1>
+                    </h2>
                     <p className={`text-slate-400 text-xs sm:text-sm max-w-lg mt-1 font-medium ${isDark ? "text-slate-400" : "text-slate-500"}`}>
                       {t.projectsSub}
                     </p>
@@ -1085,7 +1074,7 @@ export default function App() {
                   }`}>
                     {[
                       { id: "All", label: t.projectsFilterAll },
-                      { id: "Laravel", label: t.projectsFilterLaravel },
+                      { id: "Backend", label: t.projectsFilterBackend },
                       { id: "DB", label: t.projectsFilterDB },
                       { id: "Cloud", label: t.projectsFilterCloud }
                     ].map((btn) => (
@@ -1174,15 +1163,16 @@ export default function App() {
                             alt={isAr ? article.titleAr : article.titleEn} 
                             className="w-full h-full object-cover"
                             referrerPolicy="no-referrer"
+                            onError={handleBlogImageError}
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                           <div className="absolute bottom-6 left-6 right-6 text-white space-y-2">
                             <span className="text-xs uppercase bg-indigo-600 px-3 py-1 rounded-full font-mono font-bold tracking-widest text-[#a5b4fc]">
                               {article.category.toUpperCase()}
                             </span>
-                            <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight font-space leading-tight">
+                            <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight font-space leading-tight">
                               {isAr ? article.titleAr : article.titleEn}
-                            </h1>
+                            </h2>
                             <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-300">
                               <span>✍️ {isAr ? article.authorAr : article.authorEn}</span>
                               <span>•</span>
@@ -1257,10 +1247,10 @@ export default function App() {
                   <div className="space-y-12">
                     {/* Header Pitch */}
                     <div className="text-center max-w-3xl mx-auto space-y-3">
-                      <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#6366f1]">{isAr ? "مقالات هندسية وسيو متكامل" : "Enterprise System Architecture Blogs"}</span>
-                      <h1 className={`text-3xl sm:text-4xl font-extrabold tracking-tight font-space ${isDark ? "text-white" : "text-slate-855"}`}>
-                        {isAr ? "مدونة الباك-إند وتأصيل السيو الهندسي" : "The Backend & Regional System Engineering Blog"}
-                      </h1>
+                      <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#6366f1]">{isAr ? "مقالات برمجية وهندسية" : "Technical Backend Articles"}</span>
+                      <h2 className={`text-3xl sm:text-4xl font-extrabold tracking-tight font-space ${isDark ? "text-white" : "text-slate-855"}`}>
+                        {isAr ? "مدونة الباك-إند وهندسة الأنظمة" : "The Backend & Systems Engineering Blog"}
+                      </h2>
                       <p className={`text-sm leading-relaxed ${isDark ? "text-slate-400" : "text-slate-500"}`}>
                         {isAr ? "مقالات فنية معمقة تصف لغير التقنيين وأصحاب الشركات الناشئة كيفية تأمين فهارس قواعد البيانات ورفع كفاءة البنية التحتية." : "In-depth corporate analysis of PHP operations, secure mada payment webhooks, and scalable relational ledgers."}
                       </p>
@@ -1318,7 +1308,7 @@ export default function App() {
   "@type": "WebDeveloper",
   "name": "Abdu Taher",
   "worksFor": "${seoTargetCompany}",
-  "expertise": "Laravel System Scaling",
+  "expertise": "High-Performance Backend Scaling",
   "geoTarget": "Saudi Arabia & GCC"
 }`}
                             </pre>
@@ -1348,7 +1338,7 @@ export default function App() {
                         {[
                           { id: "all", lAr: "الكل", lEn: "All Posts" },
                           { id: "business", lAr: "البيزنس والتوظيف", lEn: "Business & Clients" },
-                          { id: "laravel", lAr: "لارافيل", lEn: "Laravel Hub" },
+                          { id: "backend", lAr: "الباك إند والأنظمة", lEn: "Backend Hub" },
                           { id: "database", lAr: "قواعد البيانات", lEn: "Database Tune" },
                           { id: "scaling", lAr: "التوسيع", lEn: "Scaling Tips" },
                           { id: "seo", lAr: "السيو والأرشفة", lEn: "SEO & Rankings" }
@@ -1405,6 +1395,7 @@ export default function App() {
                                     className="w-full h-full object-cover group-hover:scale-105 transition-all"
                                     loading="lazy"
                                     referrerPolicy="no-referrer"
+                                    onError={handleBlogImageError}
                                   />
                                   <div className="absolute top-2 right-2 bg-indigo-650/80 bg-indigo-900 border border-indigo-700/30 text-white font-mono text-[9px] px-2 py-0.5 rounded font-bold uppercase">
                                     {article.category}
@@ -1454,9 +1445,9 @@ export default function App() {
                 
                 <div className="text-center max-w-3xl mx-auto space-y-3">
                   <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#6366f1]">{t.navContact}</span>
-                  <h1 className={`text-3xl sm:text-4xl font-extrabold tracking-tight font-space uppercase ${isDark ? "text-white" : "text-slate-855"}`}>
+                  <h2 className={`text-3xl sm:text-4xl font-extrabold tracking-tight font-space uppercase ${isDark ? "text-white" : "text-slate-855"}`}>
                     {t.contactTitle}
-                  </h1>
+                  </h2>
                   <p className={`text-sm leading-relaxed ${isDark ? "text-slate-400" : "text-slate-500"}`}>
                     {t.contactSub}
                   </p>
