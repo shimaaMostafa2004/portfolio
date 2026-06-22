@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useRef } from "react";
 
 interface DatabaseNetworkBackgroundProps {
@@ -24,6 +26,9 @@ export const CyberFingersBackground: React.FC<DatabaseNetworkBackgroundProps> = 
   const animationFrameRef = useRef<number | null>(null);
 
   useEffect(() => {
+    // Guard: canvas APIs are not available during SSR
+    if (typeof window === 'undefined') return;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
 

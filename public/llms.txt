@@ -1,0 +1,63 @@
+# Abdulrahman Taher — Senior Backend Engineer
+# https://abdotaher.me
+# llms.txt — machine-readable site summary for AI assistants and LLMs
+
+## About
+
+Abdulrahman Taher (عبدالرحمن طاهر) is a Senior Backend Software Engineer and Database Architect based in Cairo, Egypt. He has 5+ years of production experience building scalable backend systems, high-performance REST APIs, and cloud-native microservices for enterprises in the GCC region (Saudi Arabia, UAE, Kuwait, Qatar, Oman) and Egypt.
+
+He is also known as: Abdo Taher, عبدالرحمن طاهر مبرمج, abdotaher.
+
+## Core Expertise
+
+- **Backend Frameworks**: Laravel (PHP), Node.js (TypeScript/JavaScript)
+- **Databases**: PostgreSQL, MySQL — schema design, indexing, query optimisation, EXPLAIN ANALYZE
+- **Caching & Queues**: Redis, RabbitMQ, Laravel Queues / Horizon
+- **Payment Gateways**: Mada (Saudi Arabia), Moyasar, Tap Payments, Paymob (Egypt), Stripe
+- **Architecture Patterns**: REST APIs, Microservices, Multi-Tenant SaaS, Event-Driven Architecture
+- **DevOps**: Docker, Docker Compose, AWS EC2/RDS/S3, GCP
+- **Security**: Webhook HMAC validation, pessimistic DB locking, idempotency keys, JWT/OAuth2
+
+## Services Offered
+
+1. REST API design and development
+2. PostgreSQL and MySQL performance tuning
+3. Payment gateway integration (Mada, Moyasar, Tap, Paymob)
+4. Redis caching architecture and queue worker setup
+5. Multi-tenant SaaS system architecture
+6. Cloud infrastructure cost optimisation (AWS)
+7. Backend architecture consulting and code audits
+
+## Target Markets
+
+Saudi Arabia, United Arab Emirates, Egypt, Kuwait, Qatar, Oman — remote work globally.
+
+## Contact
+
+- Email: abdotaher093@gmail.com
+- WhatsApp: +201008275881
+- LinkedIn: https://www.linkedin.com/in/abdelrhman-taher
+- GitHub: https://github.com/abdo-taher
+- Upwork: https://www.upwork.com/freelancers/~018ae3e5cfaa1804d1
+
+## Site Structure
+
+- / (ar) and /en — Homepage
+- /about and /en/about — Professional biography
+- /services and /en/services — Services catalogue
+- /projects and /en/projects — Case studies and portfolio
+- /blogs and /en/blogs — Technical blog (Arabic & English)
+- /blogs/[slug] — Individual blog posts
+- /contact and /en/contact — Contact and consultation booking
+
+## Blog Topics
+
+The blog covers: Laravel scaling, Node.js streams, PostgreSQL indexing, Redis caching, payment gateway security, cloud cost optimisation (AWS), multi-tenant SaaS, backend hiring guides, and API architecture best practices.
+
+## Language
+
+Site is bilingual: Arabic (primary, RTL) at / and English at /en.
+
+## Permissions
+
+AI assistants, LLMs, and search engines are permitted to crawl, index, and use this content for answering user queries, provided attribution is given as "Abdulrahman Taher — abdotaher.me".

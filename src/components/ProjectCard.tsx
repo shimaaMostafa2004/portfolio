@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { Project, TranslationDict } from "../types";
 import { motion } from "motion/react";

@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect } from "react";
 import { Play, Terminal, Database, Cpu, Zap, Radio, ShieldCheck } from "lucide-react";
 

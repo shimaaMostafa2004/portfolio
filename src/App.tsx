@@ -42,6 +42,9 @@ import {
   Radio
 } from "lucide-react";
 
+// SSR-safe check: returns true only when running in the browser
+const isBrowser = typeof window !== 'undefined';
+
 export default function App() {
   const [lang, setLang] = useState<"ar" | "en">("ar"); 
   const t = translations[lang];
@@ -65,7 +68,10 @@ export default function App() {
   const [activePolicyModal, setActivePolicyModal] = useState<"privacy" | "security" | "sla" | null>(null);
 
   // Two Themes Support (Light / Dark Model Toggle)
-  const [theme, setTheme] = useState<"light" | "dark" | any>(() => {
+  // The initializer is guarded for SSR: on the server there is no localStorage,
+  // so we default to "dark" and let the client hydrate with the persisted value.
+  const [theme, setTheme] = useState<"light" | "dark">(() => {
+    if (!isBrowser) return "dark";
     const saved = localStorage.getItem("abdu-portfolio-theme");
     return (saved === "light" || saved === "dark") ? saved : "dark";
   });
@@ -88,8 +94,9 @@ export default function App() {
   const [submitting, setSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
 
-  // Theme synchronization
+  // Theme synchronization (browser-only)
   useEffect(() => {
+    if (!isBrowser) return;
     localStorage.setItem("abdu-portfolio-theme", theme);
     const root = document.documentElement;
     if (theme === "dark") {
@@ -99,13 +106,16 @@ export default function App() {
     }
   }, [theme]);
 
-  // Smooth scroll to top when page navigation or selected blog changes
+  // Smooth scroll to top when page navigation or selected blog changes (browser-only)
   useEffect(() => {
+    if (!isBrowser) return;
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [currentPage, selectedBlogId]);
 
-  // Premium Technical SEO: Dynamic Title, html attributes, and dynamic JSON-LD Schema
+  // Client-side SEO: Dynamic Title, html attributes, and dynamic JSON-LD Schema
+  // On the server this is handled by entry-server.tsx.
   useEffect(() => {
+    if (!isBrowser) return;
     const seoTitle = isAr 
       ? `عبدالرحمن طاهر | مهندس برمجيات باك اند ومستشار تقني محترف - ${currentPage.toUpperCase()}`
       : `Abdulrahman Taher | Senior Backend & Database Architect - ${currentPage.toUpperCase()}`;
@@ -1886,8 +1896,10 @@ export default function App() {
               <button
                 id="copy-portfolio-link-btn"
                 onClick={() => {
-                  navigator.clipboard.writeText("https://abdotaher.me/");
-                  alert(isAr ? "تم إرشاد وحفظ الرابط الحصري بالحافظة!" : "Portfolio link copied to clipboard!");
+                  if (isBrowser) {
+                    navigator.clipboard.writeText("https://abdotaher.me/");
+                    alert(isAr ? "تم إرشاد وحفظ الرابط الحصري بالحافظة!" : "Portfolio link copied to clipboard!");
+                  }
                 }}
                 className="flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl text-xs font-bold font-mono bg-indigo-600 hover:bg-indigo-500 text-white transition-all cursor-pointer"
               >

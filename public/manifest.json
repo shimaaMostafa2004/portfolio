@@ -1,0 +1,23 @@
+{
+  "name": "عبدالرحمن طاهر | مهندس باك اند",
+  "short_name": "Abdo Taher",
+  "description": "مهندس برمجيات باك اند أول متخصص في Laravel وNode.js وPostgreSQL للشركات في الخليج ومصر.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "lang": "ar",
+  "dir": "rtl",
+  "orientation": "portrait-primary",
+  "categories": ["business", "productivity"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any maskable"
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}
