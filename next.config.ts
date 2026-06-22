@@ -1,11 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Static export is NOT used because we want SSG + dynamic routes.
-  // Next.js default handles both SSG (generateStaticParams) and SSR.
+  // Firebase Hosting serves static assets, so export the App Router site to out/.
+  output: "export",
 
   // Allow images from Unsplash and abdotaher.me
   images: {
+    unoptimized: true,
     remotePatterns: [
       { protocol: "https", hostname: "images.unsplash.com" },
       { protocol: "https", hostname: "abdotaher.me" },

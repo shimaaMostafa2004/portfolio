@@ -24,17 +24,22 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
+          cache: npm
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
-      - name: Build Vite site
+      - name: Build Next.js static site
         run: npm run build
 
+      - name: Prepare Firebase credentials
+        run: |
+          printf '%s' "$FIREBASE_SERVICE_ACCOUNT" > "$RUNNER_TEMP/firebase-service-account.json"
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_PROTOFILO_64439 }}
+
       - name: Deploy to Firebase Hosting (preview)
-        uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_PROTOFILO_64439 }}
-          projectId: protofilo-64439
+        run: npx firebase-tools@latest hosting:channel:deploy "pr-${{ github.event.pull_request.number }}" --project protofilo-64439 --expires 7d
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/firebase-service-account.json
