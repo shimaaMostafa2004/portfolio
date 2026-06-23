@@ -282,7 +282,7 @@ export function HomePageClient() {
               isDark ? "bg-[#13112a] border-indigo-950/70" : "bg-white border-slate-200 shadow-xs"
             }`}>
               <div>
-                <span className="font-mono text-[10px] sm:text-xs font-bold text-indigo-500">{card.num} // {card.cap}</span>
+                <span className="font-mono text-[10px] sm:text-xs font-bold text-indigo-500">{card.num} {"//"} {card.cap}</span>
                 <p className={`text-base sm:text-lg font-bold font-space mt-2 ${isDark ? "text-white" : "text-slate-800"}`}>{card.title}</p>
                 <p className={`text-xs sm:text-sm mt-2 sm:mt-3 leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}>"{card.desc}"</p>
               </div>

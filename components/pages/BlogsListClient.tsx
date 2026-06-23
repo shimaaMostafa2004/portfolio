@@ -10,7 +10,7 @@ import { blogArticles } from "@/src/data/blogs";
 type Category = "all" | "backend" | "database" | "scaling" | "seo" | "business";
 
 export function BlogsListClient() {
-  const { lang, isAr, isDark } = usePageContext();
+  const { isAr, isDark } = usePageContext();
   const prefix = isAr ? "" : "/en";
 
   const [search, setSearch] = useState("");

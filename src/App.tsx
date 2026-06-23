@@ -1,6 +1,6 @@
 import React, { useState, useEffect, FormEvent } from "react";
 import { translations, sampleProjects } from "./translations";
-import { blogArticles, BlogArticle } from "./data/blogs";
+import { blogArticles } from "./data/blogs";
 import { BottleneckEstimator } from "./components/BottleneckEstimator";
 import { ProjectCard } from "./components/ProjectCard";
 import { CyberFingersBackground } from "./components/CyberFingersBackground";
@@ -8,32 +8,25 @@ import { InteractiveConsole } from "./components/InteractiveConsole";
 import { motion, AnimatePresence } from "motion/react";
 import { 
   Terminal, 
-  User, 
   Layers,
   Database,
   Settings, 
-  History, 
   Mail, 
   ExternalLink, 
   CheckCircle2, 
   Rocket, 
   MessageSquare, 
   Award, 
-  Github, 
-  Linkedin, 
   ArrowRight, 
   ArrowLeft,
   Check, 
-  Info,
   Smartphone,
   CheckCircle,
-  HelpCircle,
   Globe2,
   Sun,
   Moon,
   Search,
   BookOpen,
-  Clock,
   Shield,
   Cpu,
   Bookmark,
