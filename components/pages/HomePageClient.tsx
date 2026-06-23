@@ -77,8 +77,8 @@ export function HomePageClient() {
             isDark ? "text-slate-300" : "text-slate-600"
           }`}>
             {isAr
-              ? "مطور Laravel وخبير PostgreSQL من مصر — أبني REST APIs سريعة وأنظمة باك إند مستقرة قابلة للتوسع للشركات والمنتجات الرقمية في مصر والخليج."
-              : "Laravel developer and PostgreSQL expert from Egypt — building fast REST APIs and stable, scalable backend systems for businesses across Egypt and the GCC."}
+              ? "مطور Laravel وخبير PostgreSQL من مصر — أبني أنظمة باك-إند وقواعد بيانات فائقة الأداء قابلة للتوسع للشركات والمنتجات الرقمية في مصر والخليج."
+              : "Laravel developer and PostgreSQL expert from Egypt — building high-performance, scalable backend systems and databases for businesses across Egypt and the GCC."}
           </p>
 
           {/* Feature pills */}
@@ -316,7 +316,7 @@ export function HomePageClient() {
                 من أنا
               </h2>
               <p className={`text-sm sm:text-base leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
-                عبدالرحمن طاهر — مهندس برمجيات متخصص في الجانب الخلفي للتطبيقات، يجمع بين خبرة عميقة في Laravel وتحسين قواعد بيانات PostgreSQL وبناء أنظمة REST API قادرة على تحمل أعباء الإنتاج الفعلية. خبرة تتجاوز 5 سنوات في تطوير حلول للشركات الناشئة والمؤسسات في مصر والسعودية والإمارات والكويت.
+                عبدالرحمن طاهر — مهندس برمجيات متخصص في بناء أنظمة باك-إند وقواعد بيانات PostgreSQL فائقة الأداء قابلة للتوسع. خبرة تتجاوز 5 سنوات في تطوير REST APIs وحلول Laravel للشركات الناشئة والمؤسسات في مصر والسعودية والإمارات والكويت.
               </p>
             </div>
 
