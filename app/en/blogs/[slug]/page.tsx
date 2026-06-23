@@ -71,19 +71,22 @@ export default async function BlogPostPageEn({ params }: Props) {
   const article = blogArticles.find((a) => a.id === slug);
   if (!article) notFound();
 
+  // article is guaranteed non-null here after notFound() above
+  const foundArticle = article!;
+
   return (
     <SiteShell initialLang="en">
-      <JsonLd data={articleSchema(article)} />
-      <JsonLd data={baseSchema(`${SITE_URL}/en/blogs/${slug}`, article.titleEn, article.excerptEn)} />
+      <JsonLd data={articleSchema(foundArticle)} />
+      <JsonLd data={baseSchema(`${SITE_URL}/en/blogs/${slug}`, foundArticle.titleEn, foundArticle.excerptEn)} />
 
       <div className="sr-only">
-        <h1>{article.titleEn}</h1>
-        <p>{article.excerptEn}</p>
+        <h1>{foundArticle.titleEn}</h1>
+        <p>{foundArticle.excerptEn}</p>
         <p>
           Author: Abdulrahman Taher — Senior Backend Engineer, Cairo, Egypt.
-          Published: {article.dateEn}.
+          Published: {foundArticle.dateEn}.
         </p>
-        <ul>{article.keywords.map((kw) => <li key={kw}>{kw}</li>)}</ul>
+        <ul>{foundArticle.keywords.map((kw) => <li key={kw}>{kw}</li>)}</ul>
       </div>
 
       <BlogPostClient slug={slug} />

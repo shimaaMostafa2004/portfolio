@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Play, Terminal, Database, Cpu, Zap, Radio, ShieldCheck } from "lucide-react";
+import { Play, Database, Zap, Radio, ShieldCheck } from "lucide-react";
 
 interface InteractiveConsoleProps {
   isAr: boolean;
@@ -17,61 +17,33 @@ export const InteractiveConsole: React.FC<InteractiveConsoleProps> = ({ isAr, is
   // Active logs based on active tab
   const getInitialLogs = (tab: typeof activeTab) => {
     if (tab === "api") {
-      return isAr 
-        ? [
-            "Ready to audit secure REST API throughput...",
-            "Host: api.abdotaher.me  | Environment: Production",
-            "Caching layer: Redis Sentinel Node Active",
-            "Click 'Execute Speed Test' below to simulate +10,000 concurrent user requests."
-          ]
-        : [
-            "Ready to audit secure REST API throughput...",
-            "Host: api.abdotaher.me  | Environment: Production",
-            "Caching layer: Redis Sentinel Node Active",
-            "Click 'Execute Speed Test' below to simulate +10,000 concurrent user requests."
-          ];
+      return [
+        "Ready to audit secure REST API throughput...",
+        "Host: api.abdotaher.me  | Environment: Production",
+        "Caching layer: Redis Sentinel Node Active",
+        "Click 'Execute Speed Test' below to simulate +10,000 concurrent user requests."
+      ];
     } else if (tab === "database") {
-      return isAr
-        ? [
-            "Connecting to Database DB Instance (Partitioned Ledger)...",
-            "Checking indexing performance on table 'orders' (1.4M rows)...",
-            "Missing indexes detected on foreign_key_id. Latency is high.",
-            "Click 'Optimize database' to run query analyzer."
-          ]
-        : [
-            "Connecting to Database DB Instance (Partitioned Ledger)...",
-            "Checking indexing performance on table 'orders' (1.4M rows)...",
-            "Missing indexes detected on foreign_key_id. Latency is high.",
-            "Click 'Optimize database' to run query analyzer."
-          ];
+      return [
+        "Connecting to Database DB Instance (Partitioned Ledger)...",
+        "Checking indexing performance on table 'orders' (1.4M rows)...",
+        "Missing indexes detected on foreign_key_id. Latency is high.",
+        "Click 'Optimize database' to run query analyzer."
+      ];
     } else if (tab === "queues") {
-      return isAr
-        ? [
-            "Horizon Queue Monitor: Connected to Bull-Redis Broker...",
-            "Pending background newsletters: 45,000 tasks.",
-            "Allocated workers: 4 instances on server group.",
-            "Click 'Scale Background Workers' to fire batch tasks."
-          ]
-        : [
-            "Horizon Queue Monitor: Connected to Bull-Redis Broker...",
-            "Pending background newsletters: 45,000 tasks.",
-            "Allocated workers: 4 instances on server group.",
-            "Click 'Scale Background Workers' to fire batch tasks."
-          ];
+      return [
+        "Horizon Queue Monitor: Connected to Bull-Redis Broker...",
+        "Pending background newsletters: 45,000 tasks.",
+        "Allocated workers: 4 instances on server group.",
+        "Click 'Scale Background Workers' to fire batch tasks."
+      ];
     } else {
-      return isAr
-        ? [
-            "WAF Shield checking incoming packet headers...",
-            "Rate limiter: IP-throttle active (100req/min limit).",
-            "No SSL vulnerabilities detected. CSP Rules enforced strictly.",
-            "Click 'Secure Core Gate' to execute simulated Pen-test."
-          ]
-        : [
-            "WAF Shield checking incoming packet headers...",
-            "Rate limiter: IP-throttle active (100req/min limit).",
-            "No SSL vulnerabilities detected. CSP Rules enforced strictly.",
-            "Click 'Secure Core Gate' to execute simulated Pen-test."
-          ];
+      return [
+        "WAF Shield checking incoming packet headers...",
+        "Rate limiter: IP-throttle active (100req/min limit).",
+        "No SSL vulnerabilities detected. CSP Rules enforced strictly.",
+        "Click 'Secure Core Gate' to execute simulated Pen-test."
+      ];
     }
   };
 

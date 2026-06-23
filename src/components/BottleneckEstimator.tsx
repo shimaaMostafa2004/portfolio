@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import { TranslationDict } from "../types";
-import { motion, AnimatePresence } from "motion/react";
 import { Sliders, AlertTriangle, CheckCircle, Database } from "lucide-react";
 
 interface Props {
@@ -81,9 +80,7 @@ export const BottleneckEstimator: React.FC<Props> = ({ t, isAr, theme }) => {
         : "bg-white border border-slate-200/80 shadow-xl"
     }`}>
       {/* Background Decorative Element */}
-      <div className={`absolute top-0 right-0 w-32 h-32 rounded-full filter blur-xl pointer-events-none ${
-        isDark ? "bg-indigo-500/5" : "bg-indigo-500/5"
-      }`} />
+      <div className="absolute top-0 right-0 w-32 h-32 rounded-full filter blur-xl pointer-events-none bg-indigo-500/5" />
 
       <div className="flex flex-col gap-1 mb-6 relative">
         <div className="flex items-center gap-2 text-indigo-500 font-mono text-xs tracking-wider uppercase font-bold">

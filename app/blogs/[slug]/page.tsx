@@ -4,7 +4,7 @@ import { SiteShell } from "@/components/SiteShell";
 import { BlogPostClient } from "@/components/pages/BlogPostClient";
 import JsonLd from "@/components/JsonLd";
 import { blogArticles } from "@/src/data/blogs";
-import { articleSchema, baseSchema, SITE_URL, OG_IMAGE } from "@/lib/seo";
+import { articleSchema, baseSchema, SITE_URL } from "@/lib/seo";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -77,11 +77,13 @@ export default async function BlogPostPage({ params }: Props) {
   const article = blogArticles.find((a) => a.id === slug);
   if (!article) notFound();
 
-  const schema = articleSchema(article);
+  // article is guaranteed non-null here after notFound() above
+  const foundArticle = article!;
+  const schema = articleSchema(foundArticle);
   const pageSchema = baseSchema(
     `${SITE_URL}/blogs/${slug}`,
-    article.titleEn,
-    article.excerptEn
+    foundArticle.titleEn,
+    foundArticle.excerptEn
   );
 
   return (
@@ -91,16 +93,16 @@ export default async function BlogPostPage({ params }: Props) {
 
       {/* Static SEO content — visible to crawlers before JS hydrates */}
       <div className="sr-only">
-        <h1>{article.titleAr}</h1>
-        <p>{article.excerptAr}</p>
-        <p>{article.titleEn}</p>
-        <p>{article.excerptEn}</p>
+        <h1>{foundArticle.titleAr}</h1>
+        <p>{foundArticle.excerptAr}</p>
+        <p>{foundArticle.titleEn}</p>
+        <p>{foundArticle.excerptEn}</p>
         <p>
           Author: Abdulrahman Taher — Senior Backend Engineer, Cairo, Egypt.
-          Published: {article.dateEn}.
+          Published: {foundArticle.dateEn}.
         </p>
         <ul>
-          {article.keywords.map((kw) => (
+          {foundArticle.keywords.map((kw) => (
             <li key={kw}>{kw}</li>
           ))}
         </ul>

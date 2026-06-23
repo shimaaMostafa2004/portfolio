@@ -12,15 +12,6 @@
     return !!document.querySelector('[data-i18n-default="en"]');
   }
 
-  function detectBrowserLang() {
-    var browserLang = '';
-    try {
-      browserLang = String(navigator.language || navigator.userLanguage || '').toLowerCase();
-    } catch (error) {}
-    if (browserLang.indexOf('ar') === 0) return 'ar';
-    return 'en';
-  }
-
   function getInitialLang() {
     try {
       var params = new URLSearchParams(window.location.search);
