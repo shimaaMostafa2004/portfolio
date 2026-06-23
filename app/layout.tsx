@@ -157,14 +157,14 @@ export default function RootLayout({
         />
 
         {/* ── Google Analytics (GA4) ── */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-2KBNYVF6C5" />
         <script
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-XXXXXXXXXX', {
+              gtag('config', 'G-2KBNYVF6C5', {
                 cookie_flags: 'SameSite=None;Secure',
                 send_page_view: true
               });
