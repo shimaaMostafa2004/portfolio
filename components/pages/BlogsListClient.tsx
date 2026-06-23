@@ -48,11 +48,11 @@ export function BlogsListClient() {
           {isAr ? "مقالات برمجية وهندسية" : "Technical Backend Articles"}
         </span>
         <h1 className={`text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight font-space ${isDark ? "text-white" : "text-slate-800"}`}>
-          {isAr ? "مدونة الباك-إند وهندسة الأنظمة" : "The Backend & Systems Engineering Blog"}
+          {isAr ? "مدونة الباك-إند — Laravel وNestJS وهندسة الأنظمة" : "Backend Engineering Blog — Laravel, NestJS & System Design"}
         </h1>
         <p className={`text-sm leading-relaxed ${isDark ? "text-slate-400" : "text-slate-500"}`}>
-          {isAr ? "مقالات فنية معمقة تصف كيفية تأمين فهارس قواعد البيانات ورفع كفاءة البنية التحتية."
-                 : "In-depth analysis of PHP operations, secure payment webhooks, and scalable relational ledgers."}
+          {isAr ? "مقالات فنية معمقة في Laravel وNestJS وقواعد البيانات وهندسة الأنظمة وتحسين الأداء."
+                 : "In-depth articles on Laravel, NestJS, Node.js, database optimization, REST APIs, and scalable backend architecture."}
         </p>
       </div>
 

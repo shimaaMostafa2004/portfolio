@@ -5,32 +5,35 @@ import JsonLd from "@/components/JsonLd";
 import { baseSchema, SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Portfolio & Case Studies | Backend Projects — Abdulrahman Taher",
+  title: "Projects & Portfolio | Full Stack Work by Abdo Taher",
   description:
-    "Real production case studies: scalable ride-hailing backends, financial SaaS platforms, healthcare systems, and e-commerce built for GCC clients using Laravel, Node.js, and Database.",
+    "Portfolio and case studies by Abdo Taher — SaaS platforms, enterprise web applications, e-commerce systems, admin dashboards, and REST APIs built with Next.js, React, TypeScript, and Node.js.",
   keywords: [
-    "backend portfolio GCC",
-    "Laravel case studies",
-    "Node.js production projects",
-    "scalable API projects",
-    "ride-hailing backend",
-    "fintech SaaS backend",
-    "e-commerce backend Egypt",
+    "Abdo Taher portfolio",
+    "Next.js projects",
+    "React applications portfolio",
+    "SaaS development case studies",
+    "full stack developer portfolio",
+    "TypeScript web applications",
+    "Node.js API projects",
+    "e-commerce development",
+    "admin dashboard development",
+    "web application portfolio Egypt",
   ],
   alternates: { canonical: "/en/projects", languages: { ar: "/projects", en: "/en/projects" } },
   openGraph: {
-    title: "Portfolio & Case Studies | Abdulrahman Taher",
+    title: "Projects & Portfolio | Abdo Taher",
     description:
-      "Real case studies: ride-hailing, financial platforms, healthcare, and e-commerce backends for GCC clients.",
+      "SaaS platforms, enterprise apps, e-commerce, dashboards, and REST APIs built with Next.js, React, TypeScript, and Node.js.",
     url: `${SITE_URL}/en/projects`,
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Backend Engineering Portfolio" }],
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Abdo Taher — Software Engineering Portfolio" }],
   },
 };
 
 export default function ProjectsPageEn() {
   return (
     <SiteShell initialLang="en">
-      <JsonLd data={baseSchema(`${SITE_URL}/en/projects`, "Portfolio & Case Studies | Abdulrahman Taher", "Real production case studies for GCC clients — Laravel, Node.js, Database.")} />
+      <JsonLd data={baseSchema(`${SITE_URL}/en/projects`, "Projects & Portfolio | Abdo Taher — Full Stack Developer", "SaaS platforms, enterprise web apps, e-commerce, dashboards, and REST APIs built with Next.js, React, TypeScript, and Node.js.")} />
       <ProjectsPageClient />
     </SiteShell>
   );

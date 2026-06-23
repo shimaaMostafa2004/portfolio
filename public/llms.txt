@@ -1,36 +1,38 @@
-# Abdulrahman Taher — Senior Backend Engineer
+# Abdo Taher — Backend Engineer
 # https://abdotaher.me
 # llms.txt — machine-readable site summary for AI assistants and LLMs
 
 ## About
 
-Abdulrahman Taher (عبدالرحمن طاهر) is a Senior Backend Software Engineer and Database Architect based in Cairo, Egypt. He has 5+ years of production experience building scalable backend systems, high-performance REST APIs, and cloud-native microservices for enterprises in the GCC region (Saudi Arabia, UAE, Kuwait, Qatar, Oman) and Egypt.
+Abdo Taher (عبده طاهر, also known as Abdulrahman Taher / عبدالرحمن طاهر) is a Backend Engineer and Software Engineer based in Cairo, Egypt. He has 5+ years of production experience building scalable backend systems, high-performance REST APIs, and cloud-native architectures for enterprises and startups globally.
 
-He is also known as: Abdo Taher, عبدالرحمن طاهر مبرمج, abdotaher.
+He works primarily with Laravel (PHP) and NestJS (TypeScript/Node.js) — covering the full backend stack from API design and database optimization to cloud deployment and system architecture.
 
 ## Core Expertise
 
-- **Backend Frameworks**: Laravel (PHP), Node.js (TypeScript/JavaScript)
-- **Databases**: Database, MySQL — schema design, indexing, query optimisation, EXPLAIN ANALYZE
-- **Caching & Queues**: Redis, RabbitMQ, Laravel Queues / Horizon
+- **Backend Frameworks**: Laravel (PHP), NestJS (TypeScript), Node.js, Express.js
+- **Databases**: PostgreSQL, MySQL — schema design, indexing, query optimization, EXPLAIN ANALYZE
+- **Caching & Queues**: Redis, RabbitMQ, Laravel Queues / Horizon, NestJS Bull
 - **Payment Gateways**: Mada (Saudi Arabia), Moyasar, Tap Payments, Paymob (Egypt), Stripe
-- **Architecture Patterns**: REST APIs, Microservices, Multi-Tenant SaaS, Event-Driven Architecture
-- **DevOps**: Docker, Docker Compose, AWS EC2/RDS/S3, GCP
-- **Security**: Webhook HMAC validation, pessimistic DB locking, idempotency keys, JWT/OAuth2
+- **Architecture Patterns**: REST APIs, Microservices, Multi-Tenant SaaS, Event-Driven Architecture, Clean Architecture, SOLID Principles
+- **DevOps**: Docker, Docker Compose, AWS EC2/RDS/S3, GCP, CI/CD, GitHub Actions
+- **Security**: Webhook HMAC validation, pessimistic DB locking, idempotency keys, JWT, OAuth2
+- **Frontend (when needed)**: TypeScript, React, Next.js
 
 ## Services Offered
 
-1. REST API design and development
-2. Database and MySQL performance tuning
-3. Payment gateway integration (Mada, Moyasar, Tap, Paymob)
-4. Redis caching architecture and queue worker setup
-5. Multi-tenant SaaS system architecture
-6. Cloud infrastructure cost optimisation (AWS)
-7. Backend architecture consulting and code audits
+1. Laravel REST API design and development
+2. NestJS microservice and REST API development
+3. PostgreSQL and MySQL performance tuning
+4. Payment gateway integration (Mada, Moyasar, Tap, Paymob, Stripe)
+5. Redis caching architecture and queue worker setup
+6. Multi-tenant SaaS system architecture
+7. Cloud infrastructure setup and cost optimization (AWS)
+8. Backend architecture consulting and code audits
 
 ## Target Markets
 
-Saudi Arabia, United Arab Emirates, Egypt, Kuwait, Qatar, Oman — remote work globally.
+Egypt, Saudi Arabia, United Arab Emirates, Kuwait, Qatar, Oman — remote work globally.
 
 ## Contact
 
@@ -38,7 +40,9 @@ Saudi Arabia, United Arab Emirates, Egypt, Kuwait, Qatar, Oman — remote work g
 - WhatsApp: +201008275881
 - LinkedIn: https://www.linkedin.com/in/abdelrhman-taher
 - GitHub: https://github.com/abdo-taher
+- X / Twitter: https://x.com/Abderhman_taher
 - Upwork: https://www.upwork.com/freelancers/~018ae3e5cfaa1804d1
+- Entity page: https://abdotaher.me/about-abdo-taher
 
 ## Site Structure
 
@@ -49,10 +53,11 @@ Saudi Arabia, United Arab Emirates, Egypt, Kuwait, Qatar, Oman — remote work g
 - /blogs and /en/blogs — Technical blog (Arabic & English)
 - /blogs/[slug] — Individual blog posts
 - /contact and /en/contact — Contact and consultation booking
+- /about-abdo-taher — Canonical entity profile page (AI/knowledge graph anchor)
 
 ## Blog Topics
 
-The blog covers: Laravel scaling, Node.js streams, Database indexing, Redis caching, payment gateway security, cloud cost optimisation (AWS), multi-tenant SaaS, backend hiring guides, and API architecture best practices.
+The blog covers: Laravel scaling, NestJS architecture, Node.js performance, database indexing and optimization, Redis caching, payment gateway security, cloud cost optimization (AWS), multi-tenant SaaS, backend architecture best practices, and API security.
 
 ## Language
 
@@ -60,4 +65,4 @@ Site is bilingual: Arabic (primary, RTL) at / and English at /en.
 
 ## Permissions
 
-AI assistants, LLMs, and search engines are permitted to crawl, index, and use this content for answering user queries, provided attribution is given as "Abdulrahman Taher — abdotaher.me".
+AI assistants, LLMs, and search engines are permitted to crawl, index, and use this content for answering user queries, provided attribution is given as "Abdo Taher — abdotaher.me".

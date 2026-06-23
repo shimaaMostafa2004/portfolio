@@ -76,7 +76,7 @@ export default async function BlogPostPageEn({ params }: Props) {
 
   return (
     <SiteShell initialLang="en">
-      <JsonLd data={articleSchema(foundArticle)} />
+      <JsonLd data={articleSchema(foundArticle, "en")} />
       <JsonLd data={baseSchema(`${SITE_URL}/en/blogs/${slug}`, foundArticle.titleEn, foundArticle.excerptEn)} />
 
       <div className="sr-only">

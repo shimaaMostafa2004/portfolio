@@ -158,7 +158,7 @@ export function ContactPageClient() {
             <div className="space-y-2.5 sm:space-y-3.5">
               {[
                 { href: "mailto:abdotaher093@gmail.com", icon: <Mail className="w-5 h-5 text-indigo-500" />, label: "EMAIL ADDRESS", value: "abdotaher093@gmail.com", valueColor: "text-slate-300" },
-                { href: "https://wa.me/201008275881", icon: <MessageSquare className="w-5 h-5 text-emerald-500" />, label: "WHATSAPP GCC DIRECT", value: "+201008275881", valueColor: "text-emerald-400" },
+                { href: "https://wa.me/201008275881", icon: <MessageSquare className="w-5 h-5 text-emerald-500" />, label: "WHATSAPP DIRECT", value: "+201008275881", valueColor: "text-emerald-400" },
                 { href: "https://www.upwork.com/freelancers/~018ae3e5cfaa1804d1", icon: <Award className="w-5 h-5 text-emerald-500" />, label: "UPWORK CONTRACT HUB", value: "Verified Account Profile", valueColor: "text-emerald-400" },
               ].map((ch) => (
                 <a key={ch.href} href={ch.href}

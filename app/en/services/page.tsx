@@ -5,36 +5,40 @@ import JsonLd from "@/components/JsonLd";
 import { baseSchema, faqSchema, SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Backend Engineering Services | Laravel, Node.js, Database — Abdulrahman Taher",
+  title: "Services | Full Stack Development, Next.js, SaaS — Abdo Taher",
   description:
-    "Professional backend engineering services: REST API design, Database performance tuning, payment gateway integration (Mada, Moyasar, Tap), Redis caching, multi-tenant SaaS architecture, and cloud cost optimisation.",
+    "Full stack development services by Abdo Taher: Next.js & React applications, Node.js APIs, SaaS architecture, database design, technical SEO, cloud deployment (AWS/Docker), and performance optimization.",
   keywords: [
-    "backend engineering services GCC",
-    "REST API development",
-    "Database tuning consultant",
-    "payment gateway integration Mada",
-    "Redis caching setup",
-    "SaaS architecture design",
-    "cloud cost optimisation AWS",
-    "hire Laravel developer remotely",
+    "Next.js development services",
+    "React application development",
+    "Node.js API development",
+    "SaaS architecture services",
+    "TypeScript full stack developer",
+    "technical SEO services",
+    "cloud deployment AWS Docker",
+    "hire full stack developer",
+    "web performance optimization",
+    "database design services",
   ],
   alternates: { canonical: "/en/services", languages: { ar: "/services", en: "/en/services" } },
   openGraph: {
-    title: "Backend Engineering Services | Abdulrahman Taher",
+    title: "Services | Full Stack Development & SaaS — Abdo Taher",
     description:
-      "REST APIs, Database tuning, payment gateway integration, Redis caching, multi-tenant SaaS — specialised for GCC enterprises.",
+      "Next.js, React, Node.js, SaaS architecture, REST APIs, database design, technical SEO, and cloud deployment.",
     url: `${SITE_URL}/en/services`,
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Backend Engineering Services" }],
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Abdo Taher Software Engineering Services" }],
   },
 };
 
 export default function ServicesPageEn() {
   return (
     <SiteShell initialLang="en">
-      <JsonLd data={baseSchema(`${SITE_URL}/en/services`, "Backend Engineering Services | Abdulrahman Taher", "REST APIs, Database tuning, payment gateways, Redis, multi-tenant SaaS.")} />
+      <JsonLd data={baseSchema(`${SITE_URL}/en/services`, "Services | Full Stack Development & SaaS — Abdo Taher", "Next.js, React, Node.js APIs, SaaS architecture, database design, technical SEO, and cloud deployment.")} />
       <JsonLd data={faqSchema([
-        { question: "What backend services does Abdulrahman Taher offer?", answer: "REST API design and development, Database/MySQL performance tuning, payment gateway integration (Mada, Moyasar, Tap, Paymob), Redis caching and queue worker setup, multi-tenant SaaS architecture, and AWS cloud cost optimisation." },
-        { question: "Can Abdulrahman Taher integrate local GCC payment gateways?", answer: "Yes. He has production experience integrating Mada (Saudi Arabia), Moyasar, Tap Payments, and Paymob — including webhook validation, idempotency, and reconciliation ledgers." },
+        { question: "What services does Abdo Taher offer?", answer: "Abdo Taher offers Next.js and React application development, Node.js REST API and GraphQL development, SaaS platform architecture, TypeScript full stack development, database design and optimization (PostgreSQL, MongoDB, MySQL), technical SEO and Core Web Vitals optimization, cloud deployment with AWS and Docker, and CI/CD pipeline setup." },
+        { question: "Can Abdo Taher build a SaaS application from scratch?", answer: "Yes. Abdo Taher specializes in SaaS architecture — multi-tenant systems, subscription billing, user authentication (OAuth, JWT), admin dashboards, and scalable backends. He handles the full stack from database to UI." },
+        { question: "Does Abdo Taher provide technical SEO services?", answer: "Yes. Abdo Taher offers technical SEO including structured data markup (JSON-LD), Next.js metadata optimization, Core Web Vitals improvements, hreflang, sitemap optimization, and GEO (Generative Engine Optimization) for AI search engines like ChatGPT and Gemini." },
+        { question: "What is Abdo Taher's hourly rate?", answer: "Rates vary by project scope and complexity. Contact Abdo Taher at abdotaher093@gmail.com or WhatsApp +201008275881 for a free consultation and project estimate." },
       ])} />
       <ServicesPageClient />
     </SiteShell>

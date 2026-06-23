@@ -67,7 +67,7 @@ export function ProjectsPageClient() {
         <p className="text-xs text-slate-500 font-semibold flex flex-wrap items-center justify-center gap-1.5">
           <span>{t.projectsMore}</span>
           <a href="https://wa.me/201008275881" className="text-indigo-500 hover:underline">
-            {isAr ? "دليل بناء سيستم لفرق الخليج" : "GCC Software Architecture Guide"}
+            {isAr ? "دليل بناء سيستم لفرق من حول العالم" : "Backend Architecture Guide — Laravel & NestJS"}
           </a>
         </p>
       </div>

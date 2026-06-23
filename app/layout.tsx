@@ -1,52 +1,52 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import JsonLd from "@/components/JsonLd";
+import { globalEntitySchema, SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://abdotaher.me"),
   title: {
-    default: "عبدالرحمن طاهر | مطور Laravel و Database",
-    template: "%s | عبدالرحمن طاهر",
+    default: "Abdo Taher | Backend Engineer — Laravel & NestJS",
+    template: "%s | Abdo Taher",
   },
   description:
-    "عبدالرحمن طاهر، مطور Laravel وخبير Database في مصر والخليج. أبني REST APIs وأنظمة باك إند عالية الأداء مع تكامل بوابات الدفع وتحسين قواعد البيانات.",
+    "Abdo Taher is a Backend Engineer specializing in Laravel, NestJS, Node.js, REST APIs, database optimization, and scalable system architecture. Based in Cairo, Egypt — available globally.",
   keywords: [
-    // Arabic — primary brand + service intent
-    "عبدالرحمن طاهر",
-    "مطور Laravel",
-    "مهندس باك اند مصر",
-    "خبير Database",
-    "مهندس برمجيات",
-    "هندسة قواعد البيانات",
-    "تكامل بوابات الدفع",
-    "مستشار تقني",
-    "مطور باك اند فريلانس",
-    "أنظمة سحابية",
-    "Node.js مطور",
-    "تحسين أداء Database",
-    "استشارات تقنية الخليج",
-    "ربط بوابات دفع مدى موياسر تاب",
-    "بناء REST APIs",
-    // English — discovery & international reach
-    "Senior Backend Engineer Egypt",
-    "Laravel Developer Egypt",
-    "Backend Developer GCC",
-    "Database Expert",
-    "Freelance Backend Developer",
-    "API Development",
+    // Primary identity
+    "Abdo Taher",
+    "عبده طاهر",
+    "Abdulrahman Taher",
+    "abdotaher",
+    // Role + tech
+    "Backend Engineer",
+    "Software Engineer",
+    "Laravel Developer",
+    "NestJS Developer",
+    "Node.js Developer",
+    "REST API Developer",
+    "SaaS Backend Developer",
+    // Services
+    "REST API Development",
+    "Database Optimization",
+    "Backend Architecture",
     "Payment Gateway Integration",
-    "Technical Consultant Egypt",
-    "Node.js Backend Developer",
-    "Database Expert",
-    "Remote Laravel Developer Saudi Arabia",
+    "Cloud Deployment",
+    // Location
     "Backend Engineer Egypt",
-    "Senior Software Engineer Egypt",
-    "Abdulrahman Taher developer",
+    "Laravel Developer Cairo",
+    "Remote Backend Engineer",
+    "Freelance Backend Developer",
+    // Arabic
+    "مهندس باك-إند",
+    "مطور Laravel",
+    "مطور NestJS",
+    "مهندس برمجيات",
   ],
-  authors: [{ name: "Abdulrahman Taher", url: "https://abdotaher.me" }],
-  creator: "Abdulrahman Taher",
-  publisher: "Abdulrahman Taher",
+  authors: [{ name: "Abdo Taher", url: "https://abdotaher.me" }],
+  creator: "Abdo Taher",
+  publisher: "Abdo Taher",
   category: "Technology",
-  classification: "Backend Software Engineering",
+  classification: "Software Engineering",
   robots: {
     index: true,
     follow: true,
@@ -65,24 +65,24 @@ export const metadata: Metadata = {
     languages: {
       ar: "/",
       en: "/en",
-      "x-default": "/",
+      "x-default": "/en",
     },
   },
   openGraph: {
-    type: "website",
-    locale: "ar_EG",
-    alternateLocale: ["en_US"],
+    type: "profile",
+    locale: "en_US",
+    alternateLocale: ["ar_EG"],
     url: "https://abdotaher.me",
-    siteName: "عبدالرحمن طاهر | مطور Laravel و Database",
-    title: "عبدالرحمن طاهر | مطور Laravel و Database",
+    siteName: "Abdo Taher | Backend Engineer",
+    title: "Abdo Taher | Backend Engineer — Laravel & NestJS",
     description:
-      "مطور Laravel وخبير Database في مصر والخليج، متخصص في REST APIs وأنظمة الباك إند وتحسين الأداء.",
+      "Backend Engineer specializing in Laravel, NestJS, Node.js, REST APIs, database optimization, and scalable cloud architecture.",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "عبدالرحمن طاهر - مطور Laravel وخبير Database",
+        alt: "Abdo Taher — Software Engineer & Full Stack Developer",
         type: "image/jpeg",
       },
     ],
@@ -92,25 +92,22 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@abdotaher_dev",
-    creator: "@abdotaher_dev",
-    title: "عبدالرحمن طاهر | مطور Laravel و Database",
+    site: "@Abderhman_taher",
+    creator: "@Abderhman_taher",
+    title: "Abdo Taher | Backend Engineer — Laravel & NestJS",
     description:
-      "مطور Laravel وخبير Database متخصص في REST APIs وأنظمة الباك إند وتحسين الأداء.",
-    images: [{ url: "/og-image.jpg", alt: "عبدالرحمن طاهر - مطور Laravel وخبير Database" }],
+      "Backend Engineer specializing in Laravel, NestJS, Node.js, REST APIs, and scalable system architecture.",
+    images: [{ url: "/og-image.jpg", alt: "Abdo Taher — Software Engineer & Full Stack Developer" }],
   },
-  // Search engine verification
   verification: {
     google: "-WxdYsb9lGJIJ0eTnfYVQf9J6g8UMbTkK4A_uWBTcnA",
   },
-  // App / PWA
-  applicationName: "Abdulrahman Taher Portfolio",
+  applicationName: "Abdo Taher Portfolio",
   appleWebApp: {
     capable: true,
-    title: "عبدالرحمن طاهر",
+    title: "Abdo Taher",
     statusBarStyle: "black-translucent",
   },
-  // Referrer & format detection
   referrer: "origin-when-cross-origin",
   formatDetection: {
     email: false,
@@ -125,7 +122,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ar" dir="rtl" suppressHydrationWarning>
+    <html lang="en" dir="ltr" suppressHydrationWarning>
       <head>
         {/* ── Favicon — all formats ── */}
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -139,8 +136,6 @@ export default function RootLayout({
         <meta name="color-scheme" content="dark light" />
         <link rel="manifest" href="/manifest.json" />
 
-        {/* ── Canonical hreflang handled by Next.js alternates ── */}
-
         {/* ── Preconnect for performance ── */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -151,6 +146,9 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap"
           rel="stylesheet"
         />
+
+        {/* ── Global entity JSON-LD — primary AI/Knowledge Graph anchor ── */}
+        <JsonLd data={globalEntitySchema()} />
 
         {/* ── Google Analytics (GA4) ── */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-2KBNYVF6C5" />
@@ -174,3 +172,5 @@ export default function RootLayout({
     </html>
   );
 }
+
+

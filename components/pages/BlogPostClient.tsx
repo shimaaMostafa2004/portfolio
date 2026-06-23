@@ -119,7 +119,7 @@ export function BlogPostClient({ slug }: Props) {
           <div className={`p-4 sm:p-6 rounded-xl sm:rounded-2xl border ${isDark ? "bg-[#13112a] border-indigo-950/60" : "bg-white border-slate-200"}`}>
             <h3 className="text-xs font-mono font-bold uppercase text-indigo-400 mb-2 sm:mb-2.5">Technical Standards Met</h3>
             <ul className="text-xs space-y-1.5 sm:space-y-2 font-mono text-slate-400 font-bold">
-              <li>✔️ GCC payment gate check</li>
+              <li>✔️ REST API security standards</li>
               <li>✔️ Web security standards compliance</li>
               <li>✔️ ACID transaction isolation level</li>
               <li>✔️ Compound SQL indexing</li>

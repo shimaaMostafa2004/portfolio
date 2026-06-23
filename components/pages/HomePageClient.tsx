@@ -46,7 +46,7 @@ export function HomePageClient() {
           <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full p-[3px] bg-gradient-to-tr from-indigo-500 via-purple-500 to-indigo-500 relative z-10">
             <img
               src="/profile.jpg"
-              alt="Abdulrahman Taher Laravel Backend Developer"
+              alt="Abdo Taher — Software Engineer & Full Stack Developer"
               width={128} height={128}
               className={`w-full h-full rounded-full object-cover border-2 ${isDark ? "border-[#0b0918] bg-slate-900" : "border-[#f8fafc] bg-white"}`}
               onError={handleProfileError}
@@ -63,7 +63,7 @@ export function HomePageClient() {
           <span className={`inline-flex self-center py-1 px-3 rounded-full font-mono text-[10px] sm:text-xs font-bold tracking-widest uppercase border ${
             isDark ? "bg-indigo-950/60 border-indigo-800/40 text-indigo-400" : "bg-indigo-50 border-indigo-100 text-indigo-600"
           }`}>
-            🚀 Senior Backend & Database Architect — GCC
+            🚀 Backend Engineer — Laravel · NestJS · Database
           </span>
 
           <h1 className={`text-2xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight font-space ${
@@ -77,8 +77,8 @@ export function HomePageClient() {
             isDark ? "text-slate-300" : "text-slate-600"
           }`}>
             {isAr
-              ? "مطور Laravel وخبير Database من مصر — أبني أنظمة باك-إند وقواعد بيانات فائقة الأداء قابلة للتوسع للشركات والمنتجات الرقمية في مصر والخليج."
-              : "Laravel developer and Database expert from Egypt — building high-performance, scalable backend systems and databases for businesses across Egypt and the GCC."}
+              ? "مهندس باك-إند من مصر — أبني أنظمة باك-إند قابلة للتوسع باستخدام Laravel وNestJS وقواعد البيانات وواجهات REST APIs لشركات وتطبيقات رقمية حول العالم."
+              : "Backend Engineer from Egypt — building scalable backend systems, REST APIs, and SaaS platforms using Laravel, NestJS, Node.js, and database architecture."}
           </p>
 
           {/* Feature pills */}
@@ -142,16 +142,16 @@ export function HomePageClient() {
         </span>
         <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fabdotaher.me"
           target="_blank" rel="noopener noreferrer"
-          aria-label="Share Abdulrahman Taher portfolio on LinkedIn"
+        aria-label="Share Abdo Taher portfolio on LinkedIn"
           className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-[11px] transition-all ${
             isDark ? "bg-[#13112a] border-indigo-950 text-slate-300 hover:border-blue-500/50 hover:text-white" : "bg-white border-slate-200 text-slate-600 hover:border-blue-400"
           }`}>
           <LinkedInIcon className="w-3 h-3 text-[#0A66C2]" />
           {isAr ? "شارك على LinkedIn" : "Share on LinkedIn"}
         </a>
-        <a href="https://x.com/intent/tweet?text=%D9%85%D8%B7%D9%88%D8%B1%20Laravel%20%D9%88%D8%AE%D8%A8%D9%8A%D8%B1%20Database%20%D9%81%D9%8A%20%D9%85%D8%B5%D8%B1%20%D9%88%D8%A7%D9%84%D8%AE%D9%84%D9%8A%D8%AC%20%E2%80%94%20https%3A%2F%2Fabdotaher.me"
+        <a href="https://x.com/intent/tweet?text=Abdo%20Taher%20%E2%80%94%20Software%20Engineer%20%26%20Full%20Stack%20Developer%20%E2%80%94%20https%3A%2F%2Fabdotaher.me"
           target="_blank" rel="noopener noreferrer"
-          aria-label="Share Abdulrahman Taher portfolio on X Twitter"
+          aria-label="Share Abdo Taher portfolio on X Twitter"
           className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-[11px] transition-all ${
             isDark ? "bg-[#13112a] border-indigo-950 text-slate-300 hover:border-white/30 hover:text-white" : "bg-white border-slate-200 text-slate-600 hover:border-slate-400"
           }`}>
@@ -160,7 +160,7 @@ export function HomePageClient() {
         </a>
         <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fabdotaher.me"
           target="_blank" rel="noopener noreferrer"
-          aria-label="Share Abdulrahman Taher portfolio on Facebook"
+          aria-label="Share Abdo Taher portfolio on Facebook"
           className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-[11px] transition-all ${
             isDark ? "bg-[#13112a] border-indigo-950 text-slate-300 hover:border-blue-600/50 hover:text-white" : "bg-white border-slate-200 text-slate-600 hover:border-blue-500"
           }`}>
@@ -169,9 +169,9 @@ export function HomePageClient() {
           </svg>
           {isAr ? "شارك على Facebook" : "Share on Facebook"}
         </a>
-        <a href="https://wa.me/?text=%D9%85%D8%B7%D9%88%D8%B1%20Laravel%20%D9%88%D8%AE%D8%A8%D9%8A%D8%B1%20Database%20%E2%80%94%20https%3A%2F%2Fabdotaher.me"
+        <a href="https://wa.me/?text=Abdo%20Taher%20%E2%80%94%20Software%20Engineer%20%26%20Full%20Stack%20Developer%20%E2%80%94%20https%3A%2F%2Fabdotaher.me"
           target="_blank" rel="noopener noreferrer"
-          aria-label="Share Abdulrahman Taher portfolio on WhatsApp"
+          aria-label="Share Abdo Taher portfolio on WhatsApp"
           className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-[11px] transition-all ${
             isDark ? "bg-[#13112a] border-indigo-950 text-slate-300 hover:border-emerald-500/50 hover:text-white" : "bg-white border-slate-200 text-slate-600 hover:border-emerald-400"
           }`}>
@@ -226,10 +226,10 @@ export function HomePageClient() {
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 max-w-5xl mx-auto">
           {[
-            { icon: <Code className="w-4 h-4 sm:w-5 sm:h-5 text-indigo-500" />, titleAr: "بناء المعمارية", titleEn: "Core Architecture", descAr: "هندسة الميدلوير وحقن الاعتمادات ومعمارية نظيفة قابلة للنمو.", descEn: "Middleware engineering, dependency injection, and scalable MVC architectures." },
-            { icon: <Database className="w-4 h-4 sm:w-5 sm:h-5 text-indigo-500" />, titleAr: "قواعد البيانات والفهرسة", titleEn: "Databases & Indexing", descAr: "تحسين الاستعلامات المعقدة وتقسيم الجداول ومراجعة خطط التنفيذ.", descEn: "Subquery tuning, table partitions, composite indexes, and EXPLAIN ANALYZE." },
-            { icon: <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-amber-500" />, titleAr: "ذاكرة كاش Redis", titleEn: "Redis Cache Sentinel", descAr: "التخزين المؤقت للبيانات الساخنة وصمام أمان طلبات الـ API.", descEn: "In-memory data structures, cache locks, and rate limiters." },
-            { icon: <Radio className="w-4 h-4 sm:w-5 sm:h-5 text-indigo-500" />, titleAr: "الكيوهات وبول-ريديس", titleEn: "Queue Horizon Workers", descAr: "معالجة المهام الثقيلة في الخلفية لتفادي فترات الانتظار.", descEn: "Async queue processing, transactional mail sends, and cron pipelines." },
+            { icon: <Code className="w-4 h-4 sm:w-5 sm:h-5 text-indigo-500" />, titleAr: "بناء المعمارية", titleEn: "Core Architecture", descAr: "بناء أنظمة باك-إند بـ Laravel وNestJS بمعمارية نظيفة وحقن الاعتمادات ومبادئ SOLID.", descEn: "Laravel & NestJS backend systems with clean architecture, dependency injection, and SOLID principles." },
+            { icon: <Database className="w-4 h-4 sm:w-5 sm:h-5 text-indigo-500" />, titleAr: "قواعد البيانات والـ API", titleEn: "Databases & APIs", descAr: "تصميم قواعد بيانات وبناء REST APIs مع تحسين الاستعلامات والفهرسة وConnection Pooling.", descEn: "Database design, REST APIs, query optimization, composite indexes, and connection pooling." },
+            { icon: <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-amber-500" />, titleAr: "الأداء والكاش", titleEn: "Performance & Caching", descAr: "تحسين أداء التطبيقات باستخدام Redis للكاش وطوابير المهام وتقليل زمن استجابة الـ API.", descEn: "Redis caching, queue workers, API response optimization, and server performance tuning." },
+            { icon: <Radio className="w-4 h-4 sm:w-5 sm:h-5 text-indigo-500" />, titleAr: "السحابة والـ DevOps", titleEn: "Cloud & DevOps", descAr: "نشر التطبيقات على AWS باستخدام Docker وCI/CD وGitHub Actions.", descEn: "AWS deployment, Docker, CI/CD pipelines, and GitHub Actions for automated delivery." },
           ].map((pillar, i) => (
             <div key={i} className={`p-4 sm:p-5 rounded-xl border flex flex-col transition-all hover:scale-[1.02] ${
               isDark ? "bg-[#13112a] border-indigo-950/60 hover:border-indigo-500/50" : "bg-white border-slate-200 hover:shadow-lg"
@@ -257,7 +257,7 @@ export function HomePageClient() {
             {isAr ? "اختبر الأداء بنفسك" : "Live Performance Testing"}
           </span>
           <h2 className={`text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight font-space ${isDark ? "text-white" : "text-slate-800"}`}>
-            {isAr ? "اختبر كفاءة وسرعة الباك-إند والـ APIs" : "Audit Your API and Database Performance"}
+            {isAr ? "اختبر كفاءة وسرعة تطبيقاتك وواجهاتك البرمجية" : "Test Your Web Application & API Performance"}
           </h2>
         </div>
         <div className="w-full overflow-hidden">
@@ -297,10 +297,10 @@ export function HomePageClient() {
         isDark ? "bg-[#13112a]/40 border-indigo-950/80" : "bg-indigo-50/20 border-indigo-100 shadow-xs"
       }`}>
         <p className={`text-lg sm:text-xl font-extrabold font-space ${isDark ? "text-white" : "text-slate-800"}`}>
-          {isAr ? "هل تبحث عن مهندس متمكن يسرّع تسليم البرمجيات؟" : "Need to secure databases and prevent checkout bottlenecks?"}
+          {isAr ? "هل تبحث عن مهندس برمجيات يبني تطبيقات ويب حديثة عالية الأداء؟" : "Need a Software Engineer to build a modern, high-performance web application?"}
         </p>
         <p className={`text-xs sm:text-sm mt-2 max-w-2xl mx-auto leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
-          {isAr ? "أعمل بنموذج خطة عمل هندسية واضحة لتأمين الاستفسارات وتوسيع السيرفرات وقواعد البيانات." : "Deploy clean, production-certified scalable microservice architectures and financial ledger webhooks."}
+          {isAr ? "أبني منصات SaaS وتطبيقات مؤسسية ولوحات تحكم ومتاجر إلكترونية بـ Next.js وReact وTypeScript وNode.js." : "Building SaaS platforms, enterprise apps, dashboards, and e-commerce with Next.js, React, TypeScript, and Node.js."}
         </p>
         <div className="flex flex-col xs:flex-row justify-center gap-2 sm:gap-3 mt-5 sm:mt-6">
           <Link href={`${prefix}/contact`} className="bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs py-3 px-6 rounded-xl border border-indigo-500/10 transition-colors shadow-sm text-center">
@@ -327,7 +327,7 @@ export function HomePageClient() {
                 من أنا
               </h2>
               <p className={`text-sm sm:text-base leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
-                عبدالرحمن طاهر — مهندس برمجيات متخصص في بناء أنظمة باك-إند وقواعد بيانات فائقة الأداء قابلة للتوسع. خبرة تتجاوز 5 سنوات في تطوير REST APIs وحلول Laravel للشركات الناشئة والمؤسسات في مصر والسعودية والإمارات والكويت.
+                عبده طاهر — مهندس باك-إند متخصص في بناء أنظمة باك-إند قابلة للتوسع باستخدام Laravel وNestJS وقواعد البيانات وREST APIs. يبني منصات SaaS وتطبيقات مؤسسية وأنظمة دفع متكاملة بمعمارية نظيفة تعتمد SOLID وClean Architecture.
               </p>
             </div>
 
@@ -337,9 +337,9 @@ export function HomePageClient() {
               </h2>
               <div className="space-y-3">
                 <div>
-                  <p className={`text-sm ${isDark ? "text-indigo-300" : "text-indigo-700"} mb-0.5`}>تطوير Laravel وبناء REST APIs</p>
+                  <p className={`text-sm ${isDark ? "text-indigo-300" : "text-indigo-700"} mb-0.5`}>تطوير Laravel وNestJS وبناء REST APIs</p>
                   <p className={`text-sm leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}>
-                    تصميم وبناء واجهات برمجية REST API مؤمَّنة بمعمارية نظيفة تعتمد مبادئ SOLID وClean Architecture، قابلة للتوسعة وتدعم بيئات الإنتاج بدون اختناقات.
+                    تصميم وبناء واجهات برمجية REST API مؤمَّنة بـ Laravel وNestJS بمعمارية نظيفة تعتمد مبادئ SOLID وClean Architecture، قابلة للتوسعة وتدعم بيئات الإنتاج بدون اختناقات.
                   </p>
                 </div>
                 <div>
@@ -357,7 +357,7 @@ export function HomePageClient() {
                 <div>
                   <p className={`text-sm ${isDark ? "text-indigo-300" : "text-indigo-700"} mb-0.5`}>الأنظمة السحابية والميكروسيرفيس</p>
                   <p className={`text-sm leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}>
-                    تصميم أنظمة سحابية بـ Docker وAWS وGCP مع Node.js لتطبيقات تتطلب استجابة فورية وقابلية توسع أفقي.
+                    تصميم أنظمة سحابية بـ Docker وAWS مع NestJS لتطبيقات تتطلب استجابة فورية وقابلية توسع أفقي.
                   </p>
                 </div>
               </div>
@@ -368,16 +368,16 @@ export function HomePageClient() {
                 لماذا تختارني
               </h2>
               <p className={`text-sm sm:text-base leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}>
-                نتائج موثقة: تقليص زمن استجابة الـ API بنسبة تصل إلى 40%، خفض تكاليف الخادم، وتسريع دورة التطوير. أعمل عن بُعد مع فرق من مصر والسعودية والإمارات والكويت بتواصل منتظم وتوثيق كامل.
+                نتائج موثقة: تقليص زمن استجابة الـ API بنسبة تصل إلى 40%، خفض تكاليف الخادم، وتسريع دورة التطوير. أعمل عن بُعد مع فرق وعملاء حول العالم بتواصل منتظم وتوثيق كامل.
               </p>
               <p className={`text-sm leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}>
-                <Link href="/contact" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">احجز استشارة Laravel مجانية</Link>
+                <Link href="/contact" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">احجز استشارة مجانية</Link>
                 {" · "}
                 <Link href="/about" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">تعرف على مساري المهني</Link>
                 {" · "}
-                <Link href="/services" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">خدمات Laravel وقواعد البيانات</Link>
+                <Link href="/services" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">خدمات Laravel وNestJS وقواعد البيانات</Link>
                 {" · "}
-                <Link href="/projects" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">اطلب تحسين قواعد البيانات</Link>
+                <Link href="/projects" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">معرض المشاريع</Link>
               </p>
             </div>
 
@@ -387,10 +387,13 @@ export function HomePageClient() {
 
             <div className="space-y-2">
               <h2 className={`text-xl sm:text-2xl font-extrabold font-space tracking-tight ${isDark ? "text-white" : "text-slate-800"}`}>
-                About Abdulrahman Taher
+                About Abdo Taher
               </h2>
               <p className={`text-sm sm:text-base leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
-                Abdulrahman Taher is a backend-focused software engineer with deep expertise in Laravel, Database optimisation, and REST API architecture. He has 5+ years of experience delivering production-grade systems for startups and enterprises across Egypt, Saudi Arabia, UAE, Kuwait, Qatar, and Oman.
+                Abdo Taher is a Backend Engineer from Cairo, Egypt with deep expertise in Laravel, NestJS, Node.js, and database architecture. He builds scalable REST APIs, SaaS platforms, and enterprise backend systems with clean architecture and a focus on performance, reliability, and developer experience.
+              </p>
+              <p className={`text-sm sm:text-base leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}>
+                Abdo Taher is a Software Engineer specializing in Laravel, NestJS, Node.js, REST APIs, database design, cloud deployment, and modern backend development. He builds scalable SaaS platforms, enterprise applications, and high-performance systems with a strong focus on software architecture and clean code.
               </p>
             </div>
 
@@ -400,8 +403,8 @@ export function HomePageClient() {
               </h2>
               <div className="space-y-3">
                 <div>
-                  <p className={`text-sm ${isDark ? "text-indigo-300" : "text-indigo-700"} mb-0.5`}>Laravel Development & REST API Architecture</p>
-                  <p className={`text-sm leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}>Secure, clean REST APIs using SOLID principles and Clean Architecture — production-ready for 10K+ concurrent users with zero bottlenecks.</p>
+                  <p className={`text-sm ${isDark ? "text-indigo-300" : "text-indigo-700"} mb-0.5`}>Laravel & NestJS — REST API Development</p>
+                  <p className={`text-sm leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}>Scalable, secure REST APIs built with Laravel and NestJS — clean architecture, SOLID principles, production-ready for 10K+ concurrent users.</p>
                 </div>
                 <div>
                   <p className={`text-sm ${isDark ? "text-indigo-300" : "text-indigo-700"} mb-0.5`}>Database Performance Tuning</p>
@@ -412,24 +415,24 @@ export function HomePageClient() {
                   <p className={`text-sm leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}>Mada, Moyasar, Tap Payments, Paymob, and Stripe — secured with Webhook Verification, Idempotency Keys, and double-charge prevention.</p>
                 </div>
                 <div>
-                  <p className={`text-sm ${isDark ? "text-indigo-300" : "text-indigo-700"} mb-0.5`}>Technical Consulting & Architecture Reviews</p>
-                  <p className={`text-sm leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}>Full system audits covering code quality, architecture weaknesses, and bottleneck identification — free first session.</p>
+                  <p className={`text-sm ${isDark ? "text-indigo-300" : "text-indigo-700"} mb-0.5`}>Cloud Architecture & DevOps</p>
+                  <p className={`text-sm leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}>Docker, AWS, CI/CD pipelines, Redis caching, and queue workers — full deployment setup for production backend systems.</p>
                 </div>
               </div>
             </div>
 
             <div className="space-y-2">
               <h2 className={`text-xl sm:text-2xl font-extrabold font-space tracking-tight ${isDark ? "text-white" : "text-slate-800"}`}>
-                Why Choose Abdulrahman Taher
+                Why Choose Abdo Taher
               </h2>
               <p className={`text-sm leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}>
-                <Link href="/en/contact" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">Book a free Laravel consultation</Link>
+                <Link href="/en/contact" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">Book a free consultation</Link>
                 {" · "}
-                <Link href="/en/about" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">Meet Abdulrahman Taher</Link>
+                <Link href="/en/about" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">Meet Abdo Taher</Link>
                 {" · "}
-                <Link href="/en/services" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">Backend engineering services</Link>
+                <Link href="/en/services" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">Laravel & NestJS services</Link>
                 {" · "}
-                <Link href="/en/projects" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">Request database optimisation</Link>
+                <Link href="/en/projects" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">View portfolio</Link>
               </p>
             </div>
 

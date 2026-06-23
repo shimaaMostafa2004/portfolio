@@ -5,57 +5,72 @@ import JsonLd from "@/components/JsonLd";
 import { baseSchema, faqSchema, SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Abdulrahman Taher | Senior Backend Engineer — Laravel, Node.js, Database",
+  title: "Abdo Taher | Software Engineer & Full Stack Developer",
   description:
-    "Abdulrahman Taher is a Senior Backend Engineer from Egypt with 5+ years building scalable APIs, Database-optimised databases, and cloud microservices for GCC enterprises in Saudi Arabia, UAE, and Kuwait.",
+    "Abdo Taher is a Software Engineer and Full Stack Developer from Egypt specializing in Next.js, React, TypeScript, Node.js, SaaS platforms, REST APIs, and modern web applications. Available globally for freelance and contract work.",
   keywords: [
+    "Abdo Taher",
     "Abdulrahman Taher",
-    "Senior Backend Engineer Egypt",
-    "Remote Laravel Developer GCC",
-    "Node.js architect Saudi Arabia",
-    "Database performance expert",
-    "API architecture consultant",
-    "payment gateway integration Mada Moyasar",
-    "freelance backend developer Middle East",
-    "scalable SaaS architecture",
-    "Redis caching expert",
+    "Software Engineer Egypt",
+    "Full Stack Developer",
+    "Next.js Developer",
+    "React Developer",
+    "TypeScript Developer",
+    "Node.js Developer",
+    "SaaS Developer",
+    "REST API Developer",
+    "Freelance Software Engineer",
+    "Full Stack Developer Egypt",
+    "Web Application Developer",
+    "Technical SEO Engineer",
+    "Remote Software Engineer Middle East",
   ],
   alternates: {
     canonical: "/en",
-    languages: { ar: "/", en: "/en", "x-default": "/" },
+    languages: { ar: "/", en: "/en", "x-default": "/en" },
   },
   openGraph: {
-    title: "Abdulrahman Taher | Senior Backend Engineer",
+    title: "Abdo Taher | Software Engineer & Full Stack Developer",
     description:
-      "5+ years building scalable APIs, Database databases, and cloud systems for GCC enterprises — Laravel, Node.js, Redis, Docker.",
+      "Software Engineer from Egypt specializing in Next.js, React, TypeScript, Node.js, SaaS development, REST APIs, and web performance.",
     url: `${SITE_URL}/en`,
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Abdulrahman Taher - Senior Backend Engineer" }],
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Abdo Taher — Software Engineer & Full Stack Developer" }],
   },
 };
 
 const enFaqs = [
   {
-    question: "Who is Abdulrahman Taher?",
+    question: "Who is Abdo Taher?",
     answer:
-      "Abdulrahman Taher is a Senior Backend Engineer from Cairo, Egypt. He specialises in Laravel, Node.js, Database, Redis, and payment gateway integrations for GCC enterprises, with over 5 years of production experience.",
+      "Abdo Taher (Abdulrahman Taher) is a Software Engineer and Full Stack Developer from Cairo, Egypt. He specializes in Next.js, React, TypeScript, Node.js, REST API development, SaaS architecture, and modern web application development. He is available globally for freelance and contract work.",
   },
   {
-    question: "Is Abdulrahman Taher available for remote work in Saudi Arabia or UAE?",
+    question: "What does Abdo Taher specialize in?",
     answer:
-      "Yes. He works fully remote with clients across Saudi Arabia, UAE, Kuwait, Qatar, Oman, and Egypt. You can reach him via WhatsApp or email to discuss your project.",
+      "Abdo Taher specializes in building scalable SaaS platforms, enterprise web applications, admin dashboards, e-commerce systems, and high-performance websites using Next.js, React, TypeScript, Node.js, PostgreSQL, MongoDB, Docker, and AWS.",
   },
   {
-    question: "What payment gateways has Abdulrahman Taher integrated?",
+    question: "Is Abdo Taher available for freelance or remote work?",
     answer:
-      "Mada (Saudi Arabia), Moyasar, Tap Payments, Paymob (Egypt), and Stripe — with full webhook validation, idempotency keys, and double-debit prevention.",
+      "Yes. Abdo Taher works fully remote and is available globally for freelance projects, contract work, and part-time engagements. You can reach him via email at abdotaher093@gmail.com or WhatsApp at +201008275881.",
+  },
+  {
+    question: "What technologies does Abdo Taher use?",
+    answer:
+      "Abdo Taher's primary stack includes Next.js, React, TypeScript, Node.js, Express.js, NestJS, PostgreSQL, MongoDB, MySQL, Docker, AWS, CI/CD pipelines, GraphQL, and REST APIs. He also has deep expertise in Technical SEO and Core Web Vitals optimization.",
+  },
+  {
+    question: "Has Abdo Taher built SaaS applications?",
+    answer:
+      "Yes. Abdo Taher has built multiple SaaS platforms including multi-tenant systems, subscription billing platforms, enterprise dashboards, and B2B web applications. His focus is on scalable architecture, clean code, and high performance.",
   },
 ];
 
 export default function HomePageEn() {
   const schema = baseSchema(
     `${SITE_URL}/en`,
-    "Abdulrahman Taher | Senior Backend & Database Architect",
-    "Senior Backend Engineer building scalable, high-performance APIs and database systems for GCC enterprises."
+    "Abdo Taher | Software Engineer & Full Stack Developer",
+    "Software Engineer from Egypt specializing in Next.js, React, TypeScript, Node.js, SaaS development, REST APIs, and modern web applications."
   );
 
   return (

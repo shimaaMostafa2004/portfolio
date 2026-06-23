@@ -10,7 +10,7 @@ const serviceIcons = [Layers, Database, Settings, Rocket, Cpu, Globe2];
 const serviceDetails = [
   ["Enterprise API Structure", "Admin Panels & Custom Dashboards", "REST / Webhooks / GraphQL / SDK integrations"],
   ["PGSQL Composite Indexes Tuning", "MySQL raw subqueries refactoring", "Multi-tenant data structures, normalization"],
-  ["JWT / Sanctum Security & Role Permissions", "Prevent double spending on invoices", "Payment gateways (Mada, Tap, Moyasar, Paymob)"],
+  ["JWT / OAuth Security & Role Permissions", "Prevent double spending on invoices", "Payment gateways (Mada, Tap, Moyasar, Paymob, Stripe)"],
   ["Redis cache wrappers & buffers", "Active worker queues & task distribution", "Containerization (Docker, AWS ECS)"],
   ["AI Agents & assistant loops (Gemini / OpenAI)", "Structured output & prompt engineering", "Automated background task classification"],
   ["SMS integrations (Twilio, Unifonic, Mobily)", "Maps & Routing (Google Maps API)", "Logistics trackers, Webhook sync buffers"],
@@ -76,7 +76,7 @@ export function ServicesPageClient() {
         </h2>
         <p className="text-xs sm:text-sm text-slate-400 mt-2 max-w-xl mx-auto leading-relaxed">
           {isAr ? "خلال بضعة أيام، يمكنني مراجعة مستودع الأكواد وفهرس قواعد البيانات الحالي."
-                 : "I provide rapid, hands-on architectural code diagnostics and query indexing refactoring."}
+                 : "I provide rapid, hands-on architectural code diagnostics and API performance refactoring for Laravel and NestJS systems."}
         </p>
         <Link href={`${prefix}/contact`}
           className="bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs py-2.5 px-6 rounded-lg mt-4 sm:mt-5 inline-block shadow-sm transition-all">
