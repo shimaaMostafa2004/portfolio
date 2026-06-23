@@ -4,12 +4,25 @@ import React from "react";
 import Link from "next/link";
 import {
   Rocket, MessageSquare, BookOpen, Check, Zap, Radio,
-  Database, Code, Award, CheckCircle2, Cpu,
+  Database, Code, Award, CheckCircle2, Cpu, Share2,
 } from "lucide-react";
 import { usePageContext } from "@/components/usePageContext";
 import { translations } from "@/src/translations";
 import { BottleneckEstimator } from "@/src/components/BottleneckEstimator";
 import { InteractiveConsole } from "@/src/components/InteractiveConsole";
+
+/* ── Brand SVG icons for share buttons ── */
+const LinkedInIcon = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className={className} fill="currentColor" aria-hidden="true">
+    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+  </svg>
+);
+const XIcon = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className={className} fill="currentColor" aria-hidden="true">
+    <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/>
+  </svg>
+);
+/* ─────────────────────────────────────── */
 
 export function HomePageClient() {
   const { lang, theme, isAr, isDark } = usePageContext();
@@ -59,24 +72,17 @@ export function HomePageClient() {
             {t.heroTitle}
           </h1>
 
-          {/* Intro paragraph — directly under H1 for keyword/content alignment */}
+          {/* Intro paragraph — directly under H1 */}
           <p className={`text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed ${
             isDark ? "text-slate-300" : "text-slate-600"
           }`}>
             {isAr
-              ? "أنا عبدالرحمن طاهر، مطور Laravel ومهندس باك إند متخصص في PostgreSQL وبناء REST APIs عالية الأداء للشركات والمنتجات الرقمية في مصر والخليج."
-              : "I'm Abdulrahman Taher, a Laravel developer and backend engineer specialising in PostgreSQL and high-performance REST APIs for businesses across Egypt and the GCC."}
-          </p>
-          <p className={`text-sm sm:text-base max-w-2xl mx-auto leading-relaxed ${
-            isDark ? "text-slate-400" : "text-slate-500"
-          }`}>
-            {isAr
-              ? "أساعد الشركات على بناء أنظمة باك إند قابلة للتوسع، وتصميم قواعد بيانات PostgreSQL فائقة الأداء، مع تحسين الاستعلامات والبنية البرمجية لضمان السرعة والاستقرار."
-              : "I help companies build scalable backend systems, design high-performance PostgreSQL databases, and optimise queries and architecture for speed and stability."}
+              ? "مطور Laravel وخبير PostgreSQL من مصر — أبني REST APIs سريعة وأنظمة باك إند مستقرة قابلة للتوسع للشركات والمنتجات الرقمية في مصر والخليج."
+              : "Laravel developer and PostgreSQL expert from Egypt — building fast REST APIs and stable, scalable backend systems for businesses across Egypt and the GCC."}
           </p>
 
           {/* Feature pills */}
-          <div className="flex flex-wrap justify-center gap-2 mt-1 text-[11px] sm:text-xs font-bold">
+          <div className="flex flex-wrap justify-center gap-2 mt-1 text-[11px] sm:text-xs">
             {[t.heroCheck1, t.heroCheck2, t.heroCheck3].map((c) => (
               <span key={c} className={`px-2.5 sm:px-3 py-1.5 rounded-full border flex items-center gap-1.5 ${
                 isDark ? "bg-[#13112a] border-indigo-950 text-slate-300" : "bg-white border-slate-200 text-slate-600"
@@ -126,6 +132,41 @@ export function HomePageClient() {
             </div>
           ))}
         </div>
+      </section>
+
+      {/* ── SOCIAL SHARE ── */}
+      <section className="flex flex-wrap justify-center gap-2 sm:gap-3 -mt-4">
+        <span className={`self-center text-[11px] font-mono uppercase tracking-widest ${isDark ? "text-slate-500" : "text-slate-400"}`}>
+          <Share2 className="w-3 h-3 inline mr-1" />
+          {isAr ? "شارك" : "Share"}
+        </span>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fabdotaher.me"
+          target="_blank" rel="noopener noreferrer"
+          aria-label="Share on LinkedIn"
+          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-[11px] transition-all ${
+            isDark ? "bg-[#13112a] border-indigo-950 text-slate-300 hover:border-blue-500/50 hover:text-white" : "bg-white border-slate-200 text-slate-600 hover:border-blue-400"
+          }`}>
+          <LinkedInIcon className="w-3 h-3 text-[#0A66C2]" />
+          LinkedIn
+        </a>
+        <a href="https://x.com/intent/tweet?text=%D9%85%D8%B7%D9%88%D8%B1%20Laravel%20%D9%88%D8%AE%D8%A8%D9%8A%D8%B1%20PostgreSQL%20%D9%81%D9%8A%20%D9%85%D8%B5%D8%B1%20%D9%88%D8%A7%D9%84%D8%AE%D9%84%D9%8A%D8%AC%20%E2%80%94%20https%3A%2F%2Fabdotaher.me"
+          target="_blank" rel="noopener noreferrer"
+          aria-label="Share on X"
+          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-[11px] transition-all ${
+            isDark ? "bg-[#13112a] border-indigo-950 text-slate-300 hover:border-white/30 hover:text-white" : "bg-white border-slate-200 text-slate-600 hover:border-slate-400"
+          }`}>
+          <XIcon className="w-3 h-3" />
+          X / Twitter
+        </a>
+        <a href="https://wa.me/?text=%D9%85%D8%B7%D9%88%D8%B1%20Laravel%20%D9%88%D8%AE%D8%A8%D9%8A%D8%B1%20PostgreSQL%20%E2%80%94%20https%3A%2F%2Fabdotaher.me"
+          target="_blank" rel="noopener noreferrer"
+          aria-label="Share on WhatsApp"
+          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-[11px] transition-all ${
+            isDark ? "bg-[#13112a] border-indigo-950 text-slate-300 hover:border-emerald-500/50 hover:text-white" : "bg-white border-slate-200 text-slate-600 hover:border-emerald-400"
+          }`}>
+          <MessageSquare className="w-3 h-3 text-emerald-500" />
+          WhatsApp
+        </a>
       </section>
 
       {/* ── TRUST BADGES ── */}
@@ -244,17 +285,17 @@ export function HomePageClient() {
       <section className={`p-6 sm:p-8 rounded-2xl border text-center ${
         isDark ? "bg-[#13112a]/40 border-indigo-950/80" : "bg-indigo-50/20 border-indigo-100 shadow-xs"
       }`}>
-        <h2 className={`text-lg sm:text-xl font-bold font-space ${isDark ? "text-white" : "text-slate-800"}`}>
+        <p className={`text-lg sm:text-xl font-extrabold font-space ${isDark ? "text-white" : "text-slate-800"}`}>
           {isAr ? "هل تبحث عن مهندس متمكن يسرّع تسليم البرمجيات؟" : "Need to secure databases and prevent checkout bottlenecks?"}
-        </h2>
+        </p>
         <p className={`text-xs sm:text-sm mt-2 max-w-2xl mx-auto leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
           {isAr ? "أعمل بنموذج خطة عمل هندسية واضحة لتأمين الاستفسارات وتوسيع السيرفرات وقواعد البيانات." : "Deploy clean, production-certified scalable microservice architectures and financial ledger webhooks."}
         </p>
         <div className="flex flex-col xs:flex-row justify-center gap-2 sm:gap-3 mt-5 sm:mt-6">
           <Link href={`${prefix}/contact`} className="bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs py-3 px-6 rounded-xl border border-indigo-500/10 transition-colors shadow-sm text-center">
-            {isAr ? "احجز استشارة Laravel" : "Book a Laravel Consultation"}
+            {isAr ? "اطلب تطوير API الآن" : "Request API Development"}
           </Link>
-          <Link href={`${prefix}/services`} className={`font-bold text-xs py-3 px-6 rounded-xl border transition-all text-center ${
+          <Link href={`${prefix}/services`} className={`text-xs py-3 px-6 rounded-xl border transition-all text-center ${
             isDark ? "bg-[#13112a] border-indigo-950 text-slate-300 hover:bg-slate-900" : "bg-white border-slate-200 text-slate-600 hover:bg-slate-50"
           }`}>
             {isAr ? "استعرض الخدمات" : "View Services"}
@@ -269,61 +310,56 @@ export function HomePageClient() {
 
         {isAr ? (
           <div className="space-y-7" dir="rtl">
-            {/* H2: من أنا */}
+
             <div className="space-y-2">
               <h2 className={`text-xl sm:text-2xl font-extrabold font-space tracking-tight ${isDark ? "text-white" : "text-slate-800"}`}>
                 من أنا
               </h2>
               <p className={`text-sm sm:text-base leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
-                أنا <strong>عبدالرحمن طاهر</strong>، مطور Laravel ومهندس باك إند متخصص في PostgreSQL وبناء REST APIs عالية الأداء للشركات والمنتجات الرقمية في مصر والخليج.
-              </p>
-              <p className={`text-sm sm:text-base leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
-                أساعد الشركات على بناء أنظمة باك إند قابلة للتوسع، وتصميم قواعد بيانات PostgreSQL فائقة الأداء، مع تحسين الاستعلامات والبنية البرمجية لضمان السرعة والاستقرار.
+                عبدالرحمن طاهر — مهندس برمجيات متخصص في الجانب الخلفي للتطبيقات، يجمع بين خبرة عميقة في Laravel وتحسين قواعد بيانات PostgreSQL وبناء أنظمة REST API قادرة على تحمل أعباء الإنتاج الفعلية. خبرة تتجاوز 5 سنوات في تطوير حلول للشركات الناشئة والمؤسسات في مصر والسعودية والإمارات والكويت.
               </p>
             </div>
 
-            {/* H2: الخدمات */}
             <div className="space-y-3">
               <h2 className={`text-xl sm:text-2xl font-extrabold font-space tracking-tight ${isDark ? "text-white" : "text-slate-800"}`}>
                 الخدمات
               </h2>
               <div className="space-y-3">
                 <div>
-                  <p className={`text-sm font-bold mb-0.5 ${isDark ? "text-indigo-300" : "text-indigo-700"}`}>تطوير Laravel وبناء REST APIs</p>
-                  <p className={`text-sm leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
-                    أصمم وأبني واجهات برمجية REST API مؤمَّنة بمعمارية نظيفة تعتمد مبادئ SOLID وClean Architecture، قابلة للتوسعة وتدعم الإنتاج بدون اختناقات.
+                  <p className={`text-sm ${isDark ? "text-indigo-300" : "text-indigo-700"} mb-0.5`}>تطوير Laravel وبناء REST APIs</p>
+                  <p className={`text-sm leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}>
+                    تصميم وبناء واجهات برمجية REST API مؤمَّنة بمعمارية نظيفة تعتمد مبادئ SOLID وClean Architecture، قابلة للتوسعة وتدعم بيئات الإنتاج بدون اختناقات.
                   </p>
                 </div>
                 <div>
-                  <p className={`text-sm font-bold mb-0.5 ${isDark ? "text-indigo-300" : "text-indigo-700"}`}>تحسين أداء قواعد بيانات PostgreSQL</p>
-                  <p className={`text-sm leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
-                    متخصص في تحسين الاستعلامات المعقدة، بناء فهارس مركّبة ذكية، وتحليل خطط التنفيذ بـ EXPLAIN ANALYZE وتقسيم الجداول الضخمة.
+                  <p className={`text-sm ${isDark ? "text-indigo-300" : "text-indigo-700"} mb-0.5`}>تحسين أداء قواعد بيانات PostgreSQL</p>
+                  <p className={`text-sm leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}>
+                    تحليل خطط التنفيذ بـ EXPLAIN ANALYZE، وبناء فهارس مركّبة، وتقسيم الجداول الضخمة، وإعداد Connection Pooling للحصول على أداء قاعدة بيانات مثالي.
                   </p>
                 </div>
                 <div>
-                  <p className={`text-sm font-bold mb-0.5 ${isDark ? "text-indigo-300" : "text-indigo-700"}`}>تكامل بوابات الدفع</p>
-                  <p className={`text-sm leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
-                    خبرة في تكامل Mada وMoyasar وTap Payments وPaymob وStripe مع Webhook Verification وIdempotency Keys للحماية من الخصم المزدوج.
+                  <p className={`text-sm ${isDark ? "text-indigo-300" : "text-indigo-700"} mb-0.5`}>تكامل بوابات الدفع</p>
+                  <p className={`text-sm leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}>
+                    تكامل Mada وMoyasar وTap Payments وPaymob وStripe مع تطبيق Webhook Verification وIdempotency Keys ومنع الخصم المزدوج.
                   </p>
                 </div>
                 <div>
-                  <p className={`text-sm font-bold mb-0.5 ${isDark ? "text-indigo-300" : "text-indigo-700"}`}>الأنظمة السحابية والميكروسيرفيس</p>
-                  <p className={`text-sm leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
-                    تصميم أنظمة سحابية بـ Docker وAWS وGCP مع Node.js لتطبيقات الوقت الحقيقي التي تتطلب استجابة أقل من 50ms.
+                  <p className={`text-sm ${isDark ? "text-indigo-300" : "text-indigo-700"} mb-0.5`}>الأنظمة السحابية والميكروسيرفيس</p>
+                  <p className={`text-sm leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}>
+                    تصميم أنظمة سحابية بـ Docker وAWS وGCP مع Node.js لتطبيقات تتطلب استجابة فورية وقابلية توسع أفقي.
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* H2: لماذا تختارني */}
             <div className="space-y-2">
               <h2 className={`text-xl sm:text-2xl font-extrabold font-space tracking-tight ${isDark ? "text-white" : "text-slate-800"}`}>
                 لماذا تختارني
               </h2>
-              <p className={`text-sm sm:text-base leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
-                بخبرة تتجاوز 5 سنوات كمطور Laravel وخبير PostgreSQL، أُحقق نتائج قابلة للقياس: تقليص زمن الاستجابة 40%+، خفض تكلفة الخادم، وتسريع دورة التطوير. أعمل عن بُعد مع شركات في مصر والسعودية والإمارات والكويت بتقارير واضحة وشفافية تامة.
+              <p className={`text-sm sm:text-base leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}>
+                نتائج موثقة: تقليص زمن استجابة الـ API بنسبة تصل إلى 40%، خفض تكاليف الخادم، وتسريع دورة التطوير. أعمل عن بُعد مع فرق من مصر والسعودية والإمارات والكويت بتواصل منتظم وتوثيق كامل.
               </p>
-              <p className={`text-sm sm:text-base leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
+              <p className={`text-sm leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}>
                 <Link href="/contact" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">احجز استشارة Laravel مجانية</Link>
                 {" · "}
                 <Link href="/contact" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">ناقش مشروع باك إند</Link>
@@ -333,48 +369,49 @@ export function HomePageClient() {
                 <Link href="/projects" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">اطلب تحسين PostgreSQL</Link>
               </p>
             </div>
+
           </div>
         ) : (
           <div className="space-y-7" dir="ltr">
+
             <div className="space-y-2">
               <h2 className={`text-xl sm:text-2xl font-extrabold font-space tracking-tight ${isDark ? "text-white" : "text-slate-800"}`}>
                 About Abdulrahman Taher
               </h2>
               <p className={`text-sm sm:text-base leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
-                <strong>Abdulrahman Taher</strong> is a Laravel developer and backend engineer from Egypt, specialising in PostgreSQL, REST APIs, payment gateway integration, and scalable cloud architectures for enterprises across Egypt and the GCC.
-              </p>
-              <p className={`text-sm sm:text-base leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
-                With 5+ years experience, he serves businesses in Saudi Arabia, UAE, Kuwait, Qatar, Oman, and Egypt — delivering 40%+ latency reduction, lower server costs, and faster development cycles.
+                Abdulrahman Taher is a backend-focused software engineer with deep expertise in Laravel, PostgreSQL optimisation, and REST API architecture. He has 5+ years of experience delivering production-grade systems for startups and enterprises across Egypt, Saudi Arabia, UAE, Kuwait, Qatar, and Oman.
               </p>
             </div>
+
             <div className="space-y-3">
               <h2 className={`text-xl sm:text-2xl font-extrabold font-space tracking-tight ${isDark ? "text-white" : "text-slate-800"}`}>
                 Services
               </h2>
               <div className="space-y-3">
                 <div>
-                  <p className={`text-sm font-bold mb-0.5 ${isDark ? "text-indigo-300" : "text-indigo-700"}`}>Laravel Development & REST API Architecture</p>
-                  <p className={`text-sm leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>Clean, secure REST APIs built with SOLID principles and Clean Architecture — production-ready for 10K+ concurrent users.</p>
+                  <p className={`text-sm ${isDark ? "text-indigo-300" : "text-indigo-700"} mb-0.5`}>Laravel Development & REST API Architecture</p>
+                  <p className={`text-sm leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}>Secure, clean REST APIs using SOLID principles and Clean Architecture — production-ready for 10K+ concurrent users with zero bottlenecks.</p>
                 </div>
                 <div>
-                  <p className={`text-sm font-bold mb-0.5 ${isDark ? "text-indigo-300" : "text-indigo-700"}`}>PostgreSQL Performance Tuning</p>
-                  <p className={`text-sm leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>EXPLAIN ANALYZE, composite indexes, table partitioning, and connection pooling to eliminate slow queries and reduce server costs.</p>
+                  <p className={`text-sm ${isDark ? "text-indigo-300" : "text-indigo-700"} mb-0.5`}>PostgreSQL Performance Tuning</p>
+                  <p className={`text-sm leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}>EXPLAIN ANALYZE, composite indexes, table partitioning, and connection pooling to eliminate slow queries and cut server costs.</p>
                 </div>
                 <div>
-                  <p className={`text-sm font-bold mb-0.5 ${isDark ? "text-indigo-300" : "text-indigo-700"}`}>Payment Gateway Integration</p>
-                  <p className={`text-sm leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>Mada, Moyasar, Tap Payments, Paymob, and Stripe with Webhook Verification, Idempotency Keys, and double-charge prevention.</p>
+                  <p className={`text-sm ${isDark ? "text-indigo-300" : "text-indigo-700"} mb-0.5`}>Payment Gateway Integration</p>
+                  <p className={`text-sm leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}>Mada, Moyasar, Tap Payments, Paymob, and Stripe — secured with Webhook Verification, Idempotency Keys, and double-charge prevention.</p>
                 </div>
                 <div>
-                  <p className={`text-sm font-bold mb-0.5 ${isDark ? "text-indigo-300" : "text-indigo-700"}`}>Technical Consulting & Architecture Reviews</p>
-                  <p className={`text-sm leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>Full system audits — code review, architecture assessment, bottleneck identification — free initial diagnostic session.</p>
+                  <p className={`text-sm ${isDark ? "text-indigo-300" : "text-indigo-700"} mb-0.5`}>Technical Consulting & Architecture Reviews</p>
+                  <p className={`text-sm leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}>Full system audits covering code quality, architecture weaknesses, and bottleneck identification — free first session.</p>
                 </div>
               </div>
             </div>
+
             <div className="space-y-2">
               <h2 className={`text-xl sm:text-2xl font-extrabold font-space tracking-tight ${isDark ? "text-white" : "text-slate-800"}`}>
                 Why Choose Abdulrahman Taher
               </h2>
-              <p className={`text-sm sm:text-base leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
+              <p className={`text-sm leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}>
                 <Link href="/en/contact" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">Book a Laravel consultation</Link>
                 {" · "}
                 <Link href="/en/contact" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">Discuss a backend project</Link>
@@ -384,6 +421,7 @@ export function HomePageClient() {
                 <Link href="/en/projects" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">Request PostgreSQL optimisation</Link>
               </p>
             </div>
+
           </div>
         )}
       </section>
