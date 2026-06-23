@@ -32,6 +32,8 @@ jobs:
 
       - name: Build Next.js static site
         run: npm run build
+        env:
+          NEXT_PUBLIC_WEB3FORMS_KEY: ${{ secrets.NEXT_PUBLIC_WEB3FORMS_KEY }}
 
       - name: Prepare Firebase credentials
         run: |

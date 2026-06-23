@@ -16,15 +16,42 @@ export function ContactPageClient() {
   const [submitting, setSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!formName || !formEmail) return;
     setSubmitting(true);
-    setTimeout(() => {
+    setSubmitStatus("idle");
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
+          subject: `[Portfolio] رسالة جديدة من ${formName}`,
+          from_name: formName,
+          email: formEmail,
+          message: formMsg || "(لم يتم إدخال رسالة)",
+          // bot-blocking honeypot
+          botcheck: "",
+        }),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setSubmitStatus("success");
+        setFormName("");
+        setFormEmail("");
+        setFormMsg("");
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch {
+      setSubmitStatus("error");
+    } finally {
       setSubmitting(false);
-      setSubmitStatus("success");
-      setFormName(""); setFormEmail(""); setFormMsg("");
-    }, 1200);
+    }
   };
 
   const inputCls = `w-full border rounded-xl px-4 py-3 text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500/40 ${
@@ -89,10 +116,20 @@ export function ContactPageClient() {
             <AnimatePresence mode="wait">
               {submitStatus === "success" && (
                 <motion.div
+                  key="success"
                   initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }}
                   className="p-3.5 sm:p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs rounded-xl flex items-start gap-2.5 font-bold">
                   <CheckCircle className="w-4 h-4 mt-0.5 shrink-0 text-emerald-600" />
                   <span>{t.contactFormSuccess}</span>
+                </motion.div>
+              )}
+              {submitStatus === "error" && (
+                <motion.div
+                  key="error"
+                  initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }}
+                  className="p-3.5 sm:p-4 bg-red-50 border border-red-200 text-red-800 text-xs rounded-xl flex items-start gap-2.5 font-bold">
+                  <span>⚠️</span>
+                  <span>{t.contactFormError}</span>
                 </motion.div>
               )}
             </AnimatePresence>
