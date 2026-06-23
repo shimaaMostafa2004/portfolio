@@ -46,14 +46,16 @@ export function AboutPageClient() {
           </div>
           <div className="flex flex-wrap gap-3 pt-4 border-t border-indigo-950/20">
             <Link href={`${prefix}/contact`}
+              aria-label={isAr ? "تواصل لمناقشة مشروعك مع عبده طاهر" : "Contact Abdo Taher to discuss your backend project"}
               className="bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs py-2.5 px-5 rounded-lg transition-colors shadow-sm">
-              {t.contactFormSubmit}
+              {isAr ? "ناقش مشروعك معي" : "Discuss Your Project"}
             </Link>
             <Link href={`${prefix}/projects`}
+              aria-label={isAr ? "استعرض أعمال ومشاريع عبده طاهر" : "View Abdo Taher backend project portfolio"}
               className={`font-semibold text-xs py-2.5 px-5 rounded-lg border transition-all ${
                 isDark ? "bg-[#13112a] border-indigo-950 text-indigo-400" : "bg-slate-100 border-slate-300 text-slate-700"
               }`}>
-              {t.heroCtaPortfolio}
+              {isAr ? "استعرض أعمالي السابقة" : "View Backend Projects"}
             </Link>
           </div>
         </div>

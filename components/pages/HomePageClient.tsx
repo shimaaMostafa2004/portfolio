@@ -96,11 +96,13 @@ export function HomePageClient() {
           {/* CTAs */}
           <div className="flex flex-col xs:flex-row flex-wrap justify-center gap-2 sm:gap-3 mt-4 sm:mt-6">
             <Link href={`${prefix}/contact`}
+              aria-label={isAr ? "وظفني الآن — ابدأ مشروعك" : "Hire me now — start your backend project"}
               className="bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs py-3 px-5 sm:py-3.5 sm:px-6 rounded-xl transition-all shadow-md flex items-center justify-center gap-2">
               <Rocket className="w-4 h-4" />
               {t.heroCtaHire}
             </Link>
             <Link href={`${prefix}/blogs`}
+              aria-label={isAr ? "اقرأ مدونة الباك-إند والهندسة" : "Read backend engineering articles on the blog"}
               className={`font-bold text-xs py-3 px-5 sm:py-3.5 sm:px-6 rounded-xl border transition-all flex items-center justify-center gap-2 ${
                 isDark ? "bg-[#13112a] border-indigo-950 text-indigo-400 hover:bg-slate-900" : "bg-white border-slate-200 text-indigo-600 hover:bg-slate-50"
               }`}>

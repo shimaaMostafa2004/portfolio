@@ -252,12 +252,12 @@ export default function AboutAbdoTaherPage() {
 
       {/* Navigation */}
       <section className="flex flex-wrap gap-3 pt-4 border-t border-slate-200">
-        <Link href="/en" className="text-sm text-indigo-600 underline underline-offset-2">Home</Link>
-        <Link href="/en/about" className="text-sm text-indigo-600 underline underline-offset-2">Full Bio</Link>
-        <Link href="/en/services" className="text-sm text-indigo-600 underline underline-offset-2">Services</Link>
-        <Link href="/en/projects" className="text-sm text-indigo-600 underline underline-offset-2">Projects</Link>
-        <Link href="/en/blogs" className="text-sm text-indigo-600 underline underline-offset-2">Blog</Link>
-        <Link href="/en/contact" className="text-sm text-indigo-600 underline underline-offset-2">Contact</Link>
+        <Link href="/en" className="text-sm text-indigo-600 underline underline-offset-2">Abdo Taher Homepage</Link>
+        <Link href="/en/about" className="text-sm text-indigo-600 underline underline-offset-2">Full Biography</Link>
+        <Link href="/en/services" className="text-sm text-indigo-600 underline underline-offset-2">Backend Services</Link>
+        <Link href="/en/projects" className="text-sm text-indigo-600 underline underline-offset-2">Project Portfolio</Link>
+        <Link href="/en/blogs" className="text-sm text-indigo-600 underline underline-offset-2">Technical Blog</Link>
+        <Link href="/en/contact" className="text-sm text-indigo-600 underline underline-offset-2">Hire Abdo Taher</Link>
       </section>
     </main>
   );

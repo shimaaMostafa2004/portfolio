@@ -89,8 +89,9 @@ export function BlogPostClient({ slug }: Props) {
               </p>
             </div>
             <Link href={`${prefix}/contact`}
+              aria-label={isAr ? "تواصل لحجز مراجعة كود مجانية" : "Book a free backend code review with Abdo Taher"}
               className="bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs py-2 px-5 rounded-lg transition-colors shrink-0 self-start sm:self-auto">
-              {t.contactFormSubmit}
+              {isAr ? "احجز مراجعة كود مجانية" : "Book Free Code Review"}
             </Link>
           </div>
         </div>
