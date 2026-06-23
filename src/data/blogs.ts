@@ -988,6 +988,173 @@ $data = Cache::remember('homepage_seo_payload', 3600, function() {
       <h3>2. Compiling with PHP OPcache</h3>
       <p>Enable server-side OPcache modules to skip source code analysis cycles. Compiled file representations are cached instantly, taking execution times down to bare minimum levels.</p>
     `
+  },
+  {
+    id: "b27",
+    category: "backend",
+    titleAr: "واجهة المستخدم المدفوعة بالخادم (SDUI) في NestJS: إدارة CRUD بدون كود فرونت إند",
+    titleEn: "Server-Driven UI (SDUI) in NestJS: Zero Frontend Code for Admin CRUD",
+    excerptAr: "كيف تبني لوحة إدارة Admin CRUD كاملة في NestJS حيث يتحكم الخادم بالكامل في هيكل الواجهة وبدون كتابة أي كود فرونت إند.",
+    excerptEn: "How to build a complete Admin CRUD panel in NestJS where the server fully controls the UI structure — no frontend code required.",
+    readTimeAr: "12 دقيقة قراءة",
+    readTimeEn: "12 min read",
+    dateAr: "23 يونيو 2026",
+    dateEn: "June 23, 2026",
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
+    authorAr: "المهندس عبدالرحمن طاهر",
+    authorEn: "Eng. Abdulrahman Taher",
+    keywords: [
+      "Server-Driven UI", "SDUI NestJS", "Admin CRUD NestJS",
+      "واجهة مدفوعة بالخادم", "NestJS backend", "Zero frontend CRUD",
+      "dynamic UI NestJS", "بناء لوحة إدارة بدون فرونت اند"
+    ],
+    contentAr: `
+      <h2>ما هي واجهة المستخدم المدفوعة بالخادم؟</h2>
+      <p>Server-Driven UI أو SDUI هي نمط معماري يتحكم فيه الخادم بالكامل في هيكل الواجهة وسلوكها. بدلاً من أن يقرر الفرونت إند كيف تبدو الصفحة، يرسل الخادم وصفاً JSON كاملاً للمكونات — الحقول، الأزرار، الجداول — ويقوم الكلاينت بتصييرها تلقائياً. النتيجة: تغيير كامل في واجهة الإدارة دون لمس كود الفرونت إند.</p>
+
+      <h2>لماذا NestJS مثالية لتطبيق SDUI؟</h2>
+      <p>يتميز NestJS بهيكله المعياري القائم على TypeScript، مما يجعله مثالياً لبناء APIs تُعيد وصفاً منظماً للواجهة. يمكنك تعريف Decorators خاصة تُولّد تعريف الحقول تلقائياً من الـ Entity مباشرة.</p>
+
+      <h2>بناء نظام SDUI-CRUD خطوة بخطوة</h2>
+
+      <h3>1. تعريف الـ Entity مع Metadata للواجهة</h3>
+      <pre><code>@Entity()
+export class Product {
+  @UIField({ label: 'اسم المنتج', type: 'text', required: true })
+  @Column()
+  name: string;
+
+  @UIField({ label: 'السعر', type: 'number', required: true })
+  @Column('decimal')
+  price: number;
+
+  @UIField({ label: 'الحالة', type: 'select', options: ['active','inactive'] })
+  @Column()
+  status: string;
+}</code></pre>
+
+      <h3>2. بناء الـ Decorator المخصص UIField</h3>
+      <pre><code>export const UI_FIELD_KEY = 'ui:field';
+
+export function UIField(config: UIFieldConfig) {
+  return Reflect.metadata(UI_FIELD_KEY, config);
+}
+
+export interface UIFieldConfig {
+  label: string;
+  type: 'text' | 'number' | 'select' | 'date' | 'boolean';
+  required?: boolean;
+  options?: string[];
+}</code></pre>
+
+      <h3>3. الـ Schema Generator Service</h3>
+      <pre><code>@Injectable()
+export class SchemaGeneratorService {
+  generateSchema(entityClass: Function) {
+    const instance = new (entityClass as any)();
+    const fields = [];
+    for (const key of Object.keys(instance)) {
+      const config = Reflect.getMetadata(UI_FIELD_KEY, entityClass.prototype, key);
+      if (config) fields.push({ field: key, ...config });
+    }
+    return { entity: entityClass.name, fields, actions: ['create','read','update','delete'] };
+  }
+}</code></pre>
+
+      <h3>4. الـ SDUI Controller</h3>
+      <pre><code>@Controller('admin/sdui')
+export class SduiController {
+  @Get(':entity/schema')
+  getSchema(@Param('entity') entity: string) {
+    const entityClass = this.entityRegistry.get(entity);
+    return this.schemaGenerator.generateSchema(entityClass);
+  }
+
+  @Get(':entity')
+  findAll(@Param('entity') entity: string, @Query() query: PaginationDto) {
+    return this.entityRegistry.getRepository(entity)
+      .findAndCount({ skip: query.skip, take: query.take });
+  }
+
+  @Post(':entity')
+  create(@Param('entity') entity: string, @Body() body: Record<string, any>) {
+    return this.entityRegistry.getRepository(entity).save(body);
+  }
+}</code></pre>
+
+      <h3>5. الاستجابة JSON للفرونت إند</h3>
+      <pre><code>{
+  "entity": "Product",
+  "fields": [
+    { "field": "name",   "label": "اسم المنتج", "type": "text",   "required": true },
+    { "field": "price",  "label": "السعر",       "type": "number", "required": true },
+    { "field": "status", "label": "الحالة",      "type": "select", "options": ["active","inactive"] }
+  ],
+  "actions": ["create","read","update","delete"]
+}</code></pre>
+
+      <h2>فوائد هذا النمط</h2>
+      <p>إضافة حقل جديد تعني إضافة Decorator واحد فقط في الباك إند — الواجهة تتحدث نفسها. هذا يقلل وقت التسليم ويلغي التنسيق المتكرر بين فرقي الفرونت والباك إند.</p>
+
+      <h2>متى تستخدم SDUI ومتى تتجنبه؟</h2>
+      <p>SDUI مثالي لـ: لوحات الإدارة الداخلية، أنظمة CMS، وواجهات Back-office. ليس الخيار الأفضل للواجهات التي تتطلب تفاعلاً بصرياً معقداً أو تجربة مستخدم مخصصة جداً.</p>
+
+      <p>يمكنك قراءة المقال الأصلي على <a href="https://medium.com/@abdotaher093/server-driven-ui-sdui-in-nestjs-zero-frontend-code-for-admin-crud-866eb988e823" target="_blank" rel="noopener noreferrer">Medium</a>.</p>
+    `,
+    contentEn: `
+      <h2>What is Server-Driven UI (SDUI)?</h2>
+      <p>Server-Driven UI is an architectural pattern where the server fully controls the structure and behaviour of the UI. Instead of the frontend deciding how a page looks, the server sends a complete JSON description of components and the client renders them automatically — no frontend code changes needed.</p>
+
+      <h2>Why NestJS is Perfect for SDUI</h2>
+      <p>NestJS's modular TypeScript architecture makes it ideal for APIs that return structured UI descriptions. Custom Decorators auto-generate field definitions from Entities, eliminating repetition and keeping database and UI in sync.</p>
+
+      <h2>Building SDUI-CRUD Step by Step</h2>
+
+      <h3>1. Entity with UI Metadata</h3>
+      <pre><code>@Entity()
+export class Product {
+  @UIField({ label: 'Product Name', type: 'text', required: true })
+  @Column() name: string;
+
+  @UIField({ label: 'Price', type: 'number', required: true })
+  @Column('decimal') price: number;
+
+  @UIField({ label: 'Status', type: 'select', options: ['active','inactive'] })
+  @Column() status: string;
+}</code></pre>
+
+      <h3>2. UIField Decorator</h3>
+      <pre><code>export function UIField(config: UIFieldConfig) {
+  return Reflect.metadata(UI_FIELD_KEY, config);
+}</code></pre>
+
+      <h3>3. Schema Generator Service</h3>
+      <pre><code>generateSchema(entityClass: Function) {
+  const fields = Object.keys(new (entityClass as any)())
+    .map(key => ({ field: key, ...Reflect.getMetadata(UI_FIELD_KEY, entityClass.prototype, key) }))
+    .filter(f => f.label);
+  return { entity: entityClass.name, fields, actions: ['create','read','update','delete'] };
+}</code></pre>
+
+      <h3>4. SDUI Controller</h3>
+      <pre><code>@Get(':entity/schema')
+getSchema(@Param('entity') entity: string) {
+  return this.schemaGenerator.generateSchema(this.entityRegistry.get(entity));
+}
+
+@Post(':entity')
+create(@Param('entity') entity: string, @Body() body: Record<string, any>) {
+  return this.entityRegistry.getRepository(entity).save(body);
+}</code></pre>
+
+      <h2>Real-World Benefits</h2>
+      <p>Adding a new field means adding one Decorator in the backend — the UI updates itself. This eliminates the coordination overhead between frontend and backend teams and dramatically cuts delivery time.</p>
+
+      <h2>When to Use SDUI</h2>
+      <p>Ideal for internal admin panels, CMS, and back-office interfaces with frequently changing structures. Not suitable for UIs requiring complex custom visual interactions.</p>
+
+      <p>Read the original article on <a href="https://medium.com/@abdotaher093/server-driven-ui-sdui-in-nestjs-zero-frontend-code-for-admin-crud-866eb988e823" target="_blank" rel="noopener noreferrer">Medium</a>.</p>
+    `
   }
 ];
 
