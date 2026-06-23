@@ -161,6 +161,7 @@ export function SiteShell({ children, initialLang = "ar" }: Props) {
 
             {/* CTA — visible sm+ on desktop */}
             <Link href={`${prefix}/contact`}
+              aria-label={isAr ? "تواصل معي للتوظيف أو الاستشارة" : "Hire me or book a consultation"}
               className="hidden sm:inline-flex lg:hidden xl:inline-flex bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs py-2 px-3 sm:py-2.5 sm:px-4 rounded-xl transition-all shadow-sm items-center gap-1.5 whitespace-nowrap">
               <Smartphone className="w-3.5 h-3.5" />
               <span>{isAr ? "تواصل" : "Hire Me"}</span>
@@ -197,8 +198,9 @@ export function SiteShell({ children, initialLang = "ar" }: Props) {
               ))}
               <Link href={`${prefix}/contact`}
                 onClick={() => setMobileMenuOpen(false)}
+                aria-label={isAr ? "ابدأ مشروعك — تواصل واحجز استشارة" : "Start your project — contact for consultation"}
                 className="mt-2 bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm py-3 px-4 rounded-xl transition-all text-center">
-                {isAr ? "تواصل واستشارة" : "Contact / Hire Me"}
+                {isAr ? "ابدأ مشروعك" : "Start Your Project"}
               </Link>
             </nav>
           </div>
@@ -275,7 +277,7 @@ export function SiteShell({ children, initialLang = "ar" }: Props) {
               {[
                 { href: `${prefix}/`,         ar: "الصفحة الرئيسية",          en: "Go to Homepage" },
                 { href: `${prefix}/about`,    ar: "نبذة عن عبدالرحمن",       en: "About Abdulrahman" },
-                { href: `${prefix}/services`, ar: "خدمات Laravel وقواعد البيانات", en: "Laravel & Database Services" },
+                { href: `${prefix}/services`, ar: "خدمات Laravel وNestJS", en: "Laravel & NestJS Services" },
                 { href: `${prefix}/projects`, ar: "أعمال ومشاريع سابقة",     en: "Past Projects Portfolio" },
                 { href: `${prefix}/blogs`,    ar: "مقالات تقنية",              en: "Technical Blog Articles" },
                 { href: `${prefix}/contact`,  ar: "تواصل مع عبدالرحمن",       en: "Contact Abdulrahman" },
