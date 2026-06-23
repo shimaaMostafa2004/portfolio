@@ -163,7 +163,7 @@ export default function App() {
           "knowsLanguage": ["Arabic", "English"],
           "knowsAbout": [
             "High-Performance API Architecture",
-            "PostgreSQL Performance Tuning",
+            "Database Performance Tuning",
             "RabbitMQ & Redis queue processors",
             "Payment integration Saudi Arabia Mada Gateway"
           ],
@@ -581,7 +581,7 @@ export default function App() {
                           </h4>
                           <span className="block text-[11px] font-bold text-orange-400">{isAr ? "أخصائي قواعد بيانات AWS" : "Database Specialist"}</span>
                           <p className="text-[10px] text-slate-400 font-bold leading-relaxed">
-                            {isAr ? "معتمد رسمياً لتخطيط وتأمين وتطوير خوادم PostgreSQL و Aurora السحابية وضمان الـ replication." : "Certified cloud authority in optimizing sub-second query designs and failover replicas."}
+                            {isAr ? "معتمد رسمياً لتخطيط وتأمين وتطوير خوادم Database و Aurora السحابية وضمان الـ replication." : "Certified cloud authority in optimizing sub-second query designs and failover replicas."}
                           </p>
                         </div>
                       </div>
@@ -700,8 +700,8 @@ export default function App() {
                           icon: <Code className="w-5 h-5 text-indigo-500" />
                         },
                         {
-                          titleAr: "قاعدة بيانات PostgreSQL",
-                          titleEn: "PostgreSQL & Indexing",
+                          titleAr: "قاعدة بيانات Database",
+                          titleEn: "Database & Indexing",
                           descAr: "تحسين الاستعلامات المعقدة، تقسيم الجداول الكبيرة، مراجعة خطط التنفيذ (EXPLAIN ANALYZE) والتحجيم.",
                           descEn: "Complex subquery tuning, table partitions, composite indexes, and executing EXPLAIN ANALYZE bottlenecks profiling.",
                           icon: <Database className="w-5 h-5 text-indigo-500" />
@@ -769,7 +769,7 @@ export default function App() {
                           step: "01",
                           titleAr: "تشخيص وقياس الأداء",
                           titleEn: "Database & API Audit",
-                          descAr: "قياس زمن الاستجابة الفعلي لطلبات الـ HTTP وتحديد مصايد الاستعلامات البطيئة في PostgreSQL.",
+                          descAr: "قياس زمن الاستجابة الفعلي لطلبات الـ HTTP وتحديد مصايد الاستعلامات البطيئة في Database.",
                           descEn: "Measuring real-time transactional overhead, identifying query loops, and exposing database blocks."
                         },
                         {
@@ -1203,7 +1203,7 @@ export default function App() {
                     {isAr ? "تحتاج خطة تشغيل تفصيلية لتوسيع نظامك؟" : "Looking for scalable API engineering consulting?"}
                   </h4>
                   <p className={`text-xs sm:text-sm text-slate-400 mt-2 max-w-xl mx-auto leading-relaxed`}>
-                    {isAr ? "خلال بضعة أيام، يمكنني مراجعة مستودع الأكواد (Repository Checkup)، وفهرس PostgreSQL الحالي، وتخليص العمليات المتعرجة لحقن كود أنظف وأكثر أماناً وسرعة." : "I provide rapid, hands-on architectural code diagnostics, DB query indexing refactoring, and asynchronous job optimization blueprints."}
+                    {isAr ? "خلال بضعة أيام، يمكنني مراجعة مستودع الأكواد (Repository Checkup)، وفهرس Database الحالي، وتخليص العمليات المتعرجة لحقن كود أنظف وأكثر أماناً وسرعة." : "I provide rapid, hands-on architectural code diagnostics, DB query indexing refactoring, and asynchronous job optimization blueprints."}
                   </p>
                   <button 
                     onClick={() => setCurrentPage("contact")}
@@ -1832,7 +1832,7 @@ export default function App() {
                     </p>
                     <p className="text-[11px] font-mono text-slate-500 leading-relaxed">
                       [INFO] Scanning replica blocks in SST/GST timezone... <br />
-                      [OK] Core portfolio databases are safe: <strong>PostgreSQL Master</strong> and <strong>Redis Cache Hot Buffers</strong> active.
+                      [OK] Core portfolio databases are safe: <strong>Database Master</strong> and <strong>Redis Cache Hot Buffers</strong> active.
                     </p>
                   </div>
 
@@ -1973,7 +1973,7 @@ export default function App() {
               {/* Share on X Button */}
               <a
                 id="share-twitter-link"
-                href="https://x.com/intent/tweet?text=Check%20out%20Abdulrahman%20Taher%27s%20Backend%20Portfolio!%20Laravel%20%7C%20PostgreSQL%20%7C%20APIs%20%E2%80%94%20https%3A%2F%2Fabdotaher.me"
+                href="https://x.com/intent/tweet?text=Check%20out%20Abdulrahman%20Taher%27s%20Backend%20Portfolio!%20Laravel%20%7C%20Database%20%7C%20APIs%20%E2%80%94%20https%3A%2F%2Fabdotaher.me"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl text-xs font-bold font-mono border transition-all ${
@@ -2112,7 +2112,7 @@ export default function App() {
                       {isAr ? "3. نطاقات نقل ومعالجة البيانات" : "3. Database Transmission Boundary"}
                     </p>
                     <p>
-                      {isAr ? "جميع قواعد البيانات والـ PostgreSQL تلتزم بقيود الحظر الفوري للكيانات مجهولة الهوية وجدار الحماية المتقدم (WAF) لتقليل هجمات حجب الخدمة." : "All databases employ automated IP whitelisting restrictions and Web Application Firewalls (WAF) to defend against DDOS vectors."}
+                      {isAr ? "جميع قواعد البيانات والـ Database تلتزم بقيود الحظر الفوري للكيانات مجهولة الهوية وجدار الحماية المتقدم (WAF) لتقليل هجمات حجب الخدمة." : "All databases employ automated IP whitelisting restrictions and Web Application Firewalls (WAF) to defend against DDOS vectors."}
                     </p>
                   </div>
                 </div>

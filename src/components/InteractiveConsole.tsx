@@ -33,13 +33,13 @@ export const InteractiveConsole: React.FC<InteractiveConsoleProps> = ({ isAr, is
     } else if (tab === "database") {
       return isAr
         ? [
-            "Connecting to PostgreSQL DB Instance (Partitioned Ledger)...",
+            "Connecting to Database DB Instance (Partitioned Ledger)...",
             "Checking indexing performance on table 'orders' (1.4M rows)...",
             "Missing indexes detected on foreign_key_id. Latency is high.",
             "Click 'Optimize database' to run query analyzer."
           ]
         : [
-            "Connecting to PostgreSQL DB Instance (Partitioned Ledger)...",
+            "Connecting to Database DB Instance (Partitioned Ledger)...",
             "Checking indexing performance on table 'orders' (1.4M rows)...",
             "Missing indexes detected on foreign_key_id. Latency is high.",
             "Click 'Optimize database' to run query analyzer."

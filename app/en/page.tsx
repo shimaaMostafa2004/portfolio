@@ -5,15 +5,15 @@ import JsonLd from "@/components/JsonLd";
 import { baseSchema, faqSchema, SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Abdulrahman Taher | Senior Backend Engineer — Laravel, Node.js, PostgreSQL",
+  title: "Abdulrahman Taher | Senior Backend Engineer — Laravel, Node.js, Database",
   description:
-    "Abdulrahman Taher is a Senior Backend Engineer from Egypt with 5+ years building scalable APIs, PostgreSQL-optimised databases, and cloud microservices for GCC enterprises in Saudi Arabia, UAE, and Kuwait.",
+    "Abdulrahman Taher is a Senior Backend Engineer from Egypt with 5+ years building scalable APIs, Database-optimised databases, and cloud microservices for GCC enterprises in Saudi Arabia, UAE, and Kuwait.",
   keywords: [
     "Abdulrahman Taher",
     "Senior Backend Engineer Egypt",
     "Remote Laravel Developer GCC",
     "Node.js architect Saudi Arabia",
-    "PostgreSQL performance expert",
+    "Database performance expert",
     "API architecture consultant",
     "payment gateway integration Mada Moyasar",
     "freelance backend developer Middle East",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Abdulrahman Taher | Senior Backend Engineer",
     description:
-      "5+ years building scalable APIs, PostgreSQL databases, and cloud systems for GCC enterprises — Laravel, Node.js, Redis, Docker.",
+      "5+ years building scalable APIs, Database databases, and cloud systems for GCC enterprises — Laravel, Node.js, Redis, Docker.",
     url: `${SITE_URL}/en`,
     images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Abdulrahman Taher - Senior Backend Engineer" }],
   },
@@ -37,7 +37,7 @@ const enFaqs = [
   {
     question: "Who is Abdulrahman Taher?",
     answer:
-      "Abdulrahman Taher is a Senior Backend Engineer from Cairo, Egypt. He specialises in Laravel, Node.js, PostgreSQL, Redis, and payment gateway integrations for GCC enterprises, with over 5 years of production experience.",
+      "Abdulrahman Taher is a Senior Backend Engineer from Cairo, Egypt. He specialises in Laravel, Node.js, Database, Redis, and payment gateway integrations for GCC enterprises, with over 5 years of production experience.",
   },
   {
     question: "Is Abdulrahman Taher available for remote work in Saudi Arabia or UAE?",

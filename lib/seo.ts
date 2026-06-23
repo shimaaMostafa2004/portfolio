@@ -17,7 +17,7 @@ const personNode = {
   alternateName: ["عبدالرحمن طاهر", "Abdo Taher", "عبدالرحمن طاهر مبرمج"],
   jobTitle: "Senior Backend Engineer & Laravel Developer",
   description:
-    "Abdulrahman Taher — Senior Backend Engineer, Laravel Developer, and PostgreSQL Expert from Egypt. 5+ years building scalable REST APIs, optimising PostgreSQL databases, integrating payment gateways (Mada, Moyasar, Tap, Paymob), and designing cloud systems for GCC enterprises. Available as a Freelance Backend Developer for Saudi Arabia, UAE, Kuwait, Qatar, and Egypt.",
+    "Abdulrahman Taher — Senior Backend Engineer, Laravel Developer, and Database Expert from Egypt. 5+ years building scalable REST APIs, optimising Database databases, integrating payment gateways (Mada, Moyasar, Tap, Paymob), and designing cloud systems for GCC enterprises. Available as a Freelance Backend Developer for Saudi Arabia, UAE, Kuwait, Qatar, and Egypt.",
   url: SITE_URL,
   image: {
     "@type": "ImageObject",
@@ -40,7 +40,7 @@ const personNode = {
   ],
   knowsAbout: [
     "Laravel Backend Development",
-    "PostgreSQL Performance Tuning",
+    "Database Performance Tuning",
     "REST API Architecture",
     "Backend Development",
     "Database Optimization",
@@ -54,7 +54,7 @@ const personNode = {
     "@type": "Occupation",
     name: "Backend Software Engineer",
     occupationalCategory: "15-1252.00",
-    skills: "Laravel, Node.js, PostgreSQL, Redis, Docker, REST API, Microservices",
+    skills: "Laravel, Node.js, Database, Redis, Docker, REST API, Microservices",
   },
   address: {
     "@type": "PostalAddress",
@@ -81,7 +81,7 @@ export function baseSchema(pageUrl: string, pageTitle: string, pageDesc: string)
         name: "عبدالرحمن طاهر | مهندس برمجيات باك اند",
         alternateName: "Abdulrahman Taher | Senior Backend Engineer",
         description:
-          "Portfolio and technical blog of Abdulrahman Taher — Senior Backend Engineer specialising in Laravel, Node.js, PostgreSQL, and GCC payment integrations.",
+          "Portfolio and technical blog of Abdulrahman Taher — Senior Backend Engineer specialising in Laravel, Node.js, Database, and GCC payment integrations.",
         publisher: { "@id": `${SITE_URL}/#person` },
         author: { "@id": `${SITE_URL}/#person` },
         inLanguage: ["ar", "en"],
@@ -142,7 +142,7 @@ export function baseSchema(pageUrl: string, pageTitle: string, pageDesc: string)
           name: "Backend Engineering Services",
           itemListElement: [
             { "@type": "Offer", itemOffered: { "@type": "Service", name: "REST API Architecture & Development" } },
-            { "@type": "Offer", itemOffered: { "@type": "Service", name: "PostgreSQL & Database Performance Tuning" } },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Database & Database Performance Tuning" } },
             { "@type": "Offer", itemOffered: { "@type": "Service", name: "Payment Gateway Integration (Mada, Moyasar, Tap, Paymob)" } },
             { "@type": "Offer", itemOffered: { "@type": "Service", name: "Redis Caching & Queue Worker Setup" } },
             { "@type": "Offer", itemOffered: { "@type": "Service", name: "Cloud Cost Optimisation (AWS / GCP)" } },

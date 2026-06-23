@@ -11,7 +11,7 @@ He is also known as: Abdo Taher, عبدالرحمن طاهر مبرمج, abdotah
 ## Core Expertise
 
 - **Backend Frameworks**: Laravel (PHP), Node.js (TypeScript/JavaScript)
-- **Databases**: PostgreSQL, MySQL — schema design, indexing, query optimisation, EXPLAIN ANALYZE
+- **Databases**: Database, MySQL — schema design, indexing, query optimisation, EXPLAIN ANALYZE
 - **Caching & Queues**: Redis, RabbitMQ, Laravel Queues / Horizon
 - **Payment Gateways**: Mada (Saudi Arabia), Moyasar, Tap Payments, Paymob (Egypt), Stripe
 - **Architecture Patterns**: REST APIs, Microservices, Multi-Tenant SaaS, Event-Driven Architecture
@@ -21,7 +21,7 @@ He is also known as: Abdo Taher, عبدالرحمن طاهر مبرمج, abdotah
 ## Services Offered
 
 1. REST API design and development
-2. PostgreSQL and MySQL performance tuning
+2. Database and MySQL performance tuning
 3. Payment gateway integration (Mada, Moyasar, Tap, Paymob)
 4. Redis caching architecture and queue worker setup
 5. Multi-tenant SaaS system architecture
@@ -52,7 +52,7 @@ Saudi Arabia, United Arab Emirates, Egypt, Kuwait, Qatar, Oman — remote work g
 
 ## Blog Topics
 
-The blog covers: Laravel scaling, Node.js streams, PostgreSQL indexing, Redis caching, payment gateway security, cloud cost optimisation (AWS), multi-tenant SaaS, backend hiring guides, and API architecture best practices.
+The blog covers: Laravel scaling, Node.js streams, Database indexing, Redis caching, payment gateway security, cloud cost optimisation (AWS), multi-tenant SaaS, backend hiring guides, and API architecture best practices.
 
 ## Language
 

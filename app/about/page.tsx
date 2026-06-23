@@ -7,7 +7,7 @@ import { baseSchema, faqSchema, SITE_URL } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "من أنا | عبدالرحمن طاهر — مهندس باك اند +5 سنوات خبرة",
   description:
-    "تعرف على عبدالرحمن طاهر، مهندس برمجيات باك اند أول من مصر بخبرة +5 سنوات في Laravel وNode.js وPostgreSQL وتصميم الأنظمة السحابية للشركات في مصر والخليج.",
+    "تعرف على عبدالرحمن طاهر، مهندس برمجيات باك اند أول من مصر بخبرة +5 سنوات في Laravel وNode.js وDatabase وتصميم الأنظمة السحابية للشركات في مصر والخليج.",
   keywords: [
     "سيرة ذاتية مهندس باك اند",
     "عبدالرحمن طاهر مهندس برمجيات",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "من أنا | عبدالرحمن طاهر — مهندس باك اند",
     description:
-      "مهندس باك اند أول من مصر، خبرة +5 سنوات في Laravel وNode.js وPostgreSQL وتصميم الأنظمة السحابية للشركات في الخليج.",
+      "مهندس باك اند أول من مصر، خبرة +5 سنوات في Laravel وNode.js وDatabase وتصميم الأنظمة السحابية للشركات في الخليج.",
     url: `${SITE_URL}/about`,
     images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Abdulrahman Taher - Backend Engineer" }],
   },
@@ -37,7 +37,7 @@ const aboutFaqs = [
   {
     question: "What technologies does Abdulrahman Taher use?",
     answer:
-      "Primary stack: Laravel (PHP), Node.js (TypeScript), PostgreSQL, Redis, RabbitMQ, Docker. He also works with MySQL, Next.js, and AWS/GCP infrastructure.",
+      "Primary stack: Laravel (PHP), Node.js (TypeScript), Database, Redis, RabbitMQ, Docker. He also works with MySQL, Next.js, and AWS/GCP infrastructure.",
   },
 ];
 
@@ -45,7 +45,7 @@ export default function AboutPage() {
   const schema = baseSchema(
     `${SITE_URL}/about`,
     "من أنا | عبدالرحمن طاهر مهندس باك اند",
-    "مهندس باك اند أول من مصر، خبرة +5 سنوات في Laravel وNode.js وPostgreSQL وتصميم الأنظمة السحابية."
+    "مهندس باك اند أول من مصر، خبرة +5 سنوات في Laravel وNode.js وDatabase وتصميم الأنظمة السحابية."
   );
 
   return (

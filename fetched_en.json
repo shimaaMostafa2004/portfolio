@@ -154,7 +154,7 @@
     "auto_101": "Problem:",
     "auto_102": "Payment and ledger flows required stronger consistency, better observability, and lower response latency.",
     "auto_103": "Solution:",
-    "auto_104": "Designed stable REST APIs, optimized PostgreSQL queries, and added observability plus auditing around financial workflows and external integrations.",
+    "auto_104": "Designed stable REST APIs, optimized Database queries, and added observability plus auditing around financial workflows and external integrations.",
     "auto_105": "Result:",
     "auto_106": "Reduction in server response latency",
     "auto_107": "Clearer",

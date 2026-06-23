@@ -77,8 +77,8 @@ export function HomePageClient() {
             isDark ? "text-slate-300" : "text-slate-600"
           }`}>
             {isAr
-              ? "مطور Laravel وخبير PostgreSQL من مصر — أبني أنظمة باك-إند وقواعد بيانات فائقة الأداء قابلة للتوسع للشركات والمنتجات الرقمية في مصر والخليج."
-              : "Laravel developer and PostgreSQL expert from Egypt — building high-performance, scalable backend systems and databases for businesses across Egypt and the GCC."}
+              ? "مطور Laravel وخبير Database من مصر — أبني أنظمة باك-إند وقواعد بيانات فائقة الأداء قابلة للتوسع للشركات والمنتجات الرقمية في مصر والخليج."
+              : "Laravel developer and Database expert from Egypt — building high-performance, scalable backend systems and databases for businesses across Egypt and the GCC."}
           </p>
 
           {/* Feature pills */}
@@ -149,7 +149,7 @@ export function HomePageClient() {
           <LinkedInIcon className="w-3 h-3 text-[#0A66C2]" />
           {isAr ? "شارك على LinkedIn" : "Share on LinkedIn"}
         </a>
-        <a href="https://x.com/intent/tweet?text=%D9%85%D8%B7%D9%88%D8%B1%20Laravel%20%D9%88%D8%AE%D8%A8%D9%8A%D8%B1%20PostgreSQL%20%D9%81%D9%8A%20%D9%85%D8%B5%D8%B1%20%D9%88%D8%A7%D9%84%D8%AE%D9%84%D9%8A%D8%AC%20%E2%80%94%20https%3A%2F%2Fabdotaher.me"
+        <a href="https://x.com/intent/tweet?text=%D9%85%D8%B7%D9%88%D8%B1%20Laravel%20%D9%88%D8%AE%D8%A8%D9%8A%D8%B1%20Database%20%D9%81%D9%8A%20%D9%85%D8%B5%D8%B1%20%D9%88%D8%A7%D9%84%D8%AE%D9%84%D9%8A%D8%AC%20%E2%80%94%20https%3A%2F%2Fabdotaher.me"
           target="_blank" rel="noopener noreferrer"
           aria-label="Share Abdulrahman Taher portfolio on X Twitter"
           className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-[11px] transition-all ${
@@ -169,7 +169,7 @@ export function HomePageClient() {
           </svg>
           {isAr ? "شارك على Facebook" : "Share on Facebook"}
         </a>
-        <a href="https://wa.me/?text=%D9%85%D8%B7%D9%88%D8%B1%20Laravel%20%D9%88%D8%AE%D8%A8%D9%8A%D8%B1%20PostgreSQL%20%E2%80%94%20https%3A%2F%2Fabdotaher.me"
+        <a href="https://wa.me/?text=%D9%85%D8%B7%D9%88%D8%B1%20Laravel%20%D9%88%D8%AE%D8%A8%D9%8A%D8%B1%20Database%20%E2%80%94%20https%3A%2F%2Fabdotaher.me"
           target="_blank" rel="noopener noreferrer"
           aria-label="Share Abdulrahman Taher portfolio on WhatsApp"
           className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-[11px] transition-all ${
@@ -193,7 +193,7 @@ export function HomePageClient() {
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5 max-w-4xl mx-auto">
           {[
-            { icon: <Award className="w-5 h-5" />, colorBg: "bg-orange-500/10", colorText: "text-orange-500", colorBorder: "border-orange-500/25", badgeColor: "text-orange-400", title: "AWS DB SPECIALTY", badge: isAr ? "أخصائي قواعد بيانات AWS" : "Database Specialist", desc: isAr ? "معتمد لتخطيط وتأمين PostgreSQL و Aurora السحابية." : "Certified in optimizing sub-second query designs and failover replicas." },
+            { icon: <Award className="w-5 h-5" />, colorBg: "bg-orange-500/10", colorText: "text-orange-500", colorBorder: "border-orange-500/25", badgeColor: "text-orange-400", title: "AWS DB SPECIALTY", badge: isAr ? "أخصائي قواعد بيانات AWS" : "Database Specialist", desc: isAr ? "معتمد لتخطيط وتأمين Database و Aurora السحابية." : "Certified in optimizing sub-second query designs and failover replicas." },
             { icon: <CheckCircle2 className="w-5 h-5" />, colorBg: "bg-emerald-500/10", colorText: "text-emerald-500", colorBorder: "border-emerald-500/25", badgeColor: "text-emerald-400", title: "UPWORK TOP RATED PLUS", badge: isAr ? "النخبة الأعلى تقييماً 3%" : "Top 3% Technical Class", desc: isAr ? "ضمن أفضل الخبراء التقنيين بـ 100% نجاح." : "100% Job Success Score delivering enterprise software." },
             { icon: <Cpu className="w-5 h-5" />, colorBg: "bg-blue-500/10", colorText: "text-blue-500", colorBorder: "border-blue-500/25", badgeColor: "text-blue-400", title: "GCP PRO ARCHITECT", badge: isAr ? "مهندس معمارية سحابية Google" : "Professional Cloud Architect", desc: isAr ? "هيكلة الحاويات Docker ونظم الباك-اند المرنة." : "Container nodes, microservice boundaries, and hyper-scalable VPCs." },
           ].map((b, i) => (
@@ -390,7 +390,7 @@ export function HomePageClient() {
                 About Abdulrahman Taher
               </h2>
               <p className={`text-sm sm:text-base leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
-                Abdulrahman Taher is a backend-focused software engineer with deep expertise in Laravel, PostgreSQL optimisation, and REST API architecture. He has 5+ years of experience delivering production-grade systems for startups and enterprises across Egypt, Saudi Arabia, UAE, Kuwait, Qatar, and Oman.
+                Abdulrahman Taher is a backend-focused software engineer with deep expertise in Laravel, Database optimisation, and REST API architecture. He has 5+ years of experience delivering production-grade systems for startups and enterprises across Egypt, Saudi Arabia, UAE, Kuwait, Qatar, and Oman.
               </p>
             </div>
 

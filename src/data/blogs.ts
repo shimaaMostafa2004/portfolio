@@ -69,7 +69,7 @@ export const blogArticles: BlogArticle[] = [
       <p><strong>Action:</strong> Offload everything to Laravel Queue Workers driven by highly tuned Redis. This delivers an instant response to the client within 120ms while the heavy execution runs gracefully in the backend.</p>
 
       <h3>2. Employ Aggressive Redis Buffering</h3>
-      <p>Avoid hitting PostgreSQL/MySQL for static or infrequently modified data tables. System configurations, regional currency plans, and category grids should utilize caching:</p>
+      <p>Avoid hitting Database/MySQL for static or infrequently modified data tables. System configurations, regional currency plans, and category grids should utilize caching:</p>
       <pre><code>Cache::remember('gcc_gate_settings', now()->addDay(), function () {
     return GateSetting::getActive();
 });</code></pre>
@@ -137,8 +137,8 @@ export const blogArticles: BlogArticle[] = [
   {
     id: "b3",
     category: "database",
-    titleAr: "أسرار الفرس وتحسين استعلامات PostgreSQL وصيانة معمارية البيانات",
-    titleEn: "Optimizing Massive PostgreSQL Indexing and API Query Retries",
+    titleAr: "أسرار الفرس وتحسين استعلامات Database وصيانة معمارية البيانات",
+    titleEn: "Optimizing Massive Database Indexing and API Query Retries",
     excerptAr: "دليل المطورين لتحسين جلب وتوزيع الجداول في الأنظمة متعددة المستأجرين (Multi-tenant SaaS) وتقليل استهلاك المعالجات لأقل من %30.",
     excerptEn: "A developer's blueprint to fine-tuning database indices, query execution plans, and scaling structural multi-tenant SaaS schemas.",
     readTimeAr: "9 دقائق قراءة",
@@ -148,7 +148,7 @@ export const blogArticles: BlogArticle[] = [
     image: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=800&q=80",
     authorAr: "المهندس عبدالرحمن طاهر",
     authorEn: "Eng. Abdulrahman Taher",
-    keywords: ["PostgreSQL performance", "تحسين قواعد البيانات", "مطور لارافيل متمكن", "Multi-tenant database", "فهرسة الجداول indexes"],
+    keywords: ["Database performance", "تحسين قواعد البيانات", "مطور لارافيل متمكن", "Multi-tenant database", "فهرسة الجداول indexes"],
     contentAr: `
       <h2>لماذا تتباطأ قاعدة البيانات الخاصة بك بمرور الوقت؟</h2>
       <p>معظم المهندسين يبدأون بكتابة كود Eloquent بسيط وجميل، وتكون الأمور ممتازة في بيئة التطوير (Local Environment). ولكن بمجرد انتقال التطبيق للإنتاج وتراكم ملايين السجلات (Database Rows)، تتحول عمليات الـ SQL Joins البسيطة إلى كوابيس تستنزف معالج السيرفر بالكامل.</p>
@@ -417,8 +417,8 @@ export const blogArticles: BlogArticle[] = [
   {
     id: "b11",
     category: "database",
-    titleAr: "مقارنة قواعد البيانات الحركية: PostgreSQL مقابل MongoDB لأنظمة الـ SaaS عالية الضغط",
-    titleEn: "Vetting PostgreSQL vs MongoDB for High-Concurrency Modern Client Systems",
+    titleAr: "مقارنة قواعد البيانات الحركية: Database مقابل MongoDB لأنظمة الـ SaaS عالية الضغط",
+    titleEn: "Vetting Database vs MongoDB for High-Concurrency Modern Client Systems",
     excerptAr: "استكشاف للمطورين والعملاء لتحديد متى يجب استخدام الجداول العلائقية الصلبة أو الهياكل الديناميكية المرنة.",
     excerptEn: "A guide to selecting the ideal storage architecture—relational integrity vs. document-based scalability for enterprise apps.",
     readTimeAr: "8 دقائق",
@@ -432,16 +432,16 @@ export const blogArticles: BlogArticle[] = [
     contentAr: `
       <h2>بين دقة العلاقات ومرونة البيانات: كيف تختار؟</h2>
       <p>تعتمد قوة الباك-إند بأكملها على الاختيار الصحيح لقواعد البيانات. الخطأ هنا يعني بقاء نظامك هشاً ومعطلاً بمرور السنين. دعنا نفصّل الاختيار بأسلوب هندسي واضح.</p>
-      <h3>1. متى تلتزم بـ PostgreSQL (الأنظمة العلائقية)؟</h3>
-      <p>إذا كانت هناك معاملات مالية، فواتير وتفاصيل مستخدمين تتداخل وترتبط بصلابة ببعضها البعض، فإن PostgreSQL مع دعمها الصارم لمعايير ACID وعدم قابليتها للأخطاء المالية تعد الاختيار الذهبي والوحيد المعتمد للمحاسبة المحسنة وبناء موثوقية 100%.</p>
+      <h3>1. متى تلتزم بـ Database (الأنظمة العلائقية)؟</h3>
+      <p>إذا كانت هناك معاملات مالية، فواتير وتفاصيل مستخدمين تتداخل وترتبط بصلابة ببعضها البعض، فإن Database مع دعمها الصارم لمعايير ACID وعدم قابليتها للأخطاء المالية تعد الاختيار الذهبي والوحيد المعتمد للمحاسبة المحسنة وبناء موثوقية 100%.</p>
       <h3>2. متى تلتزم بـ MongoDB (الأنظمة غير العلائقية)؟</h3>
       <p>إذا كان نظامك يقوم باستقبال بيانات عشوائية وغير مهيكلة، مثل سجلات تتبع الأجهزة الذكية، أو ملفات مستندات تتشكل وتتنوع ديناميكياً بدون علاقات محاسبية معقدة، فـ MongoDB توفر سرعة قصوى وأداء متميز في التخزين.</p>
     `,
     contentEn: `
       <h2>Relational Integrity vs. Flexible Document Schemas</h2>
       <p>Your database choice dictates the lifespan and technical health of your digital product. Making the wrong decision can lead to frequent data corruption and scaling deadlocks.</p>
-      <h3>1. When PostgreSQL is Indispensable (Relational Standards)</h3>
-      <p>For financial accounting, payment logs, and user security permissions, PostgreSQL and its ironclad ACID transaction compliance are absolute requirements. It prevents ghost write errors and ensures a 100% accurate system state.</p>
+      <h3>1. When Database is Indispensable (Relational Standards)</h3>
+      <p>For financial accounting, payment logs, and user security permissions, Database and its ironclad ACID transaction compliance are absolute requirements. It prevents ghost write errors and ensures a 100% accurate system state.</p>
       <h3>2. When MongoDB excels (NoSQL Flexibility)</h3>
       <p>If you are saving polymorphic logs, loosely structured diagnostic feeds, or dynamic JSON catalog configurations with no deep relational dependencies, MongoDB delivers blazing-fast single-document writes.</p>
     `
@@ -671,7 +671,7 @@ export const blogArticles: BlogArticle[] = [
     `,
     contentEn: `
       <h2>Shattering Database Response Bottlenecks on Special Seasons</h2>
-      <p>Customers demand immediate checkout feedback. A 2-second delay during billing routes causes cart abandonment. Under heavy holiday flash sales, hit-heavy PostgreSQL engines fall short.</p>
+      <p>Customers demand immediate checkout feedback. A 2-second delay during billing routes causes cart abandonment. Under heavy holiday flash sales, hit-heavy Database engines fall short.</p>
       <h3>1. Store Dynamic Product Inventories directly in Redis</h3>
       <p>Maintain quick-access catalogs in RAM-based caches. Redis processes and returns inventory states in under 3ms, allowing database resources to prioritize mission-critical debit writes.</p>
       <h3>2. Leverage Atomic Redis Counters</h3>
@@ -874,8 +874,8 @@ db.execute(query, [req.body.email]);</code></pre>
   {
     id: "b24",
     category: "database",
-    titleAr: "تحسين استخلاص البيانات الضخمة (PostgreSQL Optimizer) وسحر الفهارس المخصصة",
-    titleEn: "PostgreSQL Optimizer: Tuning Heavy Database Queries with Ultimate Custom Indexes",
+    titleAr: "تحسين استخلاص البيانات الضخمة (Database Optimizer) وسحر الفهارس المخصصة",
+    titleEn: "Database Optimizer: Tuning Heavy Database Queries with Ultimate Custom Indexes",
     excerptAr: "دليل عملي لتسريع استعلامات التقارير وجداول الإجماليات من دقائق إلى أجزاء من الثانية باستخدام الفهارس المركبة وفهارس التغطية.",
     excerptEn: "Practical guide to speed up heavy financial reporting and large ledger joins using composite and partial indexes in relational databases.",
     readTimeAr: "9 دقائق",
@@ -885,7 +885,7 @@ db.execute(query, [req.body.email]);</code></pre>
     image: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=800&q=80",
     authorAr: "المهندس عبدالرحمن طاهر",
     authorEn: "Eng. Abdulrahman Taher",
-    keywords: ["PostgreSQL indexing techniques", "تحصيل الأداء لقاعدة البيانات", "Composite and Partial indexes", "سرعة استرجاع التقارير والبيانات"],
+    keywords: ["Database indexing techniques", "تحصيل الأداء لقاعدة البيانات", "Composite and Partial indexes", "سرعة استرجاع التقارير والبيانات"],
     contentAr: `
       <h2>فك شفرة سرعة الاستعلامات الضخمة</h2>
       <p>عندما تزداد أحجام السجلات إلى ملايين الأسطر، فإن عمليات استرجاع البيانات البسيطة تتحول فجأة إلى عبء يستنزف المعالج والذاكرة بالكامل. الفهارس الافتراضية لا تكفي دائماً لعلاج الاستعلامات المعقدة.</p>

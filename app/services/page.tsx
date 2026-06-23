@@ -5,13 +5,13 @@ import JsonLd from "@/components/JsonLd";
 import { baseSchema, faqSchema, SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "خدمات هندسة الباك اند | مطور Laravel وNode.js وPostgreSQL",
+  title: "خدمات هندسة الباك اند | مطور Laravel وNode.js وDatabase",
   description:
     "خدمات هندسة الباك اند المتخصصة من عبدالرحمن طاهر: تصميم REST APIs، تحسين قواعد البيانات، ربط بوابات الدفع الخليجية (مدى، ميسر، تاب)، Redis Caching، وبنية SaaS قابلة للتوسع.",
   keywords: [
     "خدمات مطور باك اند",
     "ربط بوابات دفع مصر الخليج",
-    "تحسين PostgreSQL",
+    "تحسين Database",
     "تصميم REST API",
     "Backend Engineering Services GCC",
     "Laravel API development",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "خدمات هندسة الباك اند | عبدالرحمن طاهر",
     description:
-      "REST APIs، تحسين PostgreSQL، بوابات الدفع الخليجية، Redis، وبنية SaaS — خدمات متخصصة للشركات والمشاريع التقنية.",
+      "REST APIs، تحسين Database، بوابات الدفع الخليجية، Redis، وبنية SaaS — خدمات متخصصة للشركات والمشاريع التقنية.",
     url: `${SITE_URL}/services`,
     images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Backend Engineering Services" }],
   },
@@ -35,7 +35,7 @@ const servicesFaqs = [
   {
     question: "ما هي خدمات الباك اند التي تقدمها؟",
     answer:
-      "أقدم: تصميم وتطوير REST APIs، تحسين أداء قواعد البيانات PostgreSQL/MySQL، ربط بوابات الدفع (مدى، ميسر، تاب، باي موب)، إعداد Redis Caching وقوائم انتظار العمل، وتصميم بنية SaaS متعددة المستأجرين.",
+      "أقدم: تصميم وتطوير REST APIs، تحسين أداء قواعد البيانات Database/MySQL، ربط بوابات الدفع (مدى، ميسر، تاب، باي موب)، إعداد Redis Caching وقوائم انتظار العمل، وتصميم بنية SaaS متعددة المستأجرين.",
   },
   {
     question: "How much does backend consulting cost?",

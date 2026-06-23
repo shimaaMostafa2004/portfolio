@@ -7,7 +7,7 @@ import { baseSchema, SITE_URL } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "معرض المشاريع والحالات العملية | عبدالرحمن طاهر",
   description:
-    "دراسات حالة حقيقية لمشاريع برمجية ناجحة في الخليج ومصر: أنظمة نقل الركاب، منصات مالية، أنظمة رعاية صحية، تجارة إلكترونية — بتقنيات Laravel وNode.js وPostgreSQL.",
+    "دراسات حالة حقيقية لمشاريع برمجية ناجحة في الخليج ومصر: أنظمة نقل الركاب، منصات مالية، أنظمة رعاية صحية، تجارة إلكترونية — بتقنيات Laravel وNode.js وDatabase.",
   keywords: [
     "مشاريع برمجية الخليج",
     "حالات عملية باك اند",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "معرض المشاريع | عبدالرحمن طاهر",
     description:
-      "دراسات حالة حقيقية: أنظمة نقل ركاب، منصات مالية، تجارة إلكترونية — Laravel وNode.js وPostgreSQL.",
+      "دراسات حالة حقيقية: أنظمة نقل ركاب، منصات مالية، تجارة إلكترونية — Laravel وNode.js وDatabase.",
     url: `${SITE_URL}/projects`,
     images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Backend Engineering Projects Portfolio" }],
   },

@@ -7,7 +7,7 @@ import { baseSchema, SITE_URL } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "Portfolio & Case Studies | Backend Projects — Abdulrahman Taher",
   description:
-    "Real production case studies: scalable ride-hailing backends, financial SaaS platforms, healthcare systems, and e-commerce built for GCC clients using Laravel, Node.js, and PostgreSQL.",
+    "Real production case studies: scalable ride-hailing backends, financial SaaS platforms, healthcare systems, and e-commerce built for GCC clients using Laravel, Node.js, and Database.",
   keywords: [
     "backend portfolio GCC",
     "Laravel case studies",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 export default function ProjectsPageEn() {
   return (
     <SiteShell initialLang="en">
-      <JsonLd data={baseSchema(`${SITE_URL}/en/projects`, "Portfolio & Case Studies | Abdulrahman Taher", "Real production case studies for GCC clients — Laravel, Node.js, PostgreSQL.")} />
+      <JsonLd data={baseSchema(`${SITE_URL}/en/projects`, "Portfolio & Case Studies | Abdulrahman Taher", "Real production case studies for GCC clients — Laravel, Node.js, Database.")} />
       <ProjectsPageClient />
     </SiteShell>
   );
