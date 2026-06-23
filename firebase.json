@@ -6,13 +6,7 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "redirects": [
-      {
-        "source": "https://www.abdotaher.me/**",
-        "destination": "https://abdotaher.me/:splat",
-        "type": 301
-      }
-    ],
+    "redirects": [],
     "headers": [
       {
         "source": "**",
