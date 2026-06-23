@@ -311,7 +311,7 @@ export function HomePageClient() {
           <Link href={`${prefix}/services`} className={`text-xs py-3 px-6 rounded-xl border transition-all text-center ${
             isDark ? "bg-[#13112a] border-indigo-950 text-slate-300 hover:bg-slate-900" : "bg-white border-slate-200 text-slate-600 hover:bg-slate-50"
           }`}>
-            {isAr ? "استعرض الخدمات" : "View Services"}
+            {isAr ? "تعرّف على خدماتي" : "Explore Backend Services"}
           </Link>
         </div>
       </section>

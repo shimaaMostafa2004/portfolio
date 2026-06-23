@@ -164,7 +164,7 @@ export function SiteShell({ children, initialLang = "ar" }: Props) {
               aria-label={isAr ? "تواصل معي للتوظيف أو الاستشارة" : "Hire me or book a consultation"}
               className="hidden sm:inline-flex lg:hidden xl:inline-flex bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs py-2 px-3 sm:py-2.5 sm:px-4 rounded-xl transition-all shadow-sm items-center gap-1.5 whitespace-nowrap">
               <Smartphone className="w-3.5 h-3.5" />
-              <span>{isAr ? "تواصل" : "Hire Me"}</span>
+              <span>{isAr ? "وظّفني" : "Get in Touch"}</span>
             </Link>
 
             {/* Hamburger (below lg) */}
