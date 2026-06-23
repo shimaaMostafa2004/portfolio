@@ -4,12 +4,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://abdotaher.me"),
   title: {
-    default:
-      "عبدالرحمن طاهر | مطور Laravel وخبير PostgreSQL وباك اند أول — مصر والخليج",
+    default: "عبدالرحمن طاهر | مطور Laravel و PostgreSQL",
     template: "%s | عبدالرحمن طاهر",
   },
   description:
-    "عبدالرحمن طاهر — مطور Laravel وخبير PostgreSQL ومهندس باك اند أول في مصر والخليج. متخصص في REST APIs وتكامل بوابات الدفع والأنظمة السحابية. استشارة مجانية.",
+    "عبدالرحمن طاهر، مطور Laravel وخبير PostgreSQL في مصر والخليج. أبني REST APIs وأنظمة باك إند عالية الأداء مع تكامل بوابات الدفع وتحسين قواعد البيانات.",
   keywords: [
     // Arabic — primary brand + service intent
     "عبدالرحمن طاهر",
@@ -74,18 +73,17 @@ export const metadata: Metadata = {
     locale: "ar_EG",
     alternateLocale: ["en_US"],
     url: "https://abdotaher.me",
-    siteName: "عبدالرحمن طاهر | مهندس باك اند",
-    title:
-      "عبدالرحمن طاهر | مهندس برمجيات باك اند وقواعد بيانات ومستشار تقني محترف",
+    siteName: "عبدالرحمن طاهر | مطور Laravel و PostgreSQL",
+    title: "عبدالرحمن طاهر | مطور Laravel و PostgreSQL",
     description:
-      "مهندس برمجيات باك اند ومطور قواعد بيانات محترف — Laravel, Node.js, PostgreSQL, Redis — لبناء أنظمة و APIs قوية للشركات في الخليج ومصر.",
+      "مطور Laravel وخبير PostgreSQL في مصر والخليج، متخصص في REST APIs وأنظمة الباك إند وتحسين الأداء.",
     images: [
       {
-        url: "/image.png",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Abdulrahman Taher - Senior Backend Engineer specialising in Laravel, Node.js, PostgreSQL",
-        type: "image/png",
+        alt: "عبدالرحمن طاهر - مطور Laravel وخبير PostgreSQL",
+        type: "image/jpeg",
       },
     ],
     countryName: "Egypt",
@@ -96,11 +94,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@abdotaher_dev",
     creator: "@abdotaher_dev",
-    title:
-      "عبدالرحمن طاهر | مهندس برمجيات باك اند وقواعد بيانات ومستشار تقني محترف",
+    title: "عبدالرحمن طاهر | مطور Laravel و PostgreSQL",
     description:
-      "مهندس باك اند — Laravel, Node.js, PostgreSQL, Redis — يبني APIs وأنظمة سحابية للشركات في الخليج ومصر.",
-    images: [{ url: "/image.png", alt: "Abdulrahman Taher - Senior Backend Engineer" }],
+      "مطور Laravel وخبير PostgreSQL متخصص في REST APIs وأنظمة الباك إند وتحسين الأداء.",
+    images: [{ url: "/og-image.jpg", alt: "عبدالرحمن طاهر - مطور Laravel وخبير PostgreSQL" }],
   },
   // Search engine verification
   verification: {
