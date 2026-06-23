@@ -5,36 +5,43 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://abdotaher.me"),
   title: {
     default:
-      "عبدالرحمن طاهر | مهندس برمجيات باك اند وقواعد بيانات ومستشار تقني محترف",
+      "عبدالرحمن طاهر | مطور Laravel وخبير PostgreSQL وباك اند أول — مصر والخليج",
     template: "%s | عبدالرحمن طاهر",
   },
   description:
-    "عبدالرحمن طاهر | مهندس برمجيات باك اند ومطور قواعد بيانات محترف لبناء أنظمة و APIs قوية وسريعة سحابية رائدة للشركات والمشاريع التقنية المميزة.",
+    "عبدالرحمن طاهر — مطور Laravel وخبير PostgreSQL ومهندس باك اند أول في مصر والخليج. متخصص في REST APIs وتكامل بوابات الدفع والأنظمة السحابية. استشارة مجانية.",
   keywords: [
-    // Arabic — primary persona
+    // Arabic — primary brand + service intent
     "عبدالرحمن طاهر",
-    "مبرمج باك اند مصر",
-    "مهندس قواعد بيانات الخليج",
-    "مطور Laravel محترف",
-    "مهندس Node.js الخليج",
-    "مستشار تقني سعودية",
-    "برمجة APIs قواعد بيانات",
-    "تطوير أنظمة SaaS",
-    "ربط بوابات دفع مدى",
+    "مطور Laravel",
+    "مهندس باك اند مصر",
+    "خبير PostgreSQL",
+    "مهندس برمجيات",
+    "هندسة قواعد البيانات",
+    "تكامل بوابات الدفع",
+    "مستشار تقني",
+    "مطور باك اند فريلانس",
+    "أنظمة سحابية",
+    "Node.js مطور",
     "تحسين أداء PostgreSQL",
-    // English — discovery & LLMs
+    "استشارات تقنية الخليج",
+    "ربط بوابات دفع مدى موياسر تاب",
+    "بناء REST APIs",
+    // English — discovery & international reach
     "Senior Backend Engineer Egypt",
+    "Laravel Developer Egypt",
+    "Backend Developer GCC",
+    "PostgreSQL Expert",
+    "Freelance Backend Developer",
+    "API Development",
+    "Payment Gateway Integration",
+    "Technical Consultant Egypt",
+    "Node.js Backend Developer",
+    "Database Expert",
     "Remote Laravel Developer Saudi Arabia",
-    "Node.js Architect GCC",
-    "PostgreSQL Performance Consultant",
-    "API Architecture Specialist",
-    "Redis Caching Expert",
-    "Payment Gateway Integration Mada Moyasar",
-    "Multi-Tenant SaaS Developer",
-    "Cloud Cost Optimisation AWS",
-    "Dubai Backend Consultant",
-    "Freelance Backend Engineer Middle East",
-    "Abdulrahman Taher backend",
+    "Backend Engineer Egypt",
+    "Senior Software Engineer Egypt",
+    "Abdulrahman Taher developer",
   ],
   authors: [{ name: "Abdulrahman Taher", url: "https://abdotaher.me" }],
   creator: "Abdulrahman Taher",
@@ -127,6 +134,13 @@ export default function RootLayout({
   return (
     <html lang="ar" dir="rtl" suppressHydrationWarning>
       <head>
+        {/* ── Favicon — all formats ── */}
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+
         {/* ── Theme & PWA ── */}
         <meta name="theme-color" content="#0f172a" />
         <meta name="color-scheme" content="dark light" />

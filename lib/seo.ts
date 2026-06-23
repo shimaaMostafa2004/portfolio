@@ -15,9 +15,9 @@ const personNode = {
   "@id": `${SITE_URL}/#person`,
   name: "Abdulrahman Taher",
   alternateName: ["عبدالرحمن طاهر", "Abdo Taher", "عبدالرحمن طاهر مبرمج"],
-  jobTitle: "Senior Backend & Database Architect",
+  jobTitle: "Senior Backend Engineer & Laravel Developer",
   description:
-    "Senior Backend Engineer with 5+ years of experience building scalable APIs, PostgreSQL-optimised database systems, and microservices for GCC enterprises.",
+    "Abdulrahman Taher — Senior Backend Engineer, Laravel Developer, and PostgreSQL Expert from Egypt. 5+ years building scalable REST APIs, optimising PostgreSQL databases, integrating payment gateways (Mada, Moyasar, Tap, Paymob), and designing cloud systems for GCC enterprises. Available as a Freelance Backend Developer for Saudi Arabia, UAE, Kuwait, Qatar, and Egypt.",
   url: SITE_URL,
   image: {
     "@type": "ImageObject",
@@ -30,6 +30,7 @@ const personNode = {
   sameAs: [
     "https://www.linkedin.com/in/abdelrhman-taher",
     "https://github.com/abdo-taher",
+    "https://x.com/Abderhman_taher",
     "https://www.upwork.com/freelancers/~018ae3e5cfaa1804d1",
     "https://wa.me/201008275881",
   ],

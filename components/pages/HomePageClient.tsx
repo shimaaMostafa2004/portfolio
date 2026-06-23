@@ -262,6 +262,173 @@ export function HomePageClient() {
           </Link>
         </div>
       </section>
+
+      {/* ── SEO CONTENT SECTION ── */}
+      <section className={`rounded-2xl border p-6 sm:p-10 space-y-8 text-start ${
+        isDark ? "bg-[#0f0d24]/60 border-indigo-950/40" : "bg-white border-slate-200 shadow-xs"
+      }`} aria-label={isAr ? "نبذة تفصيلية عن عبدالرحمن طاهر" : "About Abdulrahman Taher — Backend Engineer"}>
+
+        {isAr ? (
+          <div className="space-y-8" dir="rtl">
+            <div className="space-y-3">
+              <h2 className={`text-xl sm:text-2xl font-extrabold font-space tracking-tight ${isDark ? "text-white" : "text-slate-800"}`}>
+                من هو عبدالرحمن طاهر؟
+              </h2>
+              <p className={`text-sm sm:text-base leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
+                <strong>عبدالرحمن طاهر</strong> مهندس برمجيات ومطور <strong>Laravel</strong> متخصص في <strong>هندسة الباك اند</strong> وتصميم المعماريات البرمجية القوية. بخبرة تتجاوز 5 سنوات كـ <strong>Backend Developer</strong> محترف، أساعد الشركات في مصر والخليج العربي على بناء أنظمة برمجية متينة وسريعة وقابلة للتوسع. تخصصي الجوهري هو بناء <strong>REST APIs</strong> عالية الأداء، وتحسين <strong>قواعد البيانات</strong> بقيادة <strong>PostgreSQL</strong>، وتكامل <strong>بوابات الدفع</strong> المحلية والعالمية، وبناء <strong>الأنظمة السحابية</strong> القابلة للتوسع.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              <h2 className={`text-xl sm:text-2xl font-extrabold font-space tracking-tight ${isDark ? "text-white" : "text-slate-800"}`}>
+                خدمات هندسة الباك اند المتخصصة
+              </h2>
+
+              <div className="space-y-4">
+                <div>
+                  <h3 className={`text-base sm:text-lg font-bold mb-1.5 ${isDark ? "text-indigo-300" : "text-indigo-700"}`}>
+                    1. تطوير Laravel وبناء REST APIs
+                  </h3>
+                  <p className={`text-sm leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
+                    كـ <strong>مطور Laravel</strong> محترف، أصمم وأبني واجهات برمجية <strong>REST API</strong> قوية ومؤمَّنة بمعمارية نظيفة تعتمد مبادئ SOLID وClean Architecture. الكود المُسلَّم قابل للاختبار والتوسعة والصيانة على المدى البعيد، ويدعم أحمال الإنتاج الحقيقية بدون اختناقات.
+                  </p>
+                </div>
+                <div>
+                  <h3 className={`text-base sm:text-lg font-bold mb-1.5 ${isDark ? "text-indigo-300" : "text-indigo-700"}`}>
+                    2. تحسين أداء قواعد البيانات PostgreSQL
+                  </h3>
+                  <p className={`text-sm leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
+                    بصفتي <strong>خبير PostgreSQL</strong>، أتخصص في تحسين الاستعلامات المعقدة، وبناء فهارس مركّبة ذكية، وتحليل خطط التنفيذ بـ <code>EXPLAIN ANALYZE</code>، وتقسيم الجداول الضخمة. إذا كانت <strong>قواعد البيانات</strong> تُعاني من بطء أو اختناقات تحت الضغط، فالتشخيص والحل هو تخصصي.
+                  </p>
+                </div>
+                <div>
+                  <h3 className={`text-base sm:text-lg font-bold mb-1.5 ${isDark ? "text-indigo-300" : "text-indigo-700"}`}>
+                    3. تكامل بوابات الدفع المحلية والعالمية
+                  </h3>
+                  <p className={`text-sm leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
+                    أملك خبرة عملية واسعة في <strong>تكامل بوابات الدفع</strong>: Mada وMoyasar وTap Payments وPaymob وStripe. أُطبّق معايير أمان المدفوعات (Webhook Verification, Idempotency Keys, Double-Charge Prevention) لضمان موثوقية 100% في كل معاملة مالية.
+                  </p>
+                </div>
+                <div>
+                  <h3 className={`text-base sm:text-lg font-bold mb-1.5 ${isDark ? "text-indigo-300" : "text-indigo-700"}`}>
+                    4. الأنظمة السحابية والميكروسيرفيس بـ Node.js
+                  </h3>
+                  <p className={`text-sm leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
+                    أصمم <strong>الأنظمة السحابية</strong> باستخدام Docker وAWS وGCP، وأبني معماريات Microservices متناسقة. إلى جانب Laravel، أبني <strong>APIs</strong> عالية الأداء بـ <strong>Node.js</strong> لتطبيقات الوقت الحقيقي التي تتطلب استجابة أقل من 50ms تحت أحمال كثيفة.
+                  </p>
+                </div>
+                <div>
+                  <h3 className={`text-base sm:text-lg font-bold mb-1.5 ${isDark ? "text-indigo-300" : "text-indigo-700"}`}>
+                    5. الاستشارات التقنية ومراجعة المعمارية
+                  </h3>
+                  <p className={`text-sm leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
+                    كـ <strong>مستشار تقني</strong> ذو خبرة، أُقدّم جلسات تدقيق كاملة لأنظمتك البرمجية: مراجعة الكود، تقييم المعمارية، تحديد نقاط الضعف، وخطة إصلاح بأولويات واضحة — كل هذا في جلسة تشخيص أولى مجانية.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-3">
+              <h2 className={`text-xl sm:text-2xl font-extrabold font-space tracking-tight ${isDark ? "text-white" : "text-slate-800"}`}>
+                لماذا يختار العملاء في مصر والخليج عبدالرحمن طاهر؟
+              </h2>
+              <p className={`text-sm sm:text-base leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
+                <strong>مهندس باك اند</strong> جيد لا يكتب كوداً فحسب — بل يحل مشاكل الأعمال برمجياً. هذا ما أؤمن به وأطبقه: <strong>تحسين الأداء</strong> ليعمل الـ API في أقل من 100ms، <strong>الموثوقية</strong> بنظام يعمل 24/7 حتى في ذروة الزيارات، <strong>الأمان</strong> ببوابات دفع محكمة، و<strong>التوسعة</strong> بمعمارية تنمو مع نمو الأعمال. بصفتي <strong>Freelance Backend Developer</strong> أعمل مع فرق من مصر والسعودية والإمارات والكويت، وأُحقق نتائج قابلة للقياس: تقليص زمن الاستجابة 40%+ وخفض تكلفة الخادم وتسريع دورة التطوير.
+              </p>
+            </div>
+
+            <div className="space-y-3">
+              <h2 className={`text-xl sm:text-2xl font-extrabold font-space tracking-tight ${isDark ? "text-white" : "text-slate-800"}`}>
+                ابدأ استشارتك التقنية المجانية اليوم
+              </h2>
+              <p className={`text-sm sm:text-base leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
+                سواء كنت تبحث عن <strong>مطور Laravel</strong> لبناء API جديدة، أو <strong>خبير PostgreSQL</strong> لتحسين قاعدة بيانات بطيئة، أو <strong>مستشار تقني</strong> لمراجعة منظومتك البرمجية — أنا هنا.{" "}
+                <Link href={`/contact`} className="text-indigo-500 hover:text-indigo-400 font-bold underline underline-offset-2">
+                  تواصل معي الآن
+                </Link>{" "}
+                للحصول على جلسة تشخيص مجانية، أو استعرض{" "}
+                <Link href={`/services`} className="text-indigo-500 hover:text-indigo-400 font-bold underline underline-offset-2">
+                  خدمات هندسة الباك اند
+                </Link>{" "}
+                الكاملة أو{" "}
+                <Link href={`/projects`} className="text-indigo-500 hover:text-indigo-400 font-bold underline underline-offset-2">
+                  مشاريع ناجحة سابقة
+                </Link>.
+              </p>
+            </div>
+          </div>
+        ) : (
+          <div className="space-y-8" dir="ltr">
+            <div className="space-y-3">
+              <h2 className={`text-xl sm:text-2xl font-extrabold font-space tracking-tight ${isDark ? "text-white" : "text-slate-800"}`}>
+                Who is Abdulrahman Taher?
+              </h2>
+              <p className={`text-sm sm:text-base leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
+                <strong>Abdulrahman Taher</strong> is a <strong>Senior Backend Engineer</strong> and <strong>Laravel Developer</strong> from Egypt, specialising in building high-performance <strong>REST APIs</strong>, optimising <strong>PostgreSQL</strong> databases, integrating payment gateways, and designing scalable cloud architectures. With 5+ years as a professional <strong>Backend Developer</strong>, he serves enterprises across Egypt, Saudi Arabia, UAE, Kuwait, Qatar, and Oman.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              <h2 className={`text-xl sm:text-2xl font-extrabold font-space tracking-tight ${isDark ? "text-white" : "text-slate-800"}`}>
+                Backend Engineering Services
+              </h2>
+              <div className="space-y-4">
+                <div>
+                  <h3 className={`text-base sm:text-lg font-bold mb-1.5 ${isDark ? "text-indigo-300" : "text-indigo-700"}`}>
+                    Laravel Development & REST API Architecture
+                  </h3>
+                  <p className={`text-sm leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
+                    As a professional <strong>Laravel Developer</strong>, Abdulrahman designs and builds secure, clean REST APIs using SOLID principles, dependency injection, and Clean Architecture — production-ready for 10K+ concurrent users.
+                  </p>
+                </div>
+                <div>
+                  <h3 className={`text-base sm:text-lg font-bold mb-1.5 ${isDark ? "text-indigo-300" : "text-indigo-700"}`}>
+                    PostgreSQL Performance Tuning & Database Optimisation
+                  </h3>
+                  <p className={`text-sm leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
+                    As a <strong>PostgreSQL Expert</strong> and <strong>Database Expert</strong>, he digs into EXPLAIN ANALYZE, composite indexes, table partitioning, and connection pooling to eliminate slow queries and reduce server costs.
+                  </p>
+                </div>
+                <div>
+                  <h3 className={`text-base sm:text-lg font-bold mb-1.5 ${isDark ? "text-indigo-300" : "text-indigo-700"}`}>
+                    Payment Gateway Integration
+                  </h3>
+                  <p className={`text-sm leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
+                    Deep hands-on expertise in <strong>Payment Gateway Integration</strong>: Mada, Moyasar, Tap Payments, Paymob, and Stripe — with Webhook Verification, Idempotency Keys, and double-charge prevention for 100% transaction reliability.
+                  </p>
+                </div>
+                <div>
+                  <h3 className={`text-base sm:text-lg font-bold mb-1.5 ${isDark ? "text-indigo-300" : "text-indigo-700"}`}>
+                    Technical Consulting & Architecture Reviews
+                  </h3>
+                  <p className={`text-sm leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
+                    As an experienced <strong>Technical Consultant</strong>, Abdulrahman offers full system audits — code review, architecture assessment, bottleneck identification, and a prioritised remediation roadmap — with a free initial diagnostic session.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-3">
+              <h2 className={`text-xl sm:text-2xl font-extrabold font-space tracking-tight ${isDark ? "text-white" : "text-slate-800"}`}>
+                Ready to improve your backend?
+              </h2>
+              <p className={`text-sm sm:text-base leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
+                Whether you need a <strong>Laravel Developer</strong> to build a new API, a <strong>PostgreSQL Expert</strong> to fix a slow database, or a <strong>Technical Consultant</strong> to audit your entire system — he&apos;s ready.{" "}
+                <Link href={`/en/contact`} className="text-indigo-500 hover:text-indigo-400 font-bold underline underline-offset-2">
+                  Get in touch
+                </Link>{" "}
+                for a free diagnostic, explore{" "}
+                <Link href={`/en/services`} className="text-indigo-500 hover:text-indigo-400 font-bold underline underline-offset-2">
+                  backend services
+                </Link>, or browse{" "}
+                <Link href={`/en/projects`} className="text-indigo-500 hover:text-indigo-400 font-bold underline underline-offset-2">
+                  past projects
+                </Link>.
+              </p>
+            </div>
+          </div>
+        )}
+      </section>
     </div>
   );
 }

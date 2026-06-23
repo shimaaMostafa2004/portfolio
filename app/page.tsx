@@ -5,53 +5,80 @@ import JsonLd from "@/components/JsonLd";
 import { baseSchema, faqSchema, SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "عبدالرحمن طاهر | مهندس برمجيات باك اند وقواعد بيانات ومستشار تقني محترف",
+  title: "عبدالرحمن طاهر | مطور Laravel وخبير PostgreSQL وباك اند أول — مصر والخليج",
   description:
-    "عبدالرحمن طاهر — مهندس باك اند أول وخبير قواعد بيانات في مصر والخليج. متخصص في Laravel وNode.js وPostgreSQL وبوابات الدفع المحلية لبناء APIs سريعة وأنظمة سحابية قابلة للتوسع.",
+    "عبدالرحمن طاهر — مطور Laravel وخبير PostgreSQL ومهندس باك اند أول في مصر والخليج. متخصص في REST APIs وتكامل بوابات الدفع (Mada, Moyasar, Tap) والأنظمة السحابية. استشارة مجانية.",
   keywords: [
     "عبدالرحمن طاهر",
+    "مطور Laravel",
     "مهندس باك اند مصر",
-    "مطور Laravel للخليج",
+    "خبير PostgreSQL",
+    "مهندس برمجيات",
+    "تكامل بوابات الدفع",
+    "مستشار تقني",
+    "مطور باك اند فريلانس",
     "Senior Backend Engineer Egypt",
-    "Remote Laravel Developer GCC",
-    "Node.js PostgreSQL expert",
-    "API architecture consultant",
-    "payment gateway integration",
-    "مستشار تقني سعودية الإمارات",
+    "Laravel Developer Egypt",
+    "Backend Developer GCC",
+    "PostgreSQL Expert",
+    "Freelance Backend Developer",
+    "Payment Gateway Integration",
+    "API Development",
+    "Backend Engineer Egypt",
   ],
   alternates: {
     canonical: "/",
     languages: { ar: "/", en: "/en", "x-default": "/" },
   },
   openGraph: {
-    title: "عبدالرحمن طاهر | مهندس باك اند وقواعد بيانات",
+    title: "عبدالرحمن طاهر | مطور Laravel وخبير PostgreSQL — مصر والخليج",
     description:
-      "مهندس باك اند أول متخصص في Laravel وNode.js وPostgreSQL لبناء أنظمة APIs للشركات في الخليج ومصر.",
+      "مطور Laravel وخبير PostgreSQL ومهندس باك اند أول. أبني REST APIs سريعة وأُكامل بوابات الدفع وأصمم الأنظمة السحابية للشركات في الخليج ومصر.",
     url: SITE_URL,
-    images: [{ url: "/image.png", width: 1200, height: 630, alt: "Abdulrahman Taher - Senior Backend Engineer" }],
+    images: [{ url: "/image.png", width: 1200, height: 630, alt: "Abdulrahman Taher - Laravel & PostgreSQL Backend Engineer Egypt" }],
   },
 };
 
 const homeFaqs = [
   {
-    question: "من هو عبدالرحمن طاهر؟",
+    question: "من هو عبدالرحمن طاهر وما تخصصه؟",
     answer:
-      "عبدالرحمن طاهر مهندس برمجيات باك اند أول من مصر، متخصص في Laravel وNode.js وPostgreSQL مع خبرة +5 سنوات في بناء APIs وأنظمة سحابية قابلة للتوسع لشركات في الخليج ومصر.",
+      "عبدالرحمن طاهر مهندس برمجيات باك اند أول ومطور Laravel وخبير PostgreSQL من مصر، يعمل عن بُعد مع شركات في مصر والخليج. متخصص في بناء REST APIs عالية الأداء وتحسين قواعد البيانات وتكامل بوابات الدفع والأنظمة السحابية. خبرة تتجاوز 5 سنوات في هندسة البرمجيات للشركات الإقليمية.",
   },
   {
-    question: "What does Abdulrahman Taher specialise in?",
+    question: "ما هي خدمات هندسة الباك اند التي يقدمها عبدالرحمن طاهر؟",
     answer:
-      "Abdulrahman Taher is a Senior Backend Engineer specialising in Laravel, Node.js, PostgreSQL database tuning, Redis caching, payment gateway integration (Mada, Moyasar, Tap, Paymob), and scalable cloud architecture for GCC enterprises.",
+      "يقدم عبدالرحمن طاهر خدمات شاملة: تطوير Laravel وNode.js، بناء REST APIs، تحسين أداء PostgreSQL، تكامل بوابات الدفع (Mada وMoyasar وTap وPaymob وStripe)، بناء الأنظمة السحابية بـ Docker وAWS، إعداد Redis Caching وQueue Workers، والاستشارات التقنية لمراجعة المعمارية البرمجية.",
   },
   {
-    question: "هل يقدم عبدالرحمن طاهر خدمات للشركات في السعودية والإمارات؟",
+    question: "هل يعمل عبدالرحمن طاهر مع شركات في السعودية والإمارات؟",
     answer:
-      "نعم، يعمل عبدالرحمن طاهر عن بُعد مع شركات في المملكة العربية السعودية والإمارات والكويت وقطر وسلطنة عُمان ومصر لتقديم خدمات هندسة الباك اند وتحسين قواعد البيانات وتكامل بوابات الدفع.",
+      "نعم، يعمل عبدالرحمن طاهر عن بُعد مع شركات وعملاء في المملكة العربية السعودية والإمارات العربية المتحدة والكويت وقطر وسلطنة عُمان ومصر. يقبل المشاريع بالدولار الأمريكي والريال السعودي والدرهم الإماراتي والجنيه المصري.",
   },
   {
-    question: "What payment gateways can Abdulrahman Taher integrate?",
+    question: "ما خبرة عبدالرحمن طاهر في تكامل بوابات الدفع؟",
     answer:
-      "He has hands-on experience integrating Mada, Moyasar, Tap Payments, Paymob, and Stripe — with a focus on webhook security, idempotency, and double-debit prevention.",
+      "يملك عبدالرحمن طاهر خبرة عملية في تكامل بوابات الدفع المحلية والعالمية: Mada وMoyasar وTap Payments وPaymob وStripe. يُطبّق معايير أمان المدفوعات الصارمة بما فيها Webhook Verification وIdempotency Keys والحماية من الخصم المزدوج لضمان موثوقية 100% في كل معاملة.",
+  },
+  {
+    question: "كيف يُحسّن عبدالرحمن طاهر أداء قواعد بيانات PostgreSQL؟",
+    answer:
+      "يُحسّن عبدالرحمن طاهر أداء PostgreSQL من خلال: تحليل خطط التنفيذ بـ EXPLAIN ANALYZE، بناء فهارس مركّبة ذكية، تقسيم الجداول الضخمة (Table Partitioning)، تحسين الاستعلامات الفرعية المعقدة، إعداد Connection Pooling، واستخدام Redis لتخفيف الضغط على قاعدة البيانات.",
+  },
+  {
+    question: "هل يقدم عبدالرحمن طاهر استشارة تقنية مجانية؟",
+    answer:
+      "نعم، يقدم عبدالرحمن طاهر جلسة تشخيص تقني أولى مجانية لتقييم وضع النظام البرمجي وتحديد نقاط الضعف والاختناقات. يمكن التواصل عبر نموذج الاتصال على الموقع أو مباشرة عبر WhatsApp على الرقم +201008275881.",
+  },
+  {
+    question: "ما الفرق بين مهندس الباك اند ومطور الويب Full Stack؟",
+    answer:
+      "مهندس الباك اند متخصص في بناء الجانب الخادمي: قواعد البيانات، APIs، منطق الأعمال، الأمان، والأداء. عبدالرحمن طاهر متخصص حصراً في الباك اند مما يمنحه عمقاً تقنياً أكبر في تحسين الأداء وهندسة الأنظمة وحل الاختناقات مقارنة بمطوري Full Stack.",
+  },
+  {
+    question: "What does Abdulrahman Taher specialise in as a Backend Engineer?",
+    answer:
+      "Abdulrahman Taher is a Senior Backend Engineer and Laravel Developer specialising in PostgreSQL database tuning, REST API architecture, Redis caching, payment gateway integration (Mada, Moyasar, Tap, Paymob), Node.js microservices, and scalable cloud architecture for GCC and Egyptian enterprises. He has 5+ years of production experience building systems that handle 10,000+ concurrent users.",
   },
 ];
 

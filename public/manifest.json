@@ -1,7 +1,7 @@
 {
-  "name": "عبدالرحمن طاهر | مهندس باك اند",
+  "name": "عبدالرحمن طاهر | مطور Laravel وخبير PostgreSQL",
   "short_name": "Abdo Taher",
-  "description": "مهندس برمجيات باك اند أول متخصص في Laravel وNode.js وPostgreSQL للشركات في الخليج ومصر.",
+  "description": "مهندس باك اند أول ومطور Laravel وخبير PostgreSQL في مصر والخليج. بناء REST APIs وتكامل بوابات الدفع والأنظمة السحابية.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0f172a",
@@ -16,6 +16,18 @@
       "type": "image/svg+xml",
       "sizes": "any",
       "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "type": "image/png",
+      "sizes": "32x32",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180",
+      "purpose": "any"
     }
   ],
   "related_applications": [],
