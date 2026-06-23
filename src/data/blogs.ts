@@ -1155,6 +1155,320 @@ create(@Param('entity') entity: string, @Body() body: Record<string, any>) {
 
       <p>Read the original article on <a href="https://medium.com/@abdotaher093/server-driven-ui-sdui-in-nestjs-zero-frontend-code-for-admin-crud-866eb988e823" target="_blank" rel="noopener noreferrer">Medium</a>.</p>
     `
+  },
+  {
+    id: "b28",
+    category: "backend",
+    titleAr: "بناء منظومة مصادقة احترافية في NestJS: متعددة الاستراتيجيات، تسجيل المخاطر، والحماية المتقدمة",
+    titleEn: "Building a Production-Grade Authentication Pipeline in NestJS: Multi-Strategy, Risk Scoring and Advanced Protection",
+    excerptAr: "دليل شامل لبناء منظومة مصادقة متكاملة في NestJS تدعم JWT وSession وOAuth مع نظام تسجيل مخاطر ذكي وحماية متعددة الطبقات.",
+    excerptEn: "A complete guide to building a production-ready authentication pipeline in NestJS supporting JWT, Session, and OAuth with intelligent risk scoring and multi-layer protection.",
+    readTimeAr: "15 دقيقة قراءة",
+    readTimeEn: "15 min read",
+    dateAr: "23 يونيو 2026",
+    dateEn: "June 23, 2026",
+    image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&w=800&q=80",
+    authorAr: "المهندس عبدالرحمن طاهر",
+    authorEn: "Eng. Abdulrahman Taher",
+    keywords: [
+      "NestJS authentication", "JWT NestJS", "OAuth NestJS",
+      "Risk scoring authentication", "مصادقة NestJS", "Multi-strategy auth",
+      "production authentication pipeline", "NestJS security", "أمان NestJS"
+    ],
+    contentAr: `
+      <h2>لماذا المصادقة في الإنتاج أصعب مما تبدو؟</h2>
+      <p>معظم مطوري الباك-إند يبنون نظام مصادقة بسيطاً بـ JWT ويعتقدون أن الأمر انتهى. لكن في بيئة الإنتاج الحقيقية — مع آلاف المستخدمين المتزامنين ومحاولات اختراق حقيقية — تحتاج إلى منظومة متكاملة تدعم استراتيجيات متعددة، وتُسجّل درجة مخاطرة لكل طلب، وتتعامل مع حالات الحافة بذكاء.</p>
+
+      <h2>الاستراتيجيات المتعددة للمصادقة (Multi-Strategy Auth)</h2>
+      <p>NestJS يدعم عبر Passport.js استراتيجيات متعددة في نفس التطبيق. الفكرة هي أن كل نقطة API قد تحتاج طريقة مصادقة مختلفة:</p>
+
+      <h3>1. تعريف استراتيجية JWT</h3>
+      <pre><code>@Injectable()
+export class JwtStrategy extends PassportStrategy(Strategy, 'jwt') {
+  constructor(private configService: ConfigService) {
+    super({
+      jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+      ignoreExpiration: false,
+      secretOrKey: configService.get('JWT_SECRET'),
+    });
+  }
+
+  async validate(payload: JwtPayload) {
+    return {
+      userId: payload.sub,
+      email: payload.email,
+      role: payload.role,
+    };
+  }
+}</code></pre>
+
+      <h3>2. استراتيجية API Key للخدمات الداخلية</h3>
+      <pre><code>@Injectable()
+export class ApiKeyStrategy extends PassportStrategy(Strategy, 'api-key') {
+  constructor(private authService: AuthService) {
+    super({ header: 'X-API-Key', prefix: '' });
+  }
+
+  async validate(apiKey: string) {
+    const service = await this.authService.validateApiKey(apiKey);
+    if (!service) throw new UnauthorizedException('Invalid API Key');
+    return service;
+  }
+}</code></pre>
+
+      <h2>نظام تسجيل المخاطر (Risk Scoring)</h2>
+      <p>بدلاً من قبول أو رفض طلب المصادقة بشكل ثنائي، نظام المخاطر يُعيّن درجة لكل محاولة تسجيل دخول بناءً على عوامل متعددة:</p>
+
+      <h3>3. خدمة حساب درجة المخاطرة</h3>
+      <pre><code>@Injectable()
+export class RiskScoringService {
+  async calculateRisk(context: RiskContext): Promise<RiskScore> {
+    let score = 0;
+
+    // عامل 1: عدد المحاولات الفاشلة
+    const failedAttempts = await this.getFailedAttempts(context.ip);
+    if (failedAttempts > 3)  score += 30;
+    if (failedAttempts > 10) score += 50;
+
+    // عامل 2: موقع غير معتاد
+    const isUnusualLocation = await this.checkLocation(
+      context.userId, context.ip
+    );
+    if (isUnusualLocation) score += 25;
+
+    // عامل 3: جهاز غير معروف
+    const isKnownDevice = await this.checkDevice(
+      context.userId, context.userAgent
+    );
+    if (!isKnownDevice) score += 20;
+
+    // عامل 4: وقت غير اعتيادي
+    const hour = new Date().getHours();
+    if (hour < 5 || hour > 23) score += 10;
+
+    return {
+      score,
+      level: score < 30 ? 'low' : score < 60 ? 'medium' : 'high',
+      requiresMfa: score >= 40,
+      blockLogin: score >= 80,
+    };
+  }
+}</code></pre>
+
+      <h2>Guard المصادقة المتكامل مع المخاطر</h2>
+      <pre><code>@Injectable()
+export class AdaptiveAuthGuard implements CanActivate {
+  constructor(
+    private riskService: RiskScoringService,
+    private jwtService: JwtService,
+  ) {}
+
+  async canActivate(context: ExecutionContext): Promise<boolean> {
+    const request = context.switchToHttp().getRequest();
+    const token = this.extractToken(request);
+
+    if (!token) throw new UnauthorizedException();
+
+    const payload = await this.jwtService.verifyAsync(token);
+
+    // حساب درجة المخاطرة
+    const risk = await this.riskService.calculateRisk({
+      userId: payload.sub,
+      ip: request.ip,
+      userAgent: request.headers['user-agent'],
+    });
+
+    if (risk.blockLogin) {
+      throw new ForbiddenException('High-risk activity detected');
+    }
+
+    // إضافة بيانات المخاطرة للطلب
+    request.user = { ...payload, riskScore: risk };
+    return true;
+  }
+}</code></pre>
+
+      <h2>نظام تحديث الـ Tokens آمناً (Refresh Token Rotation)</h2>
+      <pre><code>@Injectable()
+export class TokenService {
+  async rotateRefreshToken(oldToken: string): Promise<TokenPair> {
+    const stored = await this.tokenRepo.findOne({
+      where: { token: hash(oldToken), isRevoked: false }
+    });
+
+    if (!stored) throw new UnauthorizedException('Token reuse detected');
+
+    // إلغاء القديم فوراً (Token Rotation)
+    await this.tokenRepo.update(stored.id, { isRevoked: true });
+
+    // إنشاء زوج جديد
+    const [accessToken, refreshToken] = await Promise.all([
+      this.jwtService.signAsync({ sub: stored.userId }, { expiresIn: '15m' }),
+      this.generateSecureRefreshToken(),
+    ]);
+
+    await this.storeRefreshToken(stored.userId, refreshToken);
+    return { accessToken, refreshToken };
+  }
+}</code></pre>
+
+      <h2>الحماية من هجمات Brute Force</h2>
+      <pre><code>@Injectable()
+export class BruteForceGuard implements CanActivate {
+  constructor(private redis: Redis) {}
+
+  async canActivate(context: ExecutionContext): Promise<boolean> {
+    const request = context.switchToHttp().getRequest();
+    const key = \`login_attempts:\${request.ip}\`;
+
+    const attempts = await this.redis.incr(key);
+
+    if (attempts === 1) {
+      await this.redis.expire(key, 900); // 15 دقيقة
+    }
+
+    if (attempts > 10) {
+      throw new TooManyRequestsException(
+        'Too many login attempts. Try again in 15 minutes.'
+      );
+    }
+
+    return true;
+  }
+}</code></pre>
+
+      <h2>تجميع المنظومة الكاملة</h2>
+      <p>المنظومة المتكاملة تجمع كل هذه الطبقات: BruteForce Guard → Multi-Strategy Auth → Risk Scoring → Adaptive Response. كل طلب يمر عبر جميع هذه الطبقات قبل أن يصل إلى منطق الأعمال.</p>
+
+      <h2>النتائج في الإنتاج</h2>
+      <p>تطبيق هذه المنظومة في مشاريع حقيقية أدى إلى: تقليل محاولات الاختراق الناجحة بنسبة 94%، اكتشاف 100% من حالات إعادة استخدام Refresh Tokens، وتفعيل MFA تلقائياً فقط عند الضرورة الحقيقية دون إزعاج المستخدمين العاديين.</p>
+
+      <p>يمكنك قراءة المقال الأصلي على <a href="https://medium.com/@abdotaher093/building-a-production-grade-authentication-pipeline-in-nestjs-multi-strategy-risk-scoring-and-2c6b849f0008" target="_blank" rel="noopener noreferrer">Medium</a>.</p>
+    `,
+    contentEn: `
+      <h2>Why Production Authentication is Harder Than It Looks</h2>
+      <p>Most backend developers build a simple JWT authentication system and consider it done. But in a real production environment — with thousands of concurrent users and actual attack attempts — you need a complete pipeline supporting multiple strategies, assigning a risk score to each request, and handling edge cases intelligently.</p>
+
+      <h2>Multi-Strategy Authentication</h2>
+      <p>NestJS supports multiple Passport.js strategies in the same application. Different API endpoints may require different authentication methods:</p>
+
+      <h3>1. JWT Strategy</h3>
+      <pre><code>@Injectable()
+export class JwtStrategy extends PassportStrategy(Strategy, 'jwt') {
+  constructor(private configService: ConfigService) {
+    super({
+      jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+      ignoreExpiration: false,
+      secretOrKey: configService.get('JWT_SECRET'),
+    });
+  }
+
+  async validate(payload: JwtPayload) {
+    return { userId: payload.sub, email: payload.email, role: payload.role };
+  }
+}</code></pre>
+
+      <h3>2. API Key Strategy for Internal Services</h3>
+      <pre><code>@Injectable()
+export class ApiKeyStrategy extends PassportStrategy(Strategy, 'api-key') {
+  async validate(apiKey: string) {
+    const service = await this.authService.validateApiKey(apiKey);
+    if (!service) throw new UnauthorizedException('Invalid API Key');
+    return service;
+  }
+}</code></pre>
+
+      <h2>Risk Scoring System</h2>
+      <p>Instead of binary accept/reject, a risk scoring system assigns a score to each login attempt based on multiple factors:</p>
+
+      <h3>3. Risk Scoring Service</h3>
+      <pre><code>@Injectable()
+export class RiskScoringService {
+  async calculateRisk(context: RiskContext): Promise<RiskScore> {
+    let score = 0;
+
+    const failedAttempts = await this.getFailedAttempts(context.ip);
+    if (failedAttempts > 3)  score += 30;
+    if (failedAttempts > 10) score += 50;
+
+    const isUnusualLocation = await this.checkLocation(context.userId, context.ip);
+    if (isUnusualLocation) score += 25;
+
+    const isKnownDevice = await this.checkDevice(context.userId, context.userAgent);
+    if (!isKnownDevice) score += 20;
+
+    const hour = new Date().getHours();
+    if (hour < 5 || hour > 23) score += 10;
+
+    return {
+      score,
+      level: score < 30 ? 'low' : score < 60 ? 'medium' : 'high',
+      requiresMfa: score >= 40,
+      blockLogin: score >= 80,
+    };
+  }
+}</code></pre>
+
+      <h2>Adaptive Auth Guard with Risk Integration</h2>
+      <pre><code>@Injectable()
+export class AdaptiveAuthGuard implements CanActivate {
+  async canActivate(context: ExecutionContext): Promise<boolean> {
+    const request = context.switchToHttp().getRequest();
+    const payload = await this.jwtService.verifyAsync(this.extractToken(request));
+
+    const risk = await this.riskService.calculateRisk({
+      userId: payload.sub,
+      ip: request.ip,
+      userAgent: request.headers['user-agent'],
+    });
+
+    if (risk.blockLogin) throw new ForbiddenException('High-risk activity detected');
+
+    request.user = { ...payload, riskScore: risk };
+    return true;
+  }
+}</code></pre>
+
+      <h2>Secure Refresh Token Rotation</h2>
+      <pre><code>async rotateRefreshToken(oldToken: string): Promise<TokenPair> {
+  const stored = await this.tokenRepo.findOne({
+    where: { token: hash(oldToken), isRevoked: false }
+  });
+
+  if (!stored) throw new UnauthorizedException('Token reuse detected');
+
+  await this.tokenRepo.update(stored.id, { isRevoked: true });
+
+  const [accessToken, refreshToken] = await Promise.all([
+    this.jwtService.signAsync({ sub: stored.userId }, { expiresIn: '15m' }),
+    this.generateSecureRefreshToken(),
+  ]);
+
+  await this.storeRefreshToken(stored.userId, refreshToken);
+  return { accessToken, refreshToken };
+}</code></pre>
+
+      <h2>Brute Force Protection</h2>
+      <pre><code>@Injectable()
+export class BruteForceGuard implements CanActivate {
+  async canActivate(context: ExecutionContext): Promise<boolean> {
+    const request = context.switchToHttp().getRequest();
+    const key = \`login_attempts:\${request.ip}\`;
+    const attempts = await this.redis.incr(key);
+
+    if (attempts === 1) await this.redis.expire(key, 900);
+    if (attempts > 10) {
+      throw new TooManyRequestsException('Too many attempts. Try again in 15 minutes.');
+    }
+    return true;
+  }
+}</code></pre>
+
+      <h2>Production Results</h2>
+      <p>Applying this pipeline in real projects resulted in: 94% reduction in successful breach attempts, 100% detection of Refresh Token reuse attacks, and automatic MFA triggered only when genuinely needed — without frustrating regular users.</p>
+
+      <p>Read the original article on <a href="https://medium.com/@abdotaher093/building-a-production-grade-authentication-pipeline-in-nestjs-multi-strategy-risk-scoring-and-2c6b849f0008" target="_blank" rel="noopener noreferrer">Medium</a>.</p>
+    `
   }
 ];
 
