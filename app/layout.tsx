@@ -4,17 +4,17 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://abdotaher.me"),
   title: {
-    default: "عبدالرحمن طاهر | مطور Laravel و PostgreSQL",
+    default: "عبدالرحمن طاهر | مطور Laravel و Database",
     template: "%s | عبدالرحمن طاهر",
   },
   description:
-    "عبدالرحمن طاهر، مطور Laravel وخبير PostgreSQL في مصر والخليج. أبني REST APIs وأنظمة باك إند عالية الأداء مع تكامل بوابات الدفع وتحسين قواعد البيانات.",
+    "عبدالرحمن طاهر، مطور Laravel وخبير Database في مصر والخليج. أبني REST APIs وأنظمة باك إند عالية الأداء مع تكامل بوابات الدفع وتحسين قواعد البيانات.",
   keywords: [
     // Arabic — primary brand + service intent
     "عبدالرحمن طاهر",
     "مطور Laravel",
     "مهندس باك اند مصر",
-    "خبير PostgreSQL",
+    "خبير Database",
     "مهندس برمجيات",
     "هندسة قواعد البيانات",
     "تكامل بوابات الدفع",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     "مطور باك اند فريلانس",
     "أنظمة سحابية",
     "Node.js مطور",
-    "تحسين أداء PostgreSQL",
+    "تحسين أداء Database",
     "استشارات تقنية الخليج",
     "ربط بوابات دفع مدى موياسر تاب",
     "بناء REST APIs",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     "Senior Backend Engineer Egypt",
     "Laravel Developer Egypt",
     "Backend Developer GCC",
-    "PostgreSQL Expert",
+    "Database Expert",
     "Freelance Backend Developer",
     "API Development",
     "Payment Gateway Integration",
@@ -73,16 +73,16 @@ export const metadata: Metadata = {
     locale: "ar_EG",
     alternateLocale: ["en_US"],
     url: "https://abdotaher.me",
-    siteName: "عبدالرحمن طاهر | مطور Laravel و PostgreSQL",
-    title: "عبدالرحمن طاهر | مطور Laravel و PostgreSQL",
+    siteName: "عبدالرحمن طاهر | مطور Laravel و Database",
+    title: "عبدالرحمن طاهر | مطور Laravel و Database",
     description:
-      "مطور Laravel وخبير PostgreSQL في مصر والخليج، متخصص في REST APIs وأنظمة الباك إند وتحسين الأداء.",
+      "مطور Laravel وخبير Database في مصر والخليج، متخصص في REST APIs وأنظمة الباك إند وتحسين الأداء.",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "عبدالرحمن طاهر - مطور Laravel وخبير PostgreSQL",
+        alt: "عبدالرحمن طاهر - مطور Laravel وخبير Database",
         type: "image/jpeg",
       },
     ],
@@ -94,18 +94,14 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@abdotaher_dev",
     creator: "@abdotaher_dev",
-    title: "عبدالرحمن طاهر | مطور Laravel و PostgreSQL",
+    title: "عبدالرحمن طاهر | مطور Laravel و Database",
     description:
-      "مطور Laravel وخبير PostgreSQL متخصص في REST APIs وأنظمة الباك إند وتحسين الأداء.",
-    images: [{ url: "/og-image.jpg", alt: "عبدالرحمن طاهر - مطور Laravel وخبير PostgreSQL" }],
+      "مطور Laravel وخبير Database متخصص في REST APIs وأنظمة الباك إند وتحسين الأداء.",
+    images: [{ url: "/og-image.jpg", alt: "عبدالرحمن طاهر - مطور Laravel وخبير Database" }],
   },
   // Search engine verification
   verification: {
-    google: "REPLACE_WITH_GOOGLE_SEARCH_CONSOLE_TOKEN",
-    yandex: "REPLACE_WITH_YANDEX_TOKEN",
-    other: {
-      "msvalidate.01": "REPLACE_WITH_BING_TOKEN",
-    },
+    google: "-WxdYsb9lGJIJ0eTnfYVQf9J6g8UMbTkK4A_uWBTcnA",
   },
   // App / PWA
   applicationName: "Abdulrahman Taher Portfolio",
