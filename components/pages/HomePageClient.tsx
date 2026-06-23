@@ -138,34 +138,45 @@ export function HomePageClient() {
       <section className="flex flex-wrap justify-center gap-2 sm:gap-3 -mt-4">
         <span className={`self-center text-[11px] font-mono uppercase tracking-widest ${isDark ? "text-slate-500" : "text-slate-400"}`}>
           <Share2 className="w-3 h-3 inline mr-1" />
-          {isAr ? "شارك" : "Share"}
+          {isAr ? "شارك المعرض" : "Share Portfolio"}
         </span>
         <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fabdotaher.me"
           target="_blank" rel="noopener noreferrer"
-          aria-label="Share on LinkedIn"
+          aria-label="Share Abdulrahman Taher portfolio on LinkedIn"
           className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-[11px] transition-all ${
             isDark ? "bg-[#13112a] border-indigo-950 text-slate-300 hover:border-blue-500/50 hover:text-white" : "bg-white border-slate-200 text-slate-600 hover:border-blue-400"
           }`}>
           <LinkedInIcon className="w-3 h-3 text-[#0A66C2]" />
-          LinkedIn
+          {isAr ? "شارك على LinkedIn" : "Share on LinkedIn"}
         </a>
         <a href="https://x.com/intent/tweet?text=%D9%85%D8%B7%D9%88%D8%B1%20Laravel%20%D9%88%D8%AE%D8%A8%D9%8A%D8%B1%20PostgreSQL%20%D9%81%D9%8A%20%D9%85%D8%B5%D8%B1%20%D9%88%D8%A7%D9%84%D8%AE%D9%84%D9%8A%D8%AC%20%E2%80%94%20https%3A%2F%2Fabdotaher.me"
           target="_blank" rel="noopener noreferrer"
-          aria-label="Share on X"
+          aria-label="Share Abdulrahman Taher portfolio on X Twitter"
           className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-[11px] transition-all ${
             isDark ? "bg-[#13112a] border-indigo-950 text-slate-300 hover:border-white/30 hover:text-white" : "bg-white border-slate-200 text-slate-600 hover:border-slate-400"
           }`}>
           <XIcon className="w-3 h-3" />
-          X / Twitter
+          {isAr ? "شارك على X" : "Share on X"}
+        </a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fabdotaher.me"
+          target="_blank" rel="noopener noreferrer"
+          aria-label="Share Abdulrahman Taher portfolio on Facebook"
+          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-[11px] transition-all ${
+            isDark ? "bg-[#13112a] border-indigo-950 text-slate-300 hover:border-blue-600/50 hover:text-white" : "bg-white border-slate-200 text-slate-600 hover:border-blue-500"
+          }`}>
+          <svg viewBox="0 0 24 24" className="w-3 h-3 text-[#1877F2]" fill="currentColor" aria-hidden="true">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+          {isAr ? "شارك على Facebook" : "Share on Facebook"}
         </a>
         <a href="https://wa.me/?text=%D9%85%D8%B7%D9%88%D8%B1%20Laravel%20%D9%88%D8%AE%D8%A8%D9%8A%D8%B1%20PostgreSQL%20%E2%80%94%20https%3A%2F%2Fabdotaher.me"
           target="_blank" rel="noopener noreferrer"
-          aria-label="Share on WhatsApp"
+          aria-label="Share Abdulrahman Taher portfolio on WhatsApp"
           className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-[11px] transition-all ${
             isDark ? "bg-[#13112a] border-indigo-950 text-slate-300 hover:border-emerald-500/50 hover:text-white" : "bg-white border-slate-200 text-slate-600 hover:border-emerald-400"
           }`}>
           <MessageSquare className="w-3 h-3 text-emerald-500" />
-          WhatsApp
+          {isAr ? "شارك على WhatsApp" : "Share on WhatsApp"}
         </a>
       </section>
 

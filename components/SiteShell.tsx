@@ -271,10 +271,17 @@ export function SiteShell({ children, initialLang = "ar" }: Props) {
             <p className="font-mono font-bold text-slate-500 text-center sm:text-start">
               © 2026 {isAr ? "عبدالرحمن طاهر" : "Abdulrahman Taher"} — {isAr ? "جميع الحقوق محفوظة" : "All Rights Reserved"}
             </p>
-            <nav className="flex flex-wrap justify-center gap-x-4 gap-y-1 font-mono font-bold text-[11px] text-slate-500">
-              {navLinks.map((link) => (
+            <nav aria-label={isAr ? "روابط التذييل" : "Footer links"} className="flex flex-wrap justify-center gap-x-4 gap-y-1 font-mono font-bold text-[11px] text-slate-500">
+              {[
+                { href: `${prefix}/`,         ar: "الصفحة الرئيسية",          en: "Go to Homepage" },
+                { href: `${prefix}/about`,    ar: "نبذة عن عبدالرحمن",       en: "About Abdulrahman" },
+                { href: `${prefix}/services`, ar: "خدمات Laravel وPostgreSQL", en: "Laravel & PostgreSQL Services" },
+                { href: `${prefix}/projects`, ar: "أعمال ومشاريع سابقة",     en: "Past Projects Portfolio" },
+                { href: `${prefix}/blogs`,    ar: "مقالات تقنية",              en: "Technical Blog Articles" },
+                { href: `${prefix}/contact`,  ar: "تواصل مع عبدالرحمن",       en: "Contact Abdulrahman" },
+              ].map((link) => (
                 <Link key={link.href} href={link.href} className="hover:text-indigo-500 uppercase transition-colors">
-                  {isAr ? link.labelAr : link.labelEn}
+                  {isAr ? link.ar : link.en}
                 </Link>
               ))}
             </nav>
