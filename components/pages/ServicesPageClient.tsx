@@ -75,7 +75,7 @@ export function ServicesPageClient() {
           {isAr ? "تحتاج خطة تشغيل تفصيلية لتوسيع نظامك؟" : "Looking for scalable API engineering consulting?"}
         </h2>
         <p className="text-xs sm:text-sm text-slate-400 mt-2 max-w-xl mx-auto leading-relaxed">
-          {isAr ? "خلال بضعة أيام، يمكنني مراجعة مستودع الأكواد وفهرس PostgreSQL الحالي."
+          {isAr ? "خلال بضعة أيام، يمكنني مراجعة مستودع الأكواد وفهرس قواعد البيانات الحالي."
                  : "I provide rapid, hands-on architectural code diagnostics and query indexing refactoring."}
         </p>
         <Link href={`${prefix}/contact`}

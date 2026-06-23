@@ -82,7 +82,7 @@ export const translations: { ar: TranslationDict; en: TranslationDict } = {
     servicesItem1Title: "هندسة وتصميم الـ REST APIs والـ Microservices",
     servicesItem1Desc: "تصميم مخصص للواجهات البرمجية الصلبة والـ APIs، وبناء بيئة تشغيل متناسقة تخدم شتى الكومبوننت والتطبيقات بسلاسة وأمان.",
     servicesItem2Title: "ضبط وتحسين أداء قواعد البيانات والـ SQL",
-    servicesItem2Desc: "اكتشاف ثغرات البطء، معالجة استمارات الاستعلام الطويلة، هيكلة فهارس PostgreSQL/MySQL المعقدة لخفض زمن الاستجابة بنسبة هائلة.",
+    servicesItem2Desc: "اكتشاف ثغرات البطء، معالجة استمارات الاستعلام الطويلة، هيكلة فهارس قواعد البيانات المعقدة لخفض زمن الاستجابة بنسبة هائلة.",
     servicesItem3Title: "دمج وتأمين بوابات الدفع وقنوات التسوية",
     servicesItem3Desc: "تجهيز ودمج بوابات الدفع (Mada, Tap, Moyasar, Paymob, Stripe) مع تأمين المعاملات بالكامل ضد إعادة الدفع وتأكيد الحركات بنسبة 100%.",
     servicesItem4Title: "الكاش وإدارة الطوابير وأتمتة العمليات (Scaling)",

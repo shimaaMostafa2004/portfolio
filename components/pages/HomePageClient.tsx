@@ -227,7 +227,7 @@ export function HomePageClient() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 max-w-5xl mx-auto">
           {[
             { icon: <Code className="w-4 h-4 sm:w-5 sm:h-5 text-indigo-500" />, titleAr: "بناء المعمارية", titleEn: "Core Architecture", descAr: "هندسة الميدلوير وحقن الاعتمادات ومعمارية نظيفة قابلة للنمو.", descEn: "Middleware engineering, dependency injection, and scalable MVC architectures." },
-            { icon: <Database className="w-4 h-4 sm:w-5 sm:h-5 text-indigo-500" />, titleAr: "قاعدة بيانات PostgreSQL", titleEn: "PostgreSQL & Indexing", descAr: "تحسين الاستعلامات المعقدة وتقسيم الجداول ومراجعة خطط التنفيذ.", descEn: "Subquery tuning, table partitions, composite indexes, and EXPLAIN ANALYZE." },
+            { icon: <Database className="w-4 h-4 sm:w-5 sm:h-5 text-indigo-500" />, titleAr: "قواعد البيانات والفهرسة", titleEn: "Databases & Indexing", descAr: "تحسين الاستعلامات المعقدة وتقسيم الجداول ومراجعة خطط التنفيذ.", descEn: "Subquery tuning, table partitions, composite indexes, and EXPLAIN ANALYZE." },
             { icon: <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-amber-500" />, titleAr: "ذاكرة كاش Redis", titleEn: "Redis Cache Sentinel", descAr: "التخزين المؤقت للبيانات الساخنة وصمام أمان طلبات الـ API.", descEn: "In-memory data structures, cache locks, and rate limiters." },
             { icon: <Radio className="w-4 h-4 sm:w-5 sm:h-5 text-indigo-500" />, titleAr: "الكيوهات وبول-ريديس", titleEn: "Queue Horizon Workers", descAr: "معالجة المهام الثقيلة في الخلفية لتفادي فترات الانتظار.", descEn: "Async queue processing, transactional mail sends, and cron pipelines." },
           ].map((pillar, i) => (
@@ -327,7 +327,7 @@ export function HomePageClient() {
                 من أنا
               </h2>
               <p className={`text-sm sm:text-base leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
-                عبدالرحمن طاهر — مهندس برمجيات متخصص في بناء أنظمة باك-إند وقواعد بيانات PostgreSQL فائقة الأداء قابلة للتوسع. خبرة تتجاوز 5 سنوات في تطوير REST APIs وحلول Laravel للشركات الناشئة والمؤسسات في مصر والسعودية والإمارات والكويت.
+                عبدالرحمن طاهر — مهندس برمجيات متخصص في بناء أنظمة باك-إند وقواعد بيانات فائقة الأداء قابلة للتوسع. خبرة تتجاوز 5 سنوات في تطوير REST APIs وحلول Laravel للشركات الناشئة والمؤسسات في مصر والسعودية والإمارات والكويت.
               </p>
             </div>
 
@@ -343,7 +343,7 @@ export function HomePageClient() {
                   </p>
                 </div>
                 <div>
-                  <p className={`text-sm ${isDark ? "text-indigo-300" : "text-indigo-700"} mb-0.5`}>تحسين أداء قواعد بيانات PostgreSQL</p>
+                  <p className={`text-sm ${isDark ? "text-indigo-300" : "text-indigo-700"} mb-0.5`}>تحسين أداء قواعد البيانات</p>
                   <p className={`text-sm leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}>
                     تحليل خطط التنفيذ بـ EXPLAIN ANALYZE، وبناء فهارس مركّبة، وتقسيم الجداول الضخمة، وإعداد Connection Pooling للحصول على أداء قاعدة بيانات مثالي.
                   </p>
@@ -373,11 +373,11 @@ export function HomePageClient() {
               <p className={`text-sm leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}>
                 <Link href="/contact" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">احجز استشارة Laravel مجانية</Link>
                 {" · "}
-                <Link href="/contact" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">ناقش مشروع باك إند</Link>
+                <Link href="/about" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">تعرف على مساري المهني</Link>
                 {" · "}
-                <Link href="/services" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">خدمات Laravel وPostgreSQL</Link>
+                <Link href="/services" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">خدمات Laravel وقواعد البيانات</Link>
                 {" · "}
-                <Link href="/projects" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">اطلب تحسين PostgreSQL</Link>
+                <Link href="/projects" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">اطلب تحسين قواعد البيانات</Link>
               </p>
             </div>
 
@@ -404,7 +404,7 @@ export function HomePageClient() {
                   <p className={`text-sm leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}>Secure, clean REST APIs using SOLID principles and Clean Architecture — production-ready for 10K+ concurrent users with zero bottlenecks.</p>
                 </div>
                 <div>
-                  <p className={`text-sm ${isDark ? "text-indigo-300" : "text-indigo-700"} mb-0.5`}>PostgreSQL Performance Tuning</p>
+                  <p className={`text-sm ${isDark ? "text-indigo-300" : "text-indigo-700"} mb-0.5`}>Database Performance Tuning</p>
                   <p className={`text-sm leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}>EXPLAIN ANALYZE, composite indexes, table partitioning, and connection pooling to eliminate slow queries and cut server costs.</p>
                 </div>
                 <div>
@@ -423,13 +423,13 @@ export function HomePageClient() {
                 Why Choose Abdulrahman Taher
               </h2>
               <p className={`text-sm leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}>
-                <Link href="/en/contact" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">Book a Laravel consultation</Link>
+                <Link href="/en/contact" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">Book a free Laravel consultation</Link>
                 {" · "}
-                <Link href="/en/contact" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">Discuss a backend project</Link>
+                <Link href="/en/about" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">Meet Abdulrahman Taher</Link>
                 {" · "}
                 <Link href="/en/services" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">Backend engineering services</Link>
                 {" · "}
-                <Link href="/en/projects" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">Request PostgreSQL optimisation</Link>
+                <Link href="/en/projects" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">Request database optimisation</Link>
               </p>
             </div>
 

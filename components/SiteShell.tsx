@@ -275,7 +275,7 @@ export function SiteShell({ children, initialLang = "ar" }: Props) {
               {[
                 { href: `${prefix}/`,         ar: "الصفحة الرئيسية",          en: "Go to Homepage" },
                 { href: `${prefix}/about`,    ar: "نبذة عن عبدالرحمن",       en: "About Abdulrahman" },
-                { href: `${prefix}/services`, ar: "خدمات Laravel وPostgreSQL", en: "Laravel & PostgreSQL Services" },
+                { href: `${prefix}/services`, ar: "خدمات Laravel وقواعد البيانات", en: "Laravel & Database Services" },
                 { href: `${prefix}/projects`, ar: "أعمال ومشاريع سابقة",     en: "Past Projects Portfolio" },
                 { href: `${prefix}/blogs`,    ar: "مقالات تقنية",              en: "Technical Blog Articles" },
                 { href: `${prefix}/contact`,  ar: "تواصل مع عبدالرحمن",       en: "Contact Abdulrahman" },
