@@ -27,7 +27,7 @@ export const metadata: Metadata = {
       "مقالات تقنية في Laravel وNode.js وPostgreSQL وبوابات الدفع الخليجية وتحسين السيرفرات.",
     url: `${SITE_URL}/blogs`,
     type: "website",
-    images: [{ url: "/image.png", width: 1200, height: 630, alt: "Backend Engineering Blog" }],
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Backend Engineering Blog" }],
   },
 };
 

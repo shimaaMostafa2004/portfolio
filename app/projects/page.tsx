@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     description:
       "دراسات حالة حقيقية: أنظمة نقل ركاب، منصات مالية، تجارة إلكترونية — Laravel وNode.js وPostgreSQL.",
     url: `${SITE_URL}/projects`,
-    images: [{ url: "/image.png", width: 1200, height: 630, alt: "Backend Engineering Projects Portfolio" }],
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Backend Engineering Projects Portfolio" }],
   },
 };
 

@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     description:
       "REST APIs، تحسين PostgreSQL، بوابات الدفع الخليجية، Redis، وبنية SaaS — خدمات متخصصة للشركات والمشاريع التقنية.",
     url: `${SITE_URL}/services`,
-    images: [{ url: "/image.png", width: 1200, height: 630, alt: "Backend Engineering Services" }],
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Backend Engineering Services" }],
   },
 };
 

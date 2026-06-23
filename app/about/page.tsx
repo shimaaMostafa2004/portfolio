@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     description:
       "مهندس باك اند أول من مصر، خبرة +5 سنوات في Laravel وNode.js وPostgreSQL وتصميم الأنظمة السحابية للشركات في الخليج.",
     url: `${SITE_URL}/about`,
-    images: [{ url: "/image.png", width: 1200, height: 630, alt: "Abdulrahman Taher - Backend Engineer" }],
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Abdulrahman Taher - Backend Engineer" }],
   },
 };
 

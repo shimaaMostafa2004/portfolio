@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     description:
       "Real case studies: ride-hailing, financial platforms, healthcare, and e-commerce backends for GCC clients.",
     url: `${SITE_URL}/en/projects`,
-    images: [{ url: "/image.png", width: 1200, height: 630, alt: "Backend Engineering Portfolio" }],
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Backend Engineering Portfolio" }],
   },
 };
 

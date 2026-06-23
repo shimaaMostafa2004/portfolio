@@ -25,7 +25,7 @@ export const metadata: Metadata = {
       "Deep-dive articles on Laravel, Node.js, PostgreSQL, Redis, and GCC payment gateways.",
     url: `${SITE_URL}/en/blogs`,
     type: "website",
-    images: [{ url: "/image.png", width: 1200, height: 630, alt: "Backend Engineering Blog" }],
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Backend Engineering Blog" }],
   },
 };
 

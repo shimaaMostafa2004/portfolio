@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     description:
       "Book a free 30-min architecture review or discuss your backend project with a GCC-focused engineer.",
     url: `${SITE_URL}/en/contact`,
-    images: [{ url: "/image.png", width: 1200, height: 630, alt: "Contact Abdulrahman Taher" }],
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Contact Abdulrahman Taher" }],
   },
 };
 

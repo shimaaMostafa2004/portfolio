@@ -6,7 +6,7 @@
  */
 
 export const SITE_URL = "https://abdotaher.me";
-export const OG_IMAGE = `${SITE_URL}/image.png`;
+export const OG_IMAGE = `${SITE_URL}/og-image.jpg`;
 export const TWITTER_HANDLE = "@abdotaher_dev";
 
 /** Canonical Person node — reused across all schemas */

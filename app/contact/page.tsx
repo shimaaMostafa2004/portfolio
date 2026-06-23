@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     description:
       "احجز جلسة استشارة تقنية مجانية أو ناقش مشروعك مع مهندس باك اند متخصص.",
     url: `${SITE_URL}/contact`,
-    images: [{ url: "/image.png", width: 1200, height: 630, alt: "Contact Abdulrahman Taher - Backend Engineer" }],
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Contact Abdulrahman Taher - Backend Engineer" }],
   },
 };
 

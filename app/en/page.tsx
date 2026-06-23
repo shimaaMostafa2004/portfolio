@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "5+ years building scalable APIs, PostgreSQL databases, and cloud systems for GCC enterprises — Laravel, Node.js, Redis, Docker.",
     url: `${SITE_URL}/en`,
-    images: [{ url: "/image.png", width: 1200, height: 630, alt: "Abdulrahman Taher - Senior Backend Engineer" }],
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Abdulrahman Taher - Senior Backend Engineer" }],
   },
 };
 
