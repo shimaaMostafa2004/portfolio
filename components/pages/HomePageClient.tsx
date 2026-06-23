@@ -77,8 +77,8 @@ export function HomePageClient() {
             isDark ? "text-slate-300" : "text-slate-600"
           }`}>
             {isAr
-              ? "مهندس باك-إند من مصر — أبني أنظمة باك-إند قابلة للتوسع باستخدام Laravel وNestJS وقواعد البيانات وواجهات REST APIs لشركات وتطبيقات رقمية حول العالم."
-              : "Backend Engineer from Egypt — building scalable backend systems, REST APIs, and SaaS platforms using Laravel, NestJS, Node.js, and database architecture."}
+              ? "مهندس باك-إند من مصر — أبني أنظمة باك-إند قابلة للتوسع وفائقة الأداء باستخدام Laravel وNestJS وقواعد البيانات وواجهات REST APIs لشركات وتطبيقات رقمية حول العالم."
+              : "Backend Engineer from Egypt — building scalable, performance-driven backend systems and databases using Laravel, NestJS, Node.js, and REST API architecture."}
           </p>
 
           {/* Feature pills */}
@@ -297,14 +297,14 @@ export function HomePageClient() {
         isDark ? "bg-[#13112a]/40 border-indigo-950/80" : "bg-indigo-50/20 border-indigo-100 shadow-xs"
       }`}>
         <p className={`text-lg sm:text-xl font-extrabold font-space ${isDark ? "text-white" : "text-slate-800"}`}>
-          {isAr ? "هل تبحث عن مهندس برمجيات يبني تطبيقات ويب حديثة عالية الأداء؟" : "Need a Software Engineer to build a modern, high-performance web application?"}
+          {isAr ? "هل تبحث عن مهندس باك-إند يبني أنظمة قابلة للتوسع وفائقة الأداء؟" : "Need scalable, performance-driven backend systems and databases for your product?"}
         </p>
         <p className={`text-xs sm:text-sm mt-2 max-w-2xl mx-auto leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
-          {isAr ? "أبني منصات SaaS وتطبيقات مؤسسية ولوحات تحكم ومتاجر إلكترونية بـ Next.js وReact وTypeScript وNode.js." : "Building SaaS platforms, enterprise apps, dashboards, and e-commerce with Next.js, React, TypeScript, and Node.js."}
+          {isAr ? "أبني منصات SaaS وأنظمة مؤسسية وواجهات REST APIs قابلة للتوسع بـ Laravel وNestJS وقواعد البيانات." : "Building scalable SaaS platforms, enterprise backends, and high-performance REST APIs with Laravel, NestJS, and database optimization."}
         </p>
         <div className="flex flex-col xs:flex-row justify-center gap-2 sm:gap-3 mt-5 sm:mt-6">
           <Link href={`${prefix}/contact`} className="bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs py-3 px-6 rounded-xl border border-indigo-500/10 transition-colors shadow-sm text-center">
-            {isAr ? "اطلب تطوير API الآن" : "Request API Development"}
+            {isAr ? "اطلب بناء API قابل للتوسع" : "Request Scalable Backend Development"}
           </Link>
           <Link href={`${prefix}/services`} className={`text-xs py-3 px-6 rounded-xl border transition-all text-center ${
             isDark ? "bg-[#13112a] border-indigo-950 text-slate-300 hover:bg-slate-900" : "bg-white border-slate-200 text-slate-600 hover:bg-slate-50"
@@ -373,11 +373,11 @@ export function HomePageClient() {
               <p className={`text-sm leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}>
                 <Link href="/contact" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">احجز استشارة مجانية</Link>
                 {" · "}
-                <Link href="/about" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">تعرف على مساري المهني</Link>
+                <Link href="/about" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">مساري المهني وخبراتي</Link>
                 {" · "}
                 <Link href="/services" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">خدمات Laravel وNestJS وقواعد البيانات</Link>
                 {" · "}
-                <Link href="/projects" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">معرض المشاريع</Link>
+                <Link href="/projects" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">مشاريع وأنظمة باك-إند منجزة</Link>
               </p>
             </div>
 
@@ -426,13 +426,13 @@ export function HomePageClient() {
                 Why Choose Abdo Taher
               </h2>
               <p className={`text-sm leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}>
-                <Link href="/en/contact" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">Book a free consultation</Link>
+                <Link href="/en/contact" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">Book a free backend consultation</Link>
                 {" · "}
-                <Link href="/en/about" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">Meet Abdo Taher</Link>
+                <Link href="/en/about" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">Abdo Taher — background & experience</Link>
                 {" · "}
-                <Link href="/en/services" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">Laravel & NestJS services</Link>
+                <Link href="/en/services" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">Laravel & NestJS backend services</Link>
                 {" · "}
-                <Link href="/en/projects" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">View portfolio</Link>
+                <Link href="/en/projects" className="text-indigo-500 hover:text-indigo-400 underline underline-offset-2">Scalable backend project portfolio</Link>
               </p>
             </div>
 

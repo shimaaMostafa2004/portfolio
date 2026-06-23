@@ -5,35 +5,35 @@ import JsonLd from "@/components/JsonLd";
 import { baseSchema, SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Projects & Portfolio | Full Stack Work by Abdo Taher",
+  title: "Projects & Portfolio | Scalable Backend Systems by Abdo Taher",
   description:
-    "Portfolio and case studies by Abdo Taher — SaaS platforms, enterprise web applications, e-commerce systems, admin dashboards, and REST APIs built with Next.js, React, TypeScript, and Node.js.",
+    "Portfolio and case studies by Abdo Taher — scalable SaaS backends, performance-driven REST APIs, database-optimized systems, and enterprise applications built with Laravel, NestJS, and Node.js.",
   keywords: [
     "Abdo Taher portfolio",
-    "Next.js projects",
-    "React applications portfolio",
-    "SaaS development case studies",
-    "full stack developer portfolio",
-    "TypeScript web applications",
-    "Node.js API projects",
-    "e-commerce development",
-    "admin dashboard development",
-    "web application portfolio Egypt",
+    "Laravel backend projects",
+    "NestJS REST API portfolio",
+    "scalable backend case studies",
+    "SaaS backend portfolio",
+    "database optimization projects",
+    "Node.js backend portfolio",
+    "performance-driven backend systems",
+    "enterprise backend Egypt",
+    "backend developer portfolio",
   ],
   alternates: { canonical: "/en/projects", languages: { ar: "/projects", en: "/en/projects" } },
   openGraph: {
-    title: "Projects & Portfolio | Abdo Taher",
+    title: "Projects & Portfolio | Scalable Backend Systems by Abdo Taher",
     description:
-      "SaaS platforms, enterprise apps, e-commerce, dashboards, and REST APIs built with Next.js, React, TypeScript, and Node.js.",
+      "Scalable SaaS backends, performance-driven REST APIs, and database-optimized enterprise systems built with Laravel, NestJS, and Node.js.",
     url: `${SITE_URL}/en/projects`,
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Abdo Taher — Software Engineering Portfolio" }],
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Abdo Taher — Backend Engineering Portfolio" }],
   },
 };
 
 export default function ProjectsPageEn() {
   return (
     <SiteShell initialLang="en">
-      <JsonLd data={baseSchema(`${SITE_URL}/en/projects`, "Projects & Portfolio | Abdo Taher — Full Stack Developer", "SaaS platforms, enterprise web apps, e-commerce, dashboards, and REST APIs built with Next.js, React, TypeScript, and Node.js.")} />
+      <JsonLd data={baseSchema(`${SITE_URL}/en/projects`, "Projects & Portfolio | Scalable Backend Systems by Abdo Taher", "Scalable SaaS backends, performance-driven REST APIs, and database-optimized systems built with Laravel, NestJS, and Node.js.")} />
       <ProjectsPageClient />
     </SiteShell>
   );
