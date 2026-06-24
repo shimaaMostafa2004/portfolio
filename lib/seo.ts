@@ -172,7 +172,7 @@ const profilePageNode = {
   about: { "@id": `${SITE_URL}/#person` },
   mainEntity: { "@id": `${SITE_URL}/#person` },
   dateCreated: "2024-01-01",
-  dateModified: new Date().toISOString().split("T")[0],
+  dateModified: new Date().toISOString(),
   inLanguage: ["ar", "en"],
 };
 
